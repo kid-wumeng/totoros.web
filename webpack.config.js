@@ -1,8 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
 
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/main.coffee',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -20,8 +24,8 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.coffee$/,
+        loader: 'coffee-loader',
         exclude: /node_modules/
       },
       {
@@ -34,9 +38,16 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json', '.coffee'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'assets':     resolve('src/assets'),
+      'components': resolve('src/components'),
+      'pages':      resolve('src/pages'),
     }
+  },
+  externals: {
+    WebSocket: 'WebSocket'
   },
   devServer: {
     historyApiFallback: true,
