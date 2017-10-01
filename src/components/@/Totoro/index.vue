@@ -2,7 +2,7 @@
   .totoro
     c-animate(enter="zoomIn" leave="zoomOut")
       .message(v-show="state.totoro.open") {{ state.totoro.message }}
-    .face.image.-circle(:style="style")
+    c-image.face(url="assets/totoro?2017-09-30")
 </template>
 
 
@@ -10,6 +10,7 @@
   module.exports =
     components:
       'c-animate': require('components/@/Animate')
+      'c-image':   require('components/image/Image')
 
     computed:
       style: ->
@@ -47,6 +48,7 @@
     .face{
       width: 60px;
       height: 60px;
+      border-radius: 100px;
     }
   }
 </style>

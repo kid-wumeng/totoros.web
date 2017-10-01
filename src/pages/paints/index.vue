@@ -1,16 +1,17 @@
 <template lang="jade">
-  #timeline 时间线
+  #paints
+    top-bar(active="paints")
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    data: -> {}
+    components:
+      'top-bar': require('components/bbs/TopBar')
 </script>
 
 
 <style lang="less" scoped>
-  #timeline{
-
+  #paints{
   }
 </style>

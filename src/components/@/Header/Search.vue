@@ -1,5 +1,6 @@
 <template lang="jade">
-  #timeline 时间线
+  .search
+    .icon.fa-search
 </template>
 
 
@@ -10,7 +11,9 @@
 
 
 <style lang="less" scoped>
-  #timeline{
-
+  .search{
+    margin-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
   }
 </style>

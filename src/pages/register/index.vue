@@ -44,7 +44,7 @@
 
       welcome: ->
         @notify('done', '注册成功，欢迎你成为 TOTOROS 的一员 ~ 啪啪啪', 5000)
-        @$router.push('/')
+        @$router.replace('/')
 
       fail: ({message})->
         @notify('warn', message, 3000)

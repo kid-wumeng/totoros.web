@@ -1,16 +1,21 @@
 <template lang="jade">
   .header
     .row
-      .logo.image(:style="logoStyle")
-      h1(v-if="state.user") {{ state.user.name }}
+      .row.-left
+        logo
+        navigator
+        search
+      user-face(v-if="state.user", :user="state.user")
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    computed:
-      logoStyle: ->
-        'background-image': @url('assets/logo?2017-09-30')
+    components:
+      'logo':      require('./Logo')
+      'navigator': require('./Navigator')
+      'search':    require('./Search')
+      'user-face': require('components/image/UserFace')
 </script>
 
 
@@ -18,14 +23,13 @@
   .header{
     width: 100%;
     text-align: center;
-    .row{
+    >.row{
       margin: 0 auto;
-      width: 960px;
-      height: 72px;
-      .logo{
-        @width: 90px;
-        width: @width;
-        height: @width / 4.5;
+      width: 800px;
+      height: 54px;
+      .user-face{
+        width: 32px;
+        height: 32px;
       }
     }
   }

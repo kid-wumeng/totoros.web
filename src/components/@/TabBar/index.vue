@@ -1,0 +1,30 @@
+<template lang="jade">
+  .tab-bar.row.-left
+    .tab.row(v-for="tab in tabs", :class="{'-active': tab.value === active}" @click="$emit('change', tab)")
+      .label {{ tab.label }}
+      .count(v-if="tab.label") {{ tab.count }}
+</template>
+
+
+<script lang="coffee">
+  module.exports =
+    props:
+      'tabs':
+        type: Array
+        required: true
+      'active':
+        type: String
+        required: true
+</script>
+
+
+<style lang="less" scoped>
+  .tab-bar{
+    .tab{
+      cursor: pointer;
+    }
+    .tab.-active{
+      cursor: default;
+    }
+}
+</style>

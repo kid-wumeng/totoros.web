@@ -2,10 +2,6 @@ exports.cdn = (path) ->
   return "#{window.cdn}/#{path}"
 
 
-exports.url = (path) ->
-  return 'url(' + @cdn(path) + ')'
-
-
 exports.totoro = (message, duration) ->
   @dispatch('totoro/showMessage', { message, duration })
 

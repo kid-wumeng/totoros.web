@@ -26,7 +26,7 @@
 
       welcome: ->
         @notify('done', "欢迎回来 ~ 啪啪啪", 3000)
-        @$router.push('/')
+        @$router.replace('/')
 
       fail: ({message})->
         @notify('fail', message, 3000)

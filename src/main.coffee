@@ -1,5 +1,6 @@
 Vue        = require('vue').default
 Router     = require('vue-router').default
+Lazyload   = require('vue-lazyload')
 Sai        = require('./assets/sai.io')
 store      = require('./store')
 model      = require('./model')
@@ -45,11 +46,13 @@ Vue.use({
     Vue.prototype.dispatch = store.dispatch
     Vue.prototype.api      = api
     Vue.prototype.cdn      = methods.cdn
-    Vue.prototype.url      = methods.url
     Vue.prototype.totoro   = methods.totoro
     Vue.prototype.notify   = methods.notify
     Vue.directive('focus', directives.focus)
 })
+
+
+Vue.use(Lazyload)
 
 
 Vue.use(Router)

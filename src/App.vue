@@ -31,16 +31,8 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  html{
-    height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body{
-    height: 100%;
-    background-color: rgba(250, 250, 250, 0.93);
-    overflow: scroll;
+  a{
+    text-decoration: none;
   }
 
   .icon{
@@ -51,8 +43,20 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html{
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body{
+    height: 100%;
+    background-color: rgba(250, 250, 250, 0.93);
+  }
+
   #app{
     height: 100%;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
