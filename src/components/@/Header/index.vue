@@ -5,7 +5,7 @@
         logo
         navigator
         search
-      user-face(v-if="state.user", :user="state.user")
+      user-face(v-if="login", :user="state.account.user")
 </template>
 
 

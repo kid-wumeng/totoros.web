@@ -36,11 +36,11 @@
           return false
 
       register: ->
-        @api.call('user.account.register', @email, @pass, @name).done(@done).fail(@fail)
+        @api.call('account.register', @email, @pass, @name).done(@done).fail(@fail)
 
       done: (tokenString) ->
         localStorage.setItem('tokenString', tokenString)
-        @dispatch('checkin').then(@welcome)
+        @dispatch('account/checkin').then(@welcome)
 
       welcome: ->
         @notify('done', '注册成功，欢迎你成为 TOTOROS 的一员 ~ 啪啪啪', 5000)

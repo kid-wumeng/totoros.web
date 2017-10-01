@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.logo(url="assets/logo?2017-10-01.9", @click.native="$router.push('/')")
+  c-image.logo(path="assets/logo?2017-10-01.9", @click.native="$router.push('/')")
 </template>
 
 

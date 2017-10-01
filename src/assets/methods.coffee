@@ -1,5 +1,5 @@
-exports.cdn = (path) ->
-  return "#{window.cdn}/#{path}"
+exports.isMe = (user) ->
+  return user?.id and user?.id is @loginUser?.id
 
 
 exports.totoro = (message, duration) ->
@@ -8,7 +8,3 @@ exports.totoro = (message, duration) ->
 
 exports.notify = (type, message, duration) ->
   @dispatch('notify/show', { type, message, duration })
-
-
-exports.toTimelinePage = ->
-  @$router.push('/')

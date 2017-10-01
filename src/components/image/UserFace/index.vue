@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.user-face(:url="url" cover)
+  c-image.user-face(:path="path" cover)
 </template>
 
 
@@ -14,7 +14,7 @@
         required: true
 
     computed:
-      url: -> "users/#{@user?.id}/face?v=#{user?.face?.version}"
+      path: -> "users/#{@user?.id}/face?v=#{user?.face?.version}"
 </script>
 
 

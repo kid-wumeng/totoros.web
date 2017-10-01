@@ -18,11 +18,11 @@
 
     methods:
       submit: ->
-        @api.call('user.account.login', @email, @pass).done(@done).fail(@fail)
+        @api.call('account.login', @email, @pass).done(@done).fail(@fail)
 
       done: (tokenString) ->
         localStorage.setItem('tokenString', tokenString)
-        @dispatch('checkin').then(@welcome)
+        @dispatch('account/checkin').then(@welcome)
 
       welcome: ->
         @notify('done', "欢迎回来 ~ 啪啪啪", 3000)

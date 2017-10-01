@@ -2,7 +2,7 @@
   .totoro
     c-animate(enter="zoomIn" leave="zoomOut")
       .message(v-show="state.totoro.open") {{ state.totoro.message }}
-    c-image.face(url="assets/totoro?2017-09-30")
+    c-image.face(path="assets/totoro?2017-09-30")
 </template>
 
 

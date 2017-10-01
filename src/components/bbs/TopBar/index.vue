@@ -1,6 +1,6 @@
 <template lang="jade">
   .top-bar
-    c-image(url="banner-test?123" cover)
+    c-image(path="banner-test?123" cover)
     tab-bar(:tabs="tabs", :active="active", @change="change")
 </template>
 
