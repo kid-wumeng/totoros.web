@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 module.exports = new Vuex.Store({
   modules:
-    account: require('./account')
-    totoro:  require('./totoro')
-    notify:  require('./notify')
+    'account': require('./account')
+    'totoro':  require('./totoro')
+    'notify':  require('./notify')
+    'submit-subject-modal': require('./submit-subject-modal')
 })

@@ -12,7 +12,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-input': require('components/form/Input')
+      'c-input': require('components/@/Input')
 
     data: ->
       email: ''
@@ -56,13 +56,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     .wrap{
       margin-top: -10%;
       width: 260px;
-
       .input{
         margin-bottom: 12px;
+      }
+      .button{
+        display: block;
       }
     }
   }

@@ -14,7 +14,7 @@
     components:
       'c-header': require('components/@/Header')
       'totoro':   require('components/@/Totoro')
-      'notify':   require('components/popup/Notify')
+      'notify':   require('components/@/Notify')
 </script>
 
 

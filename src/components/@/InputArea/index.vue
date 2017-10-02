@@ -1,9 +1,10 @@
 <template lang="jade">
-  input.input.input-box(
+  textarea.input-area.input-box(
     v-focus="focus",
     :value="value",
     :type="type",
     :placeholder="placeholder",
+    :rows="rows",
     :disabled="disabled",
     spellcheck="false",
     @input="input"
@@ -26,16 +27,22 @@
       'placeholder':
         type: String
         default: ''
+      'rows':
+        type: Number
+        default: 3
       'disabled':
         type: Boolean
         default: false
-        
+
     methods:
       input: (e) -> @$emit('input', e.target.value)
 </script>
 
 
 <style lang="less" scoped>
-  .input{
+  .input-area{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    resize: none;
   }
 </style>

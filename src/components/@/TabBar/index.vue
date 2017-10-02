@@ -1,5 +1,5 @@
 <template lang="jade">
-  .tab-bar.row.-left
+  .tab-bar
     .tab.row(v-for="tab in tabs", :class="{'-active': tab.value === active}" @click="$emit('change', tab)")
       .label {{ tab.label }}
       .count(v-if="tab.label") {{ tab.count }}
@@ -26,5 +26,5 @@
     .tab.-active{
       cursor: default;
     }
-}
+  }
 </style>

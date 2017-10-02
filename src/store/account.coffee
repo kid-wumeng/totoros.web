@@ -5,10 +5,6 @@ module.exports =
   state:
     user: null
 
-  getters:
-    login: (state) ->
-      return state.user isnt null
-
   mutations:
     CHECKIN_DONE: (state, user) ->
       state.user = user
