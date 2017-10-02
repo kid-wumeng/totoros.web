@@ -6,7 +6,7 @@
     :placeholder="placeholder",
     :disabled="disabled",
     spellcheck="false",
-    ref="input"
+    ref="input",
     @input="input"
   )
 </template>

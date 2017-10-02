@@ -9,6 +9,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  >*{
+    flex: none;
+  }
 
   &.-left{
     justify-content: flex-start;
@@ -26,6 +29,18 @@
     >*{
       flex: auto;
     }
+  }
+}
+
+
+.col{
+  display: flex;
+  flex-direction: column;
+  &.-left{
+    align-items: flex-start;
+  }
+  &.-right{
+    align-items: flex-end;
   }
 }
 
@@ -48,9 +63,9 @@
   }
   &[disabled]{
     font-size: 14px;
-    color: #AAA;
+    color: #707C88;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid #F2F2F2;
     box-shadow: none;
   }
 }

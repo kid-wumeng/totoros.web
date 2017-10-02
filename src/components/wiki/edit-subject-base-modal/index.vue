@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.submit-subject-modal(v-if="state['submit-subject-modal'].open", @close="commit('HIDE_SUBMIT_SUBJECT_MODAL')")
+  modal.edit-subject-base-modal(v-if="state['edit-subject-base-modal'].open", @close="commit('edit-subject-base-modal/HIDE')")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .submit-subject-modal{
+  .edit-subject-base-modal{
   }
 </style>

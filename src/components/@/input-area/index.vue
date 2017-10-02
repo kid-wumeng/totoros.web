@@ -1,12 +1,13 @@
 <template lang="jade">
   textarea.input-area.input-box(
-    v-focus="focus",
+    v-focus="autofocus",
     :value="value",
     :type="type",
     :placeholder="placeholder",
     :rows="rows",
     :disabled="disabled",
     spellcheck="false",
+    ref="input-area",
     @input="input"
   )
 </template>
@@ -15,7 +16,7 @@
 <script lang="coffee">
   module.exports =
     props:
-      'focus':
+      'autofocus':
         type: Boolean
         default: false
       'value':
@@ -35,14 +36,19 @@
         default: false
 
     methods:
-      input: (e) -> @$emit('input', e.target.value)
+      input: (e) ->
+        @$emit('input', e.target.value)
+
+      focus: ->
+        setTimeout =>
+          @$refs['input-area'].focus()
 </script>
 
 
 <style lang="less" scoped>
   .input-area{
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     resize: none;
   }
 </style>

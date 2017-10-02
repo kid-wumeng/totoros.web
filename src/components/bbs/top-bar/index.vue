@@ -32,7 +32,7 @@
       }]
 
     methods:
-      change: (tab) -> @$router.push(tab.value)
+      change: (tab) -> @$router.replace(tab.value)
 </script>
 
 

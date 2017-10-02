@@ -15,8 +15,8 @@
     flex: none;
     box-sizing: border-box;
     display: inline-block;
-    height: 32px;
-    line-height: 32px;
+    height: 34px;
+    line-height: 34px;
     padding: 0 12px;
     font-weight: 600;
     font-size: 14px;
@@ -31,10 +31,10 @@
     }
   }
   .button.-gray{
-    line-height: 30px;
-    color: #5C5C8F;
-    background-color: #EAEAEB;
+    padding: 0 11px;
+    line-height: 32px;
+    color: #707C88;
     background-image: none;
-    border: 1px solid #CDCECE;
+    border: 1px solid #F2F2F2;
   }
 </style>
