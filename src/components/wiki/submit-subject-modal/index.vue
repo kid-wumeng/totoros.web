@@ -4,16 +4,17 @@
       h1 词条收录：动画、漫画、游戏
       c-input(v-model="name" placeholder="作品的名字")
       type-radio-bar(v-model="type")
-      .button(@click="submit") 确认提交
+      c-button(@click="submit") 确认提交
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'modal':          require('components/@/Modal')
-      'c-input':        require('components/@/Input')
-      'type-radio-bar': require('components/wiki/TypeRadioBar')
+      'modal':          require('components/@/modal')
+      'c-input':        require('components/@/input')
+      'c-button':       require('components/@/button')
+      'type-radio-bar': require('components/wiki/type-radio-bar')
 
     data: ->
       name: ''

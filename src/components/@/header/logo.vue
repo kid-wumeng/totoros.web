@@ -6,7 +6,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-image': require('components/image/Image')
+      'c-image': require('components/image/image')
 </script>
 
 

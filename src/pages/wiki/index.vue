@@ -1,6 +1,6 @@
 <template lang="jade">
   #wiki.-center
-    .button(@click="commit('SHOW_SUBMIT_SUBJECT_MODAL')") 提交作品收录
+    c-button(@click="commit('SHOW_SUBMIT_SUBJECT_MODAL')") 提交作品收录
     submit-subject-modal
 </template>
 
@@ -8,7 +8,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'submit-subject-modal': require('components/wiki/SubmitSubjectModal')
+      'c-button': require('components/@/button')
+      'submit-subject-modal': require('components/wiki/submit-subject-modal')
 </script>
 
 

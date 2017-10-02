@@ -10,7 +10,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'radio-bar': require('components/@/RadioBar')
+      'radio-bar': require('components/@/radio-bar')
 
     model:
       prop: 'type'

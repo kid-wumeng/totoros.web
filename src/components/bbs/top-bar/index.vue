@@ -8,8 +8,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-image': require('components/image/Image')
-      'tab-bar': require('components/@/TabBar')
+      'c-image': require('components/image/image')
+      'tab-bar': require('components/@/tab-bar')
 
     props:
       'active':

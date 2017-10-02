@@ -7,7 +7,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'tab-bar': require('components/@/TabBar')
+      'tab-bar': require('components/@/tab-bar')
 
     props:
       'tabs':

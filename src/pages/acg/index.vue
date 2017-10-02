@@ -7,7 +7,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'top-bar': require('components/bbs/TopBar')
+      'top-bar': require('components/bbs/top-bar')
 </script>
 
 

@@ -12,10 +12,10 @@
 <script lang="coffee">
   module.exports =
     components:
-      'logo':      require('./Logo')
-      'navigator': require('./Navigator')
-      'search':    require('./Search')
-      'user-face': require('components/image/UserFace')
+      'logo':      require('./logo')
+      'navigator': require('./navigator')
+      'search':    require('./search')
+      'user-face': require('components/image/user-face')
 </script>
 
 

@@ -2,14 +2,15 @@
   .editable-input.row
     .label {{ label }}
     c-input(v-model="editValue", :disabled="!editing", ref="input")
-    .button(:class="{'-gray': !editing}" @click="onClick") {{ editing ? 'DONE' : 'EDIT' }}
+    c-button(:class="{'-gray': !editing}" @click="onClick") {{ editing ? 'DONE' : 'EDIT' }}
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-input': require('components/@/Input')
+      'c-input':  require('components/@/input')
+      'c-button': require('components/@/button')
 
     model:
       prop: 'value'

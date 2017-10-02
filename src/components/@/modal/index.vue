@@ -9,7 +9,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-animate': require('components/@/Animate')
+      'c-animate': require('components/@/animate')
 </script>
 
 

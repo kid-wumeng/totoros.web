@@ -5,14 +5,15 @@
       c-input(v-model="pass"  placeholder="密码"     type="password")
       c-input(v-model="pass2" placeholder="密码确认" type="password")
       c-input(v-model="name"  placeholder="昵称")
-      .button(@click="submit") 注注注 ... 册 ~ ！
+      c-button(@click="submit") 注注注 ... 册 ~ ！
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-input': require('components/@/Input')
+      'c-input':  require('components/@/input')
+      'c-button': require('components/@/button')
 
     data: ->
       email: ''

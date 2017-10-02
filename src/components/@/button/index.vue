@@ -1,5 +1,5 @@
 <template lang="jade">
-  .button
+  .button(@click="$emit('click')")
     slot
 </template>
 

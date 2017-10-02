@@ -3,14 +3,15 @@
     .wrap
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码" type="password")
-      .button(@click="submit") 登登登 ... 录 ~ ！
+      c-button(@click="submit") 登登登 ... 录 ~ ！
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-input': require('components/@/Input')
+      'c-input':  require('components/@/input')
+      'c-button': require('components/@/button')
 
     data: ->
       email: ''

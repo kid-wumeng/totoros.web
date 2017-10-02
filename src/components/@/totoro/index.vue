@@ -9,8 +9,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-animate': require('components/@/Animate')
-      'c-image':   require('components/image/Image')
+      'c-animate': require('components/@/animate')
+      'c-image':   require('components/image/image')
 
     computed:
       style: ->
