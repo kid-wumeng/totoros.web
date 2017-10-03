@@ -1,5 +1,5 @@
 <template lang="jade">
-  .panel
+  .panel(v-if="subject")
     h1 编辑词条：{{ subject.name }}
     .row
       left(:subject="subject")
@@ -12,7 +12,11 @@
       'left': require('./left')
 
     data: ->
-      subject: @state['edit-subject-base-modal'].subject
+      subject: null
+
+    created: ->
+      sid = @state['edit-subject-base-modal'].sid
+      api.call('subject.get', sid).done (@subject) =>
 </script>
 
 

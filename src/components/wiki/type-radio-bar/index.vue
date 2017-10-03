@@ -1,9 +1,29 @@
 <template lang="jade">
   .type-radio-bar
-    radio-bar(:radios="main_radios",  :active="main" @change="changeMain")
-    radio-bar(:radios="anime_radios", :active="sub"  @change="changeSub" v-show="main === 'anime'")
-    radio-bar(:radios="comic_radios", :active="sub"  @change="changeSub" v-show="main === 'comic'")
-    radio-bar(:radios="game_radios",  :active="sub"  @change="changeSub" v-show="main === 'game'")
+    radio-bar(:value="main" @change="changeMain")
+      radio(label="动画", value="anime")
+      radio(label="漫画", value="comic")
+      radio(label="游戏", value="game")
+
+    radio-bar(:value="sub" @change="changeSub" v-show="main === 'anime'")
+      radio(label="TV",     value="tv")
+      radio(label="OVA",    value="ova")
+      radio(label="Web",    value="web")
+      radio(label="剧场版", value="movie")
+      radio(label="同人",   value="doujin")
+      radio(label="其它",   value="other")
+
+    radio-bar(:value="sub" @change="changeSub" v-show="main === 'comic'")
+      radio(label="长篇", value="long")
+      radio(label="短篇", value="short")
+      radio(label="画集", value="paint")
+      radio(label="同人", value="doujin")
+      radio(label="其它", value="other")
+
+    radio-bar(:value="sub" @change="changeSub" v-show="main === 'game'")
+      radio(label="正式发行", value="official")
+      radio(label="同人",     value="doujin")
+      radio(label="其它",     value="other")
 </template>
 
 
@@ -11,6 +31,7 @@
   module.exports =
     components:
       'radio-bar': require('components/@/radio-bar')
+      'radio':     require('components/@/radio')
 
     model:
       prop: 'type'
@@ -25,73 +46,14 @@
       main: @type.split('-')[0]
       sub:  @type.split('-')[1]
 
-      main_radios: [{
-        label: '动画'
-        value: 'anime'
-      },{
-        label: '漫画'
-        value: 'comic'
-      },{
-        label: '游戏'
-        value: 'game'
-      }]
-
-      anime_radios: [{
-        label: 'TV'
-        value: 'tv'
-      },{
-        label: 'OVA'
-        value: 'ova'
-      },{
-        label: 'Web'
-        value: 'web'
-      },{
-        label: '剧场版'
-        value: 'movie'
-      },{
-        label: '同人'
-        value: 'doujin'
-      },{
-        label: '其它'
-        value: 'other'
-      }]
-
-      comic_radios: [{
-        label: '长篇'
-        value: 'long'
-      },{
-        label: '短篇'
-        value: 'short'
-      },{
-        label: '画集'
-        value: 'paint'
-      },{
-        label: '同人'
-        value: 'doujin'
-      },{
-        label: '其它'
-        value: 'other'
-      }]
-
-      game_radios: [{
-        label: '正式发行'
-        value: 'official'
-      },{
-        label: '同人'
-        value: 'doujin'
-      },{
-        label: '其它'
-        value: 'other'
-      }]
-
     methods:
-      changeMain: (radio) ->
-        @main = radio.value
+      changeMain: (main) ->
+        @main = main
         @sub  = ''
         @$emit('change', '')
 
-      changeSub: (radio) ->
-        @sub = radio.value
+      changeSub: (sub) ->
+        @sub = sub
         @$emit('change', @main+'-'+@sub)
 </script>
 

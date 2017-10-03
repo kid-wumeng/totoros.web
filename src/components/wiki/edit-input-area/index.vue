@@ -9,7 +9,7 @@
   module.exports =
     components:
       'input-area': require('components/@/input-area')
-      'c-button':     require('components/@/button')
+      'c-button':   require('components/@/button')
 
     model:
       prop:  'value'

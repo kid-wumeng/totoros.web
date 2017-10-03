@@ -4,17 +4,12 @@ module.exports =
 
   state:
     open: false
-    subject: null
+    sid:  null
 
   mutations:
-    SHOW: (state, subject) ->
+    SHOW: (state, sid) ->
       state.open = true
-      state.subject = subject
+      state.sid  = sid
 
     HIDE: (state) ->
       state.open = false
-
-  actions:
-    show: ({commit}, subject) ->
-      api.call('subject.get', subject.id).done (subject) ->
-        commit('SHOW', subject)
