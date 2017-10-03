@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.edit-subject-base-modal(v-if="state['edit-subject-base-modal'].open" @close="commit('edit-subject-base-modal/HIDE')")
+  modal.prompt(v-if="state.prompt.open" @close="commit('prompt/HIDE')")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .edit-subject-base-modal{
+  .prompt{
   }
 </style>

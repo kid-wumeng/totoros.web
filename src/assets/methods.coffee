@@ -3,8 +3,12 @@ exports.isMe = (user) ->
 
 
 exports.totoro = (message, duration) ->
-  @dispatch('totoro/showMessage', { message, duration })
+  @dispatch('totoro/showMessage', {message, duration})
 
 
 exports.notify = (type, message, duration) ->
-  @dispatch('notify/show', { type, message, duration })
+  @dispatch('notify/show', {type, message, duration})
+
+
+exports.prompt = (message, defaults) ->
+  @dispatch('prompt/show', {message, defaults})

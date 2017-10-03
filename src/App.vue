@@ -6,15 +6,17 @@
 
     totoro
     notify
+    prompt
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-header': require('components/@/Header')
-      'totoro':   require('components/@/Totoro')
-      'notify':   require('components/@/Notify')
+      'c-header': require('components/@/header')
+      'totoro':   require('components/@/totoro')
+      'notify':   require('components/@/notify')
+      'prompt':   require('components/@/prompt')
 </script>
 
 

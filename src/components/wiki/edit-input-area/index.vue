@@ -1,6 +1,6 @@
 <template lang="jade">
   .edit-input-area.row.-top
-    c-input-area(v-model="edit_value", :disabled="!editing", :rows="8" ref="input-area")
+    input-area(v-model="edit_value", :disabled="!editing", :rows="8" ref="input-area")
     c-button(:class="{'-gray': !editing}" @click="edit") {{ editing ? '完成' : '编辑' }}
 </template>
 
@@ -8,7 +8,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-input-area': require('components/@/input-area')
+      'input-area': require('components/@/input-area')
       'c-button':     require('components/@/button')
 
     model:

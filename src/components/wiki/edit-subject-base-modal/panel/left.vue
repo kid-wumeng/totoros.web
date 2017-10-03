@@ -9,6 +9,9 @@
     edit-item(label="原版名")
       edit-input(:value="subject.nameOrigin" @change="changeNameOrigin")
 
+    edit-item(label="别名")
+      edit-input-tag(:tags="subject.nameAliases" prompt-message="别名" @change="changeNameAliases")
+
     edit-item(label="简介")
       edit-input-area(:value="subject.intro" @change="changeIntro")
 </template>
@@ -22,6 +25,7 @@
       'edit-item':       require('components/wiki/edit-item')
       'edit-input':      require('components/wiki/edit-input')
       'edit-input-area': require('components/wiki/edit-input-area')
+      'edit-input-tag':  require('components/wiki/edit-input-tag')
       'type-radio-bar':  require('components/wiki/type-radio-bar')
 
     props:
@@ -40,6 +44,9 @@
       changeNameOrigin: (nameOrigin) ->
         @submit({nameOrigin})
 
+      changeNameAliases: (nameAliases) ->
+        @submit({nameAliases})
+
       changeIntro: (intro) ->
         @submit({intro})
 
@@ -57,7 +64,7 @@
     height: 100%;
     overflow: scroll;
     >*{
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
   }
 </style>

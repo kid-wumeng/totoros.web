@@ -39,6 +39,7 @@ Vue.use({
     Vue.prototype.isMe      = methods.isMe
     Vue.prototype.totoro    = methods.totoro
     Vue.prototype.notify    = methods.notify
+    Vue.prototype.prompt    = methods.prompt
     Vue.directive('focus', directives.focus)
     Vue.mixin({computed: mixins.computed})
 })

@@ -8,6 +8,7 @@ module.exports = new Vuex.Store({
     'account': require('./account')
     'totoro':  require('./totoro')
     'notify':  require('./notify')
+    'prompt':  require('./prompt')
     'submit-subject-modal':    require('./submit-subject-modal')
     'edit-subject-base-modal': require('./edit-subject-base-modal')
 })
