@@ -8,6 +8,10 @@
 
 <script lang="coffee">
   module.exports =
+    model:
+      prop:  'tags'
+      event: 'change'
+
     props:
       'tags':
         type: Array

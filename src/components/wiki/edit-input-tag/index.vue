@@ -11,6 +11,10 @@
       'input-tag': require('components/@/input-tag')
       'c-button':  require('components/@/button')
 
+    model:
+      prop:  'tags'
+      event: 'change'
+
     props:
       'tags':
         type: Array

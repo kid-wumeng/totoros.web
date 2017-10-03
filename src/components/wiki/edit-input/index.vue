@@ -1,6 +1,6 @@
 <template lang="jade">
   .edit-input.row
-    c-input(v-model="edit_value", :disabled="!editing", ref="input")
+    c-input(v-model="edit_value", :type="type", :disabled="!editing" ref="input")
     c-button(:class="{'-gray': !editing}" @click="edit") {{ editing ? '完成' : '编辑' }}
 </template>
 
@@ -17,8 +17,11 @@
 
     props:
       'value':
-        type: String
+        type: null
         default: ''
+      'type':
+        type: String
+        default: 'text'
 
     data: ->
       edit_value: @value

@@ -19,7 +19,7 @@
         type: Boolean
         default: false
       'value':
-        type: String
+        type: null
         default: ''
       'type':
         type: String

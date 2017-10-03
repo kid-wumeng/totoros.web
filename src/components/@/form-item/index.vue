@@ -1,5 +1,5 @@
 <template lang="jade">
-  .edit-item.row.-top
+  .form-item.row.-top
     .left
       .label {{ label }}
     .right
@@ -21,7 +21,7 @@
 
 
 <style lang="less">
-  .edit-item{
+  .form-item{
     .left{
       flex: none;
       .label{
@@ -36,6 +36,11 @@
     .right{
       margin-left: 12px;
       flex: auto;
+      .hint{
+        margin-top: 4px;
+        font-size: 12px;
+        color: #888;
+      }
     }
   }
 </style>
