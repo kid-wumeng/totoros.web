@@ -3,10 +3,10 @@
     form-item(label="类别")
       type-radio-bar(v-model="type" @change="changeType")
 
-    form-item(label="中文名")
+    form-item(label="作品名" hint="优先使用中文")
       edit-input(v-model="name" @change="changeName")
 
-    form-item(label="季度" hint="若仅有1季就不用填" v-if="model.subject.isType(type, 'anime')")
+    form-item(label="季度" hint="若仅有1季则不用填" v-if="model.subject.isType(type, 'anime')")
       edit-input(v-model="season" @change="changeSeason" type="number")
 
     form-item(label="原名")
@@ -22,7 +22,7 @@
       edit-input-date(v-model="publishDate" @change="changePublishDate")
 
     form-item(label="风格")
-      radio-grid(v-model="styles", @change="changeStyles")
+      radio-grid(v-model="styles", :cols="4" @change="changeStyles")
         radio(
           v-for="style in model.subject.STYLES",
           :label="model.subject.displayStyle(style)",
@@ -31,7 +31,7 @@
         )
 
     form-item(label="游戏模式" v-if="model.subject.isType(type, 'game')")
-      radio-grid(v-model="gameModes", @change="changeGameModes")
+      radio-grid(v-model="gameModes", :cols="4" @change="changeGameModes")
         radio(
           v-for="mode in model.subject.GAME_MODES",
           :label="model.subject.displayGameMode(mode)",
@@ -40,7 +40,7 @@
         )
 
     form-item(label="游戏平台" v-if="model.subject.isType(type, 'game')")
-      radio-grid(v-model="gamePlatforms", @change="changeGamePlatforms")
+      radio-grid(v-model="gamePlatforms", :cols="4" @change="changeGamePlatforms")
         radio(
           v-for="platform in model.subject.GAME_PLATFORMS",
           :label="model.subject.displayGamePlatform(platform)",
@@ -123,12 +123,15 @@
 <style lang="less" scoped>
   .left{
     box-sizing: border-box;
-    width: 540px;
+    width: 570px;
     height: 100%;
-    padding: 0 30px;
+    padding: 0 70px 0 30px;
     overflow: scroll;
     >*{
       margin-bottom: 16px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
   }
 </style>

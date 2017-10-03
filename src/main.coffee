@@ -14,7 +14,7 @@ routes     = require('./assets/routes')
 window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
 
 api.fail (error) ->
-  store.dispatch('notify/show', {type: 'fail', message: error.message})
+  store.dispatch('notify/show', {type: 'fail', message: error.message, duration: 5000})
 
 api.on('open', -> store.dispatch('account/checkin'))
 

@@ -16,7 +16,7 @@
         default: -> []
       'cols':
         type: Number
-        default: 4
+        default: 3
 
 
     mounted: ->

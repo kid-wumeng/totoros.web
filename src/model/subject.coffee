@@ -52,6 +52,22 @@ exports.isType = (type, mainType) ->
     return types.includes(type)
 
 
+exports.displayKey = (key) =>
+  switch key
+    when 'face'          then '封面'
+    when 'type'          then '类别'
+    when 'name'          then '作品名'
+    when 'nameOrigin'    then '原名'
+    when 'nameAliases'   then '别名'
+    when 'season'        then '季度'
+    when 'intro'         then '简介'
+    when 'publishDate'   then '发行日期'
+    when 'styles'        then '风格'
+    when 'gameModes'     then '游戏模式'
+    when 'gamePlatforms' then '游戏平台'
+    else ''
+
+
 exports.displayType = (type) =>
   switch type
     when 'anime'         then '动画'

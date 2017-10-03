@@ -24,8 +24,8 @@
     animation-duration: 0.8s;
     .icon{
       position: absolute;
-      top: 30px;
-      right: 40px;
+      top: 24px;
+      right: 34px;
       font-size: 48px;
       font-weight: 100;
       color: #545E75;

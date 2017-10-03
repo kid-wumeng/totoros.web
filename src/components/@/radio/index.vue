@@ -39,6 +39,7 @@
     box-sizing: border-box;
     height: 32px;
     align-self: stretch;
+    text-align: center;
     font-weight: 400;
     font-size: 14px;
     color: #BBB;
