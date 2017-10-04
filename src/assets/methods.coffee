@@ -12,3 +12,10 @@ exports.notify = (type, message, duration) ->
 
 exports.prompt = (message, defaults) ->
   @dispatch('prompt/show', {message, defaults})
+
+
+exports.dataUrl = (file, callback) ->
+  reader = new FileReader()
+  reader.readAsDataURL(file)
+  reader.onload = (e) ->
+    callback(e.target.result)

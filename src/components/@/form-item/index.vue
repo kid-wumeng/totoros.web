@@ -38,6 +38,7 @@
       flex: auto;
       .hint{
         margin-top: 4px;
+        padding: 0 3px;
         font-size: 12px;
         color: #888;
       }

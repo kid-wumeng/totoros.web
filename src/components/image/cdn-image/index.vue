@@ -1,12 +1,15 @@
 <template lang="jade">
-  .image(v-lazy:background-image="url", :style="style")
+  c-image.cdn-image(:url="url", :cover="cover")
 </template>
 
 
 <script lang="coffee">
   module.exports =
+    components:
+      'c-image': require('components/image/image')
+
     props:
-      'url':
+      'path':
         type: String
         required: true
       'cover':
@@ -14,15 +17,10 @@
         default: false
 
     computed:
-      style: ->
-        backgroundSize: if @cover then 'cover' else 'contain'
+      url: ->
+        return "#{@cdn}/#{@path}"
 </script>
 
 
 <style lang="less" scoped>
-  .image{
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-  }
 </style>

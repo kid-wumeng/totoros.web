@@ -1,12 +1,12 @@
 <template lang="jade">
-  c-image.logo(path="assets/logo?2017-10-01.9", @click.native="$router.push('/')")
+  cdn-image.logo(path="assets/logo?2017-10-01.9", @click.native="$router.push('/')")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-image': require('components/image/image')
+      'cdn-image': require('components/image/cdn-image')
 </script>
 
 

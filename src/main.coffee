@@ -20,7 +20,6 @@ api.on('open', -> store.dispatch('account/checkin'))
 
 
 
-
 ##################################################
 ## 判断是否处于开发环境
 ##################################################
@@ -28,9 +27,19 @@ if process.env.NODE_ENV isnt 'production'
   window.dev = true
 
 
+if dev
+  window.cdn = 'http://omdg5dewm.bkt.clouddn.com'
+else
+  window.cdn = 'http://cdn.orz-world.com'
+
+
+window.dpr = window.devicePixelRatio ? 1
+
 
 Vue.use({
   install: (Vue) ->
+    Vue.prototype.cdn       = cdn
+    Vue.prototype.dpr       = dpr
     Vue.prototype.model     = model
     Vue.prototype.state     = store.state
     Vue.prototype.loginUser = store.state.account.user

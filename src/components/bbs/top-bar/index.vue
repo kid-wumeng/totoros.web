@@ -1,6 +1,6 @@
 <template lang="jade">
   .top-bar
-    c-image(path="banner-test?123" cover)
+    cdn-image(path="banner-test?123" cover)
     tab-bar.row.-left(:tabs="tabs", :active="active", @change="change")
 </template>
 
@@ -8,7 +8,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-image': require('components/image/image')
+      'cdn-image': require('components/image/cdn-image')
       'tab-bar': require('components/@/tab-bar')
 
     props:

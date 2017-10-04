@@ -26,7 +26,7 @@
 
 <style lang="less" scoped>
   .edit-base-record{
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     .left{
       width: 80px;
       text-align: right;
@@ -37,7 +37,7 @@
     .right{
       flex: auto;
       margin-left: 12px;
-      padding-bottom: 18px;
+      padding-bottom: 12px;
       border-bottom: 1px solid #F2F2F2;
       .desc{
         .user-name{

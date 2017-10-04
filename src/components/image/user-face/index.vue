@@ -1,12 +1,12 @@
 <template lang="jade">
-  c-image.user-face(:path="path" cover)
+  cdn-image.user-face(:path="path" cover)
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-image': require('components/image/image')
+      'cdn-image': require('components/image/cdn-image')
 
     props:
       'user':
