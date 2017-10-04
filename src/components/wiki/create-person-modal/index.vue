@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.edit-subject-base-modal(v-if="state['edit-subject-base-modal'].open" @close="commit('HIDE_EDIT_SUBJECT_BASE_MODAL')")
+  modal.create-person-modal(v-if="state['create-person-modal'].open", @close="commit(HIDE_CREATE_PERSON_MODAL)")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .edit-subject-base-modal{
+  .create-person-modal{
   }
 </style>

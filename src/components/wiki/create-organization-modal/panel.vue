@@ -1,8 +1,7 @@
 <template lang="jade">
   .panel
-    h1 词条收录：动画、漫画、游戏
-    c-input(v-model="name" placeholder="作品的名字")
-    type-radio-bar(v-model="type")
+    h1 词条收录：团体
+    c-input(v-model="name" placeholder="团体的名字" autofocus)
     c-button(@click="submit") 确认提交
 </template>
 
@@ -10,31 +9,28 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-input':        require('components/@/input')
-      'c-button':       require('components/@/button')
-      'type-radio-bar': require('components/wiki/type-radio-bar')
+      'c-input':  require('components/@/input')
+      'c-button': require('components/@/button')
 
     data: ->
       name: ''
-      type: ''
 
     methods:
       submit: ->
         try
           @check()
-          api.call('subject.create', {name: @name, type: @type}).done(@done)
+          api.call('organization.create', {name: @name}).done(@done)
         catch error
           @notify('fail', error)
 
       check: ->
         if(!@name)
-          throw '作品名字还没填呢 ~'
-        if(!@type)
-          throw '作品类别还没选呢 ~'
+          throw '团体名字还没填呢 ~'
 
-      done: ->
+      done: (organization) ->
         @notify('done', '词条创建成功，请继续编辑资料 ~')
-        @commit('HIDE_SUBMIT_SUBJECT_MODAL')
+        @commit('HIDE_CREATE_ORGANIZATION_MODAL')
+        @toOrganizationPage(organization)
 </script>
 
 

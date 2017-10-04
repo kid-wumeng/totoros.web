@@ -1,34 +1,29 @@
 module.exports =
 
-  namespaced: true
-
   state:
-    open:    false
+    open: false
     subject: null
     records: []
 
   mutations:
-    SHOW: (state, subject) ->
-      state.open    = true
+    SHOW_EDIT_SUBJECT_BASE_MODAL: (state, {subject, records=[]}) ->
+      state.open = true
       state.subject = subject
+      state.records = records
 
-    HIDE: (state) ->
-      state.open    = false
+    HIDE_EDIT_SUBJECT_BASE_MODAL: (state) ->
+      state.open = false
       state.subject = null
       state.records = []
 
     UPDATE_SUBJECT: (state, subject) ->
       state.subject = subject
 
-    INSERT_RECORDS: (state, records) ->
+    ADD_EDIT_SUBJECT_BASE_RECORDS: (state, records) ->
       state.records = [records..., state.records...]
 
-    APPEND_RECORDS: (state, records) ->
-      state.records = [state.records..., records...]
-
   actions:
-    show: ({commit}, id) ->
+    'show-edit-subject-base-modal': ({commit}, id) ->
       api.call('subject.get', id).done (subject) =>
-        commit('SHOW', subject)
         api.call('subject.getEditBaseRecords', id).done (records) =>
-          commit('APPEND_RECORDS', records)
+          commit('SHOW_EDIT_SUBJECT_BASE_MODAL', {subject, records})

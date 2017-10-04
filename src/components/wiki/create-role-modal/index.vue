@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.submit-subject-modal(v-if="state['submit-subject-modal'].open", @close="commit('HIDE_SUBMIT_SUBJECT_MODAL')")
+  modal.create-role-modal(v-if="state['create-role-modal'].open", @close="commit('HIDE_CREATE_ROLE_MODAL')")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .submit-subject-modal{
+  .create-role-modal{
   }
 </style>

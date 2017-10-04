@@ -7,6 +7,14 @@
     totoro
     notify
     prompt
+    create-subject-modal
+    create-role-modal
+    create-person-modal
+    create-organization-modal
+    edit-subject-base-modal
+    edit-role-base-modal
+    edit-person-base-modal
+    edit-organization-base-modal
 </template>
 
 
@@ -17,6 +25,14 @@
       'totoro':   require('components/@/totoro')
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
+      'create-subject-modal':         require('components/wiki/create-subject-modal')
+      'create-role-modal':            require('components/wiki/create-role-modal')
+      'create-person-modal':          require('components/wiki/create-person-modal')
+      'create-organization-modal':    require('components/wiki/create-organization-modal')
+      'edit-subject-base-modal':      require('components/wiki/edit-subject-base-modal')
+      'edit-role-base-modal':         require('components/wiki/edit-role-base-modal')
+      'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
+      'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
 </script>
 
 

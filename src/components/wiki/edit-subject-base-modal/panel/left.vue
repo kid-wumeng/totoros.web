@@ -147,8 +147,8 @@
         api.call('subject.update', @subject.id, data).done(@done)
 
       done: ({subject, records}) ->
-        @commit('edit-subject-base-modal/UPDATE_SUBJECT', subject)
-        @commit('edit-subject-base-modal/INSERT_RECORDS', records)
+        @commit('UPDATE_SUBJECT', subject)
+        @commit('ADD_EDIT_SUBJECT_BASE_RECORDS', records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

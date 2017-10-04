@@ -49,6 +49,10 @@ Vue.use({
     Vue.prototype.totoro    = methods.totoro
     Vue.prototype.notify    = methods.notify
     Vue.prototype.prompt    = methods.prompt
+    Vue.prototype.toSubjectPage      = methods.toSubjectPage
+    Vue.prototype.toRolePage         = methods.toRolePage
+    Vue.prototype.toPersonPage       = methods.toPersonPage
+    Vue.prototype.toOrganizationPage = methods.toOrganizationPage
     Vue.directive('focus', directives.focus)
     Vue.mixin({computed: mixins.computed})
 })
