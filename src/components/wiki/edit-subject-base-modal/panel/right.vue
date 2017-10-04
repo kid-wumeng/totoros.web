@@ -10,13 +10,9 @@
     components:
       'edit-base-record': require('components/wiki/edit-base-record')
 
-    props:
-      'subject':
-        type: Object
-        required: true
-      'records':
-        type: Array
-        default: -> []
+    computed:
+      subject: -> @state['edit-subject-base-modal'].subject
+      records: -> @state['edit-subject-base-modal'].records
 </script>
 
 

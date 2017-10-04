@@ -1,9 +1,9 @@
 <template lang="jade">
-  .panel(v-if="subject")
+  .panel
     h1 编辑作品词条：{{ subject.name }}
     .row
-      left(:subject="subject")
-      right(:subject="subject", :records="records")
+      left
+      right
 </template>
 
 
@@ -13,14 +13,8 @@
       'left':  require('./left')
       'right': require('./right')
 
-    data: ->
-      subject: null
-      records: []
-
-    created: ->
-      sid = @state['edit-subject-base-modal'].sid
-      api.call('subject.get', sid).done (@subject) =>
-      api.call('subject.getEditBaseRecords', sid).done (@records) =>
+    computed:
+      subject: -> @state['edit-subject-base-modal'].subject
 </script>
 
 
