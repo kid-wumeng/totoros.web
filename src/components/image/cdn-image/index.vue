@@ -17,8 +17,7 @@
         default: false
 
     computed:
-      url: ->
-        return "#{@cdn}/#{@path}"
+      url: -> if @path then "#{@cdn}/#{@path}" else ''
 </script>
 
 

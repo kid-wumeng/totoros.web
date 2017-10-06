@@ -20,8 +20,9 @@
       width: 0
 
     computed:
-      path: ->
-        return "subjects/#{@subject?.id}/face?v=#{@subject?.face?.version}"
+      id:      -> @subject?.id
+      version: -> @subject?.face?.version
+      path:    -> if @version then "subjects/#{@id}/face?v=#{@version}" else ''
 
       ratio: ->
         w = @subject?.face?.width

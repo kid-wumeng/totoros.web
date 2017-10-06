@@ -1,5 +1,6 @@
 <template lang="jade">
-  .image(v-lazy:background-image="url", :style="style")
+  .image(v-if="url", v-lazy:background-image="url", :style="style")
+  .image(v-else, v-lazy:background-image="defaultUrl", :style="{'backgroundSize': 'contain'}")
 </template>
 
 
@@ -14,6 +15,9 @@
         default: false
 
     computed:
+      defaultUrl: ->
+        return "#{@cdn}/assets/default-image?2017-10-07"
+
       style: ->
         backgroundSize: if @cover then 'cover' else 'contain'
 </script>
