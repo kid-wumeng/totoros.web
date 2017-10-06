@@ -28,7 +28,7 @@
     >.value{
       display: inline;
       font-size: 13px;
-      margin-left: 4px;
+      margin-left: 5px;
       color: #707C88;
       *{
         display: inline;

@@ -40,17 +40,19 @@ window.dpr = window.devicePixelRatio ? 1
 
 Vue.use({
   install: (Vue) ->
-    Vue.prototype.cdn       = cdn
-    Vue.prototype.dpr       = dpr
-    Vue.prototype.model     = model
-    Vue.prototype.state     = store.state
-    Vue.prototype.loginUser = store.state.account.user
-    Vue.prototype.commit    = store.commit
-    Vue.prototype.dispatch  = store.dispatch
-    Vue.prototype.isMe      = methods.isMe
-    Vue.prototype.totoro    = methods.totoro
-    Vue.prototype.notify    = methods.notify
-    Vue.prototype.prompt    = methods.prompt
+    Vue.prototype.cdn        = cdn
+    Vue.prototype.dpr        = dpr
+    Vue.prototype.model      = model
+    Vue.prototype.state      = store.state
+    Vue.prototype.loginUser  = store.state.account.user
+    Vue.prototype.commit     = store.commit
+    Vue.prototype.dispatch   = store.dispatch
+    Vue.prototype.isMe       = methods.isMe
+    Vue.prototype.totoro     = methods.totoro
+    Vue.prototype.toast      = methods.toast
+    Vue.prototype.notify     = methods.notify
+    Vue.prototype.prompt     = methods.prompt
+    Vue.prototype.readDataUrl = methods.readDataUrl
     Vue.prototype.toSubjectPage      = methods.toSubjectPage
     Vue.prototype.toRolePage         = methods.toRolePage
     Vue.prototype.toPersonPage       = methods.toPersonPage

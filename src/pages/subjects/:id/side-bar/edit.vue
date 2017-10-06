@@ -1,11 +1,11 @@
 <template lang="jade">
   .edit.col
-      c-button.-gray(v-if="path === ''", @click="dispatch('show-edit-subject-base-modal')") 编辑：基本档案
-      c-button.-gray(v-if="path === ''")         编辑：资源Links
-      c-button.-gray(v-if="path === 'world'")    编辑：世界观
-      c-button.-gray(v-if="path === 'casts'")    编辑：Casts
-      c-button.-gray(v-if="path === 'staffs'")   编辑：Staffs
-      c-button.-gray(v-if="path === 'episodes'") 编辑：Episodes
+      c-button.-gray(v-show="path === ''", @click="dispatch('show-edit-subject-base-modal', subject.id)") 编辑：基本档案
+      c-button.-gray(v-show="path === ''")         编辑：资源Links
+      c-button.-gray(v-show="path === 'world'")    编辑：世界观
+      c-button.-gray(v-show="path === 'casts'")    编辑：Casts
+      c-button.-gray(v-show="path === 'staffs'")   编辑：Staffs
+      c-button.-gray(v-show="path === 'episodes'") 编辑：Episodes
 </template>
 
 

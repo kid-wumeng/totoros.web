@@ -4,6 +4,7 @@
     router-view.body
 
     totoro
+    toast
     notify
     prompt
     create-subject-modal
@@ -14,6 +15,7 @@
     edit-role-base-modal
     edit-person-base-modal
     edit-organization-base-modal
+    upload-wiki-face-modal
 </template>
 
 
@@ -22,6 +24,7 @@
     components:
       'c-header': require('components/@/header')
       'totoro':   require('components/@/totoro')
+      'toast':    require('components/@/toast')
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
       'create-subject-modal':         require('components/wiki/create-subject-modal')
@@ -32,6 +35,7 @@
       'edit-role-base-modal':         require('components/wiki/edit-role-base-modal')
       'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
       'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
+      'upload-wiki-face-modal':       require('components/wiki/upload-wiki-face-modal')
 </script>
 
 

@@ -51,6 +51,7 @@
   .file-select{
     display: inline-block;
     .wrap{
+      width: 100%;
       display: block;
       cursor: pointer;
     }

@@ -46,7 +46,7 @@
       margin-right: 12px;
       .score{
         font-weight: 600;
-        font-size: 24px;
+        font-size: 22px;
       }
       .count{
         margin-top: 6px;

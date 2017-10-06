@@ -1,5 +1,5 @@
 <template lang="jade">
-  .face
+  .face(@click="upload")
     photo-frame
       subject-face(:subject="subject")
 </template>
@@ -15,6 +15,10 @@
       'subject':
         type: Object
         required: true
+
+    methods:
+      upload: ->
+        @dispatch('show-upload-wiki-face-modal', {type: 'subject', id: @subject.id})
 </script>
 
 

@@ -8,6 +8,7 @@ module.exports = new Vuex.Store({
   modules:
     'account': require('./account')
     'totoro':  require('./totoro')
+    'toast':   require('./toast')
     'notify':  require('./notify')
     'prompt':  require('./prompt')
     'subject-list': require('./subject-list')
@@ -19,4 +20,5 @@ module.exports = new Vuex.Store({
     'edit-role-base-modal':         require('./edit-role-base-modal')
     'edit-person-base-modal':       require('./edit-person-base-modal')
     'edit-organization-base-modal': require('./edit-organization-base-modal')
+    'upload-wiki-face-modal':       require('./upload-wiki-face-modal')
 })

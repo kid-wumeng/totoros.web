@@ -55,6 +55,7 @@
       font-size: 13px;
       text-align: justify;
       text-indent: 26px;
+      color: #273340;
       margin-top: 6px;
       &:first-child{
         margin-top: 0;

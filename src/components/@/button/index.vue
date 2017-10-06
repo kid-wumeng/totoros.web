@@ -1,12 +1,19 @@
 <template lang="jade">
-  .button(@click="$emit('click')")
+  .button(:class="{'-disabled': disabled}" @click="click")
     slot
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    data: -> {}
+    props:
+      'disabled':
+        type: Boolean
+        default: false
+
+    methods:
+      click: ->
+        if !@disabled then @$emit('click')
 </script>
 
 
@@ -36,5 +43,13 @@
     color: #707C88;
     background-image: none;
     border: 1px solid #F2F2F2;
+  }
+  .button.-disabled{
+    padding: 0 11px;
+    line-height: 32px;
+    color: #DDD;
+    background-image: none;
+    border: 1px dashed #E2E2E2;
+    cursor: default;
   }
 </style>
