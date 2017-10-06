@@ -40,7 +40,7 @@
 
     form-item(label="发行日期")
       edit-input-date(
-        :value="publishDate",
+        :dateGroup="publishDate",
         @change="changePublishDate",
       )
 

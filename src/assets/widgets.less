@@ -5,6 +5,34 @@
 }
 
 
+.-noSmoothing{
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: unset;
+}
+
+
+.-more{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.link{
+  font-size: 13px;
+  color: #2F9C95;
+  cursor: pointer;
+  word-break: break-all;
+  &:hover{
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+.link.-line{
+  text-decoration: underline;
+}
+
+
 .row{
   display: flex;
   justify-content: space-between;
@@ -39,6 +67,7 @@
 .col{
   display: flex;
   flex-direction: column;
+  align-items: center;
   &.-left{
     align-items: flex-start;
   }

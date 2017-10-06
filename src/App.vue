@@ -2,7 +2,6 @@
   #app
     c-header
     router-view.body
-    .head 脚步
 
     totoro
     notify
@@ -73,8 +72,7 @@
   }
 
   #app{
-    height: 100%;
-    overflow: scroll;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

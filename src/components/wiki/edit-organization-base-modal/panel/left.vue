@@ -27,13 +27,13 @@
 
     form-item(label="成立日期")
       edit-input-date(
-        :value="establishDate",
+        :dateGroup="establishDate",
         @change="changeEstablishDate",
       )
 
     form-item(label="解散日期")
       edit-input-date(
-        :value="disbandDate",
+        :dateGroup="disbandDate",
         @change="changeDisbandDate",
       )
 </template>

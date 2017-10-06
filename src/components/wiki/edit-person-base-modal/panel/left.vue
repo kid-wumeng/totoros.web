@@ -27,13 +27,13 @@
 
     form-item(label="出生日期")
       edit-input-date(
-        :value="birthDate",
+        :dateGroup="birthDate",
         @change="changeBirthDate",
       )
 
     form-item(label="逝世日期")
       edit-input-date(
-        :value="deathDate",
+        :dateGroup="deathDate",
         @change="changeDeathDate",
       )
 </template>

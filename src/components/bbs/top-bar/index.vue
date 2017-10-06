@@ -9,7 +9,7 @@
   module.exports =
     components:
       'cdn-image': require('components/image/cdn-image')
-      'tab-bar': require('components/@/tab-bar')
+      'tab-bar':   require('components/@/tab-bar')
 
     props:
       'active':

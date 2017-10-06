@@ -19,6 +19,8 @@ api.fail (error) ->
 api.on('open', -> store.dispatch('account/checkin'))
 
 
+window.Vue = Vue
+
 
 ##################################################
 ## 判断是否处于开发环境

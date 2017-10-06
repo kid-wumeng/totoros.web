@@ -71,7 +71,7 @@ exports.displayKey = (key) =>
 exports.displayType = (type) =>
   switch type
     when 'anime'         then '动画'
-    when 'anime-tv'      then 'TV动画'
+    when 'anime-tv'      then 'TV-Series'
     when 'anime-ova'     then 'OVA'
     when 'anime-web'     then 'WEB动画'
     when 'anime-movie'   then '剧场版'

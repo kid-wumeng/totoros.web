@@ -31,12 +31,23 @@ exports.isUrl = (url) ->
 # @params {string}
 # @return {number}
 ###
-exports.lenString = (string) ->
+exports.lenString = (string='') ->
   doubleReg = /[^\x00-\xff]/
   len = 0
   for char in string
     len += if doubleReg.test(char) then 2 else 1
   return len
+
+
+
+### 截断字符串，单字节占1位，双字节占2位 ##
+# @params {string}
+# @params {number} start
+# @params {number} end
+# @return {string}
+# @TODO 待补
+###
+exports.sliceString = (string='', start, end) ->
 
 
 
@@ -53,3 +64,14 @@ exports.padStart = (value, len, char) ->
     value = char + value
     count--
   return value
+
+
+
+exports.parseUrl = (url) ->
+  dict = {}
+  urlReg = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
+  result = urlReg.exec(url)
+  fields = ['url', 'scheme', 'slash', 'host', 'port', 'path', 'query', 'hash']
+  fields.forEach (field, i) ->
+    dict[field] = result[i]
+  return dict

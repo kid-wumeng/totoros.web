@@ -20,7 +20,9 @@
 
 <style lang="less" scoped>
   .tab-bar{
+    box-sizing: border-box;
     .tab{
+      box-sizing: border-box;
       cursor: pointer;
     }
     .tab.-active{

@@ -26,7 +26,7 @@
     >.row{
       margin: 0 auto;
       width: 800px;
-      height: 54px;
+      height: 64px;
       .user-face{
         width: 32px;
         height: 32px;

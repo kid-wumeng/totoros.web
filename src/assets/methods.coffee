@@ -21,8 +21,11 @@ exports.dataUrl = (file, callback) ->
     callback(e.target.result)
 
 
-exports.toSubjectPage = (subject) ->
-  @$router.push("/subjects/#{subject.id}")
+exports.toSubjectPage = (subject, subPath='') ->
+  path = "/subjects/#{subject.id}/#{subPath}"
+  path = path.replace(/\/$/, '')
+  @$router.push(path)
+
 
 
 exports.toRolePage = (role) ->

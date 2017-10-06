@@ -30,4 +30,28 @@ module.exports = [{
   # 维基
   path: '/wiki'
   component: -> System.import('pages/wiki')
+},{
+  path: '/subjects/:id'
+  component: -> System.import('pages/subjects/:id')
+  children: [{
+    path: ''
+    meta: path: ''
+    component: -> System.import('pages/subjects/:id/overview')
+  },{
+    path: 'world'
+    meta: path: 'world'
+    component: -> System.import('pages/subjects/:id/world')
+  },{
+    path: 'casts'
+    meta: path: 'casts'
+    component: -> System.import('pages/subjects/:id/casts')
+  },{
+    path: 'staffs'
+    meta: path: 'staffs'
+    component: -> System.import('pages/subjects/:id/staffs')
+  },{
+    path: 'episodes'
+    meta: path: 'episodes'
+    component: -> System.import('pages/subjects/:id/episodes')
+  }]
 }]

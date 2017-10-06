@@ -10,6 +10,7 @@ module.exports = new Vuex.Store({
     'totoro':  require('./totoro')
     'notify':  require('./notify')
     'prompt':  require('./prompt')
+    'subject-list': require('./subject-list')
     'create-subject-modal':         require('./create-subject-modal')
     'create-role-modal':            require('./create-role-modal')
     'create-person-modal':          require('./create-person-modal')

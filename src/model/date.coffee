@@ -59,3 +59,21 @@ exports.display = (date) ->
     return "#{days}天前"
 
   return @format('YY-MM-DD')
+
+
+
+exports.displayGroup = (dateGroup={}) ->
+  array = []
+  { year, month, day } = dateGroup
+
+  if year
+     year = assets.padStart(year, 4, '0')
+     array.push(year)
+  if month
+     month = assets.padStart(month, 2, '0')
+     array.push(month)
+  if day
+     day = assets.padStart(day, 2, '0')
+     array.push(day)
+
+  return array.join('-')
