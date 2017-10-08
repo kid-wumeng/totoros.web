@@ -56,7 +56,7 @@
       text-align: justify;
       text-indent: 26px;
       color: #273340;
-      margin-top: 6px;
+      margin-top: 4px;
       &:first-child{
         margin-top: 0;
       }

@@ -1,13 +1,15 @@
 <template lang="jade">
   .side-bar
     edit(:subject="subject")
+    c-mark(:subject="subject")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'edit':  require('./edit')
+      'edit': require('./edit')
+      'c-mark': require('./mark')
 
     props:
       'subject':
@@ -18,5 +20,11 @@
 
 <style lang="less" scoped>
   .side-bar{
+    >*{
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 </style>

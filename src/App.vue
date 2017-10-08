@@ -7,6 +7,7 @@
     toast
     notify
     prompt
+    mark-modal
     create-subject-modal
     create-role-modal
     create-person-modal
@@ -27,6 +28,7 @@
       'toast':    require('components/@/toast')
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
+      'mark-modal':                   require('components/user/mark-modal')
       'create-subject-modal':         require('components/wiki/create-subject-modal')
       'create-role-modal':            require('components/wiki/create-role-modal')
       'create-person-modal':          require('components/wiki/create-person-modal')

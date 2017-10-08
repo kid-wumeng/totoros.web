@@ -26,9 +26,9 @@
       font-weight: 600;
     }
     >.content{
-      margin-top: 6px;
+      margin-top: 7px;
       box-sizing: border-box;
-      padding: 8px 12px;
+      padding: 12px 12px;
       border: 1px solid #F2F2F2;
       border-radius: 3px;
     }

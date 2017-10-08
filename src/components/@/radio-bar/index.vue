@@ -6,6 +6,10 @@
 
 <script lang="coffee">
   module.exports =
+    model:
+      prop: 'value'
+      event: 'change'
+
     props:
       'value':
         type: null

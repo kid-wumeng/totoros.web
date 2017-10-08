@@ -40,11 +40,10 @@ exports.unfoldType = (type) =>
     when 'comic' then @COMIC_TYPES
     when 'game'  then @GAME_TYPES
     when 'novel' then @NOVEL_TYPES
-    when 'real'  then @REAL_TYPES
     else [type]
 
 
-exports.isType = (type, mainType) ->
+exports.isType = (type, mainType) =>
   if type is mainType
     return true
   else
