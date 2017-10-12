@@ -8,6 +8,7 @@
     notify
     prompt
     mark-modal
+    post-modal
     create-subject-modal
     create-role-modal
     create-person-modal
@@ -29,6 +30,7 @@
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
       'mark-modal':                   require('components/user/mark-modal')
+      'post-modal':                   require('components/bbs/post-modal')
       'create-subject-modal':         require('components/wiki/create-subject-modal')
       'create-role-modal':            require('components/wiki/create-role-modal')
       'create-person-modal':          require('components/wiki/create-person-modal')

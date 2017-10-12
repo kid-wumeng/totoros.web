@@ -1,13 +1,13 @@
 <template lang="jade">
   #animes
-    top-bar(active="animes")
+    forum-frame(active="animes")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'top-bar': require('components/bbs/top-bar')
+      'forum-frame': require('components/bbs/forum-frame')
 </script>
 
 

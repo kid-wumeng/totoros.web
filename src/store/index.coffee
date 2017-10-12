@@ -11,11 +11,16 @@ module.exports = new Vuex.Store({
     'toast':   require('./toast')
     'notify':  require('./notify')
     'prompt':  require('./prompt')
-    
+
     'subject-list': require('./subject-list')
     'mark-list':    require('./mark-list')
+    'post-list':    require('./post-list')
+    'post-detail':  require('./post-detail')
 
-    'mark-modal':                   require('./mark-modal')
+    'mark-modal':    require('./mark-modal')
+    'post-modal':    require('./post-modal')
+    'input-content': require('./input-content')
+
     'create-subject-modal':         require('./create-subject-modal')
     'create-role-modal':            require('./create-role-modal')
     'create-person-modal':          require('./create-person-modal')

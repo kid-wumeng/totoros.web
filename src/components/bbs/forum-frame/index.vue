@@ -1,7 +1,9 @@
 <template lang="jade">
-  .top-bar
+  .forum-frame
     cdn-image(path="banner-test?123" cover)
     tab-bar.row.-left(:tabs="tabs", :active="active", @change="change")
+    .wrap
+      slot
 </template>
 
 
@@ -37,8 +39,8 @@
 
 
 <style lang="less">
-  .top-bar{
-    .image{
+  .forum-frame{
+    .cdn-image{
       width: 100%;
       height: 160px;
     }
@@ -67,6 +69,14 @@
           color: #445669;
         }
       }
+    }
+    .wrap{
+      margin: 0 auto;
+      padding: 12px;
+      width: 800px;
+      border: 1px solid #FFF;
+      border-radius: 3px;
+      box-shadow: 0 0 6px -3px #000;
     }
   }
 </style>

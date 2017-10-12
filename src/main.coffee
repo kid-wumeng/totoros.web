@@ -57,6 +57,8 @@ Vue.use({
     Vue.prototype.toRolePage         = methods.toRolePage
     Vue.prototype.toPersonPage       = methods.toPersonPage
     Vue.prototype.toOrganizationPage = methods.toOrganizationPage
+    Vue.prototype.toPostPage         = methods.toPostPage
+    Vue.prototype.toPicturePage      = methods.toPicturePage
     Vue.directive('focus', directives.focus)
     Vue.mixin({computed: mixins.computed})
 })

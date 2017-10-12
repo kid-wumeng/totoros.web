@@ -1,0 +1,32 @@
+<template lang="jade">
+  .input-content
+    action-bar
+    input-area(ref="input-area", :value="content", placeholder="内容", :rows="20" @input="input")
+</template>
+
+
+<script lang="coffee">
+  module.exports =
+    components:
+      'input-area': require('components/@/input-area')
+      'action-bar': require('./action-bar')
+
+    computed:
+      content: -> @state['input-content'].content
+
+    methods:
+      input: (content) ->
+        @commit('input-content/SET_CONTENT', content)
+
+    mounted: ->
+      @commit('input-content/SET_GET_CURSOR_POSITION', @$refs['input-area'].getCursorPosition)
+</script>
+
+
+<style lang="less" scoped>
+  .input-content{
+    .input-area{
+      margin-top: 6px;
+    }
+  }
+</style>

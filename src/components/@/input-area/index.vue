@@ -7,7 +7,7 @@
     :rows="rows",
     :disabled="disabled",
     spellcheck="false",
-    ref="input-area",
+    ref="textarea",
     @input="input"
   )
 </template>
@@ -41,7 +41,10 @@
 
       focus: ->
         setTimeout =>
-          @$refs['input-area'].focus()
+          @$refs['textarea'].focus()
+
+      getCursorPosition: ->
+        return @$refs['textarea'].selectionStart
 </script>
 
 

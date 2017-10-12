@@ -1,17 +1,19 @@
 <template lang="jade">
-  #comics
-    forum-frame(active="comics")
+  .panel.row.-top
+    left
+    right
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'forum-frame': require('components/bbs/forum-frame')
+      'left':  require('./left')
+      'right': require('./right')
 </script>
 
 
 <style lang="less" scoped>
-  #comics{
+  .panel{
   }
 </style>

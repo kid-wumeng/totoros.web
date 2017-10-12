@@ -27,6 +27,10 @@ module.exports = [{
   path: '/paints'
   component: -> System.import('pages/paints')
 },{
+  # 帖子
+  path: '/posts/:id'
+  component: -> System.import('pages/posts/:id')
+},{
   # 维基
   path: '/wiki'
   component: -> System.import('pages/wiki')

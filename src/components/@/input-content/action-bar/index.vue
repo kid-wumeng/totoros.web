@@ -1,17 +1,17 @@
 <template lang="jade">
-  #comics
-    forum-frame(active="comics")
+  .action-bar
+    c-picture
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'forum-frame': require('components/bbs/forum-frame')
+      'c-picture': require('./picture')
 </script>
 
 
 <style lang="less" scoped>
-  #comics{
+  .action-bar{
   }
 </style>

@@ -42,3 +42,11 @@ exports.toPersonPage = (person) ->
 
 exports.toOrganizationPage = (organization) ->
   @$router.push("/organizations/#{organization.id}")
+
+
+exports.toPostPage = (post) ->
+  @$router.push("/posts/#{post.id}")
+
+
+exports.toPicturePage = (picture) ->
+  @$router.push("/pictures/#{picture.id}")

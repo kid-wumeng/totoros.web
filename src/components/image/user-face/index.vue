@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.user-face(:path="path" cover)
+  cdn-image.user-face(:path="path", square cover)
 </template>
 
 

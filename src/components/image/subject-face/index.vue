@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.subject-face(:path="path", cover, :style="style")
+  cdn-image.subject-face(:path="path", :ratio="ratio", :square="square" cover)
 </template>
 
 
@@ -16,33 +16,13 @@
         type: Boolean
         default: false
 
-    data: ->
-      width: 0
-
     computed:
-      id:      -> @subject?.id
-      version: -> @subject?.face?.version
+      id:      -> @subject.id
+      width:   -> @subject.face?.width
+      height:  -> @subject.face?.height
+      version: -> @subject.face?.version
       path:    -> if @version then "subjects/#{@id}/face?v=#{@version}" else ''
-
-      ratio: ->
-        w = @subject?.face?.width
-        h = @subject?.face?.height
-        if w and h
-          return h / w
-        else
-          return 1.5
-
-      height: ->
-        if @square
-          return @width
-        else
-          return parseInt(@width * @ratio)
-
-      style: ->
-        height: @height + 'px'
-
-    mounted: ->
-      @width = @$el.offsetWidth
+      ratio:   -> if @height and @width then @height / @width else 1.5
 </script>
 
 
