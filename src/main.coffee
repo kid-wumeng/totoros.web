@@ -14,12 +14,13 @@ routes     = require('./assets/routes')
 window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
 
 api.fail (error) ->
-  store.dispatch('notify/show', {type: 'fail', message: error.message, duration: 5000})
+  store.dispatch('notify/show', {type: 'fail', message: error.message, duration: 4000})
 
 api.on('open', -> store.dispatch('account/checkin'))
 
 
 window.Vue = Vue
+window.model = model
 
 
 ##################################################
@@ -40,6 +41,7 @@ window.dpr = window.devicePixelRatio ? 1
 
 Vue.use({
   install: (Vue) ->
+    Vue.prototype.api        = api
     Vue.prototype.cdn        = cdn
     Vue.prototype.dpr        = dpr
     Vue.prototype.model      = model
@@ -57,6 +59,7 @@ Vue.use({
     Vue.prototype.toRolePage         = methods.toRolePage
     Vue.prototype.toPersonPage       = methods.toPersonPage
     Vue.prototype.toOrganizationPage = methods.toOrganizationPage
+    Vue.prototype.toForumPage        = methods.toForumPage
     Vue.prototype.toPostPage         = methods.toPostPage
     Vue.prototype.toPicturePage      = methods.toPicturePage
     Vue.directive('focus', directives.focus)
@@ -73,6 +76,8 @@ router = new Router({
   routes: routes
   scrollBehavior: (to, from, savedPosition) -> savedPosition ? {x: 0, y: 0}
 })
+
+window.router = router
 
 
 new Vue({

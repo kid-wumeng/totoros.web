@@ -75,3 +75,21 @@ exports.parseUrl = (url) ->
   fields.forEach (field, i) ->
     dict[field] = result[i]
   return dict
+
+
+
+exports.parseQuery = (queryString) ->
+  query = {}
+  array = queryString.split(/(?:&amp;)|&/)
+  for item in array
+    [name, value=true] = item.split('=')
+    query[name] = value
+  return query
+
+
+
+exports.checkCommentContent = (content) ->
+  if !content
+    throw "内容不能为空"
+  if @lenString(content) > 5000
+    throw "内容太长了"

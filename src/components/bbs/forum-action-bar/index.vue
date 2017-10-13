@@ -18,7 +18,7 @@
 
     methods:
       publish: ->
-        @dispatch('show-post-modal', {
+        @dispatch('post-modal/show', {
           forum:
             id: @fid
         })

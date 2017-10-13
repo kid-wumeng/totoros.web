@@ -31,7 +31,6 @@ exports.toSubjectPage = (subject, subPath='') ->
   @$router.push(path)
 
 
-
 exports.toRolePage = (role) ->
   @$router.push("/roles/#{role.id}")
 
@@ -42,6 +41,11 @@ exports.toPersonPage = (person) ->
 
 exports.toOrganizationPage = (organization) ->
   @$router.push("/organizations/#{organization.id}")
+
+
+exports.toForumPage = (forum) ->
+  switch forum.id
+    when 1 then @$router.push("/acg")
 
 
 exports.toPostPage = (post) ->

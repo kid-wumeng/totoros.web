@@ -1,40 +1,47 @@
 <template lang="jade">
   #posts-id(v-if="post")
     .wrap
-      .title {{ post.title }}
-      markdown-area(:content="post.content")
+      breadcrumb(:post="post")
+      c-main(:post="post")
+      comment-list(:post="post", :comments="comments")
+      input-comment(:post="post")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'markdown-area': require('components/@/markdown-area')
+      'breadcrumb':    require('./breadcrumb')
+      'c-main':        require('./main')
+      'comment-list':  require('./comment-list')
+      'input-comment': require('./input-comment')
 
     computed:
-      id:   -> parseInt(@$route.params.id)
-      post: -> @state['post-detail'].post
+      id:       -> parseInt(@$route.params.id)
+      post:     -> @state['post-detail'].post
+      comments: -> @state['post-detail'].comments
 
     created: ->
-      @dispatch('post-detail/load', @id)
+      @init()
+
+    watch:
+      'routePage': -> @init()
+
+    methods:
+      init: ->
+        @dispatch('post-detail/loadPost', {id: @id})
+        @dispatch('post-detail/loadComments', {id: @id, page: @routePage})
 </script>
 
 
 <style lang="less" scoped>
   #posts-id{
-    background-color: #273340;
+    background-color: #FFF;
     .wrap{
       margin: 20px auto;
-      padding: 14px;
       width: 700px;
-      background-color: #FFF;
-      border-radius: 3px;
-      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-      .title{
-        font-weight: 600;
-        font-size: 16px;
-        color: #273340;
-        margin-bottom: 14px;
+      >*{
+        margin-bottom: 20px;
       }
     }
   }

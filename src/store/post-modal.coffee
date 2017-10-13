@@ -17,7 +17,7 @@ module.exports =
       state.post  = null
 
   actions:
-    'show-post-modal': ({commit}, {forum, post}) ->
+    'post-modal/show': ({commit}, {forum, post}) ->
       if post
         api.call('post.get', post.id).done (post) ->
           commit('input-content/SET_CONTENT', post.content)
