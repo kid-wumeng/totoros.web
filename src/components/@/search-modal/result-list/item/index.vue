@@ -38,7 +38,7 @@
 <style lang="less" scoped>
   .item{
     box-sizing: border-box;
-    padding: 14px 55px;
+    padding: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
     &:hover{

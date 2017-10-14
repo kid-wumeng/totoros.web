@@ -35,7 +35,7 @@
     flex: none;
     box-sizing: border-box;
     width: 100%;
-    padding: 45px 55px;
+    padding: 30px;
     .left{
       flex: auto;
     }

@@ -14,7 +14,9 @@
         required: true
 
     computed:
-      path: -> "users/#{@user?.id}/face?v=#{user?.face?.version}"
+      id:      -> @user.id
+      version: -> @user.face?.version
+      path:    -> if @version then "users/#{@id}/face?v=#{@version}" else ''
 </script>
 
 
