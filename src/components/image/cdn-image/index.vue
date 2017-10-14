@@ -37,7 +37,7 @@
 
       style: ->
         if @height
-          return{height: @height + 'px'}
+          return{ height: @height + 'px' }
         else
           return {}
 

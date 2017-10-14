@@ -1,7 +1,7 @@
 exports.computed =
   loginUser: -> @$store.state.account.user
-  login:     -> @loginUser isnt null
-  admin:     -> @login and @loginUser.admin
+  login:     -> @$store.state.account.user isnt null
+  admin:     -> @$store.state.account.user and @$store.state.account.user.admin
 
   routePage: ->
     hash = @$route.hash

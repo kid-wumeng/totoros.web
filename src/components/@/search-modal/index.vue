@@ -1,6 +1,6 @@
 <template lang="jade">
   c-animate(v-if="state['search-modal'].open" enter="fadeIn" leave="fadeOut")
-    .search-modal
+    .search-modal.col.-left
       action-bar
       result-list
 </template>
@@ -31,7 +31,6 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.8);
     animation-duration: 0.3s;
   }

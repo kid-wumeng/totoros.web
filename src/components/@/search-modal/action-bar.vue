@@ -32,6 +32,9 @@
 
 <style lang="less" scoped>
   .action-bar{
+    flex: none;
+    box-sizing: border-box;
+    width: 100%;
     padding: 45px 55px;
     .left{
       flex: auto;
@@ -64,7 +67,7 @@
         color: #FFF;
       }
     }
-    .icon{
+    .icon.fa-close{
       font-size: 48px;
       font-weight: 100;
       color: #FFF;

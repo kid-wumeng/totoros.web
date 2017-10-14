@@ -17,5 +17,9 @@
 
 <style lang="less" scoped>
   .result-list{
+    flex: auto;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: scroll;
   }
 </style>

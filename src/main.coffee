@@ -55,6 +55,7 @@ Vue.use({
     Vue.prototype.notify     = methods.notify
     Vue.prototype.prompt     = methods.prompt
     Vue.prototype.readDataUrl = methods.readDataUrl
+    Vue.prototype.toUserPage         = methods.toUserPage
     Vue.prototype.toSubjectPage      = methods.toSubjectPage
     Vue.prototype.toRolePage         = methods.toRolePage
     Vue.prototype.toPersonPage       = methods.toPersonPage

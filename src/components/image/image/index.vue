@@ -25,11 +25,8 @@
 
 <style lang="less" scoped>
   .image{
-    width: 100%;
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 1);
     overflow: hidden;
   }
   .image.default{
