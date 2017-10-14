@@ -1,12 +1,7 @@
 <template lang="jade">
   .edit.col
-    c-button.-gray(v-show="path === ''" @click="editFace") 编辑：封面
+    c-button.-gray(v-show="path === ''" @click="editFace") 编辑：头像
     c-button.-gray(v-show="path === ''" @click="editBase") 编辑：基本档案
-    c-button.-gray(v-show="path === ''")         编辑：资源Links
-    c-button.-gray(v-show="path === 'world'")    编辑：世界观
-    c-button.-gray(v-show="path === 'casts'")    编辑：Casts
-    c-button.-gray(v-show="path === 'staffs'")   编辑：Staffs
-    c-button.-gray(v-show="path === 'episodes'") 编辑：Episodes
 </template>
 
 
@@ -17,7 +12,7 @@
       'detail-box': require('components/wiki/detail-box')
 
     props:
-      'subject':
+      'organization':
         type: Object
         required: true
 
@@ -26,10 +21,10 @@
 
     methods:
       editFace: ->
-        @dispatch('show-upload-wiki-face-modal', {type: 'subject', id: @subject.id})
+        @dispatch('show-upload-wiki-face-modal', {type: 'organization', id: @organization.id})
 
       editBase: ->
-        @dispatch('show-edit-subject-base-modal', @subject.id)
+        @dispatch('show-edit-organization-base-modal', @organization.id)
 </script>
 
 

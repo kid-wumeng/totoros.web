@@ -1,7 +1,7 @@
 <template lang="jade">
   .face
     photo-frame
-      subject-face(:subject="subject")
+      person-face(:person="person")
 </template>
 
 
@@ -9,10 +9,10 @@
   module.exports =
     components:
       'photo-frame':  require('components/wiki/photo-frame')
-      'subject-face': require('components/image/subject-face')
+      'person-face': require('components/image/person-face')
 
     props:
-      'subject':
+      'person':
         type: Object
         required: true
 </script>
@@ -24,7 +24,7 @@
     justify-content: center;
     .photo-frame{
       width: 160px;
-      .subject-face{
+      .person-face{
         cursor: auto;
       }
     }

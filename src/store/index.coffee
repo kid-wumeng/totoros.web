@@ -14,10 +14,13 @@ module.exports = new Vuex.Store({
 
     'search-modal': require('./search-modal')
 
-    'subject-list': require('./subject-list')
-    'mark-list':    require('./mark-list')
-    'post-list':    require('./post-list')
-    'post-detail':  require('./post-detail')
+    'subject-list':      require('./subject-list')
+    'role-list':         require('./role-list')
+    'person-list':       require('./person-list')
+    'organization-list': require('./organization-list')
+    'mark-list':         require('./mark-list')
+    'post-list':         require('./post-list')
+    'post-detail':       require('./post-detail')
 
     'mark-modal':    require('./mark-modal')
     'post-modal':    require('./post-modal')

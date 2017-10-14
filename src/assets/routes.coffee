@@ -35,6 +35,7 @@ module.exports = [{
   path: '/wiki'
   component: -> System.import('pages/wiki')
 },{
+  # 作品
   path: '/subjects/:id'
   component: -> System.import('pages/subjects/:id')
   children: [{
@@ -57,5 +58,32 @@ module.exports = [{
     path: 'episodes'
     meta: path: 'episodes'
     component: -> System.import('pages/subjects/:id/episodes')
+  }]
+},{
+  # 角色
+  path: '/roles/:id'
+  component: -> System.import('pages/roles/:id')
+  children: [{
+    path: ''
+    meta: path: ''
+    component: -> System.import('pages/roles/:id/overview')
+  }]
+},{
+  # 人物
+  path: '/persons/:id'
+  component: -> System.import('pages/persons/:id')
+  children: [{
+    path: ''
+    meta: path: ''
+    component: -> System.import('pages/persons/:id/overview')
+  }]
+},{
+  # 团体
+  path: '/organizations/:id'
+  component: -> System.import('pages/organizations/:id')
+  children: [{
+    path: ''
+    meta: path: ''
+    component: -> System.import('pages/organizations/:id/overview')
   }]
 }]

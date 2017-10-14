@@ -1,10 +1,13 @@
 <template lang="jade">
   .panel(v-if="model")
-    h1 上传词条封面
+    h1 {{ title }}
     photo-frame
       img(v-if="dataUrl", :src="dataUrl")
       .face(v-else)
         subject-face(v-if="type === 'subject'", :subject="model")
+        role-face(v-else-if="type === 'role'", :role="model")
+        person-face(v-else-if="type === 'person'", :person="model")
+        organization-face(v-else-if="type === 'organization'", :organization="model")
     .row.-auto
       file-select(@select="select"): c-button 选择本地图片
       c-button(:disabled="!dataUrl" @click="upload") 上传
@@ -14,10 +17,13 @@
 <script lang="coffee">
   module.exports =
     components:
-      'file-select':  require('components/@/file-select')
-      'c-button':     require('components/@/button')
-      'photo-frame':  require('components/wiki/photo-frame')
-      'subject-face': require('components/image/subject-face')
+      'file-select':       require('components/@/file-select')
+      'c-button':          require('components/@/button')
+      'photo-frame':       require('components/wiki/photo-frame')
+      'subject-face':      require('components/image/subject-face')
+      'role-face':         require('components/image/role-face')
+      'person-face':       require('components/image/person-face')
+      'organization-face': require('components/image/organization-face')
 
     data: ->
       file: null
@@ -32,6 +38,12 @@
           when 'role'         then @state['role-list'].items[@id]
           when 'person'       then @state['person-list'].items[@id]
           when 'organization' then @state['organization-list'].items[@id]
+      title: ->
+        switch @type
+          when 'subject'      then '上传作品封面'
+          when 'role'         then '上传角色头像'
+          when 'person'       then '上传人物头像'
+          when 'organization' then '上传团体LOGO'
 
     methods:
       select: (file) ->
@@ -47,10 +59,14 @@
         @toast('图片上传中...', 0)
         api.call(method, @id, @file).done(@done).fail(@fail)
 
-      done: (subject) ->
+      done: (model) ->
         @commit('HIDE_TOAST')
         @notify('done', '上传成功！')
-        @commit('UPDATE_SUBJECT', subject)
+        switch @type
+          when 'subject'      then @commit('UPDATE_SUBJECT',      model)
+          when 'role'         then @commit('UPDATE_ROLE',         model)
+          when 'person'       then @commit('UPDATE_PERSON',       model)
+          when 'organization' then @commit('UPDATE_ORGANIZATION', model)
         @commit('HIDE_UPLOAD_WIKI_FACE_MODAL')
 
       fail: (error) ->

@@ -1,18 +1,18 @@
 <template lang="jade">
   .face
     photo-frame
-      subject-face(:subject="subject")
+      organization-face(:organization="organization")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':  require('components/wiki/photo-frame')
-      'subject-face': require('components/image/subject-face')
+      'photo-frame':       require('components/wiki/photo-frame')
+      'organization-face': require('components/image/organization-face')
 
     props:
-      'subject':
+      'organization':
         type: Object
         required: true
 </script>
@@ -24,7 +24,7 @@
     justify-content: center;
     .photo-frame{
       width: 160px;
-      .subject-face{
+      .organization-face{
         cursor: auto;
       }
     }
