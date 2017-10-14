@@ -67,6 +67,15 @@ exports.padStart = (value, len, char) ->
 
 
 
+### 移除字符串前后空白 ##
+# @params {string}
+# @return {string}
+###
+exports.trim = (string) ->
+  return string.replace(/^\s+|\s+$/g, '')
+
+
+
 exports.parseUrl = (url) ->
   dict = {}
   urlReg = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/

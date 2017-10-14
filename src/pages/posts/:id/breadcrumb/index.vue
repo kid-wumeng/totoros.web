@@ -23,7 +23,7 @@
     .forum{
       font-weight: 600;
       font-size: 13px;
-      color: #2F9C95;
+      color: #A2AEBA;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -31,6 +31,7 @@
     }
     .sep{
       font-size: 13px;
+      color: #A2AEBA;
       margin: 0 6px;
     }
     .title{

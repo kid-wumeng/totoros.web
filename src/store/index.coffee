@@ -12,6 +12,8 @@ module.exports = new Vuex.Store({
     'notify':  require('./notify')
     'prompt':  require('./prompt')
 
+    'search-modal': require('./search-modal')
+
     'subject-list': require('./subject-list')
     'mark-list':    require('./mark-list')
     'post-list':    require('./post-list')

@@ -1,6 +1,6 @@
 <template lang="jade">
   .image(v-if="url", v-lazy:background-image="url", :style="style")
-  .image(v-else, v-lazy:background-image="defaultUrl", :style="{'backgroundSize': 'contain'}")
+  .image.default(v-else, v-lazy:background-image="defaultUrl", :style="{'backgroundSize': 'contain'}")
 </template>
 
 
@@ -25,8 +25,14 @@
 
 <style lang="less" scoped>
   .image{
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 1);
     overflow: hidden;
+  }
+  .image.default{
+    opacity: 0.6;
   }
 </style>

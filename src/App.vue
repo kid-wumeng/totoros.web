@@ -7,6 +7,7 @@
     toast
     notify
     prompt
+    search-modal
     mark-modal
     post-modal
     create-subject-modal
@@ -29,6 +30,7 @@
       'toast':    require('components/@/toast')
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
+      'search-modal':                 require('components/@/search-modal')
       'mark-modal':                   require('components/user/mark-modal')
       'post-modal':                   require('components/bbs/post-modal')
       'create-subject-modal':         require('components/wiki/create-subject-modal')

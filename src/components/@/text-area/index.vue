@@ -1,6 +1,6 @@
 <template lang="jade">
   .text-area(:style="textStyle")
-    .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", @click="hasShowMore=true") {{ paragraph }}
+    .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", @click="click") {{ paragraph }}
 </template>
 
 
@@ -21,41 +21,65 @@
         default: false
 
     data: ->
-      hasShowMore: false
+      formatText: ''
+      clickable: false
 
     computed:
-      len: ->
-        return @text.length
-
-      isShowMore: ->
-        return @limit and @len > @limit
-
-      formatText: ->
-        text = @text.replace(/^\s+|\s+$/g, '')
-        if @isShowMore and !@hasShowMore
-          text = text.slice(0, @limit)
-          text += '... (more)'
-        return text
-
       paragraphs: ->
         return @formatText.split(/\n+/g)
 
       textStyle: ->
-        'cursor': if @isShowMore and !@hasShowMore then 'pointer' else 'default'
+        'cursor': if @clickable then 'pointer' else 'inherit'
 
       paragraphStyle: ->
         'textIndent': if @indent then "2em" else 0
+
+    created: ->
+      @format()
+
+    watch:
+      'text': -> @format()
+
+    methods:
+      format: ->
+        text = @trim(@text)
+        if @isOver(text)
+          text = text.slice(0, @limit)
+          text = @addHint(text)
+          @clickable = @more
+        @formatText = text
+
+      isOver: (text) ->
+        len = text.length
+        return @limit and len > @limit
+
+      trim: (text) ->
+        return @model.assets.trim(text)
+
+      addHint: (text) ->
+        if(@more)
+          return "#{text}... (more)"
+        else
+          return "#{text}..."
+
+      click: ->
+        if @more
+          text = @trim(@text)
+          @formatText = text
+          @clickable  = false
 </script>
 
 
 <style lang="less">
   .text-area{
+    font-size: 13px;
+    color: #273340;
     .paragraph{
       line-height: 20px;
-      font-size: 13px;
       text-align: justify;
       text-indent: 26px;
-      color: #273340;
+      font-size: inherit;
+      color: inherit;
       margin-top: 4px;
       &:first-child{
         margin-top: 0;

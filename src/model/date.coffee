@@ -58,7 +58,7 @@ exports.display = (date) ->
   if days <= 5
     return "#{days}天前"
 
-  return @format('YY-MM-DD')
+  return @format('YY-MM-DD', date)
 
 
 

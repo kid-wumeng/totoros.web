@@ -22,7 +22,7 @@
       height:  -> @subject.face?.height
       version: -> @subject.face?.version
       path:    -> if @version then "subjects/#{@id}/face?v=#{@version}" else ''
-      ratio:   -> if @height and @width then @height / @width else 1.5
+      ratio:   -> if @height and @width then @height / @width else 1
 </script>
 
 

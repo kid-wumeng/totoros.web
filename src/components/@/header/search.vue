@@ -1,5 +1,5 @@
 <template lang="jade">
-  .search
+  .search(@click="dispatch('search-modal/show', {allowType: null})")
     .icon.fa-search
 </template>
 

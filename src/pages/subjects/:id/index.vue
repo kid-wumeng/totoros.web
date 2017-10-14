@@ -54,10 +54,16 @@
         return desc
 
     created: ->
-      @dispatch('get-subject', @id)
+      @init()
+
+    watch:
+      'id': -> @init()
 
     methods:
-      'change': (tab) ->
+      init: ->
+        @dispatch('get-subject', @id)
+
+      change: (tab) ->
         @toSubjectPage(@subject, tab.value)
 </script>
 
