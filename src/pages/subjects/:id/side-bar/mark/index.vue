@@ -27,10 +27,10 @@
         return null
 
     created: ->
-      api.call('mark.sure', @subject.id).done (mark) =>
-        if(mark)
-          @commit('UPDATE_MARK', mark)
-        @hasSure = true
+      mark = await api.call('mark.sure', @subject.id)
+      if(mark)
+        @commit('UPDATE_MARK', mark)
+      @hasSure = true
 </script>
 
 

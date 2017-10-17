@@ -27,18 +27,15 @@
         @readDataUrl file, (@dataUrl) =>
 
       upload: ->
-        @toast('图片上传中...', 0)
-        api.call('account.uploadBanner', @file).done(@done).fail(@fail)
-
-      done: (user) ->
+        try
+          @toast('图片上传中...', 0)
+          user = await api.call('account.uploadBanner', @file)
+          @notify('done', '上传成功！')
+          @commit('UPDATE_USER', user)
+          @commit('user-banner-modal/HIDE')
+        catch error
+          @notify('fail', error.message, 5000)
         @commit('HIDE_TOAST')
-        @notify('done', '上传成功！')
-        @commit('UPDATE_USER', user)
-        @commit('user-banner-modal/HIDE')
-
-      fail: (error) ->
-        @commit('HIDE_TOAST')
-        @notify('fail', error.message, 5000)
 </script>
 
 

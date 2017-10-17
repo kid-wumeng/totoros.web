@@ -51,10 +51,10 @@ module.exports =
         when 'person'       then method = 'person.getAll'
         when 'organization' then method = 'organization.getAll'
 
-      api.call(method, {q: state.q, intro: true, size: 50}).done (result) ->
-        switch state.type
-          when 'user'         then commit('search-modal/SET_RESULTS', {results: result.users})
-          when 'subject'      then commit('search-modal/SET_RESULTS', {results: result.subjects})
-          when 'role'         then commit('search-modal/SET_RESULTS', {results: result.roles})
-          when 'person'       then commit('search-modal/SET_RESULTS', {results: result.persons})
-          when 'organization' then commit('search-modal/SET_RESULTS', {results: result.organizations})
+      result = await api.call(method, {q: state.q, intro: true, size: 50})
+      switch state.type
+        when 'user'         then commit('search-modal/SET_RESULTS', {results: result.users})
+        when 'subject'      then commit('search-modal/SET_RESULTS', {results: result.subjects})
+        when 'role'         then commit('search-modal/SET_RESULTS', {results: result.roles})
+        when 'person'       then commit('search-modal/SET_RESULTS', {results: result.persons})
+        when 'organization' then commit('search-modal/SET_RESULTS', {results: result.organizations})

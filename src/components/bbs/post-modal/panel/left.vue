@@ -40,25 +40,21 @@
             }
 
           if @id
-            api.call('post.update', @id, data).done(@updateDone)
+            post = await api.call('post.update', @id, data)
+            @notify('done', '修改成功')
+            @commit('UPDATE_POST', post)
           else
-            api.call('post.create', @forum, data).done(@createDone)
+            post = await api.call('post.create', @forum, data)
+            @notify('done', '发布成功')
+            @commit('CREATE_POST', post)
+
+          @commit('post-modal/HIDE')
         catch error
           @notify('fail', error)
 
       check: ->
         @model.post.checkTitle(@title)
         @model.post.checkContent(@content)
-
-      createDone: (post) ->
-        @notify('done', '发布成功')
-        @commit('CREATE_POST', post)
-        @commit('post-modal/HIDE')
-
-      updateDone: (post) ->
-        @notify('done', '修改成功')
-        @commit('UPDATE_POST', post)
-        @commit('post-modal/HIDE')
 </script>
 
 

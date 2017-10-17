@@ -24,6 +24,6 @@ module.exports =
 
   actions:
     'show-edit-person-base-modal': ({commit}, id) ->
-      api.call('person.get', id).done (person) =>
-        api.call('person.getEditBaseRecords', id).done (records) =>
-          commit('SHOW_EDIT_PERSON_BASE_MODAL', {person, records})
+      person = await api.call('person.get', id)
+      records = await api.call('person.getEditBaseRecords', id)
+      commit('SHOW_EDIT_PERSON_BASE_MODAL', {person, records})

@@ -144,11 +144,9 @@
         @submit({gamePlatforms})
 
       submit: (data) ->
-        api.call('subject.update', @subject.id, data).done(@done)
-
-      done: ({subject, records}) ->
-        @commit('UPDATE_SUBJECT', subject)
-        @commit('ADD_EDIT_SUBJECT_BASE_RECORDS', records)
+        result = await @api.call('subject.update', @subject.id, data)
+        @commit('UPDATE_SUBJECT', result.subject)
+        @commit('ADD_EDIT_SUBJECT_BASE_RECORDS', result.records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

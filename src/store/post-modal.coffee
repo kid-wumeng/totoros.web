@@ -19,10 +19,10 @@ module.exports =
   actions:
     'post-modal/show': ({commit}, {forum, post}) ->
       if post
-        api.call('post.get', post.id).done (post) ->
-          commit('input-content/SET_CONTENT', post.content)
-          commit('input-content/SET_PICTURES', post.pictures)
-          commit('post-modal/SHOW', {post})
+        post = await api.call('post.get', post.id)
+        commit('input-content/SET_CONTENT', post.content)
+        commit('input-content/SET_PICTURES', post.pictures)
+        commit('post-modal/SHOW', {post})
       else
         commit('input-content/SET_CONTENT', '')
         commit('input-content/SET_PICTURES', [])

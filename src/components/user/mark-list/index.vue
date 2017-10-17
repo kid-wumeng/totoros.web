@@ -12,7 +12,7 @@
     props:
       'marks':
         type: Array
-        default: []
+        default: -> []
 </script>
 
 

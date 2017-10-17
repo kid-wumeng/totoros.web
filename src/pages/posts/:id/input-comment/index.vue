@@ -23,7 +23,8 @@
       submit: ->
         try
           @check()
-          @api.call('post.addComment', @post.id, @content).done(@done)
+          comment = await @api.call('post.addComment', @post.id, @content)
+          @done(comment)
         catch error
           @notify('fail', error)
 

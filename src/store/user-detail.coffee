@@ -24,9 +24,11 @@ module.exports =
       dispatch('user-detail/get-user', id)
 
     'user-detail/get-user': ({commit}, id) ->
-      api.call('user.get', id).done (user) -> commit('user-detail/SET_USER', user)
+      user = await api.call('user.get', id)
+      commit('user-detail/SET_USER', user)
 
     'user-detail/get-anime-marks': ({state, commit}, {id, page=1}) ->
-      uid = id
-      types = model.subject.unfoldType('anime')
-      api.call('mark.getAll', {uid, types, page}).done ({marks}) -> commit('user-detail/SET_ANIME_MARKS', marks)
+      uid    = id
+      types  = model.subject.unfoldType('anime')
+      result = await api.call('mark.getAll', {uid, types, page})
+      commit('user-detail/SET_ANIME_MARKS', result.marks)

@@ -26,6 +26,6 @@ module.exports =
   actions:
     'post-list/load': ({commit}, fid) ->
       commit('post-list/CLEAN')
-      api.call('post.getAll', {fid}).done (result) ->
-        commit('post-list/SET_ITEMS', result.posts)
-        commit('post-list/SET_TOTAL', result.total)
+      result = await api.call('post.getAll', {fid})
+      commit('post-list/SET_ITEMS', result.posts)
+      commit('post-list/SET_TOTAL', result.total)

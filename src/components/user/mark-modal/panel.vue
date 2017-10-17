@@ -63,11 +63,10 @@
           comment: @comment
 
         if @mark?.id
-          api.call('mark.update', @mark.id, data).done(@done)
+          mark = await api.call('mark.update', @mark.id, data)
         else
-          api.call('mark.create', @subject.id, data).done(@done)
+          mark = await api.call('mark.create', @subject.id, data)
 
-      done: (mark) ->
         @notify('done', '标记成功！')
         @commit('UPDATE_MARK', mark)
         @commit('HIDE_MARK_MODAL')

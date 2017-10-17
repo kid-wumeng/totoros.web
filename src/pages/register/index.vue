@@ -37,7 +37,11 @@
           return false
 
       register: ->
-        @api.call('account.register', @email, @pass, @name).done(@done).fail(@fail)
+        try
+          tokenString = await @api.call('account.register', @email, @pass, @name)
+          @done(tokenString)
+        catch error
+          @fail(error)
 
       done: (tokenString) ->
         localStorage.setItem('tokenString', tokenString)
@@ -47,7 +51,7 @@
         @notify('done', '注册成功，欢迎你成为 TOTOROS 的一员 ~ 啪啪啪', 5000)
         @$router.replace('/')
 
-      fail: ({message})->
+      fail: (error)->
         @notify('warn', message, 3000)
 </script>
 

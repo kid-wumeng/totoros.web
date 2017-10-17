@@ -16,6 +16,6 @@ module.exports =
     'account/checkin': ({commit}) ->
       tokenString = localStorage.getItem('tokenString')
       if(tokenString)
-        api.call('account.checkin', tokenString).done ({user, tokenString}) ->
-          localStorage.setItem('tokenString', tokenString)
-          commit('account/CHECKIN_DONE', user)
+        result = await api.call('account.checkin', tokenString)
+        localStorage.setItem('tokenString', result.tokenString)
+        commit('account/CHECKIN_DONE', result.user)

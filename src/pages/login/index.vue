@@ -19,18 +19,20 @@
 
     methods:
       submit: ->
-        @api.call('account.login', @email, @pass).done(@done).fail(@fail)
+        try
+          tokenString = await @api.call('account.login', @email, @pass)
+          @done(tokenString)
+        catch error
+          @fail(error)
 
       done: (tokenString) ->
         localStorage.setItem('tokenString', tokenString)
-        @dispatch('account/checkin').then(@welcome)
-
-      welcome: ->
+        await @dispatch('account/checkin')
         @notify('done', "欢迎回来 ~ 啪啪啪", 3000)
         @$router.replace('/')
 
-      fail: ({message})->
-        @notify('fail', message, 3000)
+      fail: (error)->
+        @notify('fail', error.message, 3000)
 </script>
 
 

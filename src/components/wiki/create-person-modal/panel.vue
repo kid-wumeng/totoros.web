@@ -19,7 +19,8 @@
       submit: ->
         try
           @check()
-          api.call('person.create', {name: @name}).done(@done)
+          person = await @api.call('person.create', {name: @name})
+          @done(person)
         catch error
           @notify('fail', error)
 

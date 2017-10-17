@@ -19,7 +19,8 @@
       submit: ->
         try
           @check()
-          api.call('role.create', {name: @name}).done(@done)
+          role = await @api.call('role.create', {name: @name})
+          @done(role)
         catch error
           @notify('fail', error)
 

@@ -13,7 +13,8 @@ routes     = require('./assets/routes')
 
 window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
 
-api.fail (error) ->
+window.addEventListener 'unhandledrejection', (event) ->
+  error = event.reason
   store.dispatch('notify/show', {type: 'fail', message: error.message, duration: 4000})
 
 api.on('open', -> store.dispatch('account/checkin'))
@@ -37,6 +38,11 @@ else
 
 
 window.dpr = window.devicePixelRatio ? 1
+
+
+window.sleep = (ms) ->
+  return new Promise (resolve) ->
+    setTimeout(resolve, ms)
 
 
 Vue.use({

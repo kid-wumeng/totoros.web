@@ -20,8 +20,10 @@ module.exports =
   actions:
     'post-detail/loadPost': ({state, commit}, {id}) ->
       commit('post-detail/SET_POST', null)
-      api.call('post.get', id).done (post) -> commit('post-detail/SET_POST', post)
+      post = await api.call('post.get', id)
+      commit('post-detail/SET_POST', post)
 
     'post-detail/loadComments': ({state, commit}, {id, page}) ->
       commit('post-detail/SET_COMMENTS', [])
-      api.call('post.getComments', id, page).done (comments) -> commit('post-detail/SET_COMMENTS', comments)
+      comments = await api.call('post.getComments', id, page)
+      commit('post-detail/SET_COMMENTS', comments)

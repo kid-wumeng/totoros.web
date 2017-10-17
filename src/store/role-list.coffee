@@ -9,4 +9,5 @@ module.exports =
 
   actions:
     'get-role': ({commit}, id) ->
-      api.call('role.get', id).done (role) -> commit('UPDATE_ROLE', role)
+      role = await api.call('role.get', id)
+      commit('UPDATE_ROLE', role)

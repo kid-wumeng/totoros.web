@@ -24,6 +24,6 @@ module.exports =
 
   actions:
     'show-edit-role-base-modal': ({commit}, id) ->
-      api.call('role.get', id).done (role) =>
-        api.call('role.getEditBaseRecords', id).done (records) =>
-          commit('SHOW_EDIT_ROLE_BASE_MODAL', {role, records})
+      role = await api.call('role.get', id)
+      records = await api.call('role.getEditBaseRecords', id)
+      commit('SHOW_EDIT_ROLE_BASE_MODAL', {role, records})

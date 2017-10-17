@@ -272,8 +272,12 @@ module.exports = RemoteApp = class RemoteApp {
     this.realtime = new Realtime(this.client, this.store);
   }
 
+  // call: (method, params...) ->
+  //   return @rpc.call(method, params)
   call(method, ...params) {
-    return this.rpc.call(method, params);
+    return new Promise((resolve, reject) => {
+      return this.rpc.call(method, params).done(resolve).fail(reject);
+    });
   }
 
   callBatch(tasks) {

@@ -9,4 +9,5 @@ module.exports =
 
   actions:
     'get-organization': ({commit}, id) ->
-      api.call('organization.get', id).done (organization) -> commit('UPDATE_ORGANIZATION', organization)
+      organization = await api.call('organization.get', id)
+      commit('UPDATE_ORGANIZATION', organization)

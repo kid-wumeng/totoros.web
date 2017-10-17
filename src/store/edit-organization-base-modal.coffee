@@ -24,6 +24,6 @@ module.exports =
 
   actions:
     'show-edit-organization-base-modal': ({commit}, id) ->
-      api.call('organization.get', id).done (organization) =>
-        api.call('organization.getEditBaseRecords', id).done (records) =>
-          commit('SHOW_EDIT_ORGANIZATION_BASE_MODAL', {organization, records})
+      organization = await api.call('organization.get', id)
+      records = await api.call('organization.getEditBaseRecords', id)
+      commit('SHOW_EDIT_ORGANIZATION_BASE_MODAL', {organization, records})

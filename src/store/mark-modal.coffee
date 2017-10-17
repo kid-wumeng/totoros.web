@@ -21,5 +21,5 @@ module.exports =
 
   actions:
     'show-mark-modal': ({commit}, {subject, initStatus}) ->
-      api.call('mark.sure', subject.id).done (mark) ->
-        commit('SHOW_MARK_MODAL', {subject, mark, initStatus})
+      mark = await api.call('mark.sure', subject.id)
+      commit('SHOW_MARK_MODAL', {subject, mark, initStatus})

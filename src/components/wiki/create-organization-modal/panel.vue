@@ -19,7 +19,8 @@
       submit: ->
         try
           @check()
-          api.call('organization.create', {name: @name}).done(@done)
+          organization = await @api.call('organization.create', {name: @name})
+          @done(organization)
         catch error
           @notify('fail', error)
 

@@ -16,4 +16,5 @@ module.exports =
 
   actions:
     'get-subject': ({commit}, id) ->
-      api.call('subject.get', id).done (subject) -> commit('UPDATE_SUBJECT', subject)
+      subject = await api.call('subject.get', id)
+      commit('UPDATE_SUBJECT', subject)

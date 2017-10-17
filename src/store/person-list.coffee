@@ -9,4 +9,5 @@ module.exports =
 
   actions:
     'get-person': ({commit}, id) ->
-      api.call('person.get', id).done (person) -> commit('UPDATE_PERSON', person)
+      person = await api.call('person.get', id)
+      commit('UPDATE_PERSON', person)

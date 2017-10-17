@@ -28,7 +28,11 @@
 
       upload: ->
         @toast('图片上传中...', 0)
-        api.call('account.uploadFace', @file).done(@done).fail(@fail)
+        try
+          user = await api.call('account.uploadFace', @file)
+          @done(user)
+        catch error
+          @fail(error)
 
       done: (user) ->
         @commit('HIDE_TOAST')

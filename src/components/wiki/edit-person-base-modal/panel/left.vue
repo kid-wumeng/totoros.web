@@ -78,11 +78,9 @@
         @submit({deathDate})
 
       submit: (data) ->
-        api.call('person.update', @person.id, data).done(@done)
-
-      done: ({person, records}) ->
-        @commit('UPDATE_PERSON', person)
-        @commit('ADD_EDIT_PERSON_BASE_RECORDS', records)
+        result = await @api.call('person.update', @person.id, data)
+        @commit('UPDATE_PERSON', result.person)
+        @commit('ADD_EDIT_PERSON_BASE_RECORDS', result.records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

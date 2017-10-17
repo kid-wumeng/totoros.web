@@ -78,11 +78,9 @@
         @submit({disbandDate})
 
       submit: (data) ->
-        api.call('organization.update', @organization.id, data).done(@done)
-
-      done: ({organization, records}) ->
-        @commit('UPDATE_ORGANIZATION', organization)
-        @commit('ADD_EDIT_ORGANIZATION_BASE_RECORDS', records)
+        result = await @api.call('organization.update', @organization.id, data)
+        @commit('UPDATE_ORGANIZATION', result.organization)
+        @commit('ADD_EDIT_ORGANIZATION_BASE_RECORDS', result.records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

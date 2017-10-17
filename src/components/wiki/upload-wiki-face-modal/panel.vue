@@ -57,7 +57,11 @@
           when 'person'       then method = 'person.uploadFace'
           when 'organization' then method = 'organization.uploadFace'
         @toast('图片上传中...', 0)
-        api.call(method, @id, @file).done(@done).fail(@fail)
+        try
+          model = await @api.call(method, @id, @file)
+          @done(model)
+        catch error
+          @fail(error)
 
       done: (model) ->
         @commit('HIDE_TOAST')

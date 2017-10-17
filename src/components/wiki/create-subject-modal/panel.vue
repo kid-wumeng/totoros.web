@@ -22,7 +22,8 @@
       submit: ->
         try
           @check()
-          api.call('subject.create', {name: @name, type: @type}).done(@done)
+          subject = @api.call('subject.create', {name: @name, type: @type})
+          @done(subject)
         catch error
           @notify('fail', error)
 
