@@ -42,6 +42,11 @@
       margin-bottom:  @padding;
       border-bottom:  @border;
       padding-bottom: @padding + 1;
+      &:last-child{
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
     }
   }
 </style>

@@ -63,6 +63,7 @@
 
 <style lang="less" scoped>
   .favor-group{
+    color: #86A4C1;
     >.item{
       margin-right: 4px;
       display: flex;
@@ -79,13 +80,15 @@
       }
       >.icon{
         margin-left: 1px;
+        color: #A8B3BE;
         transform: scale3d(0.9, 0.9, 1);
       }
     }
     >.item.-active{
+      color: inherit;
       >.label,
       >.icon{
-        color: #F7A9A8;
+        color: inherit;
       }
     }
     >.item.-clickable{

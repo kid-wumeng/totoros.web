@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.cdn-image(:url="url", :cover="cover", :style="style")
+  c-image.cdn-image(:url="url", :cover="cover", :style="style", @click.native="$emit('click')")
 </template>
 
 

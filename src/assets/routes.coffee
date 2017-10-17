@@ -11,6 +11,39 @@ module.exports = [{
   path: '/login'
   component: -> System.import('pages/login')
 },{
+  # 用户
+  path: '/users/:id'
+  component: -> System.import('pages/users/:id')
+  children: [{
+    path: ''
+    meta: path: ''
+    component: -> System.import('pages/users/:id/overview')
+  },{
+    path: 'timeline'
+    meta: path: 'timeline'
+    component: -> System.import('pages/users/:id/timeline')
+  },{
+    path: 'blogs'
+    meta: path: 'blogs'
+    component: -> System.import('pages/users/:id/blogs')
+  },{
+    path: 'paints'
+    meta: path: 'paints'
+    component: -> System.import('pages/users/:id/paints')
+  },{
+    path: 'animes'
+    meta: path: 'animes'
+    component: -> System.import('pages/users/:id/animes')
+  },{
+    path: 'comics'
+    meta: path: 'comics'
+    component: -> System.import('pages/users/:id/comics')
+  },{
+    path: 'games'
+    meta: path: 'games'
+    component: -> System.import('pages/users/:id/games')
+  }]
+},{
   # 讨论版/acg
   path: '/acg'
   component: -> System.import('pages/acg')

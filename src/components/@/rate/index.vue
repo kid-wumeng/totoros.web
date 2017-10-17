@@ -71,13 +71,15 @@
 
 <style lang="less" scoped>
   .rate{
+    color: #86A4C1;
     .star{
       position: relative;
+      color: inherit;
       &:last-child{
         margin-right: 0 !important;
       }
       .icon.fa-star{
-        color: #EEE;
+        color: #EAEAEA;
         transition: color 0.15s ease;
       }
       .icon.fa-star-half{
@@ -87,7 +89,7 @@
         pointer-events: none;
       }
       .icon.-active{
-        color: #F7A9A8;
+        color: inherit;
       }
     }
     .star.-clickable{

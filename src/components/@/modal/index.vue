@@ -1,6 +1,6 @@
 <template lang="jade">
   c-animate(enter="flipInX" leave="flipOutX")
-   .modal.-center
+   .modal.-center(:style="style")
       slot
       .icon.fa-close(@click="$emit('close')")
 </template>
@@ -10,6 +10,15 @@
   module.exports =
     components:
       'c-animate': require('components/@/animate')
+
+    props:
+      'zIndex':
+        type: Number
+        default: 10
+
+    computed:
+      style: ->
+        'zIndex': @zIndex
 </script>
 
 

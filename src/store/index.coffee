@@ -21,10 +21,13 @@ module.exports = new Vuex.Store({
     'mark-list':         require('./mark-list')
     'post-list':         require('./post-list')
     'post-detail':       require('./post-detail')
+    'user-detail':       require('./user-detail')
 
-    'mark-modal':    require('./mark-modal')
-    'post-modal':    require('./post-modal')
-    'input-content': require('./input-content')
+    'mark-modal':        require('./mark-modal')
+    'post-modal':        require('./post-modal')
+    'user-face-modal':   require('./user-face-modal')
+    'user-banner-modal': require('./user-banner-modal')
+    'input-content':     require('./input-content')
 
     'create-subject-modal':         require('./create-subject-modal')
     'create-role-modal':            require('./create-role-modal')

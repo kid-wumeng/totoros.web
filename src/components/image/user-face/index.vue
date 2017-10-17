@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.user-face(:path="path", square cover)
+  cdn-image.user-face(:path="path", square cover @click="click")
 </template>
 
 
@@ -12,11 +12,21 @@
       'user':
         type: Object
         required: true
+      'prevent':
+        type: Boolean
+        default: false
 
     computed:
       id:      -> @user.id
       version: -> @user.face?.version
       path:    -> if @version then "users/#{@id}/face?v=#{@version}" else ''
+
+    methods:
+      click: ->
+        if @prevent
+          @$emit('click')
+        else
+          @toUserPage(@user)
 </script>
 
 

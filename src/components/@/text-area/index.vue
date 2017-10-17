@@ -72,10 +72,11 @@
 
 <style lang="less">
   .text-area{
+    line-height: 20px;
     font-size: 13px;
     color: #273340;
     .paragraph{
-      line-height: 20px;
+      line-height: inherit;
       text-align: justify;
       text-indent: 26px;
       font-size: inherit;

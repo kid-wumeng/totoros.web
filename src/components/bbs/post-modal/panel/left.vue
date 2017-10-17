@@ -1,5 +1,6 @@
 <template lang="jade">
   .left
+    h1 {{ id ? '修改帖子' : '发布新帖子' }}
     c-input(v-model="title", placeholder="标题")
     input-content(v-model="content")
     .row.-right
@@ -65,7 +66,10 @@
   .left{
     width: 600px;
     >*{
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    >h1{
+      font-size: 20px;
     }
   }
 </style>
