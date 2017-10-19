@@ -22,8 +22,8 @@
     flex: none;
     box-sizing: border-box;
     display: inline-block;
-    height: 34px;
-    line-height: 34px;
+    height: 32px;
+    line-height: 32px;
     padding: 0 12px;
     font-weight: 600;
     font-size: 14px;

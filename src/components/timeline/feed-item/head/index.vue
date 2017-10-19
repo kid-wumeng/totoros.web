@@ -34,7 +34,7 @@
       color: #445669;
     }
     .date{
-      font-size: 13px;
+      font-size: 12px;
       color: #A2AEBA;
     }
   }

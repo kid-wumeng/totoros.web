@@ -8,6 +8,7 @@
     spellcheck="false",
     ref="input",
     @input="input"
+    @keyup.enter="$emit('submit')"
   )
 </template>
 

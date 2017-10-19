@@ -4,11 +4,19 @@ module.exports =
     feeds: []
     total: 0
     page:  1
-    size:  30
+    size:  20
     moreShow: false
     moreSure: false
 
   mutations:
+    ADD_FEED_COMMENT: (state, {feed, comment}) ->
+      for _, i in state.feeds
+        if isSame(state.feeds[i], feed)
+          feed = state.feeds[i]
+          if !feed.comments
+            Vue.set(feed, 'comments', [])
+          feed.comments.unshift(comment)
+
     'public-timeline/SET_FEEDS': (state, feeds) ->
       state.feeds = feeds
 

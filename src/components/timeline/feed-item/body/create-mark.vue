@@ -46,6 +46,9 @@
 
 <style lang="less" scoped>
   .create-mark{
+    >.row:first-child{
+      margin-top: -4px;
+    }
     .left{
       flex: auto;
       margin-right: 12px;
