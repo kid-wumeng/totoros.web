@@ -1,7 +1,10 @@
 <template lang="jade">
-  .head.row.-left
-    user-name(:user="user")
-    c-desc(:feed="feed")
+  .head.row
+    .left.row.-left
+      user-name(:user="user")
+      c-desc(:feed="feed")
+    .right
+      .date {{ model.date.display(feed.createDate) }}
 </template>
 
 
@@ -23,12 +26,16 @@
 
 <style lang="less" scoped>
   .head{
-    padding: 0 12px;
+    padding: 0 16px;
     height: 36px;
     border-bottom: 1px solid #EEE;
     .user-name{
       font-size: 13px;
       color: #445669;
+    }
+    .date{
+      font-size: 13px;
+      color: #A2AEBA;
     }
   }
 </style>

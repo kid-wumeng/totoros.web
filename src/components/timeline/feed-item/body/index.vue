@@ -24,6 +24,6 @@
 <style lang="less" scoped>
   .body{
     box-sizing: border-box;
-    padding: 12px;
+    padding: 16px;
   }
 </style>

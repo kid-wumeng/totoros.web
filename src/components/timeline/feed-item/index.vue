@@ -32,6 +32,7 @@
       flex: auto;
       box-sizing: border-box;
       margin-left: 16px;
+      background-color: #FFF;
       border-top: 1px solid #FFF;
       border-bottom: 1px solid #FFF;
       border-radius: 3px;

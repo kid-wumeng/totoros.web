@@ -63,19 +63,21 @@
 
 <style lang="less" scoped>
   .favor-group{
+    font-weight: 600;
     color: #86A4C1;
     >.item{
       margin-right: 4px;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-weight: inherit;
       &:last-child{
         margin-right: 0;
       }
       >.label,
       >.icon{
         transition: color 0.15s ease;
-        font-weight: bold;
+        font-weight: inherit;
         color: #A8B3BE;
       }
       >.icon{

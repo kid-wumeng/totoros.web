@@ -9,7 +9,7 @@ module.exports =
 
   mutations:
     'public-timeline/APPEND_FEEDS': (state, feeds) ->
-      state.feeds  = feeds
+      state.feeds = state.feeds.concat(feeds)
 
     'public-timeline/SET_TOTAL': (state, total) ->
       state.total = total

@@ -13,6 +13,5 @@
 
 <style lang="less" scoped>
   #timeline{
-    background-color: #FFF;
   }
 </style>
