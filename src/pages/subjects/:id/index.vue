@@ -44,7 +44,7 @@
 
     computed:
       id:      -> parseInt(@$route.params.id)
-      subject: -> @state['subject-list'].items[@id]
+      subject: -> @state['subject-detail'].subject
       type:    -> @model.subject.displayType(@subject.type)
       season:  -> @subject.season
       desc: ->
@@ -61,7 +61,7 @@
 
     methods:
       init: ->
-        @dispatch('get-subject', @id)
+        @dispatch('subject-detail/init', @id)
 
       change: (tab) ->
         @toSubjectPage(@subject, tab.value)

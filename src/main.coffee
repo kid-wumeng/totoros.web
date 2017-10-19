@@ -44,6 +44,8 @@ window.sleep = (ms) ->
   return new Promise (resolve) ->
     setTimeout(resolve, ms)
 
+window.isSame = methods.isSame
+
 
 Vue.use({
   install: (Vue) ->
@@ -55,6 +57,7 @@ Vue.use({
     Vue.prototype.loginUser  = store.state.account.user
     Vue.prototype.commit     = store.commit
     Vue.prototype.dispatch   = store.dispatch
+    Vue.prototype.isSame     = methods.isSame
     Vue.prototype.isMe       = methods.isMe
     Vue.prototype.totoro     = methods.totoro
     Vue.prototype.toast      = methods.toast

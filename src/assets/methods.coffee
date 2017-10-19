@@ -1,5 +1,13 @@
+exports.isSame = (model1, model2) ->
+  id1 = model1?.id
+  id2 = model2?.id
+  isNumber1 = typeof(id1) is 'number'
+  isNumber2 = typeof(id2) is 'number'
+  return isNumber1 and isNumber2 and id1 is id2
+
+
 exports.isMe = (user) ->
-  return user?.id and user?.id is @loginUser?.id
+  return @isSame(user, @loginUser)
 
 
 exports.totoro = (message, duration) ->

@@ -16,6 +16,7 @@ module.exports = new Vuex.Store({
     'search-modal': require('./search-modal')
 
     'subject-list':      require('./subject-list')
+    'subject-detail':    require('./subject-detail')
     'role-list':         require('./role-list')
     'person-list':       require('./person-list')
     'organization-list': require('./organization-list')

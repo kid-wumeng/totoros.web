@@ -16,6 +16,9 @@
       'indent':
         type: Boolean
         default: false
+      'gap':
+        type: Number
+        default: 0
       'more':
         type: Boolean
         default: false
@@ -33,6 +36,7 @@
 
       paragraphStyle: ->
         'textIndent': if @indent then "2em" else 0
+        'marginTop': @gap + 'px'
 
     created: ->
       @format()
@@ -80,9 +84,8 @@
       text-indent: 26px;
       font-size: inherit;
       color: inherit;
-      // margin-top: 4px;
       &:first-child{
-        margin-top: 0;
+        margin-top: 0 !important;
       }
     }
   }

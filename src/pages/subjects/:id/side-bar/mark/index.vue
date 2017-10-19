@@ -1,5 +1,5 @@
 <template lang="jade">
-  .mark(v-if="hasSure")
+  .mark(v-if="markSure")
     has-mark(v-if="mark", :mark="mark")
     not-mark(v-else, :subject="subject")
 </template>
@@ -11,26 +11,10 @@
       'has-mark': require('./has-mark')
       'not-mark': require('./not-mark')
 
-    props:
-      'subject':
-        type: Object
-        required: true
-
-    data: ->
-      hasSure: false
-
     computed:
-      mark: ->
-        for id, mark of @state['mark-list'].items
-          if mark.id is @subject.id
-            return mark
-        return null
-
-    created: ->
-      mark = await api.call('mark.sure', @subject.id)
-      if(mark)
-        @commit('UPDATE_MARK', mark)
-      @hasSure = true
+      subject:  -> @state['subject-detail'].subject
+      mark:     -> @state['subject-detail'].mark
+      markSure: -> @state['subject-detail'].markSure
 </script>
 
 
