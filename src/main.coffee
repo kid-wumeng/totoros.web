@@ -32,9 +32,9 @@ if process.env.NODE_ENV isnt 'production'
 
 
 if dev
-  window.cdn = 'http://omdg5dewm.bkt.clouddn.com'
+  window.cdn = 'http://oy0aiwj7c.bkt.clouddn.com'
 else
-  window.cdn = 'http://cdn.orz-world.com'
+  window.cdn = 'http://oy0az8u94.bkt.clouddn.com'
 
 
 window.dpr = window.devicePixelRatio ? 1

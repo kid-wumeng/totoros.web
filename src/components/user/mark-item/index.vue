@@ -9,7 +9,7 @@
         .desc {{ desc }}
       .row.-left
         rate(:score="score" size="13px")
-        favor-group(:favor="favor", :subject="subject" size="12px")
+        favor-group(:favor="favor", :subject="subject" size="13px")
       text-area(:text="comment", :indent="comment.length > 100")
 </template>
 
@@ -74,10 +74,10 @@
       margin-left: 8px;
     }
     .text-area{
-      margin-top: 4px;
+      margin-top: 5px;
       width: 80%;
       line-height: 17px;
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 </style>

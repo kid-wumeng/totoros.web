@@ -1,16 +1,18 @@
 <template lang="jade">
-  #timeline 时间线
+  #timeline
+    public-timeline
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    data: -> {}
+    components:
+      'public-timeline': require('./public-timeline')
 </script>
 
 
 <style lang="less" scoped>
   #timeline{
-
+    background-color: #FFF;
   }
 </style>

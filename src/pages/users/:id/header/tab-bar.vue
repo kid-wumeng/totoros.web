@@ -20,27 +20,27 @@
       },{
         label: 'Timeline'
         value: 'timeline'
-        count: 7
+        count: @user.feedCount
       },{
         label: '日志'
         value: 'blogs'
-        count: 18
+        count: @user.blogCount
       },{
         label: '绘画'
         value: 'paints'
-        count: 6
+        count: @user.paintCount
       },{
         label: 'Animes'
         value: 'animes'
-        count: 251
+        count: @model.user.markStat(@user, null, 'anime')
       },{
         label: 'Comics'
         value: 'comics'
-        count: 125
+        count: @model.user.markStat(@user, null, 'comic')
       },{
         label: 'Games'
         value: 'games'
-        count: 12
+        count: @model.user.markStat(@user, null, 'game')
       }]
 
     methods:

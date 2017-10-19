@@ -77,11 +77,10 @@
     color: #273340;
     .paragraph{
       line-height: inherit;
-      text-align: justify;
       text-indent: 26px;
       font-size: inherit;
       color: inherit;
-      margin-top: 4px;
+      // margin-top: 4px;
       &:first-child{
         margin-top: 0;
       }

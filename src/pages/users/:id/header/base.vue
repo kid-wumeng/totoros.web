@@ -1,7 +1,7 @@
 <template lang="jade">
   .base
-    .name KID
-    .motto 时の流れに身をまかせ
+    .name {{ user.name }}
+    .motto {{ user.motto }}
 </template>
 
 
@@ -22,7 +22,7 @@
       font-size: 16px;
     }
     .motto{
-      margin-top: 3px;
+      margin-top: 5px;
       font-size: 13px;
       color: #707C88;
     }

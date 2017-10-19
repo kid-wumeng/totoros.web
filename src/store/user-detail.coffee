@@ -30,5 +30,5 @@ module.exports =
     'user-detail/get-anime-marks': ({state, commit}, {id, page=1}) ->
       uid    = id
       types  = model.subject.unfoldType('anime')
-      result = await api.call('mark.getAll', {uid, types, page})
+      result = await api.call('mark.getAll', {uid, types, page, sort: '-score'})
       commit('user-detail/SET_ANIME_MARKS', result.marks)

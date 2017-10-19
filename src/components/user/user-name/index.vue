@@ -1,5 +1,5 @@
 <template lang="jade">
-  .user-name {{ user.name }}
+  .user-name(@click="toUserPage(user)") {{ user.name }}
 </template>
 
 
@@ -15,7 +15,10 @@
 <style lang="less" scoped>
   .user-name{
     font-weight: 600;
-    color: #2F9C95;
+    color: #A2AEBA;
     cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 </style>

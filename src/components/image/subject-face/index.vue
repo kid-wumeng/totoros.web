@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.subject-face(:path="path", :ratio="ratio", :square="square" cover)
+  cdn-image.subject-face(:path="path", :ratio="ratio", :square="square" cover @click="click")
 </template>
 
 
@@ -15,6 +15,9 @@
       'square':
         type: Boolean
         default: false
+      'prevent':
+        type: Boolean
+        default: false
 
     computed:
       id:      -> @subject.id
@@ -23,6 +26,13 @@
       version: -> @subject.face?.version
       path:    -> if @version then "subjects/#{@id}/face?v=#{@version}" else ''
       ratio:   -> if @height and @width then @height / @width else 1
+
+    methods:
+      click: ->
+        if @prevent
+          @$emit('click')
+        else
+          @toSubjectPage(@subject)
 </script>
 
 

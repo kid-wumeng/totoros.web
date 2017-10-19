@@ -11,6 +11,7 @@ module.exports = new Vuex.Store({
     'toast':   require('./toast')
     'notify':  require('./notify')
     'prompt':  require('./prompt')
+    'public-timeline': require('./public-timeline')
 
     'search-modal': require('./search-modal')
 

@@ -14,7 +14,7 @@
 
     computed:
       style: ->
-        'background-image': @url('assets/totoro?2017-09-30')
+        'background-image': @url('assets/totoro-face?2017-09-30')
 </script>
 
 
