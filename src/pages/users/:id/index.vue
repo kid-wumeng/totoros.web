@@ -11,7 +11,7 @@
       'c-header': require('./header')
 
     computed:
-      id:   -> parseInt(@$route.params.id)
+      id:   -> @routeID
       user: -> @state['user-detail'].user
 
     created: ->
