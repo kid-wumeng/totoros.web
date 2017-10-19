@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.mark-modal(v-if="state['mark-modal'].open" @close="commit('HIDE_MARK_MODAL')")
+  modal.mark-modal(v-if="state['mark-modal'].open" @close="commit('mark-modal/HIDE')")
     panel
 </template>
 

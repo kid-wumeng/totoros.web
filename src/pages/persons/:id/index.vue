@@ -28,8 +28,8 @@
       }]
 
     computed:
-      id:     -> parseInt(@$route.params.id)
-      person: -> @state['person-list'].items[@id]
+      id:     -> @routeID
+      person: -> @state['person-detail'].person
       desc:   -> '人物'
 
     created: ->

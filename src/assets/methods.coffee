@@ -15,7 +15,7 @@ exports.totoro = (message, duration) ->
 
 
 exports.toast = (message, duration) ->
-  @dispatch('show-toast', {message, duration})
+  @dispatch('toast/show', {message, duration})
 
 
 exports.notify = (type, message, duration) ->

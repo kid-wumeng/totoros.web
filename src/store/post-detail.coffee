@@ -6,10 +6,12 @@ module.exports =
 
   mutations:
     UPDATE_POST: (state, post) ->
-      if(state.post?.id is post.id) then state.post = post
+      if isSame(state.post, post)
+        state.post = post
 
     ADD_POST_COMMENT: (state, {post, comment}) ->
-      if(state.post?.id is post.id) then state.comments.push(comment)
+      if isSame(state.post, post)
+        state.comments.push(comment)
 
     'post-detail/SET_POST': (state, post) ->
       state.post = post

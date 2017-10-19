@@ -35,7 +35,7 @@
 
       done: (subject) ->
         @notify('done', '词条创建成功，请继续编辑资料 ~')
-        @commit('HIDE_CREATE_SUBJECT_MODAL')
+        @commit('create-subject-modal/HIDE')
         @toSubjectPage(subject)
 </script>
 

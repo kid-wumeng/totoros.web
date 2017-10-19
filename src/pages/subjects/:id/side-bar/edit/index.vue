@@ -26,10 +26,10 @@
 
     methods:
       editFace: ->
-        @dispatch('show-upload-wiki-face-modal', {type: 'subject', id: @subject.id})
+        @dispatch('wiki-face-modal/show', {type: 'subject', id: @subject.id})
 
       editBase: ->
-        @dispatch('show-edit-subject-base-modal', @subject.id)
+        @dispatch('edit-subject-base-modal/show', @subject.id)
 </script>
 
 

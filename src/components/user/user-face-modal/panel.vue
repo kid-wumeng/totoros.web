@@ -35,13 +35,13 @@
           @fail(error)
 
       done: (user) ->
-        @commit('HIDE_TOAST')
+        @commit('toast/HIDE')
         @notify('done', '上传成功！')
         @commit('UPDATE_USER', user)
         @commit('user-face-modal/HIDE')
 
       fail: (error) ->
-        @commit('HIDE_TOAST')
+        @commit('toast/HIDE')
         @notify('fail', error.message, 5000)
 </script>
 

@@ -35,7 +35,7 @@
           @commit('user-banner-modal/HIDE')
         catch error
           @notify('fail', error.message, 5000)
-        @commit('HIDE_TOAST')
+        @commit('toast/HIDE')
 </script>
 
 

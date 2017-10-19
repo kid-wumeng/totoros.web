@@ -26,7 +26,7 @@
 
     methods:
       showModal: (initStatus) ->
-        @dispatch('show-mark-modal', {subject: @subject, initStatus})
+        @dispatch('mark-modal/show', {subject: @subject, initStatus})
 </script>
 
 

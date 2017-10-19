@@ -1,7 +1,5 @@
 module.exports =
 
-  namespaced: true
-
   state:
     open: false
     message: ''
@@ -9,17 +7,17 @@ module.exports =
     resolve: ->
 
   mutations:
-    SHOW: (state, {message, defaults, resolve}) ->
+    'prompt/SHOW': (state, {message, defaults, resolve}) ->
       state.open     = true
       state.message  = message
       state.defaults = defaults
       state.resolve  = resolve
 
-    HIDE: (state) ->
+    'prompt/HIDE': (state) ->
       state.open = false
 
 
   actions:
-    show: ({commit}, {message='', defaults=''}) ->
+    'prompt/show': ({commit}, {message='', defaults=''}) ->
       return new Promise (resolve) ->
-        commit('SHOW', {message, defaults, resolve})
+        commit('prompt/SHOW', {message, defaults, resolve})

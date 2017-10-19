@@ -4,8 +4,8 @@ module.exports =
     open: false
 
   mutations:
-    SHOW_CREATE_PERSON_MODAL: (state) ->
+    'create-person-modal/SHOW': (state) ->
       state.open = true
 
-    HIDE_CREATE_PERSON_MODAL: (state) ->
+    'create-person-modal/HIDE': (state) ->
       state.open = false

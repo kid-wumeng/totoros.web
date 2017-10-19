@@ -38,7 +38,7 @@ module.exports =
           commit('input-content/MOUNT_PICTURE', picture)
           count++
           if count is total
-            commit('HIDE_TOAST')
+            commit('toast/HIDE')
           else
             commit('SHOW_TOAST', "上传图片中，请耐心等待... #{count}/#{total}")
         tasks.push(task)

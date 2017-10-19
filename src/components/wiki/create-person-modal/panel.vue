@@ -30,7 +30,7 @@
 
       done: (person) ->
         @notify('done', '词条创建成功，请继续编辑资料 ~')
-        @commit('HIDE_CREATE_PERSON_MODAL')
+        @commit('create-person-modal/HIDE')
         @toPersonPage(person)
 </script>
 

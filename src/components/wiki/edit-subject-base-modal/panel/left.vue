@@ -146,7 +146,7 @@
       submit: (data) ->
         result = await @api.call('subject.update', @subject.id, data)
         @commit('UPDATE_SUBJECT', result.subject)
-        @commit('ADD_EDIT_SUBJECT_BASE_RECORDS', result.records)
+        @commit('edit-subject-base-modal/ADD_RECORDS', result.records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

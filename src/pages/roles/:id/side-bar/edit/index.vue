@@ -21,10 +21,10 @@
 
     methods:
       editFace: ->
-        @dispatch('show-upload-wiki-face-modal', {type: 'role', id: @role.id})
+        @dispatch('wiki-face-modal/show', {type: 'role', id: @role.id})
 
       editBase: ->
-        @dispatch('show-edit-role-base-modal', @role.id)
+        @dispatch('edit-role-base-modal/show', @role.id)
 </script>
 
 

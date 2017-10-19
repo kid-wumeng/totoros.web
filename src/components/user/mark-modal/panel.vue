@@ -69,7 +69,7 @@
 
         @notify('done', '标记成功！')
         @commit('UPDATE_MARK', mark)
-        @commit('HIDE_MARK_MODAL')
+        @commit('mark-modal/HIDE')
 </script>
 
 

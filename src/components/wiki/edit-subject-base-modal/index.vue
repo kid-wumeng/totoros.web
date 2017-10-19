@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.edit-subject-base-modal(v-if="state['edit-subject-base-modal'].open" @close="commit('HIDE_EDIT_SUBJECT_BASE_MODAL')")
+  modal.edit-subject-base-modal(v-if="state['edit-subject-base-modal'].open" @close="commit('edit-subject-base-modal/HIDE')")
     panel
 </template>
 

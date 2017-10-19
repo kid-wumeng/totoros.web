@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.upload-wiki-face-modal(v-if="state['upload-wiki-face-modal'].open" @close="commit('HIDE_UPLOAD_WIKI_FACE_MODAL')")
+  modal.wiki-face-modal(v-if="state['wiki-face-modal'].open" @close="commit('wiki-face-modal/HIDE')")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .upload-wiki-face-modal{
+  .wiki-face-modal{
   }
 </style>

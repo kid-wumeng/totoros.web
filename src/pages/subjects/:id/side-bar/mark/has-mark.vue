@@ -48,7 +48,7 @@
 
     methods:
       showModal: ->
-        @dispatch('show-mark-modal', {subject: @subject})
+        @dispatch('mark-modal/show', {subject: @subject})
 </script>
 
 

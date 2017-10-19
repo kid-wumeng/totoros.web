@@ -80,7 +80,7 @@
       submit: (data) ->
         result = await @api.call('person.update', @person.id, data)
         @commit('UPDATE_PERSON', result.person)
-        @commit('ADD_EDIT_PERSON_BASE_RECORDS', result.records)
+        @commit('edit-person-base-modal/ADD_RECORDS', result.records)
         @notify('done', '修改成功 ~', 800)
 </script>
 

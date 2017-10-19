@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.edit-organization-base-modal(v-if="state['edit-organization-base-modal'].open" @close="commit('HIDE_EDIT_ORGANIZATION_BASE_MODAL')")
+  modal.edit-organization-base-modal(v-if="state['edit-organization-base-modal'].open" @close="commit('edit-organization-base-modal/HIDE')")
     panel
 </template>
 

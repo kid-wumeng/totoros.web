@@ -16,8 +16,8 @@
       'side-bar':       require('./side-bar')
 
     computed:
-      id:           -> parseInt(@$route.params.id)
-      organization: -> @state['organization-list'].items[@id]
+      id:           -> @routeID
+      organization: -> @state['organization-detail'].organization
       desc:         -> '团体'
 
     created: ->

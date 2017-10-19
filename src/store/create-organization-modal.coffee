@@ -4,8 +4,8 @@ module.exports =
     open: false
 
   mutations:
-    SHOW_CREATE_ORGANIZATION_MODAL: (state) ->
+    'create-organization-modal/SHOW': (state) ->
       state.open = true
 
-    HIDE_CREATE_ORGANIZATION_MODAL: (state) ->
+    'create-organization-modal/HIDE': (state) ->
       state.open = false

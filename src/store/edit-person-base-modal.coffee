@@ -6,24 +6,24 @@ module.exports =
     records: []
 
   mutations:
-    SHOW_EDIT_PERSON_BASE_MODAL: (state, {person, records=[]}) ->
+    UPDATE_PERSON: (state, person) ->
+      state.person = person
+
+    'edit-person-base-modal/SHOW': (state, {person, records=[]}) ->
       state.open    = true
       state.person  = person
       state.records = records
 
-    HIDE_EDIT_PERSON_BASE_MODAL: (state) ->
+    'edit-person-base-modal/HIDE': (state) ->
       state.open    = false
       state.person  = null
       state.records = []
 
-    UPDATE_PERSON: (state, person) ->
-      state.person = person
-
-    ADD_EDIT_PERSON_BASE_RECORDS: (state, records) ->
+    'edit-person-base-modal/ADD_RECORDS': (state, records) ->
       state.records = [records..., state.records...]
 
   actions:
-    'show-edit-person-base-modal': ({commit}, id) ->
-      person = await api.call('person.get', id)
+    'edit-person-base-modal/show': ({commit}, id) ->
+      person  = await api.call('person.get', id)
       records = await api.call('person.getEditBaseRecords', id)
-      commit('SHOW_EDIT_PERSON_BASE_MODAL', {person, records})
+      commit('edit-person-base-modal/SHOW', {person, records})

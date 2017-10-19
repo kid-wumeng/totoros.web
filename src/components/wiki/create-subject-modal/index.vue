@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.create-subject-modal(v-if="state['create-subject-modal'].open", @close="commit('HIDE_CREATE_SUBJECT_MODAL')")
+  modal.create-subject-modal(v-if="state['create-subject-modal'].open", @close="commit('create-subject-modal/HIDE')")
     panel
 </template>
 

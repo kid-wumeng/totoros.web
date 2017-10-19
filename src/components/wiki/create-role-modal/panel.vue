@@ -30,7 +30,7 @@
 
       done: (role) ->
         @notify('done', '词条创建成功，请继续编辑资料 ~')
-        @commit('HIDE_CREATE_ROLE_MODAL')
+        @commit('create-role-modal/HIDE')
         @toRolePage(role)
 </script>
 

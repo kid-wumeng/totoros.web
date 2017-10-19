@@ -30,7 +30,7 @@
 
       done: (organization) ->
         @notify('done', '词条创建成功，请继续编辑资料 ~')
-        @commit('HIDE_CREATE_ORGANIZATION_MODAL')
+        @commit('create-organization-modal/HIDE')
         @toOrganizationPage(organization)
 </script>
 

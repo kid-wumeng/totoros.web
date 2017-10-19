@@ -43,7 +43,7 @@
       }]
 
     computed:
-      id:      -> parseInt(@$route.params.id)
+      id:      -> @routeID
       subject: -> @state['subject-detail'].subject
       type:    -> @model.subject.displayType(@subject.type)
       season:  -> @subject.season

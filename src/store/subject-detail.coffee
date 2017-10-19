@@ -25,13 +25,13 @@ module.exports =
   actions:
     'subject-detail/init': ({commit, dispatch}, id) ->
       commit('subject-detail/RESET')
-      dispatch('subject-detail/load-subject', id)
-      dispatch('subject-detail/sure-mark', id)
+      dispatch('subject-detail/loadSubject', id)
+      dispatch('subject-detail/markSure', id)
 
-    'subject-detail/load-subject': ({commit}, id) ->
+    'subject-detail/loadSubject': ({commit}, id) ->
       subject = await api.call('subject.get', id)
       commit('subject-detail/SET_SUBJECT', subject)
 
-    'subject-detail/sure-mark': ({state, commit}, id) ->
+    'subject-detail/markSure': ({state, commit}, id) ->
       mark = await api.call('mark.sure', id)
       commit('subject-detail/SET_MARK', mark)

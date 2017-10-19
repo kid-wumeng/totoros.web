@@ -21,7 +21,7 @@
     edit-role-base-modal
     edit-person-base-modal
     edit-organization-base-modal
-    upload-wiki-face-modal
+    wiki-face-modal
 </template>
 
 
@@ -44,7 +44,7 @@
       'edit-role-base-modal':         require('components/wiki/edit-role-base-modal')
       'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
       'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
-      'upload-wiki-face-modal':       require('components/wiki/upload-wiki-face-modal')
+      'wiki-face-modal':       require('components/wiki/wiki-face-modal')
 
     computed:
       key: ->

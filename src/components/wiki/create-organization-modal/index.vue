@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.create-organization-modal(v-if="state['create-organization-modal'].open", @close="commit('HIDE_CREATE_ORGANIZATION_MODAL')")
+  modal.create-organization-modal(v-if="state['create-organization-modal'].open", @close="commit('create-organization-modal/HIDE')")
     panel
 </template>
 

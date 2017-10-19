@@ -1,13 +1,13 @@
 <template lang="jade">
-  .panel(v-if="model")
+  .panel(v-if="data")
     h1 {{ title }}
     photo-frame
       img(v-if="dataUrl", :src="dataUrl")
       .face(v-else)
-        subject-face(v-if="type === 'subject'", :subject="model")
-        role-face(v-else-if="type === 'role'", :role="model")
-        person-face(v-else-if="type === 'person'", :person="model")
-        organization-face(v-else-if="type === 'organization'", :organization="model")
+        subject-face(v-if="type === 'subject'", :subject="data")
+        role-face(v-else-if="type === 'role'", :role="data")
+        person-face(v-else-if="type === 'person'", :person="data")
+        organization-face(v-else-if="type === 'organization'", :organization="data")
     .row.-auto
       file-select(@select="select"): c-button 选择本地图片
       c-button(:disabled="!dataUrl" @click="upload") 上传
@@ -30,14 +30,8 @@
       dataUrl: ''
 
     computed:
-      type:  -> @state['upload-wiki-face-modal'].type
-      id:    -> @state['upload-wiki-face-modal'].id
-      model: ->
-        switch @type
-          when 'subject'      then @state['subject-list'].items[@id]
-          when 'role'         then @state['role-list'].items[@id]
-          when 'person'       then @state['person-list'].items[@id]
-          when 'organization' then @state['organization-list'].items[@id]
+      type:  -> @state['wiki-face-modal'].type
+      data:  -> @state['wiki-face-modal'].data
       title: ->
         switch @type
           when 'subject'      then '上传作品封面'
@@ -58,23 +52,23 @@
           when 'organization' then method = 'organization.uploadFace'
         @toast('图片上传中...', 0)
         try
-          model = await @api.call(method, @id, @file)
-          @done(model)
+          data = await @api.call(method, @data.id, @file)
+          @done(data)
         catch error
           @fail(error)
 
-      done: (model) ->
-        @commit('HIDE_TOAST')
+      done: (data) ->
+        @commit('toast/HIDE')
         @notify('done', '上传成功！')
         switch @type
-          when 'subject'      then @commit('UPDATE_SUBJECT',      model)
-          when 'role'         then @commit('UPDATE_ROLE',         model)
-          when 'person'       then @commit('UPDATE_PERSON',       model)
-          when 'organization' then @commit('UPDATE_ORGANIZATION', model)
-        @commit('HIDE_UPLOAD_WIKI_FACE_MODAL')
+          when 'subject'      then @commit('UPDATE_SUBJECT',      data)
+          when 'role'         then @commit('UPDATE_ROLE',         data)
+          when 'person'       then @commit('UPDATE_PERSON',       data)
+          when 'organization' then @commit('UPDATE_ORGANIZATION', data)
+        @commit('wiki-face-modal/HIDE')
 
       fail: (error) ->
-        @commit('HIDE_TOAST')
+        @commit('toast/HIDE')
         @notify('fail', error.message, 5000)
 </script>
 

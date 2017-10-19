@@ -16,8 +16,8 @@
       'side-bar':       require('./side-bar')
 
     computed:
-      id:   -> parseInt(@$route.params.id)
-      role: -> @state['role-list'].items[@id]
+      id:   -> @routeID
+      role: -> @state['role-detail'].role
       desc: -> '角色'
 
     created: ->

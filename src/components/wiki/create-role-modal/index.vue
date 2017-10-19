@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.create-role-modal(v-if="state['create-role-modal'].open", @close="commit('HIDE_CREATE_ROLE_MODAL')")
+  modal.create-role-modal(v-if="state['create-role-modal'].open", @close="commit('create-role-modal/HIDE')")
     panel
 </template>
 

@@ -16,12 +16,10 @@ module.exports = new Vuex.Store({
 
     'search-modal': require('./search-modal')
 
-    'subject-list':      require('./subject-list')
     'subject-detail':    require('./subject-detail')
-    'role-list':         require('./role-list')
-    'person-list':       require('./person-list')
-    'organization-list': require('./organization-list')
-    'mark-list':         require('./mark-list')
+    'role-detail':         require('./role-detail')
+    'person-detail':       require('./person-detail')
+    'organization-detail': require('./organization-detail')
     'post-list':         require('./post-list')
     'post-detail':       require('./post-detail')
     'user-detail':       require('./user-detail')
@@ -40,5 +38,5 @@ module.exports = new Vuex.Store({
     'edit-role-base-modal':         require('./edit-role-base-modal')
     'edit-person-base-modal':       require('./edit-person-base-modal')
     'edit-organization-base-modal': require('./edit-organization-base-modal')
-    'upload-wiki-face-modal':       require('./upload-wiki-face-modal')
+    'wiki-face-modal':       require('./wiki-face-modal')
 })

@@ -4,8 +4,8 @@ module.exports =
     open: false
 
   mutations:
-    SHOW_CREATE_SUBJECT_MODAL: (state) ->
+    'create-subject-modal/SHOW': (state) ->
       state.open = true
 
-    HIDE_CREATE_SUBJECT_MODAL: (state) ->
+    'create-subject-modal/HIDE': (state) ->
       state.open = false

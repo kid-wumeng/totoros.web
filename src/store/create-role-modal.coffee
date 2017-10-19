@@ -4,8 +4,8 @@ module.exports =
     open: false
 
   mutations:
-    SHOW_CREATE_ROLE_MODAL: (state) ->
+    'create-role-modal/SHOW': (state) ->
       state.open = true
 
-    HIDE_CREATE_ROLE_MODAL: (state) ->
+    'create-role-modal/HIDE': (state) ->
       state.open = false

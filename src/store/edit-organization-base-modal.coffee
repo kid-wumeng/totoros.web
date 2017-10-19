@@ -6,24 +6,24 @@ module.exports =
     records: []
 
   mutations:
-    SHOW_EDIT_ORGANIZATION_BASE_MODAL: (state, {organization, records=[]}) ->
+    UPDATE_ORGANIZATION: (state, organization) ->
+      state.organization = organization
+
+    'edit-organization-base-modal/SHOW': (state, {organization, records=[]}) ->
       state.open = true
       state.organization = organization
       state.records = records
 
-    HIDE_EDIT_ORGANIZATION_BASE_MODAL: (state) ->
+    'edit-organization-base-modal/HIDE': (state) ->
       state.open = false
       state.organization = null
       state.records = []
 
-    UPDATE_ORGANIZATION: (state, organization) ->
-      state.organization = organization
-
-    ADD_EDIT_ORGANIZATION_BASE_RECORDS: (state, records) ->
+    'edit-organization-base-modal/ADD_RECORDS': (state, records) ->
       state.records = [records..., state.records...]
 
   actions:
-    'show-edit-organization-base-modal': ({commit}, id) ->
+    'edit-organization-base-modal/show': ({commit}, id) ->
       organization = await api.call('organization.get', id)
-      records = await api.call('organization.getEditBaseRecords', id)
-      commit('SHOW_EDIT_ORGANIZATION_BASE_MODAL', {organization, records})
+      records      = await api.call('organization.getEditBaseRecords', id)
+      commit('edit-organization-base-modal/SHOW', {organization, records})

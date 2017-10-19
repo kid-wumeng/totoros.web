@@ -6,25 +6,25 @@ module.exports =
     timer: null
 
   mutations:
-    SHOW_TOAST: (state, message) ->
+    'toast/SHOW': (state, message) ->
       state.open = true
       state.message = message
 
-    HIDE_TOAST: (state) ->
+    'toast/HIDE': (state) ->
       state.open = false
       state.message = ''
 
-    SET_TOAST_TIMER: (state, timer) ->
+    'toast/SET_TIMER': (state, timer) ->
       state.timer = timer
 
-    CLEAR_TOAST_TIMER: (state) ->
+    'toast/CLEAR_TIMER': (state) ->
       clearTimeout(state.timer)
       state.timer = false
 
   actions:
-    'show-toast': ({commit}, {message, duration=2000}) ->
-      commit('CLEAR_TOAST_TIMER')
-      commit('SHOW_TOAST', message)
+    'toast/show': ({commit}, {message, duration=2000}) ->
+      commit('toast/CLEAR_TIMER')
+      commit('toast/SHOW', message)
       if(duration)
-        timer = setTimeout (-> commit('HIDE_TOAST')), duration
-      commit('SET_TOAST_TIMER', timer)
+        timer = setTimeout (-> commit('toast/HIDE')), duration
+      commit('toast/SET_TIMER', timer)
