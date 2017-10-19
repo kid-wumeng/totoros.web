@@ -1,7 +1,9 @@
 <template lang="jade">
-  #public-timeline
+  #public-timeline(v-if="feeds.length")
     feed-list(:feeds="feeds")
-    .more(v-if="!over", @click="more") ... 加载更多
+    .hint(v-if="moreSure")
+      .more(v-if="moreShow", @click="more") ... 加载更多
+      .no-more(v-else) ... 没有更多了
 </template>
 
 
@@ -11,11 +13,9 @@
       'feed-list': require('components/timeline/feed-list')
 
     computed:
-      feeds: -> @state['public-timeline'].feeds
-      over:  -> @state['public-timeline'].over
-
-    created: ->
-      @init()
+      feeds:    -> @state['public-timeline'].feeds
+      moreSure: -> @state['public-timeline'].moreSure
+      moreShow: -> @state['public-timeline'].moreShow
 
     methods:
       init: ->
@@ -39,6 +39,12 @@
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
+    }
+    .no-more{
+      margin-top: 32px;
+      text-align: center;
+      font-size: 13px;
+      color: #AAA;
     }
   }
 </style>

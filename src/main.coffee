@@ -7,7 +7,6 @@ model      = require('./model')
 App        = require('./App')
 methods    = require('./assets/methods')
 directives = require('./assets/directives')
-mixins     = require('./assets/mixins')
 routes     = require('./assets/routes')
 
 
@@ -73,8 +72,13 @@ Vue.use({
     Vue.prototype.toPostPage         = methods.toPostPage
     Vue.prototype.toPicturePage      = methods.toPicturePage
     Vue.directive('focus', directives.focus)
-    Vue.mixin({computed: mixins.computed})
 })
+
+
+Vue.use(require('./assets/mixin-computed'))
+Vue.use(require('./assets/mixin-init'))
+Vue.use(require('./assets/mixin-deinit'))
+
 
 
 Vue.use(Lazyload)

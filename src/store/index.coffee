@@ -6,6 +6,7 @@ Vue.use(Vuex)
 module.exports = new Vuex.Store({
   strict: process.env.NODE_ENV isnt 'production'
   modules:
+    'router':  require('./router')
     'account': require('./account')
     'totoro':  require('./totoro')
     'toast':   require('./toast')

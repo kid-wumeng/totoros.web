@@ -1,7 +1,10 @@
 <template lang="jade">
   #app
     c-header
-    router-view.body
+    .body
+      keep-alive
+        router-view(v-if="$route.meta.keepAlive", :key="key")
+      router-view(v-if="!$route.meta.keepAlive")
 
     totoro
     toast
@@ -42,6 +45,28 @@
       'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
       'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
       'upload-wiki-face-modal':       require('components/wiki/upload-wiki-face-modal')
+
+    computed:
+      key: ->
+        path   = @$route.path
+        params = @$route?.meta?.key?.params ? []
+        query  = @$route?.meta?.key?.query  ? []
+        hash   = @$route?.meta?.key?.hash   ? ''
+        params = params.map (name) => @$route.params?[name] ? ''
+        query  = query.map  (name) => @$route.query?[name]  ? ''
+        key    = params.join('') + query.join('') + hash
+        if key
+          return path + key
+        else
+          return null
+
+    watch:
+      '$route': ->
+        @commit('router/SET_JUST_BACK', false)
+
+    created: ->
+      window.addEventListener 'popstate', =>
+        @commit('router/SET_JUST_BACK', true)
 </script>
 
 
