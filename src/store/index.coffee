@@ -7,6 +7,7 @@ module.exports = new Vuex.Store({
   strict: process.env.NODE_ENV isnt 'production'
   modules:
     'router':  require('./router')
+    'admin-forums': require('./admin-forums')
     'account': require('./account')
     'totoro':  require('./totoro')
     'toast':   require('./toast')
@@ -30,10 +31,12 @@ module.exports = new Vuex.Store({
     'user-banner-modal': require('./user-banner-modal')
     'input-content':     require('./input-content')
 
+    'create-forum-modal':           require('./create-forum-modal')
     'create-subject-modal':         require('./create-subject-modal')
     'create-role-modal':            require('./create-role-modal')
     'create-person-modal':          require('./create-person-modal')
     'create-organization-modal':    require('./create-organization-modal')
+    'update-forum-modal':           require('./update-forum-modal')
     'edit-subject-base-modal':      require('./edit-subject-base-modal')
     'edit-role-base-modal':         require('./edit-role-base-modal')
     'edit-person-base-modal':       require('./edit-person-base-modal')

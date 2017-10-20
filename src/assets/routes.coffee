@@ -147,4 +147,19 @@ module.exports = [{
     meta: path: ''
     component: -> System.import('pages/organizations/:id/overview')
   }]
+
+},{
+
+  # 管理
+  path: '/admin'
+  component: -> System.import('pages/admin')
+  children: [{
+    path: 'forums'
+    meta: path: 'forums'
+    component: -> System.import('pages/admin/forums')
+  },{
+    path: 'feedbacks'
+    meta: path: 'feedbacks'
+    component: -> System.import('pages/admin/feedbacks')
+  }]
 }]
