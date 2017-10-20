@@ -12,7 +12,7 @@
       'c-button': require('components/@/button')
 
     props:
-      'fid':
+      'id':
         type: Number
         required: true
 
@@ -20,7 +20,7 @@
       publish: ->
         @dispatch('post-modal/show', {
           forum:
-            id: @fid
+            id: @id
         })
 </script>
 

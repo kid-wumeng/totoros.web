@@ -44,7 +44,7 @@
             @notify('done', '修改成功')
             @commit('UPDATE_POST', post)
           else
-            post = await api.call('post.create', @forum, data)
+            post = await api.call('post.create', @forum.id, data)
             @notify('done', '发布成功')
             @commit('CREATE_POST', post)
 

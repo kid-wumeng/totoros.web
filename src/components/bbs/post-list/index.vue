@@ -10,7 +10,7 @@
       'post-item': require('components/bbs/post-item')
 
     props:
-      'fid':
+      'id':
         type: Number
         required: true
 
@@ -23,7 +23,7 @@
 
     methods:
       load: ->
-        @dispatch('post-list/load', @fid)
+        @dispatch('post-list/load', @id)
 </script>
 
 

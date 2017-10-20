@@ -1,17 +1,11 @@
 <template lang="jade">
   #paints
-    forum-frame(active="paints")
+    forum
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'forum-frame': require('components/bbs/forum-frame')
+      'forum': require('components/bbs/forum')
 </script>
-
-
-<style lang="less" scoped>
-  #paints{
-  }
-</style>

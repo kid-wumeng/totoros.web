@@ -2,6 +2,7 @@
   .forum-list
     c-table
       .forum(v-for="forum in forums", :key="forum.id")
+        .id {{ forum.id }}
         .name {{ forum.name }}
         .open(:class="{'-open': forum.open}") {{ forum.open ? '开放ing' : '未开放' }}
         .actions
@@ -27,6 +28,9 @@
 <style lang="less">
   .forum-list{
     .forum{
+      .id{
+        width: 10%;
+      }
       .name{
         width: 40%;
       }

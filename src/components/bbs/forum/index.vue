@@ -1,22 +1,21 @@
 <template lang="jade">
-  .forum-frame
+  .forum
     cdn-image(path="banner-test?123" cover)
-    tab-bar.row.-left(:tabs="tabs", :active="active", @change="change")
+    tab-bar.row.-left(:tabs="tabs", :active="path", @change="change")
     .wrap
-      slot
+      forum-action-bar(:id="id")
+      post-list(:id="id")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'cdn-image': require('components/image/cdn-image')
-      'tab-bar':   require('components/@/tab-bar')
+      'cdn-image':        require('components/image/cdn-image')
+      'tab-bar':          require('components/@/tab-bar')
+      'forum-action-bar': require('components/bbs/forum-action-bar')
+      'post-list':        require('components/bbs/post-list')
 
-    props:
-      'active':
-        type: String
-        required: true
 
     data: ->
       tabs: [{
@@ -33,13 +32,25 @@
         value: 'paints'
       }]
 
+    computed:
+      path: ->
+        return @$route.path.slice(1)
+
+      id: ->
+        switch @path
+          when 'acg'    then 1
+          when 'animes' then 2
+          when 'comics' then 3
+          when 'paints' then 4
+          else 0
+
     methods:
       change: (tab) -> @$router.replace(tab.value)
 </script>
 
 
 <style lang="less">
-  .forum-frame{
+  .forum{
     .cdn-image{
       width: 100%;
       height: 160px;
