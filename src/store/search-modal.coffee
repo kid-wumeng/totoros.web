@@ -6,14 +6,16 @@ module.exports =
     type: null
     q: ''
     results: []
+    redirect: false
     resolve: null
 
 
   mutations:
-    'search-modal/SHOW': (state, {allowType, resolve}) ->
+    'search-modal/SHOW': (state, {allowType, redirect, resolve}) ->
       state.open      = true
       state.allowType = allowType
       state.type      = if allowType then allowType else 'subject'
+      state.redirect  = redirect
       state.resolve   = resolve
 
     'search-modal/HIDE': (state) ->
@@ -22,6 +24,7 @@ module.exports =
       state.type      = null
       state.q         = ''
       state.results   = []
+      state.redirect  = false
       state.resolve   = null
 
     'search-modal/SET_TYPE': (state, type) ->
@@ -35,9 +38,9 @@ module.exports =
 
 
   actions:
-    'search-modal/show': ({dispatch, commit}, {allowType}) ->
+    'search-modal/show': ({dispatch, commit}, {allowType, redirect}) ->
       return new Promise (resolve) ->
-        commit('search-modal/SHOW', {allowType, resolve})
+        commit('search-modal/SHOW', {allowType, redirect, resolve})
         setTimeout (->
           dispatch('search-modal/search')
         ), 300  # 延时加载：防止DOM渲染影响动画性能

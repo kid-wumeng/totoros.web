@@ -1,12 +1,17 @@
 <template lang="jade">
-  .search(@click="dispatch('search-modal/show', {allowType: null})")
+  .search(@click="search")
     .icon.fa-search
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    data: -> {}
+    methods:
+      search: ->
+        @dispatch('search-modal/show', {
+          allowType: null
+          redirect: true
+        })
 </script>
 
 

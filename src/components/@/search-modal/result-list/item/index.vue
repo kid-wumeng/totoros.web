@@ -20,17 +20,22 @@
         required: true
 
     computed:
-      type:    -> @state['search-modal'].type
-      results: -> @state['search-modal'].results
+      type:     -> @state['search-modal'].type
+      results:  -> @state['search-modal'].results
+      redirect: -> @state['search-modal'].redirect
+      resolve:  -> @state['search-modal'].resolve
 
     methods:
       click: ->
-        switch @type
-          when 'user'         then @toUserPage(@result)
-          when 'subject'      then @toSubjectPage(@result)
-          when 'role'         then @toRolePage(@result)
-          when 'person'       then @toPersonPage(@result)
-          when 'organization' then @toOrganizationPage(@result)
+        if @redirect
+          switch @type
+            when 'user'         then @toUserPage(@result)
+            when 'subject'      then @toSubjectPage(@result)
+            when 'role'         then @toRolePage(@result)
+            when 'person'       then @toPersonPage(@result)
+            when 'organization' then @toOrganizationPage(@result)
+        else
+          @resolve(@result)
         @commit('search-modal/HIDE')
 </script>
 

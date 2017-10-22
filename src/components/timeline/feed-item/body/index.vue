@@ -7,6 +7,7 @@
   module.exports =
     components:
       'create-mark': require('./create-mark')
+      'create-post': require('./create-post')
 
     props:
       'feed':
@@ -17,6 +18,7 @@
       component: ->
         switch @feed.type
           when 'create-mark' then 'create-mark'
+          when 'create-post' then 'create-post'
           else ''
 </script>
 

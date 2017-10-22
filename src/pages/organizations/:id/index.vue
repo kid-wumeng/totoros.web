@@ -20,15 +20,12 @@
       organization: -> @state['organization-detail'].organization
       desc:         -> '团体'
 
-    created: ->
-      @init()
-
     watch:
       'id': -> @init()
 
     methods:
       init: ->
-        @dispatch('get-organization', @id)
+        @dispatch('organization-detail/init', @id)
 
       change: (tab) ->
         @toRolePage(@organization, tab.value)

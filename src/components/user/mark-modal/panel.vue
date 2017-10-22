@@ -16,7 +16,9 @@
 
     input-area(v-model="comment" placeholder="说几句吧...", :rows="5")
 
-    c-button(@click="submit") OK，标记
+    .action-bar.row
+      check(v-model="share" label="分享至TIME-LINE")
+      c-button(@click="submit") OK，标记
 </template>
 
 
@@ -28,15 +30,18 @@
       'rate':        require('components/@/rate')
       'favor-group': require('components/@/favor-group')
       'input-area':  require('components/@/input-area')
+      'check':       require('components/@/check')
       'c-button':    require('components/@/button')
 
     data: ->
       subject: @state['mark-modal'].subject
       mark:    @state['mark-modal'].mark
+      id:      @state['mark-modal'].mark?.id
       status:  @state['mark-modal'].mark?.status  ? @state['mark-modal'].initStatus
       score:   @state['mark-modal'].mark?.score   ? 0
       favor:   @state['mark-modal'].mark?.favor   ? {}
       comment: @state['mark-modal'].mark?.comment ? ''
+      share:   if @state['mark-modal'].mark?.id then false else true
 
     computed:
       verb: ->
@@ -62,13 +67,14 @@
           favor:   @favor
           comment: @comment
 
-        if @mark?.id
-          mark = await api.call('mark.update', @mark.id, data)
+        if @id
+          mark = await api.call('mark.update', @id, data, @share)
+          @commit('UPDATE_MARK', mark)
         else
-          mark = await api.call('mark.create', @subject.id, data)
+          mark = await api.call('mark.create', @subject.id, data, @share)
+          @commit('CREATE_MARK', mark)
 
         @notify('done', '标记成功！')
-        @commit('UPDATE_MARK', mark)
         @commit('mark-modal/HIDE')
 </script>
 
@@ -94,6 +100,9 @@
     >h2{
       margin-bottom: 8px;
       color: #707C88;
+    }
+    >.action-bar{
+      justify-content: space-between;
     }
   }
 </style>

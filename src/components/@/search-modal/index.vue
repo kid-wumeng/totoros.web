@@ -28,6 +28,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 200;
     box-sizing: border-box;
     width: 100%;
     height: 100%;

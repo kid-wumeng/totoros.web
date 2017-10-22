@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.picture-image(:path="path", :ratio="ratio", :square="square" cover @click="click")
+  cdn-image.picture(:path="path", :ratio="ratio", :square="square" cover @click="click")
 </template>
 
 
@@ -34,7 +34,7 @@
 
 
 <style lang="less" scoped>
-  .picture-image{
+  .picture{
     cursor: pointer;
   }
 </style>

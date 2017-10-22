@@ -8,8 +8,7 @@
   renderer = new marked.Renderer()
 
 
-
-  parseCardData = (url, text) ->
+  parseCard = (url, text) ->
     query = model.assets.parseUrl(url).query
     query = model.assets.parseQuery(query)
     data  = query
@@ -18,7 +17,7 @@
 
 
   renderSubjectCard = (url, text) ->
-    data   = parseCardData(url, text)
+    data   = parseCard(url, text)
     type   = model.subject.displayType(data.type)
     season = if data.season then "Season #{data.season}" else ''
     card   =
@@ -26,6 +25,38 @@
       face: "subjects/#{data.id}/face?v=#{data['face.version']}"
       name: data.name
       subs: [type, season].filter((item) -> item)
+    return renderCard(card)
+
+
+  renderRoleCard = (url, text) ->
+    data = parseCard(url, text)
+    card =
+      path: "roles/#{data.id}"
+      face: "roles/#{data.id}/face?v=#{data['face.version']}"
+      name: data.name
+      subs: ['角色']
+    return renderCard(card)
+
+
+  renderPersonCard = (url, text) ->
+    data = parseCard(url, text)
+    year = data.year ? ''
+    card =
+      path: "persons/#{data.id}"
+      face: "persons/#{data.id}/face?v=#{data['face.version']}"
+      name: data.name
+      subs: ['人物', year].filter((item) -> item)
+    return renderCard(card)
+
+
+  renderOrganizationCard = (url, text) ->
+    data = parseCard(url, text)
+    year = data.year ? ''
+    card =
+      path: "organizations/#{data.id}"
+      face: "organizations/#{data.id}/face?v=#{data['face.version']}"
+      name: data.name
+      subs: ['团体', year].filter((item) -> item)
     return renderCard(card)
 
 
@@ -52,7 +83,10 @@
       return renderer.image(url)
 
     switch
-      when /^(subject)/.test(url) then return renderSubjectCard(url, text)
+      when /^(subject)/.test(url)      then return renderSubjectCard(url, text)
+      when /^(role)/.test(url)         then return renderRoleCard(url, text)
+      when /^(person)/.test(url)       then return renderPersonCard(url, text)
+      when /^(organization)/.test(url) then return renderOrganizationCard(url, text)
 
     text ?= url
     return "<a href='#{url}'>#{text}</a>"
@@ -68,9 +102,6 @@
         <div class='desc'>#{text ? ''}</div>
       </div>
     "
-
-
-  renderer.card = (href, title, text) ->
 
 
   marked.setOptions({
@@ -89,7 +120,10 @@
         required: true
 
     computed:
-      html: -> marked(@content)
+      html: ->
+        html = marked(@content)
+        html = html.replace(/<br>/g, '')
+        return html
 </script>
 
 

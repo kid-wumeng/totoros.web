@@ -32,15 +32,12 @@
       person: -> @state['person-detail'].person
       desc:   -> '人物'
 
-    created: ->
-      @init()
-
     watch:
       'id': -> @init()
 
     methods:
       init: ->
-        @dispatch('get-person', @id)
+        @dispatch('person-detail/init', @id)
 
       change: (tab) ->
         @toRolePage(@person, tab.value)

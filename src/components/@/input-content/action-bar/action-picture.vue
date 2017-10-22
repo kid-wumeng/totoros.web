@@ -10,7 +10,7 @@
   module.exports =
     components:
       'file-select': require('components/@/file-select')
-      'action': require('./action')
+      'action':      require('./action')
 
     methods:
       select: (files) ->

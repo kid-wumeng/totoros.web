@@ -1,12 +1,15 @@
 <template lang="jade">
-  action.action-subject
-    .icon.fa-clone
-    .label 作品
+  action.action-subject(icon="fa-clone" label="作品" @click="search")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'action': require('./action')
+      'action': require('components/@/action')
+
+    methods:
+      search: ->
+        subject = await @dispatch('search-modal/show', {allowType: 'subject'})
+        @dispatch('input-content/mountSubject', subject)
 </script>

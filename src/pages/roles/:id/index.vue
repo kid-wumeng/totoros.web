@@ -20,15 +20,12 @@
       role: -> @state['role-detail'].role
       desc: -> '角色'
 
-    created: ->
-      @init()
-
     watch:
       'id': -> @init()
 
     methods:
       init: ->
-        @dispatch('get-role', @id)
+        @dispatch('role-detail/init', @id)
 
       change: (tab) ->
         @toRolePage(@role, tab.value)

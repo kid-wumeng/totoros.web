@@ -37,6 +37,7 @@
 <style lang="less" scoped>
   #posts-id{
     background-color: #FFF;
+    overflow: hidden;
     .wrap{
       margin: 20px auto;
       width: 700px;

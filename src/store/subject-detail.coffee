@@ -10,6 +10,14 @@ module.exports =
       if isSame(state.subject, subject)
         state.subject = subject
 
+    CREATE_MARK: (state, mark) ->
+      if isSame(state.subject, mark.subject)
+        state.mark = mark
+
+    UPDATE_MARK: (state, mark) ->
+      if isSame(state.subject, mark.subject)
+        state.mark = mark
+
     'subject-detail/SET_SUBJECT': (state, subject) ->
       state.subject = subject
 

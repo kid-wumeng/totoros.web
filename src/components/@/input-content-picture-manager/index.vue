@@ -1,8 +1,8 @@
 <template lang="jade">
   .input-content-picture-manager
     .row.-left.-wrap
-      .picture(v-for="picture in pictures", :key="picture.id", @click="commit('input-content/MOUNT_PICTURE', picture)")
-        picture-image(:picture="picture", square, prevent)
+      .picture(v-for="picture in pictures", :key="picture.id", @click="dispatch('input-content/mountPicture', picture)")
+        c-picture(:picture="picture", square, prevent)
         .id {{ picture.id }}
 </template>
 
@@ -10,7 +10,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'picture-image': require('components/image/picture-image')
+      'c-picture': require('components/image/picture')
 
     computed:
       pictures: -> @state['input-content'].pictures

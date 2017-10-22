@@ -53,9 +53,6 @@
           desc += " / Season #{@season}"
         return desc
 
-    created: ->
-      @init()
-
     watch:
       'id': -> @init()
 
