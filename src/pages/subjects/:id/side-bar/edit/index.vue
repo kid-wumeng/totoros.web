@@ -1,20 +1,22 @@
 <template lang="jade">
   .edit.col
-    c-button.-gray(v-show="path === ''" @click="editFace") 编辑：封面
-    c-button.-gray(v-show="path === ''" @click="editBase") 编辑：基本档案
-    c-button.-gray(v-show="path === ''")         编辑：资源Links
+    c-button.-gray(v-show="path === ''" @click="editFace")      编辑：封面
+    c-button.-gray(v-show="path === ''" @click="editBase")      编辑：基本档案
+    c-button.-gray(v-show="path === ''" @click="editResources") 编辑：资源Links
     c-button.-gray(v-show="path === 'world'")    编辑：世界观
     c-button.-gray(v-show="path === 'casts'")    编辑：Casts
     c-button.-gray(v-show="path === 'staffs'")   编辑：Staffs
     c-button.-gray(v-show="path === 'episodes'") 编辑：Episodes
+
+    edit-subject-resources-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-button':   require('components/@/button')
-      'detail-box': require('components/wiki/detail-box')
+      'c-button':                     require('components/@/button')
+      'edit-subject-resources-modal': require('components/wiki/edit-subject-resources-modal')
 
     props:
       'subject':
@@ -30,6 +32,9 @@
 
       editBase: ->
         @dispatch('edit-subject-base-modal/show', @subject.id)
+
+      editResources: ->
+        @dispatch('edit-subject-resources-modal/show', @subject.id)
 </script>
 
 

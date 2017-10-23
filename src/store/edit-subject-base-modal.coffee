@@ -8,7 +8,7 @@ module.exports =
   mutations:
     UPDATE_SUBJECT: (state, subject) ->
       state.subject = subject
-      
+
     'edit-subject-base-modal/SHOW': (state, {subject, records=[]}) ->
       state.open = true
       state.subject = subject
@@ -25,5 +25,5 @@ module.exports =
   actions:
     'edit-subject-base-modal/show': ({commit}, id) ->
       subject = await api.call('subject.get', id)
-      records = await api.call('subject.getEditBaseRecords', id)
+      records = await api.call('subject.getEditRecords', id, {type: 'base'})
       commit('edit-subject-base-modal/SHOW', {subject, records})
