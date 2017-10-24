@@ -1,13 +1,11 @@
 <template lang="jade">
   .record.row.-top.-left
     .left
-      .edit-date {{ model.date.display(record.editDate) }}
+      .date {{ model.date.display(record.editDate) }}
     .right
-      .desc.row.-left
-        user-name(:user="record.user")
-        .verb {{ verb }}了Link
-      div.url(v-if="type === 'add'") {{ url }}
-      del.url(v-else) {{ url }}
+      user-name(:user="record.user")
+      div.url(v-if="type === 'create'") {{ newResource.url }}
+      del.url(v-if="type === 'delete'") {{ oldResource.url }}
 </template>
 
 
@@ -22,40 +20,32 @@
         required: true
 
     computed:
-      type:     -> @record.type
-      resource: -> @record.resource
-      url:      -> @resource?.url
-
-      verb: ->
-        switch @record.type
-          when 'add'    then '添加'
-          when 'delete' then '删除'
+      type:        -> @record.type
+      oldResource: -> @record.oldResource
+      newResource: -> @record.newResource
 </script>
 
 
 <style lang="less" scoped>
   .record{
-    margin-bottom: 12px;
+    padding: 16px 20px;
+    &:nth-child(odd){
+      background-color: rgba(250, 250, 250, 1);
+    }
     .left{
       width: 80px;
       text-align: right;
-      .edit-date{
+      .date{
         font-size: 13px;
+        color: #A2AEBA;
       }
     }
     .right{
       flex: auto;
       margin-left: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #F2F2F2;
-      .desc{
-        .user-name{
-          font-size: 13px;
-        }
-        .verb{
-          margin-left: 6px;
-          font-size: 13px;
-        }
+      .user-name{
+        display: inline-block;
+        font-size: 13px;
       }
       .url{
         flex: auto;
@@ -63,7 +53,7 @@
         word-wrap: break-word;
         box-sizing: border-box;
         display: block;
-        margin-top: 5px;
+        margin-top: 6px;
         font-size: 13px;
       }
       del.url{

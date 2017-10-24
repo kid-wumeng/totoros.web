@@ -1,5 +1,5 @@
 <template lang="jade">
-  #subjects-id(v-if="subject")
+  #subjects-detail(v-if="subject")
     detail-frame
       .name(slot="name") {{ subject.name }}
       .desc(slot="desc") {{ desc }}
@@ -66,7 +66,7 @@
 
 
 <style lang="less" scoped>
-  #subjects-id{
+  #subjects-detail{
     display: flex;
   }
 </style>

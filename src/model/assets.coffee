@@ -1,3 +1,7 @@
+exports.STAFF_PERSON_JOBS       = [101..104]
+exports.STAFF_ORGANIZATION_JOBS = [201..206]
+
+
 ### 是否数字字符串 ##
 # @params {string} n
 # @return {boolean}
@@ -22,7 +26,7 @@ exports.isEmail = (email) ->
 # @return {boolean}
 ###
 exports.isUrl = (url) ->
-  reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/
+  reg = /(?:(?:http[s]?|ftp|mms):\/\/)?(?:([^:@]+)(?::([^@]*))?@)?([^:@//]+)(?::(\d+))?(?:(\/.*?)(?:\?(.*?))?(?:#(.*?))?)$/
   return reg.test(url.toString())
 
 
@@ -111,4 +115,23 @@ exports.displayCastImportance = (importance) ->
     when 3 then '核心配角'
     when 2 then '配角'
     when 1 then '龙套'
+    else ''
+
+
+
+exports.displayStaffJob = (job) ->
+  switch job
+    when 101 then '原作'
+    when 102 then '导演'
+    when 103 then '编剧'
+    when 104 then '画师'
+    when 105 then '游戏设计师'
+
+    when 201 then '制作团队'
+    when 202 then '连载平台'
+    when 203 then '出版社'
+    when 204 then '发行商'
+    when 205 then '渠道商'
+    when 206 then '播放电视台'
+
     else ''

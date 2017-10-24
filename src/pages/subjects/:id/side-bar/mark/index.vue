@@ -15,6 +15,10 @@
       subject:  -> @state['subject-detail'].subject
       mark:     -> @state['subject-detail'].mark
       markSure: -> @state['subject-detail'].markSure
+
+    methods:
+      init: ->
+        @dispatch('subject-detail/markSure', @subject.id)
 </script>
 
 

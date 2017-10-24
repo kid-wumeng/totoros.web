@@ -1,7 +1,7 @@
 <template lang="jade">
   .left
     .row.-right
-      c-button(@click="add") 添加资源Link
+      c-button(@click="create") 添加资源Link
     edit-input(
       v-for="(resource, index) in resources",
       :key="index",
@@ -23,11 +23,10 @@
       resources: -> @subject.resources ? []
 
     methods:
-      add: ->
+      create: ->
         url = await @prompt('资源页面地址', '')
         if @model.assets.isUrl(url)
-          resource = {url}
-          result = await @api.call('subject.addResource', @subject.id, resource)
+          result = await @api.call('subject.createResource', @subject.id, url)
           @done(result)
         else
           @notify('fail', '请使用标准URL')

@@ -10,8 +10,8 @@
       'record': require('./record')
 
     computed:
-      subject: -> @state['edit-subject-resources-modal'].subject
-      records: -> @state['edit-subject-resources-modal'].records
+      subject: -> @state['edit-subject-staffs-modal'].subject
+      records: -> @state['edit-subject-staffs-modal'].records
 </script>
 
 

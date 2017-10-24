@@ -2,6 +2,7 @@ module.exports =
 
   state:
     user: null
+    checkined: false
 
   getters:
     'login': (state) ->
@@ -12,6 +13,9 @@ module.exports =
     'account/SET_USER': (state, user) ->
       state.user = user
 
+    'account/SET_CHECKINED': (state, checkined) ->
+      state.checkined = checkined
+
   actions:
     'account/checkin': ({commit}) ->
       tokenString = localStorage.getItem('tokenString')
@@ -19,3 +23,4 @@ module.exports =
         result = await api.call('account.checkin', tokenString)
         localStorage.setItem('tokenString', result.tokenString)
         commit('account/SET_USER', result.user)
+        commit('account/SET_CHECKINED', true)

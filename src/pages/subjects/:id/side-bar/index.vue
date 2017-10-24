@@ -1,7 +1,7 @@
 <template lang="jade">
   .side-bar
     edit(:subject="subject")
-    c-mark(:subject="subject")
+    c-mark(v-if="state.account.checkined", :subject="subject")
 </template>
 
 

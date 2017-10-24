@@ -8,7 +8,6 @@
       .row.-right
         .hint(v-if="cast.persons && cast.persons.length") 声优：
         .person(v-for="(person, index) in cast.persons", :key="index") {{ displayPerson(person) }}
-        .person(v-for="(person, index) in cast.persons", :key="index") {{ displayPerson(person) }}
         c-button.del.-gray(@click="del(cast)") 删除
         c-button.edit(@click="$emit('edit', cast)") 编辑
 </template>

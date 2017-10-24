@@ -42,11 +42,11 @@ module.exports =
       return new Promise (resolve) ->
         commit('search-modal/SHOW', {allowType, redirect, resolve})
         setTimeout (->
-          dispatch('search-modal/search')
+          dispatch('search-modal/search', '-id')
         ), 300  # 延时加载：防止DOM渲染影响动画性能
 
 
-    'search-modal/search': ({state, commit}) ->
+    'search-modal/search': ({state, commit}, sort='+id') ->
       switch state.type
         when 'user'         then method = 'user.getAll'
         when 'subject'      then method = 'subject.getAll'
@@ -54,7 +54,8 @@ module.exports =
         when 'person'       then method = 'person.getAll'
         when 'organization' then method = 'organization.getAll'
 
-      result = await api.call(method, {q: state.q, intro: true, size: 50})
+      result = await api.call(method, {q: state.q, intro: true, sort, size: 50})
+
       switch state.type
         when 'user'         then commit('search-modal/SET_RESULTS', {results: result.users})
         when 'subject'      then commit('search-modal/SET_RESULTS', {results: result.subjects})

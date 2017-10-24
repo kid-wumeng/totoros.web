@@ -4,8 +4,8 @@
       .date {{ model.date.display(record.editDate) }}
     .right
       user-name(:user="record.user")
-      div.cast(v-if="showNewCast") {{ displayNewCast }}
-      del.cast(v-if="showOldCast") {{ displayOldCast }}
+      div.staff(v-if="showNewStaff") {{ displayNewStaff }}
+      del.staff(v-if="showOldStaff") {{ displayOldStaff }}
 </template>
 
 
@@ -20,29 +20,31 @@
         required: true
 
     computed:
-      type:    -> @record.type
-      oldCast: -> @record.oldCast
-      newCast: -> @record.newCast
+      type:     -> @record.type
+      oldStaff: -> @record.oldStaff
+      newStaff: -> @record.newStaff
 
-      showOldCast: -> ['update', 'delete'].includes(@type)
-      showNewCast: -> ['create', 'update'].includes(@type)
+      showOldStaff: -> ['update', 'delete'].includes(@type)
+      showNewStaff: -> ['create', 'update'].includes(@type)
 
-      displayOldCast: -> @displayCast(@oldCast)
-      displayNewCast: -> @displayCast(@newCast)
+      displayOldStaff: -> @displayStaff(@oldStaff)
+      displayNewStaff: -> @displayStaff(@newStaff)
 
     methods:
-      displayCast: (cast) ->
-        importance = cast.importance
-        importance = model.assets.displayCastImportance(importance)
-        role = cast.role
-        role = "##{role.id} #{role.name}"
-        role = "[#{role}]"
-        persons = cast.persons ? []
-        persons = persons.map (person) -> "##{person.id} #{person.name}"
-        persons = persons.map (person) -> "[#{person}]"
-        persons = persons.join(', ')
-        persons = "声优：#{persons}" if(persons)
-        return "#{importance}　#{role}　#{persons}"
+      displayStaff: (staff) ->
+        jobs = staff.jobs ? []
+        jobs = jobs.map (job) -> "#{model.assets.displayStaffJob(job)}"
+        jobs = jobs.join(', ')
+        if(staff.type is 'person')
+          person = staff.person
+          person = "##{person.id} #{person.name}"
+          person = "[#{person}]"
+          return "#{person}　#{jobs}"
+        else
+          organization = staff.organization
+          organization = "##{organization.id} #{organization.name}"
+          organization = "[#{organization}]"
+          return "#{organization}　#{jobs}"
 </script>
 
 
@@ -67,7 +69,7 @@
         display: inline-block;
         font-size: 13px;
       }
-      .cast{
+      .staff{
         flex: auto;
         width: 380px;
         word-wrap: break-word;
@@ -77,7 +79,7 @@
         font-weight: 600;
         font-size: 13px;
       }
-      del.cast{
+      del.staff{
         color: #CCC;
         font-weight: 400;
       }

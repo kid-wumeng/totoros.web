@@ -1,6 +1,6 @@
 <template lang="jade">
   .edit-input.row
-    c-input(v-model="inputValue", :type="type", :disabled="disabled" ref="input")
+    c-input(:value="inputValue", :type="type", :disabled="disabled" ref="input" @input="input")
     c-button(v-show="button === 'edit'", :class="{'-gray': !editing}" @click="edit") {{ editing ? '完成' : '编辑' }}
     c-button(v-show="button === 'delete'" class="-gray" @click="$emit('delete')") 删除
     c-button(v-show="button === 'select'" @click="$emit('select')") 选择
@@ -56,6 +56,9 @@
         else
           @$refs.input.focus()
           @editing = true
+
+      input: (value) ->
+        @edit_value = value
 </script>
 
 

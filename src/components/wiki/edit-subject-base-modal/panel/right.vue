@@ -21,7 +21,6 @@
     box-sizing: border-box;
     width: 600px;
     height: 100%;
-    padding: 0 70px 0 40px;
     overflow: scroll;
     .desc{
       text-align: center;

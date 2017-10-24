@@ -34,7 +34,6 @@ module.exports =
     'subject-detail/init': ({commit, dispatch}, id) ->
       commit('subject-detail/RESET')
       dispatch('subject-detail/loadSubject', id)
-      dispatch('subject-detail/markSure', id)
 
     'subject-detail/loadSubject': ({commit}, id) ->
       subject = await api.call('subject.get', id)

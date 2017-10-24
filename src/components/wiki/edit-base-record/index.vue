@@ -1,14 +1,13 @@
 <template lang="jade">
   .edit-base-record.row.-top.-left
     .left
-      .edit-date {{ model.date.display(record.editDate) }}
+      .date {{ model.date.display(record.editDate) }}
     .right
       .desc.row.-left
         user-name(:user="record.user")
         .verb 编辑了{{ model.subject.displayKey(record.key) }}
-      .value
-        del.old-value {{ record.oldValue }}
-        .new-value {{ record.newValue }}
+      div.value(v-if="record.newValue") {{ record.newValue }}
+      del.value(v-if="record.oldValue") {{ record.oldValue }}
 </template>
 
 
@@ -26,19 +25,21 @@
 
 <style lang="less" scoped>
   .edit-base-record{
-    margin-bottom: 12px;
+    padding: 16px 20px;
+    &:nth-child(odd){
+      background-color: rgba(250, 250, 250, 1);
+    }
     .left{
       width: 80px;
       text-align: right;
-      .edit-date{
+      .date{
         font-size: 13px;
+        color: #A2AEBA;
       }
     }
     .right{
       flex: auto;
       margin-left: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #F2F2F2;
       .desc{
         .user-name{
           font-size: 13px;
@@ -46,20 +47,22 @@
         .verb{
           margin-left: 6px;
           font-size: 13px;
+          color: #A2AEBA;
         }
       }
       .value{
-        .old-value{
-          display: block;
-          margin-top: 5px;
-          font-size: 13px;
-          color: #BBB;
-        }
-        .new-value{
-          margin-top: 5px;
-          font-weight: 500;
-          font-size: 13px;
-        }
+        flex: auto;
+        width: 380px;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        display: block;
+        margin-top: 6px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      del.value{
+        color: #CCC;
+        font-weight: 400;
       }
     }
   }

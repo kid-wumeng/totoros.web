@@ -75,10 +75,10 @@
 
       params: ->
         sid        = @subject.id
-        importance = @importance
         rid        = @role?.id
         pids       = @persons.map (person) -> person.id
-        return [sid, importance, rid, pids]
+        importance = @importance
+        return [sid, rid, pids, importance]
 
       done: (result) ->
         @notify('done', '提交成功')

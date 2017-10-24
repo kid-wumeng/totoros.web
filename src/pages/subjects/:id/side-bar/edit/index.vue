@@ -4,12 +4,13 @@
     c-button.-gray(v-show="path === ''" @click="editBase")       编辑：基本档案
     c-button.-gray(v-show="path === ''" @click="editResources")  编辑：资源Links
     c-button.-gray(v-show="path === 'world'")    编辑：世界观
-    c-button.-gray(v-show="path === 'casts'" @click="editCasts") 编辑：Casts
-    c-button.-gray(v-show="path === 'staffs'")   编辑：Staffs
+    c-button.-gray(v-show="path === 'casts'" @click="editCasts")   编辑：Casts
+    c-button.-gray(v-show="path === 'staffs'" @click="editStaffs") 编辑：Staffs
     c-button.-gray(v-show="path === 'episodes'") 编辑：Episodes
 
     edit-subject-resources-modal
     edit-subject-casts-modal
+    edit-subject-staffs-modal
 </template>
 
 
@@ -19,6 +20,7 @@
       'c-button':                     require('components/@/button')
       'edit-subject-resources-modal': require('components/wiki/edit-subject-resources-modal')
       'edit-subject-casts-modal':     require('components/wiki/edit-subject-casts-modal')
+      'edit-subject-staffs-modal':    require('components/wiki/edit-subject-staffs-modal')
 
     props:
       'subject':
@@ -40,6 +42,9 @@
 
       editCasts: ->
         @dispatch('edit-subject-casts-modal/show', @subject.id)
+
+      editStaffs: ->
+        @dispatch('edit-subject-staffs-modal/show', @subject.id)
 </script>
 
 
