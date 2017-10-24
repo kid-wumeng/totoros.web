@@ -10,6 +10,10 @@ exports.isMe = (user) ->
   return @isSame(user, @loginUser)
 
 
+exports.omit = (models, omit_model) ->
+  return models.filter (model) -> model.id isnt omit_model.id
+
+
 exports.totoro = (message, duration) ->
   @dispatch('totoro/showMessage', {message, duration})
 

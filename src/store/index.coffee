@@ -39,6 +39,7 @@ module.exports = new Vuex.Store({
     'update-forum-modal':           require('./update-forum-modal')
     'edit-subject-base-modal':      require('./edit-subject-base-modal')
     'edit-subject-resources-modal': require('./edit-subject-resources-modal')
+    'edit-subject-casts-modal':     require('./edit-subject-casts-modal')
     'edit-role-base-modal':         require('./edit-role-base-modal')
     'edit-person-base-modal':       require('./edit-person-base-modal')
     'edit-organization-base-modal': require('./edit-organization-base-modal')

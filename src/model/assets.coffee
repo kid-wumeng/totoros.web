@@ -102,3 +102,13 @@ exports.checkCommentContent = (content) ->
     throw "内容不能为空"
   if @lenString(content) > 5000
     throw "内容太长了"
+
+
+
+exports.displayCastImportance = (importance) ->
+  switch importance
+    when 4 then '主人公'
+    when 3 then '核心配角'
+    when 2 then '配角'
+    when 1 then '龙套'
+    else ''

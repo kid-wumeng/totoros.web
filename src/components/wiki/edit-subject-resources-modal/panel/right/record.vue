@@ -1,5 +1,5 @@
 <template lang="jade">
-  .edit-base-record.row.-top.-left
+  .record.row.-top.-left
     .left
       .edit-date {{ model.date.display(record.editDate) }}
     .right
@@ -34,7 +34,7 @@
 
 
 <style lang="less" scoped>
-  .edit-base-record{
+  .record{
     margin-bottom: 12px;
     .left{
       width: 80px;

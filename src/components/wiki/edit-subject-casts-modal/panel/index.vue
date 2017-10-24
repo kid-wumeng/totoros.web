@@ -14,7 +14,7 @@
       'right': require('./right')
 
     computed:
-      subject: -> @state['edit-subject-resources-modal'].subject
+      subject: -> @state['edit-subject-casts-modal'].subject
 </script>
 
 

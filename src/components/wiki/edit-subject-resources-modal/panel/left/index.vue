@@ -3,8 +3,8 @@
     .row.-right
       c-button(@click="add") 添加资源Link
     edit-input(
-      v-for="resource in resources",
-      :key="resource.url",
+      v-for="(resource, index) in resources",
+      :key="index",
       :value="resource.url"
       button="delete"
       @delete="del(resource)"

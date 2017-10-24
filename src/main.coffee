@@ -58,6 +58,7 @@ Vue.use({
     Vue.prototype.dispatch   = store.dispatch
     Vue.prototype.isSame     = methods.isSame
     Vue.prototype.isMe       = methods.isMe
+    Vue.prototype.omit       = methods.omit
     Vue.prototype.totoro     = methods.totoro
     Vue.prototype.toast      = methods.toast
     Vue.prototype.notify     = methods.notify
