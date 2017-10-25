@@ -2,7 +2,7 @@
   .header
     banner(:user="user")
     .row.-left.-top
-      face(:user="user")
+      face-area(:user="user")
       .col.-left
         .top
           c-base(:user="user")
@@ -14,10 +14,10 @@
 <script lang="coffee">
   module.exports =
     components:
-      'banner':  require('./banner')
-      'face':    require('./face')
-      'c-base':  require('./base')
-      'tab-bar': require('./tab-bar')
+      'banner':    require('./banner')
+      'face-area': require('./face-area')
+      'c-base':    require('./base')
+      'tab-bar':   require('./tab-bar')
 
     props:
       'user':
@@ -35,7 +35,7 @@
       top: -@offset;
       margin: 0 auto;
       box-sizing: border-box;
-      width: 800px;
+      width: 1000px;
       >.col{
         align-self: stretch;
         flex: auto;

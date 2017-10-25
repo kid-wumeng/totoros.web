@@ -25,31 +25,45 @@ module.exports = [{
   component: -> System.import('pages/users/:id')
   children: [{
     path: ''
-    meta: path: ''
+    meta:
+      path: ''
+      keepAlive: true
     component: -> System.import('pages/users/:id/overview')
   },{
     path: 'timeline'
-    meta: path: 'timeline'
+    meta:
+      path: 'timeline'
+      keepAlive: true
     component: -> System.import('pages/users/:id/timeline')
   },{
     path: 'blogs'
-    meta: path: 'blogs'
+    meta:
+      path: 'blogs'
+      keepAlive: true
     component: -> System.import('pages/users/:id/blogs')
   },{
     path: 'paints'
-    meta: path: 'paints'
+    meta:
+      path: 'paints'
+      keepAlive: true
     component: -> System.import('pages/users/:id/paints')
   },{
     path: 'animes'
-    meta: path: 'animes'
+    meta:
+      path: 'animes'
+      keepAlive: true
     component: -> System.import('pages/users/:id/animes')
   },{
     path: 'comics'
-    meta: path: 'comics'
+    meta:
+      path: 'comics'
+      keepAlive: true
     component: -> System.import('pages/users/:id/comics')
   },{
     path: 'games'
-    meta: path: 'games'
+    meta:
+      path: 'games'
+      keepAlive: true
     component: -> System.import('pages/users/:id/games')
   }]
 

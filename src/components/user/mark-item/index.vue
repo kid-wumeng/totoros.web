@@ -55,7 +55,7 @@
       }
     }
     .photo-frame{
-      width: 90px;
+      width: 80px;
     }
     .name{
       font-weight: 600;
@@ -75,8 +75,8 @@
     }
     .text-area{
       margin-top: 5px;
-      width: 80%;
-      line-height: 17px;
+      width: 60%;
+      line-height: 19px;
       font-size: 13px;
     }
   }

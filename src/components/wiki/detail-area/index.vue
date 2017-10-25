@@ -18,7 +18,7 @@
 </script>
 
 
-<style lang="less">
+<style lang="less" scoped>
   .detail-area{
     >.title{
       text-align: right;

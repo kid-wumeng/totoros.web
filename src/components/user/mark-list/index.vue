@@ -19,7 +19,7 @@
 <style lang="less" scoped>
   .mark-list{
     @padding: 8px;
-    @border: 1px solid #EAEAEA;
+    @border: 1px solid rgb(234, 234, 234);
     .mark-item{
       padding-left: @padding;
       padding-right: @padding;
@@ -30,6 +30,7 @@
         border-top: @border;
       }
       &:nth-child(odd){
+        background-color: #FFF;
       }
     }
   }

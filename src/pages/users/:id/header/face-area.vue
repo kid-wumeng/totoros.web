@@ -1,7 +1,8 @@
 <template lang="jade">
-  .face
+  .face-area
     user-face(:user="user" prevent @click="click")
-    c-button(v-if="isMe(user)") Setting
+    c-button Setting
+
     user-face-modal
 </template>
 
@@ -26,7 +27,7 @@
 
 
 <style lang="less" scoped>
-  .face{
+  .face-area{
     @padding: 4px;
 
     box-sizing: border-box;
@@ -35,10 +36,6 @@
     background-color: #FFF;
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
-    >.user-face{
-      width: 100%;
-    }
 
     >.button{
       margin-top: @padding;

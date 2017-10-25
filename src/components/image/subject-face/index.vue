@@ -15,6 +15,9 @@
       'square':
         type: Boolean
         default: false
+      'fixedHeight':
+        type: Boolean
+        default: false
       'prevent':
         type: Boolean
         default: false
@@ -25,7 +28,14 @@
       height:  -> @subject.face?.height
       version: -> @subject.face?.version
       path:    -> if @version then "subjects/#{@id}/face?v=#{@version}" else ''
-      ratio:   -> if @height and @width then @height / @width else 1
+      ratio:   ->
+        if @fixedHeight
+          return 1.45
+        else
+          if @height and @width
+            return @height / @width
+          else
+            return 1
 
     methods:
       click: ->
