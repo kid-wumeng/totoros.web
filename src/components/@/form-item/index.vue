@@ -1,10 +1,10 @@
 <template lang="jade">
   .form-item.row.-top
     .left
-      .label {{ label }}
-    .right
+      .label(v-if="label", :style="labelStyle") {{ label }}
+    .right.col.-left
       slot
-      .hint {{ hint }}
+      .hint(v-if="hint") {{ hint }}
 </template>
 
 
@@ -17,6 +17,13 @@
       'hint':
         type: String
         default: ''
+      'labelWidth':
+        type: Number
+        default: 100
+
+    computed:
+      labelStyle: ->
+        'width': if @labelWidth then @labelWidth + 'px' else 'auto'
 </script>
 
 
@@ -25,7 +32,6 @@
     .left{
       flex: none;
       .label{
-        width: 100px;
         text-align: right;
         height: 34px;
         line-height: 33px;
@@ -34,7 +40,7 @@
       }
     }
     .right{
-      margin-left: 12px;
+      margin-left: 16px;
       flex: auto;
       .hint{
         margin-top: 4px;

@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.user-banner(:path="path" cover @click="$emit('click')")
+  cdn-image.user-banner(:path="path", default-path="assets/default-user-banner?2017-10-26" cover @click="$emit('click')")
 </template>
 
 
@@ -22,6 +22,6 @@
 
 <style lang="less" scoped>
   .user-banner{
-    height: 200px;
+    height: 300px;
   }
 </style>

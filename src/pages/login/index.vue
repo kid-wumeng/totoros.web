@@ -1,5 +1,5 @@
 <template lang="jade">
-  #login
+  #login(v-if="checkined && !login")
     .wrap
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码" type="password")
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     .wrap{
-      margin-top: -10%;
+      margin-top: 10%;
       width: 260px;
       .input{
         margin-bottom: 12px;

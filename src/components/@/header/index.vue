@@ -5,7 +5,7 @@
         logo
         navigator
         search
-      user-face(v-if="login", :user="state.account.user")
+      account
 </template>
 
 
@@ -15,7 +15,7 @@
       'logo':      require('./logo')
       'navigator': require('./navigator')
       'search':    require('./search')
-      'user-face': require('components/image/user-face')
+      'account':   require('./account')
 </script>
 
 
@@ -27,10 +27,6 @@
       margin: 0 auto;
       width: 800px;
       height: 64px;
-      .user-face{
-        width: 32px;
-        height: 32px;
-      }
     }
   }
 </style>

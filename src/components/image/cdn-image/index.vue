@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.cdn-image(:url="url", :cover="cover", :style="style", @click.native="$emit('click')")
+  c-image.cdn-image(:url="url", :default-url="defaultUrl", :cover="cover", :style="style", @click.native="$emit('click')")
 </template>
 
 
@@ -12,6 +12,9 @@
       'path':
         type: String
         required: true
+      'defaultPath':
+        type: String
+        default: 'assets/default-image?2017-10-07'
       'ratio':
         type: Number
         default: 0
@@ -28,6 +31,9 @@
     computed:
       url: ->
         return if @path then "#{@cdn}/#{@path}" else ''
+
+      defaultUrl: ->
+        return "#{@cdn}/#{@defaultPath}"
 
       height: ->
         if @square

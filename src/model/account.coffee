@@ -34,3 +34,13 @@ exports.checkName = (name) ->
     throw '昵称不能少于3位（每个中文占2位）'
   if assets.lenString(name) > 18
     throw '昵称不能多于18位（每个中文占2位）'
+
+
+exports.checkMotto = (motto='') ->
+  if assets.lenString(name) > 200
+    throw '签名不能多于200位（每个中文占2位）'
+
+
+exports.checkIntro = (intro='') ->
+  if assets.lenString(name) > 5000
+    throw '简介不能多于5000位（每个中文占2位）'

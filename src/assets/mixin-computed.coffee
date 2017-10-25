@@ -3,6 +3,7 @@ module.exports = install: (Vue) -> Vue.mixin({
   computed:
     loginUser: -> @$store.state.account.user
     login:     -> @$store.state.account.user isnt null
+    checkined: -> @$store.state.account.checkined
     admin:     -> @$store.state.account.user and @$store.state.account.user.admin
     routeID:   -> parseInt(@$route.params.id ? 0)
 

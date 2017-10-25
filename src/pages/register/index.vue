@@ -1,5 +1,5 @@
 <template lang="jade">
-  #register
+  #register(v-if="checkined && !login")
     .wrap
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
@@ -52,7 +52,7 @@
         @$router.replace('/')
 
       fail: (error)->
-        @notify('warn', message, 3000)
+        @notify('warn', error.message, 3000)
 </script>
 
 
@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     .wrap{
-      margin-top: -10%;
+      margin-top: 10%;
       width: 260px;
       .input{
         margin-bottom: 12px;

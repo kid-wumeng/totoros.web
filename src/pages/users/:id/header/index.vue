@@ -28,7 +28,7 @@
 
 <style lang="less" scoped>
   .header{
-    @offset: 80px; // 头像尺寸的一半
+    @offset: 100px; // 头像尺寸的一半
     >.row{
       position: relative;
       left: 0;

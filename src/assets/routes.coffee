@@ -20,6 +20,26 @@ module.exports = [{
 
 },{
 
+  # 个人设定
+  path: '/setting'
+  redirect: path: '/setting/base'
+  component: -> System.import('pages/setting')
+  children: [{
+    path: 'base'
+    meta: path: 'base'
+    component: -> System.import('pages/setting/base')
+  },{
+    path: 'pass'
+    meta: path: 'pass'
+    component: -> System.import('pages/setting/pass')
+  },{
+    path: 'logout'
+    meta: path: 'logout'
+    component: -> System.import('pages/setting/logout')
+  }]
+
+},{
+
   # 用户
   path: '/users/:id'
   component: -> System.import('pages/users/:id')

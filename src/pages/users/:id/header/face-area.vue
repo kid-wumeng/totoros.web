@@ -1,7 +1,7 @@
 <template lang="jade">
   .face-area
     user-face(:user="user" prevent @click="click")
-    c-button Setting
+    c-button(v-if="isMe(user)" @click="$router.push('/setting')") Setting
 
     user-face-modal
 </template>
@@ -31,7 +31,7 @@
     @padding: 4px;
 
     box-sizing: border-box;
-    width: 160px;
+    width: 200px;
     padding: @padding;
     background-color: #FFF;
     border-radius: 3px;

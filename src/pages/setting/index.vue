@@ -1,7 +1,6 @@
 <template lang="jade">
-  #admin(v-if="admin")
+  #setting(v-if="login && user")
     .wrap
-      h1 ADMIN-CENTER
       tab-bar
       .main
         router-view
@@ -12,20 +11,25 @@
   module.exports =
     components:
       'tab-bar': require('./tab-bar')
+
+    computed:
+      user: -> @state['setting'].user
+
+    methods:
+      init: ->
+        @dispatch('setting/init')
 </script>
 
 
 <style lang="less" scoped>
-  #admin{
+  #setting{
     background-color: #FFF;
     overflow: hidden;
-    .wrap{
+    >.wrap{
       margin: 32px auto;
-      width: 600px;
-      >h1{
-        font-size: 20px;
-      }
+      width: 480px;
       >.main{
+        padding: 16px;
         border: 1px solid #FFF;
         border-radius: 3px;
         box-shadow: 0 0 6px -3px #000;

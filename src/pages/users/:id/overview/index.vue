@@ -1,6 +1,7 @@
 <template lang="jade">
   #user-detail-overview.row
     .left
+      intro(:user="user")
       anime-marks(:user="user")
       comic-marks(:user="user")
     .right
@@ -10,6 +11,7 @@
 <script lang="coffee">
   module.exports =
     components:
+      'intro':       require('./intro')
       'anime-marks': require('./anime-marks')
       'comic-marks': require('./comic-marks')
 
