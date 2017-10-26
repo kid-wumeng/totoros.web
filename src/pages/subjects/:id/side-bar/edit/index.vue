@@ -4,11 +4,12 @@
     c-button.-gray(v-show="path === ''" @click="editBase")       编辑：基本档案
     c-button.-gray(v-show="path === ''" @click="editResources")  编辑：资源Links
     c-button.-gray(v-show="path === 'world'")    编辑：世界观
+    c-button.-gray(v-show="path === 'episodes'" @click="editEpisodes")   编辑：Episodes
     c-button.-gray(v-show="path === 'casts'" @click="editCasts")   编辑：Casts
     c-button.-gray(v-show="path === 'staffs'" @click="editStaffs") 编辑：Staffs
-    c-button.-gray(v-show="path === 'episodes'") 编辑：Episodes
 
     edit-subject-resources-modal
+    edit-subject-episodes-modal
     edit-subject-casts-modal
     edit-subject-staffs-modal
 </template>
@@ -19,6 +20,7 @@
     components:
       'c-button':                     require('components/@/button')
       'edit-subject-resources-modal': require('components/wiki/edit-subject-resources-modal')
+      'edit-subject-episodes-modal':  require('components/wiki/edit-subject-episodes-modal')
       'edit-subject-casts-modal':     require('components/wiki/edit-subject-casts-modal')
       'edit-subject-staffs-modal':    require('components/wiki/edit-subject-staffs-modal')
 
@@ -39,6 +41,9 @@
 
       editResources: ->
         @dispatch('edit-subject-resources-modal/show', @subject.id)
+
+      editEpisodes: ->
+        @dispatch('edit-subject-episodes-modal/show', @subject.id)
 
       editCasts: ->
         @dispatch('edit-subject-casts-modal/show', @subject.id)

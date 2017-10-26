@@ -2,7 +2,7 @@
   .form-item.row.-top
     .left
       .label(v-if="label", :style="labelStyle") {{ label }}
-    .right.col.-left
+    .right
       slot
       .hint(v-if="hint") {{ hint }}
 </template>
