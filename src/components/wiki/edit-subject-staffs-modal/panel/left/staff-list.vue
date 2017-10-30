@@ -49,9 +49,9 @@
         pid  = staff.person?.id
         oid  = staff.organization?.id
         type = staff.type
-        result = await @api.call('subject.deleteStaff', sid, pid, sid, type)
+        result = await @api.call('staff.remove', staff.id)
         @notify('done', '删除成功')
-        @commit('UPDATE_SUBJECT', result.subject)
+        @commit('REMOVE_STAFF', result.staff)
         @commit('edit-subject-staffs-modal/ADD_RECORD', result.record)
 </script>
 

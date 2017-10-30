@@ -4,8 +4,8 @@
       .date {{ model.date.display(record.editDate) }}
     .right
       user-name(:user="record.user")
-      div.url(v-if="type === 'create'") {{ newResource.url }}
-      del.url(v-if="type === 'delete'") {{ oldResource.url }}
+      div.episode(v-if="showNewEpisode") {{ displayNewEpisode }}
+      del.episode(v-if="showOldEpisode") {{ displayOldEpisode }}
 </template>
 
 
@@ -20,9 +20,23 @@
         required: true
 
     computed:
-      type:        -> @record.type
-      oldResource: -> @record.oldResource
-      newResource: -> @record.newResource
+      type:       -> @record.type
+      oldEpisode: -> @record.oldEpisode
+      newEpisode: -> @record.newEpisode
+
+      showOldEpisode: -> ['update', 'delete'].includes(@type)
+      showNewEpisode: -> ['create', 'update'].includes(@type)
+
+      displayOldEpisode: -> @displayEpisode(@oldEpisode)
+      displayNewEpisode: -> @displayEpisode(@newEpisode)
+
+    methods:
+      displayEpisode: (episode) ->
+        order      = '#' + episode.order
+        name       = episode.name
+        nameOrigin = episode.nameOrigin
+        intro      = episode.intro
+        return [order, name, nameOrigin, intro].filter((value) -> value).join(' ')
 </script>
 
 
@@ -47,7 +61,7 @@
         display: inline-block;
         font-size: 13px;
       }
-      .url{
+      .episode{
         flex: auto;
         width: 380px;
         word-wrap: break-word;
@@ -56,7 +70,7 @@
         margin-top: 6px;
         font-size: 13px;
       }
-      del.url{
+      del.episode{
         color: #BBB;
       }
     }

@@ -40,9 +40,9 @@
         return "##{id} #{name}"
 
       del: (cast) ->
-        result = await @api.call('subject.deleteCast', @subject.id, cast.role.id)
+        result = await @api.call('cast.remove', cast.id)
         @notify('done', '删除成功')
-        @commit('UPDATE_SUBJECT', result.subject)
+        @commit('REMOVE_CAST', result.cast)
         @commit('edit-subject-casts-modal/ADD_RECORD', result.record)
 </script>
 

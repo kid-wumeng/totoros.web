@@ -15,6 +15,9 @@
       },{
         label: '反馈'
         value: 'feedbacks'
+      },{
+        label: '同步'
+        value: 'sync'
       }]
 
     methods:

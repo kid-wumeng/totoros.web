@@ -186,6 +186,7 @@ module.exports = [{
 
   # 管理
   path: '/admin'
+  redirect: path: '/admin/forums'
   component: -> System.import('pages/admin')
   children: [{
     path: 'forums'
@@ -195,5 +196,9 @@ module.exports = [{
     path: 'feedbacks'
     meta: path: 'feedbacks'
     component: -> System.import('pages/admin/feedbacks')
+  },{
+    path: 'sync'
+    meta: path: 'sync'
+    component: -> System.import('pages/admin/sync')
   }]
 }]

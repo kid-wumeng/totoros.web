@@ -44,6 +44,9 @@ window.sleep = (ms) ->
     setTimeout(resolve, ms)
 
 window.isSame = methods.isSame
+window.update = methods.update
+window.remove = methods.remove
+window.inc    = methods.inc
 
 
 Vue.use({
@@ -58,6 +61,8 @@ Vue.use({
     Vue.prototype.dispatch   = store.dispatch
     Vue.prototype.isSame     = methods.isSame
     Vue.prototype.isMe       = methods.isMe
+    Vue.prototype.update     = methods.update
+    Vue.prototype.remove     = methods.remove
     Vue.prototype.omit       = methods.omit
     Vue.prototype.totoro     = methods.totoro
     Vue.prototype.toast      = methods.toast
@@ -80,6 +85,8 @@ Vue.use(require('./assets/mixin-computed'))
 Vue.use(require('./assets/mixin-init'))
 Vue.use(require('./assets/mixin-deinit'))
 
+
+Vue.component('row', require('components/@/row'))
 
 
 Vue.use(Lazyload)

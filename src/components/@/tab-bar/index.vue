@@ -2,7 +2,7 @@
   .tab-bar
     .tab.row(v-for="tab in tabs", :class="{'-active': tab.value === active}" @click="$emit('change', tab)")
       .label {{ tab.label }}
-      .count(v-if="tab.label") {{ tab.count }}
+      .count(v-if="tab.count") {{ tab.count }}
 </template>
 
 

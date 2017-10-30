@@ -20,19 +20,19 @@
 
     computed:
       subject:   -> @state['edit-subject-resources-modal'].subject
-      resources: -> @subject.resources ? []
+      resources: -> @subject.resources
 
     methods:
       create: ->
         url = await @prompt('资源页面地址', '')
         if @model.assets.isUrl(url)
-          result = await @api.call('subject.createResource', @subject.id, url)
+          result = await @api.call('subject.addResource', @subject.id, url)
           @done(result)
         else
           @notify('fail', '请使用标准URL')
 
       del: (resource) ->
-        result = await @api.call('subject.deleteResource', @subject.id, resource.url)
+        result = await @api.call('subject.delResource', @subject.id, resource.uuid)
         @done(result)
 
       done: (result) ->

@@ -20,7 +20,7 @@
 
     computed:
       subject: -> @state['edit-subject-casts-modal'].subject
-      casts:   -> @subject.casts ? []
+      casts:   -> @state['edit-subject-casts-modal'].casts
 
     methods:
       showModal: (cast) ->

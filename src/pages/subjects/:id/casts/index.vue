@@ -1,17 +1,30 @@
 <template lang="jade">
   #subjects-id-casts
-    h1 CAST
+    list(:casts="casts")
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    data: -> {}
+    components:
+      'list': require('./list')
+
+    props:
+      'subject':
+        type: Object
+        required: true
+
+    computed:
+      casts: -> @state['subject-detail'].casts
+
+    methods:
+      init: ->
+        @dispatch('subject-detail/get-casts', @subject.id)
 </script>
 
 
 <style lang="less" scoped>
   #subjects-id-casts{
-
+    padding-top: 16px;
   }
 </style>

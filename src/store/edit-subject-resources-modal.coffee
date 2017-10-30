@@ -1,21 +1,22 @@
 module.exports =
 
   state:
-    open: false
+    open:    false
     subject: null
     records: []
 
   mutations:
     UPDATE_SUBJECT: (state, subject) ->
-      state.subject = subject
+      if isSame(state.subject, subject)
+        state.subject = subject
 
-    'edit-subject-resources-modal/SHOW': (state, {subject, records=[]}) ->
-      state.open = true
+    'edit-subject-resources-modal/SHOW': (state, {subject, records}) ->
+      state.open    = true
       state.subject = subject
-      state.records = records
+      state.records = records ? []
 
     'edit-subject-resources-modal/HIDE': (state) ->
-      state.open = false
+      state.open    = false
       state.subject = null
       state.records = []
 

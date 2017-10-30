@@ -10,6 +10,7 @@ module.exports = new Vuex.Store({
   modules:
     'account':                      require('./account')
     'admin-forums':                 require('./admin-forums')
+    'admin-sync':                   require('./admin-sync')
     'create-forum-modal':           require('./create-forum-modal')
     'create-organization-modal':    require('./create-organization-modal')
     'create-person-modal':          require('./create-person-modal')

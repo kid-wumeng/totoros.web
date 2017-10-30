@@ -5,7 +5,9 @@
         logo
         navigator
         search
-      account
+      row
+        admin
+        account
 </template>
 
 
@@ -15,6 +17,7 @@
       'logo':      require('./logo')
       'navigator': require('./navigator')
       'search':    require('./search')
+      'admin':     require('./admin')
       'account':   require('./account')
 </script>
 
@@ -23,6 +26,7 @@
   .header{
     width: 100%;
     text-align: center;
+    background-color: rgba(250, 250, 250, 0.93);
     >.row{
       margin: 0 auto;
       width: 800px;

@@ -8,8 +8,8 @@
           radio(:label="model.assets.displayCastImportance(2)", :value="2")
           radio(:label="model.assets.displayCastImportance(1)", :value="1")
 
-      form-item(label="* 角色")
-        edit-input(:value="role_name" button="select" @select="selRole")
+      form-item(v-if="!cast", label="* 角色")
+        edit-input(:value="roleName" button="select" @select="selRole")
 
       form-item(label="声优")
         edit-input-tags(v-model="persons", name="name" @add="addPerson")
@@ -39,12 +39,15 @@
         default: null
 
     data: ->
-      importance: @cast?.importance ? 0
       role:       @cast?.role       ? null
       persons:    @cast?.persons    ? []
+      importance: @cast?.importance ? 0
 
     computed:
-      role_name: -> @role?.name ? ''
+      roleName: -> @role?.name ? ''
+      sid:      -> @subject.id
+      rid:      -> @role?.id
+      pids:     -> @persons.map (person) -> person.id
 
     methods:
       selRole: ->
@@ -58,31 +61,35 @@
         @persons = @omit(@persons, person)
 
       submit: ->
+        if @cast
+          @update()
+        else
+          @create()
+
+      create: ->
         if(!@importance)
           @notify('fail', '请选择身份')
         else if(!@role)
           @notify('fail', '请选择角色')
         else
-          if @cast then @update() else @create()
-
-      create: ->
-        result = await @api.call('subject.createCast', @params()...)
-        @done(result)
+          result = await @api.call('cast.create', {
+            sid:        @sid
+            rid:        @rid
+            pids:       @pids
+            importance: @importance
+          })
+          @notify('done', '添加成功')
+          @commit('CREATE_CAST', result.cast)
+          @commit('edit-subject-casts-modal/ADD_RECORD', result.record)
+          @$emit('close')
 
       update: ->
-        result = await @api.call('subject.updateCast', @params()...)
-        @done(result)
-
-      params: ->
-        sid        = @subject.id
-        rid        = @role?.id
-        pids       = @persons.map (person) -> person.id
-        importance = @importance
-        return [sid, rid, pids, importance]
-
-      done: (result) ->
-        @notify('done', '提交成功')
-        @commit('UPDATE_SUBJECT', result.subject)
+        result = await @api.call('cast.update', @cast.id, {
+          pids:       @pids
+          importance: @importance
+        })
+        @notify('done', '修改成功')
+        @commit('UPDATE_CAST', result.cast)
         @commit('edit-subject-casts-modal/ADD_RECORD', result.record)
         @$emit('close')
 </script>

@@ -3,7 +3,7 @@
     h1 编辑作品词条：{{ subject.name }}
     .row
       left
-      //- right
+      right
 </template>
 
 

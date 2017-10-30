@@ -20,7 +20,7 @@
 
     computed:
       subject: -> @state['edit-subject-staffs-modal'].subject
-      staffs:   -> @subject.staffs ? []
+      staffs:  -> @state['edit-subject-staffs-modal'].staffs
 
     methods:
       showModal: (staff) ->

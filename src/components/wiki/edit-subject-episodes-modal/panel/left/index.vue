@@ -20,7 +20,7 @@
 
     computed:
       subject:  -> @state['edit-subject-episodes-modal'].subject
-      episodes: -> @subject.episodes ? []
+      episodes: -> @state['edit-subject-episodes-modal'].episodes
 
     methods:
       showModal: (episode) ->

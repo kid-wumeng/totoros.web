@@ -10,6 +10,27 @@ exports.isMe = (user) ->
   return @isSame(user, @loginUser)
 
 
+exports.update = (models, update_model) ->
+  for model, i in models
+    if isSame(model, update_model)
+      Vue.set(models, i, update_model)
+      return true
+  return false
+
+
+exports.remove = (models, remove_model) ->
+  for model, i in models
+    if isSame(model, remove_model)
+      models.splice(i, 1)
+      return true
+  return false
+
+
+exports.inc = (data, key, n=1) ->
+  value = data[key] ? 0
+  Vue.set(data, key, value + n)
+
+
 exports.omit = (models, omit_model) ->
   return models.filter (model) -> model.id isnt omit_model.id
 

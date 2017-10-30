@@ -23,6 +23,19 @@
   }
 }
 
+.-underline{
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.-none{
+  flex: none;
+}
+
+.-auto{
+  flex: auto;
+}
 
 .link{
   font-size: 13px;
@@ -43,9 +56,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  >*{
-    flex: none;
-  }
 
   &.-left{
     justify-content: flex-start;

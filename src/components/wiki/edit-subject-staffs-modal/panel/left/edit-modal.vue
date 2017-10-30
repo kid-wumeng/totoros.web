@@ -1,16 +1,16 @@
 <template lang="jade">
   modal.edit-modal(@close="$emit('close')")
     .panel
-      form-item(label="* 类别")
+      form-item(v-if="!staff" label="* 类别")
         radio-bar(v-model="type")
           radio(label="人物", value="person")
           radio(label="团体", value="organization")
 
-      form-item(v-show="type === 'person'" label="* 人物")
-        edit-input(:value="person_name" button="select" @select="selPerson")
+      form-item(v-if="!staff" v-show="type === 'person'" label="* 人物")
+        edit-input(:value="personName" button="select" @select="selPerson")
 
-      form-item(v-show="type === 'organization'" label="* 团体")
-        edit-input(:value="organization_name" button="select" @select="selOrganization")
+      form-item(v-if="!staff" v-show="type === 'organization'" label="* 团体")
+        edit-input(:value="organizationName" button="select" @select="selOrganization")
 
       form-item(v-show="type === 'person'" label="JOBs")
         radio-grid(v-model="jobs")
@@ -61,8 +61,8 @@
       jobs:         @staff?.jobs         ? []
 
     computed:
-      person_name:       -> @person?.name       ? ''
-      organization_name: -> @organization?.name ? ''
+      personName:       -> @person?.name       ? ''
+      organizationName: -> @organization?.name ? ''
 
     methods:
       selPerson: ->
@@ -72,6 +72,12 @@
         @organization = await @dispatch('search-modal/show', {allowType: 'organization'})
 
       submit: ->
+        if @staff
+          @update()
+        else
+          @create()
+
+      create: ->
         if(!@type)
           @notify('fail', '请选择类别')
         else if(@type is 'person' and !@person)
@@ -81,29 +87,29 @@
         else if(@jobs.length is 0)
           @notify('fail', '请选择至少一个JOB')
         else
-          if @staff then @update() else @create()
-
-      create: ->
-        result = await @api.call('subject.createStaff', @params()...)
-        @done(result)
+          result = await @api.call('staff.create', {
+            sid:  @subject.id
+            pid:  @person?.id
+            oid:  @organization?.id
+            type: @type
+            jobs: @jobs
+          })
+          @notify('done', '添加成功')
+          @commit('CREATE_STAFF', result.staff)
+          @commit('edit-subject-staffs-modal/ADD_RECORD', result.record)
+          @$emit('close')
 
       update: ->
-        result = await @api.call('subject.updateStaff', @params()...)
-        @done(result)
-
-      params: ->
-        sid  = @subject.id
-        pid  = @person?.id
-        oid  = @organization?.id
-        type = @type
-        jobs = @jobs
-        return [sid, pid, oid, type, jobs]
-
-      done: (result) ->
-        @notify('done', '提交成功')
-        @commit('UPDATE_SUBJECT', result.subject)
-        @commit('edit-subject-staffs-modal/ADD_RECORD', result.record)
-        @$emit('close')
+        if(@jobs.length is 0)
+          @notify('fail', '请选择至少一个JOB')
+        else
+          result = await @api.call('staff.update', @staff.id, {
+            jobs: @jobs
+          })
+          @notify('done', '修改成功')
+          @commit('UPDATE_STAFF', result.staff)
+          @commit('edit-subject-staffs-modal/ADD_RECORD', result.record)
+          @$emit('close')
 </script>
 
 

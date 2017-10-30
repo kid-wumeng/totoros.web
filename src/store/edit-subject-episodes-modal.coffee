@@ -1,29 +1,39 @@
 module.exports =
 
   state:
-    open: false
-    subject: null
-    records: []
+    open:     false
+    subject:  null
+    episodes: []
+    records:  []
 
   mutations:
-    UPDATE_SUBJECT: (state, subject) ->
-      state.subject = subject
+    CREATE_EPISODE: (state, episode) ->
+      state.episodes.push(episode)
 
-    'edit-subject-episodes-modal/SHOW': (state, {subject, records=[]}) ->
-      state.open = true
-      state.subject = subject
-      state.records = records
+    UPDATE_EPISODE: (state, episode) ->
+      update(state.episodes, episode)
+
+    REMOVE_EPISODE: (state, episode) ->
+      remove(state.episodes, episode)
+
+    'edit-subject-episodes-modal/SHOW': (state, {subject, episodes, records}) ->
+      state.open     = true
+      state.subject  = subject
+      state.episodes = episodes ? []
+      state.records  = records  ? []
 
     'edit-subject-episodes-modal/HIDE': (state) ->
-      state.open = false
-      state.subject = null
-      state.records = []
+      state.open     = false
+      state.subject  = null
+      state.episodes = []
+      state.records  = []
 
     'edit-subject-episodes-modal/ADD_RECORD': (state, record) ->
       state.records = [record, state.records...]
 
   actions:
     'edit-subject-episodes-modal/show': ({commit}, id) ->
-      subject = await api.call('subject.get', id, {episodes: true})
-      records = await api.call('subject.getEditRecords', id, {type: 'episode'})
-      commit('edit-subject-episodes-modal/SHOW', {subject, records})
+      subject  = await api.call('subject.get', id)
+      episodes = await api.call('episode.getAll', {sid: id})
+      records  = await api.call('subject.getEditRecords', id, {type: 'episode'})
+      commit('edit-subject-episodes-modal/SHOW', {subject, episodes, records})

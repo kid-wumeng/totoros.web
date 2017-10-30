@@ -62,7 +62,7 @@
 
       addHint: (text) ->
         if(@more)
-          return "#{text}... (more)"
+          return "#{text} ... (more)"
         else
           return "#{text}..."
 

@@ -1,6 +1,6 @@
 <template lang="jade">
   #subjects-id-world
-    h1 世界观
+    h1 本页面还在开发中
 
 </template>
 

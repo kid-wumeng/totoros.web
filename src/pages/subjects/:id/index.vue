@@ -21,27 +21,6 @@
       'detail-tab-bar': require('components/wiki/detail-tab-bar')
       'side-bar':       require('./side-bar')
 
-    data: ->
-      tabs: [{
-        label: 'Overview'
-        value: ''
-      },{
-        label: '世界观'
-        value: 'world'
-      },{
-        label: 'Casts'
-        value: 'casts'
-        count: 6
-      },{
-        label: 'Staffs'
-        value: 'staffs'
-        count: 27
-      },{
-        label: 'Episodes'
-        value: 'episodes'
-        count: 12
-      }]
-
     computed:
       id:      -> @routeID
       subject: -> @state['subject-detail'].subject
@@ -52,6 +31,26 @@
         if(@season)
           desc += " / Season #{@season}"
         return desc
+
+      tabs: -> [{
+        label: 'Overview'
+        value: ''
+      },{
+        label: '世界观'
+        value: 'world'
+      },{
+        label: 'Episodes'
+        value: 'episodes'
+        count: @subject.episodeCount
+      },{
+        label: 'Casts'
+        value: 'casts'
+        count: @subject.castCount
+      },{
+        label: 'Staffs'
+        value: 'staffs'
+        count: @subject.staffCount
+      }]
 
     watch:
       'id': -> @init()
@@ -68,5 +67,6 @@
 <style lang="less" scoped>
   #subjects-detail{
     display: flex;
+    background-color: #FFF;
   }
 </style>

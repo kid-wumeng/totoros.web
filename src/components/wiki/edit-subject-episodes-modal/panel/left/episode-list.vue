@@ -27,9 +27,9 @@
 
     methods:
       del: (episode) ->
-        result = await @api.call('subject.deleteEpisode', @subject.id, episode.order)
+        result = await @api.call('episode.remove', @episode.id)
         @notify('done', '删除成功')
-        @commit('UPDATE_SUBJECT', result.subject)
+        @commit('UPDATE_EPISODE', result.episode)
         @commit('edit-subject-episodes-modal/ADD_RECORD', result.record)
 </script>
 
@@ -37,7 +37,7 @@
 <style lang="less" scoped>
   .episode-list{
     >*{
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       &:last-child{
         margin-bottom: 0;
       }

@@ -2,7 +2,7 @@
   c-animate(enter="flipInX" leave="flipOutX")
    .modal.-center(:style="style")
       slot
-      .icon.fa-close(@click="$emit('close')")
+      .icon.fa-close(v-if="!hideClose" @click="$emit('close')")
 </template>
 
 
@@ -15,6 +15,9 @@
       'zIndex':
         type: Number
         default: 10
+      'hideClose':
+        type: Boolean
+        default: false
 
     computed:
       style: ->
