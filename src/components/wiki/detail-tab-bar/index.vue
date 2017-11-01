@@ -1,5 +1,5 @@
 <template lang="jade">
-  tab-bar.detail-tab-bar.row.-left(:tabs="tabs", :active="active", @change="change")
+  tab-bar.detail-tab-bar.subject-detail-tab-bar(:tabs="tabs", :active="active", @change="change")
 </template>
 
 
@@ -22,27 +22,28 @@
 
 
 <style lang="less">
-  .detail-tab-bar{
+  .subject-detail-tab-bar{
     .tab{
-      margin-right: 16px;
-      height: 20px;
-      line-height: 20px;
+      padding: 0 16px;
+      height: 28px;
+      line-height: 28px;
+      font-weight: 600;
+      color: #A2AEBA;
+      border-radius: 3px 3px 0 0;
+      user-select: none;
       .label{
-        color: #BBB;
+        font-size: 13px;
+        color: inherit;
       }
       .count{
-        color: #BBB;
+        font-size: 13px;
+        color: inherit;
         margin-left: 4px;
       }
     }
     .tab.-active{
-      font-weight: 600;
-      .label{
-        color: #445669;
-      }
-      .count{
-        color: #445669;
-      }
+      color: #FFF;
+      background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
     }
   }
 </style>

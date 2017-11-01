@@ -6,9 +6,10 @@
         router-view(v-if="$route.meta.keepAlive", :key="key")
       router-view(v-if="!$route.meta.keepAlive")
 
-    totoro
+    //- totoro
     toast
     notify
+    confirm
     prompt
     search-modal
     mark-modal
@@ -33,6 +34,7 @@
       'toast':    require('components/@/toast')
       'notify':   require('components/@/notify')
       'prompt':   require('components/@/prompt')
+      'confirm':  require('components/@/confirm')
       'search-modal':                 require('components/@/search-modal')
       'mark-modal':                   require('components/user/mark-modal')
       'post-modal':                   require('components/bbs/post-modal')
@@ -114,6 +116,7 @@
     .body{
       flex: auto;
       width: 100%;
+      margin-bottom: 30px;
     }
   }
 </style>

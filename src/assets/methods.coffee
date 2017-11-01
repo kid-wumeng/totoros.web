@@ -47,6 +47,10 @@ exports.notify = (type, message, duration) ->
   @dispatch('notify/show', {type, message, duration})
 
 
+exports.confirm = (message) ->
+  @dispatch('confirm/show', {message})
+
+
 exports.prompt = (message, defaults) ->
   @dispatch('prompt/show', {message, defaults})
 
@@ -62,6 +66,12 @@ exports.toSubjectPage = (subject, subPath='') ->
   path = "/subjects/#{subject.id}/#{subPath}"
   path = path.replace(/\/$/, '')
   @$router.push(path)
+
+
+exports.replaceSubjectPage = (subject, subPath='') ->
+  path = "/subjects/#{subject.id}/#{subPath}"
+  path = path.replace(/\/$/, '')
+  @$router.replace(path)
 
 
 exports.toUserPage = (user, subPath='') ->

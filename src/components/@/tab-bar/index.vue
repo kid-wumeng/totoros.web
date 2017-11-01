@@ -1,6 +1,6 @@
 <template lang="jade">
-  .tab-bar
-    .tab.row(v-for="tab in tabs", :class="{'-active': tab.value === active}" @click="$emit('change', tab)")
+  row.tab-bar
+    row.tab(v-for="(tab, i) in tabs", :key="i", :class="{'-active': tab.value === active}" @click="click(tab)")
       .label {{ tab.label }}
       .count(v-if="tab.count") {{ tab.count }}
 </template>
@@ -15,10 +15,15 @@
       'active':
         type: String
         required: true
+
+    methods:
+      click: (tab) ->
+        if tab.value isnt @active
+          @$emit('change', tab)
 </script>
 
 
-<style lang="less" scoped>
+<style lang="less">
   .tab-bar{
     box-sizing: border-box;
     .tab{

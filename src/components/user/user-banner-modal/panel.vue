@@ -53,7 +53,7 @@
     >.image{
       box-sizing: border-box;
       width: 100%;
-      height: 250px;
+      height: 200px;
       border-radius: 3px;
     }
     >.user-banner{

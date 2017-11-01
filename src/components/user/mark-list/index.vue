@@ -19,17 +19,12 @@
 <style lang="less" scoped>
   .mark-list{
     @padding: 8px;
-    @border: 1px solid rgb(234, 234, 234);
     .mark-item{
       padding-left: @padding;
       padding-right: @padding;
       padding-top:  @padding;
-      border-bottom:  @border;
       padding-bottom: @padding + 1;
-      &:first-child{
-        border-top: @border;
-      }
-      &:nth-child(odd){
+      &:nth-child(even){
         background-color: #FFF;
       }
     }

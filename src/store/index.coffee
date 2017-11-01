@@ -11,6 +11,7 @@ module.exports = new Vuex.Store({
     'account':                      require('./account')
     'admin-forums':                 require('./admin-forums')
     'admin-sync':                   require('./admin-sync')
+    'confirm':                      require('./confirm')
     'create-forum-modal':           require('./create-forum-modal')
     'create-organization-modal':    require('./create-organization-modal')
     'create-person-modal':          require('./create-person-modal')

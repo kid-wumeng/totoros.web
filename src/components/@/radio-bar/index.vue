@@ -49,6 +49,11 @@
 <style lang="less" scoped>
   .radio-bar{
     background-color: #FFF;
-    border-radius: 3px;
+    >.radio:first-child{
+      border-radius: 3px 0 0 3px;
+    }
+    >.radio:last-child{
+      border-radius: 0 3px 3px 0;
+    }
   }
 </style>

@@ -29,18 +29,21 @@
     height: 32px;
     font-weight: 600;
     font-size: 13px;
-    color: #707C88;
-    background-color: rgba(250, 250, 250, 0.93);
-    border: 1px solid #FFF;
+    color: #FFF;
+    background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
     border-radius: 3px;
-    box-shadow: 0 0 6px -3px #000;
     cursor: pointer;
+    user-select: none;
+    &:active{
+      background-image: linear-gradient(-180deg, #1E8470 0%, #16a085 90%);
+    }
   }
   .page-button.-disabled{
-    color: #FFF;
-    background-color: #A2AEBA;
-    border-color: transparent;
-    box-shadow: none;
+    font-weight: 600;
+    color: #707C88;
+    background-image: none;
+    background-color: #fafbfc;
+    border: 1px solid #F2F2F2;
     cursor: default;
   }
 </style>

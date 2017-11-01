@@ -1,27 +1,31 @@
 <template lang="jade">
-  .mark-item.row.-left.-top
+  row.mark-item
     .left
-      photo-frame
-        subject-face(:subject="subject")
+      photo-frame: subject-face(:subject="subject")
     .right
-      .row.-left
-        .name(@click="toSubjectPage(subject)") {{ name }}
-        .desc {{ desc }}
-      .row.-left
-        rate(:score="score" size="13px")
-        favor-group(:favor="favor", :subject="subject" size="13px")
-      text-area(:text="comment", :indent="comment.length > 100")
+      row.-between.-center
+        row.left.-center
+          .name(@click="toSubjectPage(subject)") {{ name }}
+          .desc {{ desc }}
+        row.right.-center
+          .date {{ model.date.display(mark.createDate) }}
+          c-button.-gray(v-if="isMe(mark.user)" @click="update") 修改标记
+      row
+        mark-score(:mark="mark")
+        text-area.comment(:text="comment")
+        mark-progress(v-if="mark.status === 'doing'", :mark="mark")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':  require('components/wiki/photo-frame')
-      'subject-face': require('components/image/subject-face')
-      'rate':         require('components/@/rate')
-      'favor-group':  require('components/@/favor-group')
-      'text-area':    require('components/@/text-area')
+      'photo-frame':   require('components/wiki/photo-frame')
+      'subject-face':  require('components/image/subject-face')
+      'mark-score':    require('components/user/mark-score')
+      'mark-progress': require('components/user/mark-progress')
+      'text-area':     require('components/@/text-area')
+      'c-button':      require('components/@/button')
 
     props:
       'mark':
@@ -38,9 +42,11 @@
         if(@season)
           desc += " / Season #{@season}"
         return desc
-      score:   -> @mark.score
-      favor:   -> @mark.favor
       comment: -> @mark.comment ? ''
+
+    methods:
+      update: ->
+        @dispatch('mark-modal/show', {subject: @subject})
 </script>
 
 
@@ -49,9 +55,9 @@
     box-sizing: border-box;
     >.right{
       flex: auto;
-      margin-left: 12px;
-      >.row:nth-child(2){
-        margin-top: 4px;
+      margin-left: 14px;
+      >:nth-child(2){
+        margin-top: 8px;
       }
     }
     .photo-frame{
@@ -70,14 +76,25 @@
       font-size: 12px;
       color: #A2AEBA;
     }
-    .favor-group{
+    .date{
+      font-size: 12px;
+      color: #A2AEBA;
+    }
+    .button{
       margin-left: 8px;
     }
-    .text-area{
-      margin-top: 5px;
-      width: 60%;
+    .mark-score{
+      flex: none;
+    }
+    .comment{
+      flex: auto;
+      margin-left: 11px;
       line-height: 19px;
       font-size: 13px;
+    }
+    .mark-progress{
+      flex: none;
+      margin-left: 80px;
     }
   }
 </style>

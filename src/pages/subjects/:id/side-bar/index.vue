@@ -1,7 +1,6 @@
 <template lang="jade">
   .side-bar
     edit(:subject="subject")
-    c-mark(v-if="checkined", :subject="subject")
 </template>
 
 
@@ -9,7 +8,6 @@
   module.exports =
     components:
       'edit': require('./edit')
-      'c-mark': require('./mark')
 
     props:
       'subject':

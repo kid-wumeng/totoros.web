@@ -1,9 +1,9 @@
 <template lang="jade">
   .header
     banner(:user="user")
-    .row.-left.-top
+    row
       face-area(:user="user")
-      .col.-left
+      column
         .top
           c-base(:user="user")
         .bottom
@@ -28,15 +28,16 @@
 
 <style lang="less" scoped>
   .header{
-    @offset: 100px; // 头像尺寸的一半
-    >.row{
+    @offset: 90px; // 头像尺寸的一半
+    >.row2{
       position: relative;
       left: 0;
       top: -@offset;
       margin: 0 auto;
       box-sizing: border-box;
       width: 1000px;
-      >.col{
+      border-bottom: 1px solid rgba(245, 245, 245, 1);
+      >.column{
         align-self: stretch;
         flex: auto;
         padding-top: 16px;

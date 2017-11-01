@@ -1,13 +1,20 @@
 <template lang="jade">
   #user-detail-animes
+    row.-between
+      mark-type-radio-bar(:user="user")
+      mark-status-radio-bar(:user="user")
     mark-list(:marks="marks")
+    page-bar(:user="user")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'mark-list': require('components/user/mark-list')
+      'mark-type-radio-bar':   require('components/user/mark-type-radio-bar')
+      'mark-status-radio-bar': require('components/user/mark-status-radio-bar')
+      'mark-list':             require('components/user/mark-list')
+      'page-bar':              require('components/user/page-bar')
 
     props:
       'user':
@@ -15,23 +22,39 @@
         required: true
 
     computed:
-      marks: -> @state['user-detail'].anime_marks
+      type: ->
+        if @$route.query.type
+          return 'anime-' + @$route.query.type
+        else
+          return 'anime'
+
+      status: -> @$route.query.status
+      page:   -> @routePage
+      marks:  -> @state['user-detail'].anime_marks
 
     created: ->
       @init()
 
     watch:
-      '$route': ->
-        @init()
+      'type':   -> @init()
+      'status': -> @init()
+      'page':   -> @init()
 
     methods:
       init: ->
-        @dispatch('user-detail/get-anime-marks', {id: @user.id})
+        @dispatch('user-detail/get-anime-marks', {
+          id:     @user.id
+          type:   @type
+          status: @status
+          page:   @page
+        })
 </script>
 
 
 <style lang="less" scoped>
   #user-detail-animes{
-    width: 800px;
+    .mark-list{
+      margin-top: 20px;
+    }
   }
 </style>

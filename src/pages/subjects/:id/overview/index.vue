@@ -6,6 +6,7 @@
         c-base(:subject="subject")
       .right
         score-card(:subject="subject")
+        c-mark(v-if="checkined", :subject="subject")
         intro(:subject="subject")
         resources(:subject="subject")
 </template>
@@ -17,6 +18,7 @@
       'face':       require('./face')
       'c-base':     require('./base')
       'score-card': require('./score-card')
+      'c-mark':     require('./mark')
       'intro':      require('./intro')
       'resources':  require('./resources')
 
@@ -29,6 +31,7 @@
 
 <style lang="less" scoped>
   #subjects-id-overview{
+    margin-top: 4px;
     >.row{
       >.left{
         width: 200px;

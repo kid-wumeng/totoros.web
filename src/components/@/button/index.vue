@@ -22,11 +22,11 @@
     flex: none;
     box-sizing: border-box;
     display: inline-block;
-    height: 32px;
-    line-height: 32px;
+    height: 30px;
+    line-height: 30px;
     padding: 0 12px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     color: #FFF;
     background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
@@ -38,15 +38,14 @@
     }
   }
   .button.-gray{
-    padding: 0 11px;
-    line-height: 32px;
+    line-height: 29px;
     color: #707C88;
     background-image: none;
     border: 1px solid #F2F2F2;
   }
   .button.-disabled{
     padding: 0 11px;
-    line-height: 32px;
+    line-height: 29px;
     color: #DDD;
     background-image: none;
     border: 1px dashed #E2E2E2;

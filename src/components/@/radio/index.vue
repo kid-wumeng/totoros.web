@@ -41,7 +41,7 @@
     align-self: stretch;
     text-align: center;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     color: #BBB;
     cursor: pointer;
   }

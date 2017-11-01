@@ -67,10 +67,12 @@ Vue.use({
     Vue.prototype.totoro     = methods.totoro
     Vue.prototype.toast      = methods.toast
     Vue.prototype.notify     = methods.notify
+    Vue.prototype.confirm    = methods.confirm
     Vue.prototype.prompt     = methods.prompt
     Vue.prototype.readDataUrl = methods.readDataUrl
     Vue.prototype.toUserPage         = methods.toUserPage
     Vue.prototype.toSubjectPage      = methods.toSubjectPage
+    Vue.prototype.replaceSubjectPage = methods.replaceSubjectPage
     Vue.prototype.toRolePage         = methods.toRolePage
     Vue.prototype.toPersonPage       = methods.toPersonPage
     Vue.prototype.toOrganizationPage = methods.toOrganizationPage
@@ -86,7 +88,8 @@ Vue.use(require('./assets/mixin-init'))
 Vue.use(require('./assets/mixin-deinit'))
 
 
-Vue.component('row', require('components/@/row'))
+Vue.component('row',    require('components/@/row'))
+Vue.component('column', require('components/@/column'))
 
 
 Vue.use(Lazyload)

@@ -16,5 +16,8 @@
     margin-right: 20px;
     font-weight: 600;
     cursor: pointer;
+    span{
+      font-size: 13px;
+    }
   }
 </style>

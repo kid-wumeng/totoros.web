@@ -22,10 +22,12 @@
       'side-bar':       require('./side-bar')
 
     computed:
-      id:      -> @routeID
-      subject: -> @state['subject-detail'].subject
-      type:    -> @model.subject.displayType(@subject.type)
-      season:  -> @subject.season
+      id:         -> @routeID
+      subject:    -> @state['subject-detail'].subject
+      name:       -> @subject.name
+      nameOrigin: -> @subject.nameOrigin
+      type:       -> @model.subject.displayType(@subject.type)
+      season:     -> @subject.season
       desc: ->
         desc = @type
         if(@season)
@@ -33,21 +35,21 @@
         return desc
 
       tabs: -> [{
-        label: 'Overview'
+        label: if @nameOrigin then @nameOrigin else @name
         value: ''
       },{
         label: '世界观'
         value: 'world'
       },{
-        label: 'Episodes'
+        label: 'EPISODE'
         value: 'episodes'
         count: @subject.episodeCount
       },{
-        label: 'Casts'
+        label: 'CAST'
         value: 'casts'
         count: @subject.castCount
       },{
-        label: 'Staffs'
+        label: 'STAFF'
         value: 'staffs'
         count: @subject.staffCount
       }]
@@ -60,7 +62,7 @@
         @dispatch('subject-detail/init', @id)
 
       change: (tab) ->
-        @toSubjectPage(@subject, tab.value)
+        @replaceSubjectPage(@subject, tab.value)
 </script>
 
 

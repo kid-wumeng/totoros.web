@@ -1,6 +1,14 @@
 subject = require('./subject')
 
 
+exports.STATUSES = [
+  'will-do'
+  'doing'
+  'done'
+  'do-not'
+]
+
+
 exports.isShowScore = (status) =>
   return ['doing', 'done', 'do-not'].includes(status)
 
@@ -28,19 +36,26 @@ exports.displayVerb = (type) =>
 
 exports.displayScore = (score) =>
   switch score
-    when 10 then '神之作'
-    when 9  then '至高杰作'
-    when 8  then '很棒'
-    when 7  then '优秀'
-    when 6  then '还不错'
-    when 5  then '一般'
-    when 4  then '平庸'
-    when 3  then ''
-    when 2  then ''
-    when 1  then ''
+    when 7  then '神'
+    when 6  then '杰作品质'
+    when 5  then '很不错'
+    when 4  then '还行'
+    when 3  then '平庸'
+    when 2  then '较差'
+    when 1  then '烂到极致'
 
 
 exports.validFavor = (type, item) =>
+  switch
+    when subject.isType(type, 'anime')       then ['story', 'image', 'music'].includes(item)
+    when subject.isType(type, 'comic-paint') then ['image'].includes(item)
+    when subject.isType(type, 'comic')       then ['story', 'image'].includes(item)
+    when subject.isType(type, 'game')        then ['story', 'image', 'music', 'enjoy'].includes(item)
+    when subject.isType(type, 'novel')       then ['story'].includes(item)
+    else false
+
+
+exports.isShowItem = (type, item) =>
   switch
     when subject.isType(type, 'anime')       then ['story', 'image', 'music'].includes(item)
     when subject.isType(type, 'comic-paint') then ['image'].includes(item)

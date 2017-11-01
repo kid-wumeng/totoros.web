@@ -117,7 +117,7 @@
     props:
       'content':
         type: String
-        required: true
+        default: ''
 
     computed:
       html: ->

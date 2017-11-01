@@ -22,6 +22,6 @@
 
 <style lang="less" scoped>
   .user-banner{
-    height: 300px;
+    height: 200px;
   }
 </style>

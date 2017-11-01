@@ -5,7 +5,7 @@
         logo
         navigator
         search
-      row
+      row.-center
         admin
         account
 </template>
@@ -25,11 +25,12 @@
 <style lang="less" scoped>
   .header{
     width: 100%;
-    text-align: center;
     background-color: rgba(250, 250, 250, 0.93);
+    display: flex;
+    align-items: center;
     >.row{
       margin: 0 auto;
-      width: 800px;
+      width: 1000px;
       height: 64px;
     }
   }

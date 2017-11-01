@@ -6,7 +6,6 @@ module.exports = install: (Vue) -> Vue.mixin({
     checkined: -> @$store.state.account.checkined
     admin:     -> @$store.state.account.user and @$store.state.account.user.admin
     routeID:   -> parseInt(@$route.params.id ? 0)
-
     routePage: ->
       hash = @$route.hash
       if hash

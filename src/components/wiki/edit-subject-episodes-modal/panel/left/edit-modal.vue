@@ -11,7 +11,7 @@
         c-input(v-model="nameOrigin")
 
       form-item(label="本 集/话 简介")
-        c-input-area(v-model="intro")
+        c-input-area(v-model="intro", :rows="8")
 
       .row.-right
         c-button(@click="submit") 确认提交
@@ -31,12 +31,15 @@
       'subject':
         type: Object
         required: true
+      'episodes':
+        type: Array
+        default: -> []
       'episode':
         type: Object
         default: null
 
     data: ->
-      order:      @episode?.order      ? ''
+      order:      @episode?.order      ? @episodes.length + 1
       name:       @episode?.name       ? ''
       nameOrigin: @episode?.nameOrigin ? ''
       intro:      @episode?.intro ? ''

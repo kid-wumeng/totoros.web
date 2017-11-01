@@ -1,5 +1,5 @@
 <template lang="jade">
-  tab-bar.row.-left(:tabs="tabs", :active="$route.meta.path", @change="change")
+  tab-bar.tab-bar.user-detail-tab-bar(:tabs="tabs", :active="$route.meta.path", @change="change")
 </template>
 
 
@@ -15,10 +15,10 @@
 
     computed:
       tabs: -> [{
-        label: 'Overview'
+        label: @user.name
         value: ''
       },{
-        label: 'Timeline'
+        label: '动态'
         value: 'timeline'
         count: @user.feedCount
       },{
@@ -50,31 +50,31 @@
 
 
 <style lang="less">
-  .tab-bar{
+  .user-detail-tab-bar{
     .tab{
-      padding: 0 10px;
-      height: 30px;
-      line-height: 20px;
-      &:first-child{
-        padding-left: 0;
-      }
+      padding: 0 14px;
+      height: 26px;
+      font-weight: 600;
+      display: block;
       .label{
+        display: inline;
         font-size: 13px;
-        color: #A2AEBA;
+        color: #CDD6E0;
       }
       .count{
+        display: inline;
         font-size: 13px;
-        color: #A2AEBA;
+        color: #CDD6E0;
         margin-left: 4px;
       }
     }
     .tab.-active{
-      font-weight: 600;
+      border-bottom: 2px solid #40C9A2;
       .label{
-        color: #445669;
+        color: #40C9A2;
       }
       .count{
-        color: #445669;
+        color: #40C9A2;
       }
     }
   }

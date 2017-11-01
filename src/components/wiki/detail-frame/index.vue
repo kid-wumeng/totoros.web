@@ -3,8 +3,8 @@
     .row.-left
       slot.name(name="name")
       slot.desc(name="desc")
-    slot.tab-bar(name="tab-bar")
-    c-line
+    .tab-bar-wrap
+      slot.tab-bar(name="tab-bar")
     .row.-top
       .main: slot(name="main")
       .side: slot(name="side")
@@ -35,16 +35,19 @@
       }
       >.desc{
         margin-left: 9px;
+        font-weight: 600;
         font-size: 13px;
+        color: #A2AEBA;
       }
     }
-    >.tab-bar{
-      width: 1000px;
+    >.tab-bar-wrap{
+      width: 100%;
       margin-top: 12px;
-    }
-    >.line{
-      margin-top: 12px;
-      color: #EEE;
+      border-bottom: 1px solid rgba(245, 245, 245, 1);
+      >.tab-bar{
+        margin: 0 auto;
+        width: 1000px;
+      }
     }
     >.row:last-child{
       width: 1000px;

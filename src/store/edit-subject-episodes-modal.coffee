@@ -8,7 +8,10 @@ module.exports =
 
   mutations:
     CREATE_EPISODE: (state, episode) ->
-      state.episodes.push(episode)
+      state.episodes.unshift(episode)
+
+    CREATE_EPISODES: (state, episodes) ->
+      state.episodes.unshift(episode) for episode in episodes
 
     UPDATE_EPISODE: (state, episode) ->
       update(state.episodes, episode)
@@ -34,6 +37,6 @@ module.exports =
   actions:
     'edit-subject-episodes-modal/show': ({commit}, id) ->
       subject  = await api.call('subject.get', id)
-      episodes = await api.call('episode.getAll', {sid: id})
+      episodes = await api.call('episode.getAll', {sid: id, sort: '-order'})
       records  = await api.call('subject.getEditRecords', id, {type: 'episode'})
       commit('edit-subject-episodes-modal/SHOW', {subject, episodes, records})

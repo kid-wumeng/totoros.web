@@ -1,9 +1,10 @@
 <template lang="jade">
   .left
-    .row.-right
+    row.-right
+      c-button.batch.-gray(@click="createBatch") 批量添加(10条)
       c-button(@click="showModal()") 添加EPISODE
     episode-list(:subject="subject", :episodes="episodes" @edit="showModal")
-    edit-modal(v-if="modalOpen", :subject="subject", :episode="editEpisode" @close="hideModal()")
+    edit-modal(v-if="modalOpen", :subject="subject", :episodes="episodes", :episode="editEpisode" @close="hideModal()")
 </template>
 
 
@@ -30,6 +31,19 @@
       hideModal: ->
         @editEpisode = null
         @modalOpen   = false
+
+      createBatch: ->
+        await @confirm('确认一次性添加 10 条 EPISODE ？')
+        episodes = await @api.call('episode.createBatch', @subject.id)
+        @notify('done', '添加成功')
+        @commit('CREATE_EPISODES', episodes)
+
+        # result = await @api.call('episode.create', @subject.id, {
+        #   order:      parseFloat(@order)
+        #   name:       @name
+        #   nameOrigin: @nameOrigin
+        #   intro:      @intro
+        # })
 </script>
 
 
@@ -45,6 +59,9 @@
       &:last-child{
         margin-bottom: 0;
       }
+    }
+    .button.batch{
+      margin-right: 10px;
     }
   }
 </style>

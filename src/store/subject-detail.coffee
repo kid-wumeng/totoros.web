@@ -47,6 +47,10 @@ module.exports =
       state.episodes.push(episode)
       inc(state.subject, 'episodeCount')
 
+    CREATE_EPISODES: (state, episodes) ->
+      state.episodes.push(episode) for episode in episodes
+      inc(state.subject, 'episodeCount', episodes.length)
+
     UPDATE_EPISODE: (state, episode) ->
       update(state.episodes, episode)
 

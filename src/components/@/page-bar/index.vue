@@ -78,7 +78,7 @@
 
 <style lang="less" scoped>
 
-  @padding: 6px;
+  @padding: 5px;
 
   .page-bar{
     display: flex;

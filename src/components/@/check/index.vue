@@ -1,5 +1,5 @@
 <template lang="jade">
-  .check(:class="{'-active': active}" @click="$emit('change', !active)")
+  row.check.-center(:class="{'-active': active}" @click.native="$emit('change', !active)")
     .icon.fa-check-square-o
     .label {{ label }}
 </template>
@@ -23,28 +23,29 @@
 
 <style lang="less">
   .check{
-    display: flex;
-    align-items: center;
     cursor: pointer;
     user-select: none;
     .icon{
-      font-size: 15px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 20px;
       color: #A2AEBA;
     }
     .label{
+      height: 20px;
+      line-height: 20px;
       margin-left: 4px;
-      font-size: 13px;
+      font-size: 14px;
       color: #A2AEBA;
     }
   }
   .check.-active{
     .icon{
-      font-weight: 600;
-      color: #40C9A2;
+      color: #445669;
     }
     .label{
       font-weight: 600;
-      color: #40C9A2;
+      color: #445669;
     }
   }
 </style>

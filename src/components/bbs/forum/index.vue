@@ -1,7 +1,7 @@
 <template lang="jade">
   .forum
     cdn-image(path="banner-test?123" cover)
-    tab-bar.row.-left(:tabs="tabs", :active="path", @change="change")
+    tab-bar(:tabs="tabs", :active="path", @change="change")
     .wrap
       forum-action-bar(:id="id")
       post-list(:id="id")
@@ -62,6 +62,7 @@
       width: 800px;
       .tab{
         height: 36px;
+        line-height: 36px;
         padding: 0 16px;
         font-weight: 600;
         background-color: rgba(250, 250, 250, 0.93);
