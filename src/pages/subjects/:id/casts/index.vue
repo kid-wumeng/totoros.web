@@ -1,5 +1,5 @@
 <template lang="jade">
-  #subjects-id-casts
+  #subjects-detail-casts
     list(:casts="casts")
 </template>
 
@@ -14,17 +14,29 @@
         type: Object
         required: true
 
-    computed:
-      casts: -> @state['subject-detail'].casts
+    data: ->
+      casts: []
+
+    created: ->
+      @listen('CREATE_CAST', @createCast)
+      @listen('UPDATE_CAST', @updateCast)
+      @listen('REMOVE_CAST', @removeCast)
 
     methods:
       init: ->
-        @dispatch('subject-detail/get-casts', @subject.id)
+        @casts = await api.call('cast.getAll', {sid: @subject.id})
+
+      createCast: (cast) ->
+        if @isSame(cast.subject, @subject)
+          @casts.unshift(cast)
+
+      updateCast: (cast) -> @updateItem(@casts, cast)
+      removeCast: (cast) -> @removeItem(@casts, cast)
 </script>
 
 
 <style lang="less" scoped>
-  #subjects-id-casts{
+  #subjects-detail-casts{
     padding-top: 16px;
   }
 </style>

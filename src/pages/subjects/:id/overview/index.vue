@@ -7,7 +7,7 @@
         c-base(:subject="subject")
       .right
         score-card(:subject="subject")
-        c-mark(v-if="checkined", :subject="subject")
+        c-mark(:subject="subject" v-if="checkined")
         intro(:subject="subject")
         casts(:subject="subject")
         staffs(:subject="subject")

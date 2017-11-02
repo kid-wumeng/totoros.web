@@ -4,7 +4,7 @@
       person-face(v-if="type === 'person'", :person="person" square border)
       organization-face(v-if="type === 'organization'", :organization="organization" square border)
     .right
-      row
+      row.-center
         person-name(v-if="type === 'person'", :person="person")
         organization-name(v-if="type === 'organization'", :organization="organization")
         span.nameOrigin(v-if="type === 'person'") {{ person.nameOrigin }}

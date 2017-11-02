@@ -1,39 +1,26 @@
 <template lang="jade">
-  #organizations-id(v-if="organization")
-    detail-frame
-      .name(slot="name") {{ organization.name }}
-      .desc(slot="desc") {{ desc }}
-      router-view(slot="main", :organization="organization")
-      side-bar(slot="side", :organization="organization")
+  #organizations-detail(v-if="organization")
+    frame(:organization="organization")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'detail-frame':   require('components/wiki/detail-frame')
-      'detail-tab-bar': require('components/wiki/detail-tab-bar')
-      'side-bar':       require('./side-bar')
+      'frame': require('./frame')
 
-    computed:
-      id:           -> @routeID
-      organization: -> @state['organization-detail'].organization
-      desc:         -> '团体'
+    data: ->
+      organization: null
 
-    watch:
-      'id': -> @init()
+    created: ->
+      @listen('UPDATE_ORGANIZATION',  @updateOrganization)
 
     methods:
       init: ->
-        @dispatch('organization-detail/init', @id)
+        @organization = await api.call('organization.get', @routeID)
 
-      change: (tab) ->
-        @toRolePage(@organization, tab.value)
+      updateOrganization: (organization) ->
+        if isSame(organization, @organization)
+          for key, value of organization
+            @organization[key] = value
 </script>
-
-
-<style lang="less" scoped>
-  #organizations-id{
-    display: flex;
-  }
-</style>

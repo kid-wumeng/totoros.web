@@ -3,12 +3,12 @@
     .left
       role-face(:role="role" square)
     .right
-      row.-between
-        row
+      row.-between.-center
+        row.-center
           role-name(:role="role")
           span.nameOrigin {{ role.nameOrigin }}
         sep-row
-          row(v-for="(person, index) in persons", :key="index")
+          row.-center(v-for="(person, index) in persons", :key="index")
             person-face(:person="person" square border)
             person-name(:person="person")
       .importance - {{ model.assets.displayCastImportance(cast.importance) }} -

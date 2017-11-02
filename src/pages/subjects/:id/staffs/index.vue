@@ -1,5 +1,5 @@
 <template lang="jade">
-  #subjects-id-staffs
+  #subjects-detail-staffs
     list(:staffs="staffs")
 </template>
 
@@ -14,17 +14,29 @@
         type: Object
         required: true
 
-    computed:
-      staffs: -> @state['subject-detail'].staffs
+    data: ->
+      staffs: []
+
+    created: ->
+      @listen('CREATE_STAFF', @createStaff)
+      @listen('UPDATE_STAFF', @updateStaff)
+      @listen('REMOVE_STAFF', @removeStaff)
 
     methods:
       init: ->
-        @dispatch('subject-detail/get-staffs', @subject.id)
+        @staffs = await api.call('staff.getAll', {sid: @subject.id})
+
+      createStaff: (staff) ->
+        if @isSame(staff.subject, @subject)
+          @staffs.unshift(staff)
+
+      updateStaff: (staff) -> @updateItem(@staffs, staff)
+      removeStaff: (staff) -> @removeItem(@staffs, staff)
 </script>
 
 
 <style lang="less" scoped>
-  #subjects-id-staffs{
+  #subjects-detail-staffs{
     padding-top: 16px;
   }
 </style>

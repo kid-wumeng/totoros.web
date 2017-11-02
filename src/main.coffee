@@ -59,10 +59,13 @@ Vue.use({
     Vue.prototype.loginUser  = store.state.account.user
     Vue.prototype.commit     = store.commit
     Vue.prototype.dispatch   = store.dispatch
+    Vue.prototype.listen     = methods.listen
     Vue.prototype.isSame     = methods.isSame
     Vue.prototype.isMe       = methods.isMe
-    Vue.prototype.update     = methods.update
-    Vue.prototype.remove     = methods.remove
+    Vue.prototype.updateItem = methods.updateItem
+    Vue.prototype.removeItem = methods.removeItem
+    Vue.prototype.inc        = methods.inc
+    Vue.prototype.dec        = methods.dec
     Vue.prototype.omit       = methods.omit
     Vue.prototype.totoro     = methods.totoro
     Vue.prototype.toast      = methods.toast
@@ -70,15 +73,18 @@ Vue.use({
     Vue.prototype.confirm    = methods.confirm
     Vue.prototype.prompt     = methods.prompt
     Vue.prototype.readDataUrl = methods.readDataUrl
-    Vue.prototype.toUserPage         = methods.toUserPage
-    Vue.prototype.toSubjectPage      = methods.toSubjectPage
-    Vue.prototype.replaceSubjectPage = methods.replaceSubjectPage
-    Vue.prototype.toRolePage         = methods.toRolePage
-    Vue.prototype.toPersonPage       = methods.toPersonPage
-    Vue.prototype.toOrganizationPage = methods.toOrganizationPage
-    Vue.prototype.toForumPage        = methods.toForumPage
-    Vue.prototype.toPostPage         = methods.toPostPage
-    Vue.prototype.toPicturePage      = methods.toPicturePage
+    Vue.prototype.toUserPage              = methods.toUserPage
+    Vue.prototype.toSubjectPage           = methods.toSubjectPage
+    Vue.prototype.replaceSubjectPage      = methods.replaceSubjectPage
+    Vue.prototype.toRolePage              = methods.toRolePage
+    Vue.prototype.replaceRolePage         = methods.replaceRolePage
+    Vue.prototype.toPersonPage            = methods.toPersonPage
+    Vue.prototype.replacePersonPage       = methods.replacePersonPage
+    Vue.prototype.toOrganizationPage      = methods.toOrganizationPage
+    Vue.prototype.replaceOrganizationPage = methods.replaceOrganizationPage
+    Vue.prototype.toForumPage             = methods.toForumPage
+    Vue.prototype.toPostPage              = methods.toPostPage
+    Vue.prototype.toPicturePage           = methods.toPicturePage
     Vue.directive('focus', directives.focus)
 })
 

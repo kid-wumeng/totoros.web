@@ -43,7 +43,7 @@
         if @prevent
           @$emit('click')
         else
-          @toRolePage(@person)
+          @toPersonPage(@person)
 </script>
 
 

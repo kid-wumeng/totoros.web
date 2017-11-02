@@ -1,39 +1,26 @@
 <template lang="jade">
-  #roles-id(v-if="role")
-    detail-frame
-      .name(slot="name") {{ role.name }}
-      .desc(slot="desc") {{ desc }}
-      router-view(slot="main", :role="role")
-      side-bar(slot="side", :role="role")
+  #roles-detail(v-if="role")
+    frame(:role="role")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'detail-frame':   require('components/wiki/detail-frame')
-      'detail-tab-bar': require('components/wiki/detail-tab-bar')
-      'side-bar':       require('./side-bar')
+      'frame': require('./frame')
 
-    computed:
-      id:   -> @routeID
-      role: -> @state['role-detail'].role
-      desc: -> '角色'
+    data: ->
+      role: null
 
-    watch:
-      'id': -> @init()
+    created: ->
+      @listen('UPDATE_ROLE',  @updateRole)
 
     methods:
       init: ->
-        @dispatch('role-detail/init', @id)
+        @role = await api.call('role.get', @routeID)
 
-      change: (tab) ->
-        @toRolePage(@role, tab.value)
+      updateRole: (role) ->
+        if isSame(role, @role)
+          for key, value of role
+            @role[key] = value
 </script>
-
-
-<style lang="less" scoped>
-  #roles-id{
-    display: flex;
-  }
-</style>

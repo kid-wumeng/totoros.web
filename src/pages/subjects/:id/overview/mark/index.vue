@@ -1,7 +1,7 @@
 <template lang="jade">
   .mark(v-if="markSure")
     has-mark(v-if="mark", :mark="mark")
-    not-mark(v-else, :subject="subject")
+    not-mark(v-else :subject="subject")
 </template>
 
 
@@ -11,14 +11,26 @@
       'has-mark': require('./has-mark')
       'not-mark': require('./not-mark')
 
-    computed:
-      subject:  -> @state['subject-detail'].subject
-      mark:     -> @state['subject-detail'].mark
-      markSure: -> @state['subject-detail'].markSure
+    props:
+      'subject':
+        type: Object
+        required: true
+
+    data: ->
+      mark: null
+      markSure: false
+
+    created: ->
+      @listen('CREATE_MARK', @createMark)
+      @listen('UPDATE_MARK', @updateMark)
 
     methods:
       init: ->
-        @dispatch('subject-detail/markSure', @subject.id)
+        @mark = await api.call('mark.sure', @subject.id)
+        @markSure = true
+
+      createMark: (mark) -> if @isSame(mark.subject, @subject) then @mark = mark
+      updateMark: (mark) -> if @isSame(mark.subject, @subject) then @mark = mark
 </script>
 
 

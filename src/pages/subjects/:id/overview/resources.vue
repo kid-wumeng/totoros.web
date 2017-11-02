@@ -1,7 +1,7 @@
 <template lang="jade">
   detail-area.resources(v-if="resources.length" title="资源Links")
     .col.-left
-      a.link.-line(v-for="(resource, index) in resources", :key="index", :href="resource.url" target="_blank") {{ host(resource) }}
+      a.link(v-for="(resource, index) in resources", :key="index", :href="resource.url" target="_blank") {{ host(resource) }}
 </template>
 
 

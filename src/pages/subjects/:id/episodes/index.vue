@@ -18,12 +18,30 @@
         type: Object
         required: true
 
-    computed:
-      episodes: -> @state['subject-detail'].episodes
+    data: ->
+      episodes: []
+
+    created: ->
+      @listen('CREATE_EPISODE',  @createEpisode)
+      @listen('CREATE_EPISODES', @createEpisodes)
+      @listen('UPDATE_EPISODE',  @updateEpisode)
+      @listen('REMOVE_EPISODE',  @removeEpisode)
 
     methods:
       init: ->
-        @dispatch('subject-detail/get-episodes', @subject.id)
+        @episodes = await api.call('episode.getAll', {sid: @subject.id})
+
+      createEpisode: (episode) ->
+        if @isSame(episode.subject, @subject)
+          @episodes.unshift(episode)
+
+      createEpisodes: (episodes) ->
+        for episode in episodes
+          if @isSame(episode.subject, @subject)
+            @episodes.push(episode)
+
+      updateEpisode: (episode) -> @updateItem(@episodes, episode)
+      removeEpisode: (episode) -> @removeItem(@episodes, episode)
 </script>
 
 

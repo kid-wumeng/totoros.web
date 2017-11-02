@@ -1,9 +1,8 @@
 module.exports = install: (Vue) -> Vue.mixin({
-  
+
   # 基于keep-alive的组件只会调用一次created
   created: ->
     if(@init) then @init()
-
 
   # 基于keep-alive的组件在created后会调用一次，然后每次激活时都会调用
   # 其子组件在created后不会调用，只在每次激活时调用

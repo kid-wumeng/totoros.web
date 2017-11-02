@@ -132,30 +132,45 @@ module.exports = [{
     meta:
       path: ''
       keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
     component: -> System.import('pages/subjects/:id/overview')
   },{
     path: 'world'
     meta:
       path: 'world'
       keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
     component: -> System.import('pages/subjects/:id/world')
   },{
     path: 'casts'
     meta:
       path: 'casts'
       keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
     component: -> System.import('pages/subjects/:id/casts')
   },{
     path: 'staffs'
     meta:
       path: 'staffs'
       keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
     component: -> System.import('pages/subjects/:id/staffs')
   },{
     path: 'episodes'
     meta:
       path: 'episodes'
       keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
     component: -> System.import('pages/subjects/:id/episodes')
   }]
 

@@ -1,51 +1,26 @@
 <template lang="jade">
-  #persons-id(v-if="person")
-    detail-frame
-      .name(slot="name") {{ person.name }}
-      .desc(slot="desc") {{ desc }}
-      detail-tab-bar(
-        slot="tab-bar",
-        :tabs="tabs",
-        :active="$route.meta.path",
-        @change="change"
-      )
-      router-view(slot="main", :person="person")
-      side-bar(slot="side", :person="person")
+  #persons-detail(v-if="person")
+    frame(:person="person")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'detail-frame':   require('components/wiki/detail-frame')
-      'detail-tab-bar': require('components/wiki/detail-tab-bar')
-      'side-bar':       require('./side-bar')
+      'frame': require('./frame')
 
     data: ->
-      tabs: [{
-        label: 'Overview'
-        value: ''
-      }]
+      person: null
 
-    computed:
-      id:     -> @routeID
-      person: -> @state['person-detail'].person
-      desc:   -> '人物'
-
-    watch:
-      'id': -> @init()
+    created: ->
+      @listen('UPDATE_PERSON',  @updatePerson)
 
     methods:
       init: ->
-        @dispatch('person-detail/init', @id)
+        @person = await api.call('person.get', @routeID)
 
-      change: (tab) ->
-        @toRolePage(@person, tab.value)
+      updatePerson: (person) ->
+        if isSame(person, @person)
+          for key, value of person
+            @person[key] = value
 </script>
-
-
-<style lang="less" scoped>
-  #persons-id{
-    display: flex;
-  }
-</style>
