@@ -1,14 +1,12 @@
 <template lang="jade">
   .face
-    photo-frame
-      role-face(:role="role")
+    role-face(:role="role" frame)
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':  require('components/wiki/photo-frame')
       'role-face': require('components/image/role-face')
 
     props:
@@ -22,11 +20,9 @@
   .face{
     display: flex;
     justify-content: center;
-    .photo-frame{
+    .role-face{
       width: 160px;
-      .role-face{
-        cursor: auto;
-      }
+      cursor: auto;
     }
   }
 </style>

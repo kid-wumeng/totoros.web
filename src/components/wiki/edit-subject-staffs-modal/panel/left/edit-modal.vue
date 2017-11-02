@@ -12,7 +12,7 @@
       form-item(v-if="!staff" v-show="type === 'organization'" label="* 团体")
         edit-input(:value="organizationName" button="select" @select="selOrganization")
 
-      form-item(v-show="type === 'person'" label="JOBs")
+      form-item(v-show="type === 'person'" label="* JOBs")
         radio-grid(v-model="jobs")
           radio(
             v-for="job in model.assets.STAFF_PERSON_JOBS",

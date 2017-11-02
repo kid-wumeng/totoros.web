@@ -1,14 +1,12 @@
 <template lang="jade">
   .face
-    photo-frame
-      subject-face(:subject="subject")
+    subject-face(:subject="subject" frame)
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':  require('components/wiki/photo-frame')
       'subject-face': require('components/image/subject-face')
 
     props:
@@ -22,11 +20,9 @@
   .face{
     display: flex;
     justify-content: center;
-    .photo-frame{
+    .subject-face{
       width: 160px;
-      .subject-face{
-        cursor: auto;
-      }
+      cursor: auto;
     }
   }
 </style>

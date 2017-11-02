@@ -8,8 +8,7 @@
       .left
         text-area.intro(:text="subject.intro", :limit="120" indent)
       .right
-        photo-frame
-          subject-face(:subject="subject")
+        subject-face(:subject="subject" frame)
 </template>
 
 
@@ -19,7 +18,6 @@
       'rate':         require('components/@/rate')
       'favor-group':  require('components/@/favor-group')
       'text-area':    require('components/@/text-area')
-      'photo-frame':  require('components/wiki/photo-frame')
       'subject-face': require('components/image/subject-face')
 
     props:

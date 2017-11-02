@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.cdn-image(:url="url", :default-url="defaultUrl", :cover="cover", :style="style", @click.native="$emit('click')")
+  c-image.cdn-image(:url="url", :default-url="defaultUrl", :radius="radius", :circle="circle", :cover="cover", :style="style", @click.native="$emit('click')")
 </template>
 
 
@@ -20,6 +20,10 @@
         default: 0
       'square':
         type: Boolean
+      'radius':
+        type: Number
+      'circle':
+        type: Boolean
         default: false
       'cover':
         type: Boolean
@@ -36,7 +40,7 @@
         return "#{@cdn}/#{@defaultPath}"
 
       height: ->
-        if @square
+        if @square or @circle
           return @width
         else
           return parseInt(@width * @ratio)

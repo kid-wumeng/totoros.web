@@ -1,15 +1,12 @@
 <template lang="jade">
-  detail-area.resources(v-if="resources.length" title="资源Links")
-    .col.-left
-      a.link.-line(v-for="resource in resources", :href="resource.url" target="_blank") {{ host(resource) }}
+  .resources(v-if="resources.length" title="资源Links")
+    .resource.-more(v-for="(resource, index) in resources", :key="index")
+      a.link(:href="resource.url" target="_blank") {{ host(resource) }}
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    components:
-      'detail-area': require('components/wiki/detail-area')
-
     props:
       'subject':
         type: Object
@@ -27,11 +24,17 @@
 
 <style lang="less" scoped>
   .resources{
-    a{
-      display: block;
-      padding-bottom: 1px;
+    margin-top: 10px;
+    width: 160px;
+    .resource{
+      text-align: right;
+      margin-bottom: 0px;
       &:last-child{
-        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      a{
+        display: inline-block;
+        font-size: 15px;
       }
     }
   }

@@ -1,14 +1,12 @@
 <template lang="jade">
   .face
-    photo-frame
-      person-face(:person="person")
+    person-face(:person="person" frame)
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':  require('components/wiki/photo-frame')
       'person-face': require('components/image/person-face')
 
     props:
@@ -22,11 +20,9 @@
   .face{
     display: flex;
     justify-content: center;
-    .photo-frame{
+    .person-face{
       width: 160px;
-      .person-face{
-        cursor: auto;
-      }
+      cursor: auto;
     }
   }
 </style>

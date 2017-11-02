@@ -129,23 +129,33 @@ module.exports = [{
   component: -> System.import('pages/subjects/:id')
   children: [{
     path: ''
-    meta: path: ''
+    meta:
+      path: ''
+      keepAlive: true
     component: -> System.import('pages/subjects/:id/overview')
   },{
     path: 'world'
-    meta: path: 'world'
+    meta:
+      path: 'world'
+      keepAlive: true
     component: -> System.import('pages/subjects/:id/world')
   },{
     path: 'casts'
-    meta: path: 'casts'
+    meta:
+      path: 'casts'
+      keepAlive: true
     component: -> System.import('pages/subjects/:id/casts')
   },{
     path: 'staffs'
-    meta: path: 'staffs'
+    meta:
+      path: 'staffs'
+      keepAlive: true
     component: -> System.import('pages/subjects/:id/staffs')
   },{
     path: 'episodes'
-    meta: path: 'episodes'
+    meta:
+      path: 'episodes'
+      keepAlive: true
     component: -> System.import('pages/subjects/:id/episodes')
   }]
 

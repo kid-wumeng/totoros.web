@@ -1,31 +1,33 @@
 <template lang="jade">
   row.mark-item
     .left
-      photo-frame: subject-face(:subject="subject")
+      subject-face(:subject="subject" frame)
     .right
       row.-between.-center
-        row.left.-center
+        row.-center
           .name(@click="toSubjectPage(subject)") {{ name }}
           .desc {{ desc }}
-        row.right.-center
+        row.-center
           .date {{ model.date.display(mark.createDate) }}
           c-button.-gray(v-if="isMe(mark.user)" @click="update") 修改标记
       row
         mark-score(:mark="mark")
         text-area.comment(:text="comment")
-        mark-progress(v-if="mark.status === 'doing'", :mark="mark")
+        column.-right
+          mark-progress(v-if="mark.status === 'doing'", :mark="mark")
+          resources(:subject="mark.subject")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'photo-frame':   require('components/wiki/photo-frame')
       'subject-face':  require('components/image/subject-face')
       'mark-score':    require('components/user/mark-score')
       'mark-progress': require('components/user/mark-progress')
       'text-area':     require('components/@/text-area')
       'c-button':      require('components/@/button')
+      'resources':     require('./resources')
 
     props:
       'mark':
@@ -60,7 +62,7 @@
         margin-top: 8px;
       }
     }
-    .photo-frame{
+    .subject-face{
       width: 80px;
     }
     .name{

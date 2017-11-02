@@ -3,12 +3,14 @@
     .row.-left.-top
       .left
         face(:subject="subject")
+        resources(:subject="subject")
         c-base(:subject="subject")
       .right
         score-card(:subject="subject")
         c-mark(v-if="checkined", :subject="subject")
         intro(:subject="subject")
-        resources(:subject="subject")
+        casts(:subject="subject")
+        staffs(:subject="subject")
 </template>
 
 
@@ -21,6 +23,8 @@
       'c-mark':     require('./mark')
       'intro':      require('./intro')
       'resources':  require('./resources')
+      'casts':      require('./casts')
+      'staffs':     require('./staffs')
 
     props:
       'subject':
@@ -45,11 +49,11 @@
       >.right{
         width: 500px;
         flex: auto;
-        margin-left: 20px;
+        margin-left: 32px;
         display: flex;
         flex-direction: column;
         >*{
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           &:last-child{
             margin-bottom: 0;
           }

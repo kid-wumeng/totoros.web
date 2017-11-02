@@ -2,8 +2,7 @@
   .doing
     .label 在看
     gallery(:cols="10", :padding="5")
-      photo-frame(v-for="mark in marks", :key="mark.id")
-        subject-face(:subject="mark.subject" fixed-height)
+      subject-face(v-for="mark in marks", :key="mark.id", :subject="mark.subject" frame fixed-height)
 </template>
 
 
@@ -11,7 +10,6 @@
   module.exports =
     components:
       'gallery':      require('components/@/gallery')
-      'photo-frame':  require('components/wiki/photo-frame')
       'subject-face': require('components/image/subject-face')
 
     props:

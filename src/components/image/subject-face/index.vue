@@ -1,18 +1,25 @@
 <template lang="jade">
-  cdn-image.subject-face(:path="path", :ratio="ratio", :square="square" cover @click="click")
+.subject-face(@click="click")
+  photo-frame(v-if="frame")
+    cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius" cover)
+  cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius" cover)
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'cdn-image': require('components/image/cdn-image')
+      'photo-frame': require('components/@/photo-frame')
+      'cdn-image':   require('components/image/cdn-image')
 
     props:
       'subject':
         type: Object
         required: true
       'square':
+        type: Boolean
+        default: false
+      'frame':
         type: Boolean
         default: false
       'fixedHeight':
@@ -37,6 +44,8 @@
           else
             return 1
 
+      radius: -> if @square then 3 else 0
+
     methods:
       click: ->
         if @prevent
@@ -48,6 +57,7 @@
 
 <style lang="less" scoped>
   .subject-face{
+    box-sizing: border-box;
     cursor: pointer;
   }
 </style>

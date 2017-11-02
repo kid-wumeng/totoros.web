@@ -17,6 +17,7 @@
     display: inline;
     font-weight: 600;
     font-size: 14px;
+    word-break: break-all;
     cursor: pointer;
     &:hover{
       text-decoration: underline;

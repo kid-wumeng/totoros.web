@@ -1,7 +1,7 @@
 <template lang="jade">
   row.item.-top
     .left
-      role-face(:role="role" square border)
+      role-face(:role="role" square)
     .right
       row.-between
         row
@@ -46,7 +46,6 @@
     >.right{
       flex: auto;
       position: relative;
-      top: -3px;
     }
     .role-face{
       width: 72px;
@@ -58,7 +57,6 @@
       color: #A2AEBA;
     }
     .importance{
-      position: relative;
       margin-top: 2px;
       font-size: 12px;
       color: #A2AEBA;

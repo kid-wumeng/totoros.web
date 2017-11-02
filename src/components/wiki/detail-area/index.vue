@@ -22,13 +22,14 @@
   .detail-area{
     >.title{
       text-align: right;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
+      color: #707C88;
     }
     >.line{
       margin-top: 6px;
       margin-bottom: 6px;
-      color: #EEE;
+      color: #EAEDEF;
     }
   }
 </style>

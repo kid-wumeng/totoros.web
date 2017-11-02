@@ -55,7 +55,7 @@
       }]
 
     watch:
-      'id': -> @init()
+      id: -> @init()
 
     methods:
       init: ->
