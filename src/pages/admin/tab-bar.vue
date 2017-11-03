@@ -1,5 +1,5 @@
 <template lang="jade">
-  tab-bar.row.-left(:tabs="tabs", :active="$route.meta.path", @change="change")
+  tab-bar.admin-tab-bar.row.-left(:tabs="tabs", :active="$route.meta.path", @change="change")
 </template>
 
 
@@ -27,7 +27,7 @@
 
 
 <style lang="less">
-  .tab-bar{
+  .admin-tab-bar{
     margin-top: 12px;
     margin-bottom: 12px;
     .tab{

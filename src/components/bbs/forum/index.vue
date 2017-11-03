@@ -1,7 +1,7 @@
 <template lang="jade">
   .forum
     cdn-image(path="banner-test?123" cover)
-    tab-bar(:tabs="tabs", :active="path", @change="change")
+    tab-bar.forum-tab-bar(:tabs="tabs", :active="path", @change="change")
     .wrap
       forum-action-bar(:id="id")
       post-list(:id="id")
@@ -55,7 +55,7 @@
       width: 100%;
       height: 160px;
     }
-    .tab-bar{
+    .forum-tab-bar{
       position: relative;
       top: -20px;
       margin: 0 auto;

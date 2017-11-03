@@ -47,7 +47,7 @@
 <style lang="less" scoped>
   .mark-score{
     box-sizing: border-box;
-    width: 160px;
+    width: 140px;
     .item{
       height: 18px;
       line-height: 18px;
@@ -64,7 +64,6 @@
         border: 1px solid rgb(240, 240, 240);
         border-radius: 2px;
         .active{
-          width: 0;
           height: 10px;
           border-radius: 2px;
         }

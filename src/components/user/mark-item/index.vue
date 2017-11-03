@@ -89,14 +89,20 @@
       flex: none;
     }
     .comment{
-      flex: auto;
-      margin-left: 11px;
+      flex: none;
+      width: 480px;
+      margin-left: 12px;
       line-height: 19px;
       font-size: 13px;
     }
+
+    .column{
+      flex: auto;
+    }
     .mark-progress{
       flex: none;
-      margin-left: 80px;
+      box-sizing: border-box;
+      padding-left: 80px;
     }
   }
 </style>

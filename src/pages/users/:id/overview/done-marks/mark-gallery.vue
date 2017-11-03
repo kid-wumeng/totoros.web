@@ -1,7 +1,7 @@
 <template lang="jade">
-  .done
-    .label 看过
-    gallery(:cols="10", :padding="5")
+  .mark-gallery
+    .label {{ label }}
+    gallery(:cols="7", :padding="5")
       subject-face(v-for="mark in marks", :key="mark.id", :subject="mark.subject" frame fixed-height)
 </template>
 
@@ -16,16 +16,17 @@
       'user':
         type: Object
         required: true
-
-    computed:
-      marks: ->
-        return @user.marks.filter (mark) =>
-          mark.status is 'done' and @model.subject.isType(mark.subject.type, 'anime')
+      'label':
+        type: String
+        required: true
+      'marks':
+        type: Array
+        default: -> []
 </script>
 
 
 <style lang="less" scoped>
-  .done{
+  .mark-gallery{
     display: flex;
     align-items: center;
     .label{

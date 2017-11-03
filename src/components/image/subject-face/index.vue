@@ -1,8 +1,8 @@
 <template lang="jade">
 .subject-face(@click="click")
   photo-frame(v-if="frame")
-    cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius" cover)
-  cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius" cover)
+    cdn-image(:path="path", :ratio="ratio", :square="square" cover)
+  cdn-image(v-else :path="path", :ratio="ratio", :square="square" cover)
 </template>
 
 
@@ -43,8 +43,6 @@
             return @height / @width
           else
             return 1
-
-      radius: -> if @square then 3 else 0
 
     methods:
       click: ->

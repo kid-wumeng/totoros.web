@@ -1,7 +1,7 @@
 <template lang="jade">
   .search(@click="search")
     .icon.fa-search
-    span totoros成员 / ACG词条
+    span Totoros成员 / ACG词条
 </template>
 
 

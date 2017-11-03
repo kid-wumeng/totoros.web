@@ -1,5 +1,5 @@
 <template lang="jade">
-  .intro
+  .intro.box-frame(v-if="user.intro")
     markdown-area(:content="user.intro")
 </template>
 
@@ -18,5 +18,8 @@
 
 <style lang="less" scoped>
   .intro{
+    box-sizing: border-box;
+    padding: 24px 32px;
+    border-radius: 3px;
   }
 </style>

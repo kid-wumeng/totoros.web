@@ -45,6 +45,11 @@
 
     methods:
       change: (tab) ->
+        if @isMe(@user)
+          switch tab.value
+            when 'animes' then if @model.user.markStat(@user, 'doing', 'anime') then return @toUserPage(@user, 'animes?status=doing')
+            when 'comics' then if @model.user.markStat(@user, 'doing', 'comic') then return @toUserPage(@user, 'comics?status=doing')
+            when 'games'  then if @model.user.markStat(@user, 'doing', 'game')  then return @toUserPage(@user, 'games?status=doing')
         @toUserPage(@user, tab.value)
 </script>
 

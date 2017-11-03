@@ -3,7 +3,7 @@
     .left.row.-left
       input(v-focus="true" placeholder="Search" spellcheck="false" @input="changeQ")
       .types.row(v-if="!allowType")
-        .type(:class="{'-active': type === 'user'}"         @click="changeType('user')")         totoros成员
+        .type(:class="{'-active': type === 'user'}"         @click="changeType('user')")         Totoros成员
         .type(:class="{'-active': type === 'subject'}"      @click="changeType('subject')")      作品
         .type(:class="{'-active': type === 'role'}"         @click="changeType('role')")         角色
         .type(:class="{'-active': type === 'person'}"       @click="changeType('person')")       人物

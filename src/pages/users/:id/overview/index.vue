@@ -1,10 +1,13 @@
 <template lang="jade">
-  #user-detail-overview.row
-    .left
-      intro(:user="user")
-      anime-marks(:user="user")
-      comic-marks(:user="user")
-    .right
+  #user-detail-overview
+    row
+      .left
+        intro(:user="user")
+        done-animes(:user="user")
+        done-comics(:user="user")
+        done-games(:user="user")
+      .right
+        doing-marks(:user="user")
 </template>
 
 
@@ -12,8 +15,11 @@
   module.exports =
     components:
       'intro':       require('./intro')
-      'anime-marks': require('./anime-marks')
-      'comic-marks': require('./comic-marks')
+      'done-animes': require('./done-animes')
+      'done-comics': require('./done-comics')
+      'done-games':  require('./done-games')
+      'done-marks':  require('./done-marks')
+      'doing-marks': require('./doing-marks')
 
     props:
       'user':
@@ -24,8 +30,9 @@
 
 <style lang="less" scoped>
   #user-detail-overview{
+    padding-top: 20px;
     .left{
-      width: 75%;
+      width: 65%;
       >*{
         margin-bottom: 60px;
         &:last-child{
@@ -34,8 +41,10 @@
       }
     }
     .right{
+      box-sizing: border-box;
+      margin-left: 50px;
       >*{
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         &:last-child{
           margin-bottom: 0;
         }

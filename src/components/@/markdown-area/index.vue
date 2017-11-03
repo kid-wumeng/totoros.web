@@ -89,7 +89,7 @@
       when /^(organization)/.test(url) then return renderOrganizationCard(url, text)
 
     text ?= url
-    return "<a href='#{url}'>#{text}</a>"
+    return "<a href='#{url}' target='_blank'>#{text}</a>"
 
 
   renderer.image = (url, title, text) ->
@@ -152,7 +152,8 @@
     }
 
     a{
-      color: #2F9C95;
+      font-weight: 600;
+      color: #3db8c1;
       &:hover{
         text-decoration: underline;
       }

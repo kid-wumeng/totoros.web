@@ -1,7 +1,7 @@
 <template lang="jade">
   .resources(v-if="resources.length" title="资源Links")
     .resource.-more(v-for="(resource, index) in resources", :key="index")
-      a.link(:href="resource.url" target="_blank") {{ host(resource) }}
+      a.link.-line(:href="resource.url" target="_blank") {{ host(resource) }}
 </template>
 
 
@@ -28,13 +28,9 @@
     width: 160px;
     .resource{
       text-align: right;
-      margin-bottom: 0px;
-      &:last-child{
-        margin-bottom: 0;
-      }
       a{
         display: inline-block;
-        font-size: 15px;
+        font-size: 13px;
       }
     }
   }

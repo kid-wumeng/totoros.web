@@ -1,7 +1,7 @@
 <template lang="jade">
   .mark-type-radio-bar
     radio-bar(:value="type" @change="change")
-      radio(v-for="radio in radios", :key="radio.value", :label="radio.label", :value="radio.value")
+      radio(v-for="(radio, index) in radios", :key="index", :label="radio.label", :value="radio.value")
 </template>
 
 
@@ -31,7 +31,7 @@
       radios: ->
         count  = @model.user.markStat(@user, null, @main)
         radios = [{
-          label: "All #{@main}s #{count}"
+          label: "所有标记"
           value: ''
           count: count
         }]
@@ -39,7 +39,7 @@
         types = @model.subject.unfoldType(@main)
 
         for type in types
-          sub   = @model.subject.displayType(type)
+          sub   = @model.subject.displayTypes(type)[1]
           count = @model.user.markStat(@user, null, type)
           radios.push({
             label: "#{sub} #{count}"
@@ -51,7 +51,7 @@
 
     methods:
       change: (type) ->
-        @$router.replace({
+        @$router.push({
           query:
             type: if type then type else undefined
             status: undefined
@@ -61,9 +61,29 @@
 
 <style lang="less" scoped>
   .mark-type-radio-bar{
+    margin-left: 7px;
+    .radio-bar{
+      background-color: transparent;
+    }
     .radio{
-      padding: 0 20px;
-      height: 30px;
+      padding: 0 16px;
+      height: 26px;
+      font-weight: 500;
+      font-size: 13px;
+      color: #7ec2f3;
+      border-color: #7ec2f3 !important;
+      box-shadow: none !important;
+    }
+    .radio:first-child{
+      border-radius: 2px 0 0 2px !important;
+    }
+    .radio:last-child{
+      border-radius: 0 2px 2px 0 !important;
+    }
+    .radio.-active{
+      font-weight: 600;
+      color: #FFF;
+      background-color: #7ec2f3;
     }
   }
 </style>

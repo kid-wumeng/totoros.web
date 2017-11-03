@@ -74,6 +74,21 @@
 <style lang="less">
   @import '~assets/widgets';
 
+  @font-face{
+    font-family: "Lato";
+    src: url(http://oy0aiwj7c.bkt.clouddn.com/assets/Lato-Regular.ttf?2017.11.03);
+  }
+  @font-face{
+    font-family: "Lato";
+    src: url(http://oy0aiwj7c.bkt.clouddn.com/assets/Lato-Semibold.ttf?2017.11.03);
+    font-weight: 500;
+  }
+  @font-face{
+    font-family: "Lato";
+    src: url(http://oy0aiwj7c.bkt.clouddn.com/assets/Lato-Bold.ttf?2017.11.03);
+    font-weight: 600;
+  }
+
   *{
     margin: 0;
     border: 0;

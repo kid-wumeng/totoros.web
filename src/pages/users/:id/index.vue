@@ -10,16 +10,13 @@
     components:
       'c-header': require('./header')
 
-    computed:
-      id:   -> @routeID
-      user: -> @state['user-detail'].user
-
-    created: ->
-      @init()
+    data: ->
+      user: null
 
     methods:
       init: ->
-        @dispatch('user-detail/init', @id)
+        @user = await api.call('user.get', @routeID)
+        @user.marks ?= []
 
       change: (tab) ->
         @toUserPage(@user, tab.value)
@@ -29,7 +26,7 @@
 <style lang="less" scoped>
   #users-detail{
     .main{
-      margin: -40px auto 0;
+      margin: -55px auto 0;
       width: 1000px;
     }
   }

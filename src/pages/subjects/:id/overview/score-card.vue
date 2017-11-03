@@ -36,10 +36,10 @@
   .score-card{
     align-self: flex-start;
     flex: none;
-    padding: 8px 12px;
-    background-color: rgba(250, 250, 250, 0.93);
-    border: 1px solid #F2F2F2;
-    border-radius: 1px;
+    padding: 10px 14px;
+    background-color: rgba(250, 250, 250, 0.7);
+    border: 1px solid #FFF;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
     .left{
       padding-right: 12px;
       border-right: 1px solid #EEE;

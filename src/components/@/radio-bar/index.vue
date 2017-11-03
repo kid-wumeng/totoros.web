@@ -21,9 +21,11 @@
         @setRadioBorder(radio, i)
         radio.$on('change', @change)
 
-    watch:
-      'value': ->
-        @setRadioActives()
+    updated: ->
+      @setRadioActives()
+      for radio, i in @$children
+        @setRadioBorder(radio, i)
+        radio.$on('change', @change)
 
     methods:
       setRadioActives: (radio) ->

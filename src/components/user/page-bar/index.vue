@@ -29,7 +29,7 @@
 
     methods:
       change: (page) ->
-        @$router.replace({
+        @$router.push({
           query: @$route.query
           hash: "##{page}"
         })

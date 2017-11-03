@@ -31,15 +31,6 @@ module.exports =
       state.game_marks = game_marks
 
   actions:
-    'user-detail/init': ({commit, dispatch}, id) ->
-      commit('user-detail/SET_USER', null)
-      commit('user-detail/SET_ANIME_MARKS', [])
-      dispatch('user-detail/get-user', id)
-
-    'user-detail/get-user': ({commit}, id) ->
-      user = await api.call('user.get', id)
-      commit('user-detail/SET_USER', user)
-
     'user-detail/get-marks': ({commit}, {id, type, status, page=1}) ->
       return new Promise (resolve) ->
         result = await api.call('mark.getAll', {

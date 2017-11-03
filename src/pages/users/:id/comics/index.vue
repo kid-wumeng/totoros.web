@@ -21,6 +21,9 @@
         type: Object
         required: true
 
+    data: ->
+      marks: []
+
     computed:
       type: ->
         if @$route.query.type
@@ -29,32 +32,29 @@
           return 'comic'
 
       status: -> @$route.query.status
-      page:   -> @routePage
-      marks:  -> @state['user-detail'].comic_marks
-
-    created: ->
-      @init()
 
     watch:
-      'type':   -> @init()
-      'status': -> @init()
-      'page':   -> @init()
+      'type':      -> @init()
+      'status':    -> @init()
+      'routePage': -> @init()
 
     methods:
       init: ->
-        @dispatch('user-detail/get-comic-marks', {
-          id:     @user.id
-          type:   @type
+        result = await api.call('mark.getAll', {
+          uid:    @user.id
+          types:  @model.subject.unfoldType(@type)
           status: @status
-          page:   @page
+          page:   @routePage
+          sort:   '-average'
         })
+        @marks = result.marks
 </script>
 
 
 <style lang="less" scoped>
   #user-detail-comics{
     .mark-list{
-      margin-top: 20px;
+      margin-top: 24px;
     }
   }
 </style>

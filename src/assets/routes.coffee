@@ -48,42 +48,63 @@ module.exports = [{
     meta:
       path: ''
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/overview')
   },{
     path: 'timeline'
     meta:
       path: 'timeline'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/timeline')
   },{
     path: 'blogs'
     meta:
       path: 'blogs'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/blogs')
   },{
     path: 'paints'
     meta:
       path: 'paints'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/paints')
   },{
     path: 'animes'
     meta:
       path: 'animes'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/animes')
   },{
     path: 'comics'
     meta:
       path: 'comics'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/comics')
   },{
     path: 'games'
     meta:
       path: 'games'
       keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
     component: -> System.import('pages/users/:id/games')
   }]
 
@@ -181,7 +202,12 @@ module.exports = [{
   component: -> System.import('pages/roles/:id')
   children: [{
     path: ''
-    meta: path: ''
+    meta:
+      path: ''
+      keepAlive: true
+      key:
+        prefix: 'role-detail'
+        params: ['id']
     component: -> System.import('pages/roles/:id/overview')
   }]
 
@@ -192,7 +218,12 @@ module.exports = [{
   component: -> System.import('pages/persons/:id')
   children: [{
     path: ''
-    meta: path: ''
+    meta:
+      path: ''
+      keepAlive: true
+      key:
+        prefix: 'person-detail'
+        params: ['id']
     component: -> System.import('pages/persons/:id/overview')
   }]
 
@@ -203,7 +234,12 @@ module.exports = [{
   component: -> System.import('pages/organizations/:id')
   children: [{
     path: ''
-    meta: path: ''
+    meta:
+      path: ''
+      keepAlive: true
+      key:
+        prefix: 'organization-detail'
+        params: ['id']
     component: -> System.import('pages/organizations/:id/overview')
   }]
 

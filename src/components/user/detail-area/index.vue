@@ -1,8 +1,9 @@
 <template lang="jade">
   .detail-area
-    .row.-left
+    row.-center
       .title {{ title }}
-      .tab.row.-left(v-for="(tab, index) in tabs", :key="index" @click="tab.click()") {{ tab.label }} {{ tab.count }}
+      sep-row(sep="/", :padding="6")
+        .tab(v-for="(tab, index) in tabs", :key="index" @click="tab.click()") {{ tab.label }}
     c-line
     slot
 </template>
@@ -11,7 +12,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-line': require('components/@/line')
+      'sep-row': require('components/@/sep-row')
+      'c-line':  require('components/@/line')
 
     props:
       'title':
@@ -29,17 +31,21 @@
       font-weight: 600;
       font-size: 15px;
     }
-    .tab{
-      margin-left: 12px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 13px;
-      color: #8B9FC9;
+    .sep-row{
+      margin-left: 14px;
+      .tab{
+        font-weight: 500;
+        font-size: 12px;
+        color: #707C88;
+        cursor: pointer;
+        &:hover{
+        }
+      }
     }
     .line{
       margin-top: 8px;
       margin-bottom: 12px;
-      color: #EEE;
+      color: rgba(245, 245, 245, 1);
     }
   }
 </style>
