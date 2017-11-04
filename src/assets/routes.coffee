@@ -110,6 +110,18 @@ module.exports = [{
 
 },{
 
+  # 讨论版
+  path: '/clubs'
+  component: -> System.import('pages/clubs')
+  children: [{
+    path: ':id'
+    meta:
+      keepAlive: true
+    component: -> System.import('pages/clubs/:id')
+  }]
+
+},{
+
   # 讨论版/acg
   path: '/acg'
   component: -> System.import('pages/acg')

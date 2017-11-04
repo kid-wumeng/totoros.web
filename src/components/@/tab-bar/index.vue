@@ -13,7 +13,7 @@
         type: Array
         required: true
       'active':
-        type: String
+        type: null
         required: true
 
     methods:

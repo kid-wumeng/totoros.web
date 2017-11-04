@@ -20,5 +20,5 @@ module.exports =
       dispatch('admin-clubs/loadClubs')
 
     'admin-clubs/loadClubs': ({commit}) ->
-      result = await api.call('club.getAll')
-      commit('admin-clubs/SET_ITEMS', result.clubs)
+      clubs = await api.call('club.getAll')
+      commit('admin-clubs/SET_ITEMS', clubs)

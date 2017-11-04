@@ -7,7 +7,7 @@
         .open(:class="{'-open': club.open}") {{ club.open ? '开放ing' : '未开放' }}
         .actions
           c-button(@click="update(club)") 修改
-          c-button(@click="uploadBanner(club)") 上传题图
+          c-button(@click="uploadBanner(club)") 上传BANNER
 </template>
 
 

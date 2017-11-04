@@ -1,7 +1,7 @@
 <template lang="jade">
   .panel
-    h1 创建论坛
-    c-input(v-model="name" placeholder="论坛的名字" autofocus)
+    h1 创建社团
+    c-input(v-model="name" placeholder="社团的名字" autofocus)
     c-button(@click="submit") 确认提交
 </template>
 
@@ -26,10 +26,10 @@
 
       check: ->
         if(!@name)
-          throw '论坛名字还没填呢 ~'
+          throw '社团名字还没填呢 ~'
 
       done: (club) ->
-        @notify('done', '论坛创建成功')
+        @notify('done', '社团创建成功')
         @commit('create-club-modal/HIDE')
         @commit('CREATE_CLUB', club)
 </script>

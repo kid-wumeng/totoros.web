@@ -2,17 +2,15 @@
   .post-item.row.-left
     .left
       user-face(:user="post.user")
-    .right.row
-      .col.-left
+    .right
+      column.-between
         .title(@click="toPostPage(post)") {{ post.title }}
-        .row.-bottom
-          .left.row
+        row.-between.-center
+          row.left.-center
             user-name(:user="post.user")
             .date {{ model.date.display(post.createDate) }}
-          .right.row
-            .hint {{ 18 }} comments
-            .hint /
-            .hint last from
+          row.right.-center
+            .hint Last by
             user-name(:user="post.user")
             .date {{ model.date.display(post.createDate) }}
 </template>
@@ -23,6 +21,7 @@
     components:
       'user-face': require('components/image/user-face')
       'user-name': require('components/user/user-name')
+      'c-button':  require('components/@/button')
 
     props:
       'post':
@@ -38,23 +37,19 @@
     align-items: stretch;
     >.right{
       flex: auto;
-      align-items: stretch;
-      >.col{
-        flex: auto;
-        justify-content: space-between;
-        >.row{
-          align-self: stretch;
-          flex: auto;
-        }
+      .column{
+        height: 100%;
       }
     }
     .user-face{
-      width: 40px;
+      width: 42px;
       margin-right: 10px;
     }
     .title{
+      align-self: flex-start;
       font-weight: 600;
       font-size: 14px;
+      color: #707C88;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -64,23 +59,22 @@
       margin-right: 6px;
       font-weight: 600;
       font-size: 12px;
-      color: #A2AEBA;
     }
     .date{
       margin-right: 6px;
       font-size: 12px;
-      color: #CCC;
+      color: #BBB;
     }
     .hint{
       margin-right: 6px;
       font-size: 12px;
-      color: #CCC;
+      color: #BBB;
     }
     .comment-count{
       padding: 2px 6px;
       font-weight: 600;
-      font-size: 13px;
-      color: #AAA;
+      font-size: 12px;
+      color: #BBB;
       border-radius: 100px;
       background-color: #F2F2F2;
     }

@@ -1,6 +1,6 @@
 <template lang="jade">
   .panel
-    form-item(label="* 论坛名")
+    form-item(label="* 社团名")
       edit-input(:value="name" @change="changeName")
 
     form-item(label="* 是否开放")

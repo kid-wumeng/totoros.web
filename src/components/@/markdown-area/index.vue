@@ -133,7 +133,7 @@
     word-break: break-all;
 
     *{
-      font-size: 13px;
+      font-size: 14px;
       color: #111;
       text-align: justify;
     }
@@ -143,7 +143,7 @@
     }
 
     p{
-      line-height: 21px;
+      line-height: 22px;
     }
 
     em{

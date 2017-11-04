@@ -22,8 +22,8 @@
     flex: none;
     box-sizing: border-box;
     display: inline-block;
-    height: 30px;
-    line-height: 30px;
+    height: 32px;
+    line-height: 32px;
     padding: 0 12px;
     font-weight: 600;
     font-size: 13px;
@@ -38,14 +38,14 @@
     }
   }
   .button.-gray{
-    line-height: 29px;
+    line-height: 31px;
     color: #707C88;
     background-image: none;
     border: 1px solid #F2F2F2;
   }
   .button.-disabled{
     padding: 0 11px;
-    line-height: 29px;
+    line-height: 31px;
     color: #DDD;
     background-image: none;
     border: 1px dashed #E2E2E2;

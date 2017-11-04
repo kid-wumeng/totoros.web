@@ -50,14 +50,14 @@
 
     computed:
       key: ->
-        suffex = @$route?.meta?.key?.suffex ? ''
+        prefix = @$route?.meta?.key?.prefix ? ''
         params = @$route?.meta?.key?.params ? []
         query  = @$route?.meta?.key?.query  ? []
 
         params = params.map (name) => @$route.params?[name] ? ''
         query  = query.map  (name) => @$route.query?[name]  ? ''
 
-        key = suffex + params.join('') + query.join('')
+        key = prefix + params.join('') + query.join('')
         return if key then key else null
 
     watch:

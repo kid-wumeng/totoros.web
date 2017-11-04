@@ -130,8 +130,7 @@ exports.replaceOrganizationPage = (organization) ->
 
 
 exports.toClubPage = (club) ->
-  switch club.id
-    when 1 then @$router.push("/acg")
+  @$router.push("/clubs/#{club.id}")
 
 
 exports.toPostPage = (post) ->

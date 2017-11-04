@@ -29,4 +29,6 @@ module.exports =
     CREATE_MARK: (state, mark) -> bus.$emit('CREATE_MARK', mark)
     UPDATE_MARK: (state, mark) -> bus.$emit('UPDATE_MARK', mark)
 
+    CREATE_POST: (state, post) -> bus.$emit('CREATE_POST', post)
+
     CREATE_COMMENT: (state, comment) -> bus.$emit('CREATE_COMMENT', comment)

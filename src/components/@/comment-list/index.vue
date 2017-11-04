@@ -35,9 +35,6 @@
     @padding: 12px;
     @border: 1px solid #F2F2F2;
     padding: @padding;
-    border: 1px solid #FFF;
-    border-radius: 3px;
-    box-shadow: 0 0 6px -3px #000;
     .comment-item{
       margin-bottom:  @padding;
       border-bottom:  @border;

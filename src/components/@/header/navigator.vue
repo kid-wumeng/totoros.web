@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
-    router-link(to="/")     TIME-LINE
-    router-link(to="/acg")  讨论版
-    router-link(to="/wiki") 维基计划
+    router-link(to="/")        TIME-LINE
+    router-link(to="/clubs/1") 讨论版
+    router-link(to="/wiki")    维基计划
 </template>
 
 

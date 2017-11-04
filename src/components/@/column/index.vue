@@ -20,5 +20,8 @@
     &.-right{
       align-items: flex-end;
     }
+    &.-between{
+      justify-content: space-between;
+    }
   }
 </style>

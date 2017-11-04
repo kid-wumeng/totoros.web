@@ -1,18 +1,30 @@
 <template lang="jade">
-  .post-list
-    post-item(v-for="post in posts", :key="post.id", :post="post")
+  post-list(:posts="posts")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'post-item': require('components/bbs/post-item')
+      'post-list': require('components/bbs/post-list')
 
     props:
-      'posts':
-        type: Array
-        default: -> []
+      'club':
+        type: Object
+
+    data: ->
+      posts: []
+      total: 0
+
+    methods:
+      init: ->
+        if @club
+          query = {cid: @club.id}
+        else
+          query = {}
+        result = await @api.call('post.getAll', query)
+        @posts = result.posts
+        @total = result.total
 </script>
 
 

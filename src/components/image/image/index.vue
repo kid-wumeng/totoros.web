@@ -43,6 +43,5 @@
     overflow: hidden;
   }
   .image.default{
-    border: 1px solid #EEF3F8;
   }
 </style>

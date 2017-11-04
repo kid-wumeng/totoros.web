@@ -13,6 +13,7 @@ module.exports = new Vuex.Store({
     'admin-sync':                   require('./admin-sync')
     'bus':                          require('./bus')
     'club-banner-modal':            require('./club-banner-modal')
+    'club-face-modal':              require('./club-face-modal')
     'confirm':                      require('./confirm')
     'create-club-modal':            require('./create-club-modal')
     'create-organization-modal':    require('./create-organization-modal')

@@ -3,7 +3,7 @@
     .left
       h1 CLUBS
     .right
-      c-button(@click="create") 创建论坛
+      c-button(@click="create") 创建社团
 </template>
 
 
