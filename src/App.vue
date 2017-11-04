@@ -46,19 +46,18 @@
       'edit-role-base-modal':         require('components/wiki/edit-role-base-modal')
       'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
       'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
-      'wiki-face-modal':       require('components/wiki/wiki-face-modal')
+      'wiki-face-modal':              require('components/wiki/wiki-face-modal')
 
     computed:
       key: ->
         suffex = @$route?.meta?.key?.suffex ? ''
         params = @$route?.meta?.key?.params ? []
         query  = @$route?.meta?.key?.query  ? []
-        hash   = @$route?.meta?.key?.hash   ? ''
 
         params = params.map (name) => @$route.params?[name] ? ''
         query  = query.map  (name) => @$route.query?[name]  ? ''
 
-        key = suffex + params.join('') + query.join('') + hash
+        key = suffex + params.join('') + query.join('')
         return if key then key else null
 
     watch:
@@ -72,6 +71,7 @@
 
 
 <style lang="less">
+
   @import '~assets/widgets';
 
   @font-face{

@@ -1,5 +1,5 @@
 <template lang="jade">
-  #admin-forums
+  #admin-clubs
     action-bar
     progress-modal
 </template>
@@ -14,6 +14,6 @@
 
 
 <style lang="less" scoped>
-  #admin-forums{
+  #admin-clubs{
   }
 </style>

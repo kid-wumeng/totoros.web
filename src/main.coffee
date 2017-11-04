@@ -82,7 +82,7 @@ Vue.use({
     Vue.prototype.replacePersonPage       = methods.replacePersonPage
     Vue.prototype.toOrganizationPage      = methods.toOrganizationPage
     Vue.prototype.replaceOrganizationPage = methods.replaceOrganizationPage
-    Vue.prototype.toForumPage             = methods.toForumPage
+    Vue.prototype.toClubPage             = methods.toClubPage
     Vue.prototype.toPostPage              = methods.toPostPage
     Vue.prototype.toPicturePage           = methods.toPicturePage
     Vue.directive('focus', directives.focus)

@@ -14,7 +14,7 @@
         required: true
       'defaultUrl':
         type: String
-        required: true
+        default: ''
       'radius':
         type: Number
         default: 0

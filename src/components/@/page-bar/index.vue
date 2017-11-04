@@ -2,7 +2,7 @@
   .page-bar(v-if="maxPage > 1")
     text-button.prev(
       v-show="currentPage > 1",
-      text="Prev",
+      text="上一页",
       @click.native="prev"
     )
     page-button(
@@ -14,12 +14,12 @@
     )
     text-button.next(
       v-show="currentPage < maxPage",
-      text="Next",
+      text="下一页",
       @click.native="next"
     )
     text-button.last(
       v-show="currentPage < maxPage",
-      text="Last",
+      text=">> 最后",
       @click.native="last"
     )
 </template>

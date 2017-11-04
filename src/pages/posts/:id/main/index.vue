@@ -1,15 +1,13 @@
 <template lang="jade">
-  .main.row.-left(v-if="routePage === 1")
-    .left
-      user-face(:user="post.user")
-    .right
-      .row
-        .left.row.-left
-          user-name(:user="post.user")
-          .date {{ model.date.display(post.createDate) }}
-        .right
-          action-bar(:post="post")
-      markdown-area(:content="post.content")
+  .main.box-frame.-outset(v-if="routePage === 1")
+    row.-between.-center
+      row.left
+        user-face(:user="post.user")
+        user-name(:user="post.user")
+        .date {{ model.date.display(post.createDate) }}
+      .right
+        action-bar(:post="post")
+    markdown-area(:content="post.content")
 </template>
 
 
@@ -33,10 +31,7 @@
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
-    padding: 12px;
-    border: 1px solid #FFF;
-    border-radius: 3px;
-    box-shadow: 0 0 6px -3px #000;
+    padding: 20px;
     >.right{
       flex: auto;
     }

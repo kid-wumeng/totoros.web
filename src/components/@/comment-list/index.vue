@@ -20,7 +20,7 @@
         default: 1
       'size':
         type: Number
-        default: 30
+        default: 50
       'total':
         type: Number
         default: 0

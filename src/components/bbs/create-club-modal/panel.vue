@@ -19,8 +19,8 @@
       submit: ->
         try
           @check()
-          forum = await @api.call('forum.create', {name: @name})
-          @done(forum)
+          club = await @api.call('club.create', {name: @name})
+          @done(club)
         catch error
           @notify('fail', error)
 
@@ -28,10 +28,10 @@
         if(!@name)
           throw '论坛名字还没填呢 ~'
 
-      done: (forum) ->
+      done: (club) ->
         @notify('done', '论坛创建成功')
-        @commit('create-forum-modal/HIDE')
-        @commit('CREATE_FORUM', forum)
+        @commit('create-club-modal/HIDE')
+        @commit('CREATE_CLUB', club)
 </script>
 
 

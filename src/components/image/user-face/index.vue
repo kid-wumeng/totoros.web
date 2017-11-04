@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.user-face(:path="path", square cover @click="click")
+  cdn-image.user-face(:path="path", square :radius="3" cover @click="click")
 </template>
 
 
@@ -32,7 +32,6 @@
 
 <style lang="less" scoped>
   .user-face{
-    border-radius: 3px;
     cursor: pointer;
   }
 </style>

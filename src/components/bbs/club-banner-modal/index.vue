@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.create-forum-modal(v-if="state['create-forum-modal'].open", @close="commit('create-forum-modal/HIDE')")
+  modal.club-banner-modal(v-if="state['club-banner-modal'].open" @close="commit('club-banner-modal/HIDE')")
     panel
 </template>
 

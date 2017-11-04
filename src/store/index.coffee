@@ -9,11 +9,12 @@ module.exports = new Vuex.Store({
 
   modules:
     'account':                      require('./account')
-    'admin-forums':                 require('./admin-forums')
+    'admin-clubs':                  require('./admin-clubs')
     'admin-sync':                   require('./admin-sync')
     'bus':                          require('./bus')
+    'club-banner-modal':            require('./club-banner-modal')
     'confirm':                      require('./confirm')
-    'create-forum-modal':           require('./create-forum-modal')
+    'create-club-modal':            require('./create-club-modal')
     'create-organization-modal':    require('./create-organization-modal')
     'create-person-modal':          require('./create-person-modal')
     'create-role-modal':            require('./create-role-modal')
@@ -39,7 +40,7 @@ module.exports = new Vuex.Store({
     'setting':                      require('./setting')
     'toast':                        require('./toast')
     'totoro':                       require('./totoro')
-    'update-forum-modal':           require('./update-forum-modal')
+    'update-club-modal':            require('./update-club-modal')
     'user-banner-modal':            require('./user-banner-modal')
     'user-detail':                  require('./user-detail')
     'user-face-modal':              require('./user-face-modal')

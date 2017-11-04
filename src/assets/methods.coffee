@@ -129,8 +129,8 @@ exports.replaceOrganizationPage = (organization) ->
   @$router.replace("/organizations/#{organization.id}")
 
 
-exports.toForumPage = (forum) ->
-  switch forum.id
+exports.toClubPage = (club) ->
+  switch club.id
     when 1 then @$router.push("/acg")
 
 

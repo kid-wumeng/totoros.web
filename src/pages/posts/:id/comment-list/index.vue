@@ -2,7 +2,7 @@
   comment-list(
     :comments="comments",
     :page="routePage",
-    :total="post.commentCount",
+    :total="total",
     @change-page="changePage"
   )
 </template>
@@ -17,13 +17,33 @@
       'post':
         type: Object
         required: true
-      'comments':
-        type: Array
-        default: -> []
+
+    data: ->
+      comments: []
+      total: 0
+
+    created: ->
+      @listen('CREATE_COMMENT', @createComment)
+
+    watch:
+      'routePage': -> @init()
 
     methods:
+      init: ->
+        result = await api.call('comment.getAll', {
+          at:   'post'
+          id:   @routeID
+          page: @routePage
+        })
+        @comments = result.comments
+        @total    = result.total
+
       changePage: (page) ->
         @$router.push("##{page}")
+
+      createComment: (comment) ->
+        if isSame(comment.post, @post)
+          @comments.push(comment)
 </script>
 
 

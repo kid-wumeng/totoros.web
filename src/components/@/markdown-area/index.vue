@@ -134,7 +134,8 @@
 
     *{
       font-size: 13px;
-      color: #273340;
+      color: #111;
+      text-align: justify;
     }
 
     >*:not(:last-child){
@@ -142,7 +143,7 @@
     }
 
     p{
-      line-height: 20px;
+      line-height: 21px;
     }
 
     em{

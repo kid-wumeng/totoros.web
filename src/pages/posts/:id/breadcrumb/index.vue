@@ -1,8 +1,8 @@
 <template lang="jade">
-  .breadcrumb.row.-left(v-if="login")
-    .forum(@click="toForumPage(forum)") {{ forum.name }}
-    .sep /
-    .title {{ post.title }}
+  .breadcrumb(v-if="login")
+    span.club(@click="toClubPage(club)") {{ club.name }}
+    span.sep /
+    span.title {{ post.title }}
 </template>
 
 
@@ -14,15 +14,15 @@
         required: true
 
     computed:
-      forum: -> @post.forum
+      club: -> @post.club
 </script>
 
 
 <style lang="less" scoped>
   .breadcrumb{
-    .forum{
+    .club{
       font-weight: 600;
-      font-size: 13px;
+      font-size: 14px;
       color: #A2AEBA;
       cursor: pointer;
       &:hover{

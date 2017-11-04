@@ -4,8 +4,8 @@ module.exports =
     open: false
 
   mutations:
-    'create-forum-modal/SHOW': (state) ->
+    'create-club-modal/SHOW': (state) ->
       state.open = true
 
-    'create-forum-modal/HIDE': (state) ->
+    'create-club-modal/HIDE': (state) ->
       state.open = false

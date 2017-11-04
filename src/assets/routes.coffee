@@ -137,6 +137,11 @@ module.exports = [{
   # 帖子
   path: '/posts/:id'
   component: -> System.import('pages/posts/:id')
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'post-detail'
+      params: ['id']
 
 },{
   # 维基
@@ -247,12 +252,12 @@ module.exports = [{
 
   # 管理
   path: '/admin'
-  redirect: path: '/admin/forums'
+  redirect: path: '/admin/clubs'
   component: -> System.import('pages/admin')
   children: [{
-    path: 'forums'
-    meta: path: 'forums'
-    component: -> System.import('pages/admin/forums')
+    path: 'clubs'
+    meta: path: 'clubs'
+    component: -> System.import('pages/admin/clubs')
   },{
     path: 'feedbacks'
     meta: path: 'feedbacks'

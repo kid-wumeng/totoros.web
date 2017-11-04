@@ -1,5 +1,5 @@
 <template lang="jade">
-  modal.update-forum-modal(v-if="state['update-forum-modal'].open" @close="commit('update-forum-modal/HIDE')")
+  modal.update-club-modal(v-if="state['update-club-modal'].open" @close="commit('update-club-modal/HIDE')")
     panel
 </template>
 
@@ -13,6 +13,6 @@
 
 
 <style lang="less" scoped>
-  .update-forum-modal{
+  .update-club-modal{
   }
 </style>

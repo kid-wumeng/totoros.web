@@ -3,9 +3,12 @@
     .left
       user-face(:user="comment.user")
     .right
-      .row.-left
-        user-name(:user="comment.user")
-        .date {{ model.date.display(comment.createDate) }}
+      row.-between.-center
+        row.left.-center
+          user-name(:user="comment.user")
+          .motto {{ comment.user.motto }}
+        .right
+          .date {{ model.date.display(comment.createDate) }}
       markdown-area(:content="comment.content")
 </template>
 
@@ -34,11 +37,16 @@
     }
     .user-face{
       width: 48px;
-      margin-right: 11px;
+      margin-right: 9px;
     }
     .user-name{
       margin-right: 6px;
       font-weight: 600;
+      font-size: 13px;
+      color: #445669;
+    }
+    .motto{
+      margin-right: 6px;
       font-size: 12px;
       color: #A2AEBA;
     }

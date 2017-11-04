@@ -16,7 +16,7 @@
       'input-content': require('components/@/input-content')
 
     data: ->
-      forum: @state['post-modal'].forum
+      club: @state['post-modal'].club
       post:  @state['post-modal'].post
       id:    @state['post-modal'].post?.id ? 0
       title: @state['post-modal'].post?.title ? ''
@@ -44,7 +44,7 @@
             @notify('done', '修改成功')
             @commit('UPDATE_POST', post)
           else
-            post = await api.call('post.create', @forum.id, data)
+            post = await api.call('post.create', @club.id, data)
             @notify('done', '发布成功')
             @commit('CREATE_POST', post)
 

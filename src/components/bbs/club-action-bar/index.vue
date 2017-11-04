@@ -1,5 +1,5 @@
 <template lang="jade">
-  .forum-action-bar.row
+  .club-action-bar.row
     .left
     .right
       c-button(@click="publish") 发布帖子
@@ -19,14 +19,14 @@
     methods:
       publish: ->
         @dispatch('post-modal/show', {
-          forum:
+          club:
             id: @id
         })
 </script>
 
 
 <style lang="less">
-  .forum-action-bar{
+  .club-action-bar{
     margin-bottom: 12px;
   }
 </style>

@@ -26,17 +26,17 @@
       anime_marks: ->
         marks = @user.marks.filter (mark) =>
           mark.status is 'doing' and @model.subject.isType(mark.subject.type, 'anime')
-        return marks.slice(0, 3)
+        return marks.slice(0, 5)
 
       comic_marks: ->
         marks = @user.marks.filter (mark) =>
           mark.status is 'doing' and @model.subject.isType(mark.subject.type, 'comic')
-        return marks.slice(0, 3)
+        return marks.slice(0, 5)
 
       game_marks: ->
         marks = @user.marks.filter (mark) =>
           mark.status is 'doing' and @model.subject.isType(mark.subject.type, 'game')
-        return marks.slice(0, 3)
+        return marks.slice(0, 5)
 </script>
 
 

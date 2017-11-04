@@ -1,36 +1,30 @@
 <template lang="jade">
   #posts-id(v-if="post")
-    .wrap
-      breadcrumb(:post="post")
-      c-main(:post="post")
-      comment-list(:post="post", :comments="comments")
-      input-comment(:post="post")
+    row
+      .left
+        breadcrumb(:post="post")
+        c-main(:post="post")
+        comment-list(:post="post")
+        comment-form(:post="post")
+      .right
+        h1 这是侧栏
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'breadcrumb':    require('./breadcrumb')
-      'c-main':        require('./main')
-      'comment-list':  require('./comment-list')
-      'input-comment': require('./input-comment')
+      'breadcrumb':   require('./breadcrumb')
+      'c-main':       require('./main')
+      'comment-list': require('./comment-list')
+      'comment-form': require('./comment-form')
 
-    computed:
-      id:       -> parseInt(@$route.params.id)
-      post:     -> @state['post-detail'].post
-      comments: -> @state['post-detail'].comments
-
-    created: ->
-      @init()
-
-    watch:
-      'routePage': -> @init()
+    data: ->
+      post: null
 
     methods:
       init: ->
-        @dispatch('post-detail/loadPost', {id: @id})
-        @dispatch('post-detail/loadComments', {id: @id, page: @routePage})
+        @post = await api.call('post.get', @routeID)
 </script>
 
 
@@ -38,12 +32,15 @@
   #posts-id{
     background-color: #FFF;
     overflow: hidden;
-    .wrap{
+    .left{
       margin: 20px auto;
-      width: 700px;
+      width: 660px;
       >*{
         margin-bottom: 20px;
       }
+    }
+    .right{
+      width: 200px;
     }
   }
 </style>

@@ -1,9 +1,9 @@
 <template lang="jade">
-  .forum
+  .club
     cdn-image(path="banner-test?123" cover)
-    tab-bar.forum-tab-bar(:tabs="tabs", :active="path", @change="change")
+    tab-bar.club-tab-bar(:tabs="tabs", :active="path", @change="change")
     .wrap
-      forum-action-bar(:id="id")
+      club-action-bar(:id="id")
       post-list(:id="id")
 </template>
 
@@ -13,7 +13,7 @@
     components:
       'cdn-image':        require('components/image/cdn-image')
       'tab-bar':          require('components/@/tab-bar')
-      'forum-action-bar': require('components/bbs/forum-action-bar')
+      'club-action-bar': require('components/bbs/club-action-bar')
       'post-list':        require('components/bbs/post-list')
 
 
@@ -50,12 +50,12 @@
 
 
 <style lang="less">
-  .forum{
+  .club{
     .cdn-image{
       width: 100%;
       height: 160px;
     }
-    .forum-tab-bar{
+    .club-tab-bar{
       position: relative;
       top: -20px;
       margin: 0 auto;

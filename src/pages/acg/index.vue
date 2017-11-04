@@ -1,11 +1,11 @@
 <template lang="jade">
   #acg
-    forum
+    club
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'forum': require('components/bbs/forum')
+      'club': require('components/bbs/club')
 </script>

@@ -1,7 +1,7 @@
 <template lang="jade">
   .done-animes
     detail-area(:title="title", :tabs="tabs")
-      gallery(:cols="8", :padding="5")
+      gallery(:cols="7", :padding="5")
         subject-face(v-for="mark in marks", :key="mark.id", :subject="mark.subject" frame fixed-height)
 </template>
 
@@ -19,7 +19,7 @@
         required: true
 
     computed:
-      title: -> "#{@user.name}标记的动画"
+      title: -> "#{@user.name} 标记的动画"
 
       tabs: ->
         tabs = @model.mark.STATUSES.map (status) =>

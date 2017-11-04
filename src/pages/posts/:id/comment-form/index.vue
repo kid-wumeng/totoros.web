@@ -1,5 +1,5 @@
 <template lang="jade">
-  .input-comment(v-if="login")
+  .comment-form(v-if="login")
     input-area(v-model="content" placeholder="说几句吧~", :rows="6")
     c-button(@click="submit") 发表回复
 </template>
@@ -23,7 +23,7 @@
       submit: ->
         try
           @check()
-          comment = await @api.call('post.addComment', @post.id, @content)
+          comment = await @api.call('comment.createAtPost', @post.id, @content)
           @done(comment)
         catch error
           @notify('fail', error)
@@ -33,13 +33,13 @@
 
       done: (comment) ->
         @notify('done', '发布成功')
-        @commit('ADD_POST_COMMENT', {post: @post, comment})
+        @commit('CREATE_COMMENT', comment)
         @content = ''
 </script>
 
 
 <style lang="less" scoped>
-  .input-comment{
+  .comment-form{
     padding: 12px;
     border: 1px solid #FFF;
     border-radius: 3px;

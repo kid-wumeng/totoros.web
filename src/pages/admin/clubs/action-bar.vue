@@ -1,7 +1,7 @@
 <template lang="jade">
   .action-bar.row
     .left
-      h1 FORUMS
+      h1 CLUBS
     .right
       c-button(@click="create") 创建论坛
 </template>
@@ -14,7 +14,7 @@
 
     methods:
       create: ->
-        @commit('create-forum-modal/SHOW')
+        @commit('create-club-modal/SHOW')
 </script>
 
 

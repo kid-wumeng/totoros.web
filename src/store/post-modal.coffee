@@ -2,22 +2,22 @@ module.exports =
 
   state:
     open:  false
-    forum: null
+    club: null
     post:  null
 
   mutations:
-    'post-modal/SHOW': (state, {forum, post}) ->
+    'post-modal/SHOW': (state, {club, post}) ->
       state.open  = true
-      state.forum = forum
+      state.club = club
       state.post  = post
 
     'post-modal/HIDE': (state) ->
       state.open  = false
-      state.forum = null
+      state.club = null
       state.post  = null
 
   actions:
-    'post-modal/show': ({commit}, {forum, post}) ->
+    'post-modal/show': ({commit}, {club, post}) ->
       if post
         post = await api.call('post.get', post.id)
         commit('input-content/SET_CONTENT', post.content)
@@ -26,4 +26,4 @@ module.exports =
       else
         commit('input-content/SET_CONTENT', '')
         commit('input-content/SET_PICTURES', [])
-        commit('post-modal/SHOW', {forum})
+        commit('post-modal/SHOW', {club})
