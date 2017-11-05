@@ -13,5 +13,7 @@
 
 <style lang="less" scoped>
   #timeline{
+    padding: 20px 0;
+    background-color: #FFF;
   }
 </style>

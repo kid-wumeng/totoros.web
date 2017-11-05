@@ -1,7 +1,7 @@
 <template lang="jade">
   .header
-    .row
-      .row.-left
+    row.-between.-center
+      row.-center
         logo
         navigator
         search
@@ -26,12 +26,12 @@
   .header{
     width: 100%;
     background-color: rgba(250, 250, 250, 0.93);
-    display: flex;
-    align-items: center;
-    >.row{
+    >.row2{
       margin: 0 auto;
       width: 1000px;
-      height: 64px;
+      >.row2{
+        height: 64px;
+      }
     }
   }
 </style>

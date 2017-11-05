@@ -69,7 +69,7 @@
       .count{
         display: inline;
         font-size: 13px;
-        color: #CDD6E0;
+        color: #A2AEBA;
         margin-left: 4px;
       }
     }

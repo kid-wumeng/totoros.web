@@ -18,10 +18,16 @@
 
 <style lang="less" scoped>
   .post-list{
+    @padding: 8px;
+    @border: 1px dashed #F2F2F2;
     .post-item{
-      padding: 12px;
-      &:nth-child(odd){
-        background-color: rgb(250, 250, 250, 1);
+      margin-bottom:  @padding;
+      border-bottom:  @border;
+      padding-bottom: @padding + 1;
+      &:first-child{
+        margin-top:  @padding + 1;
+        border-top:  @border;
+        padding-top: @padding;
       }
     }
   }

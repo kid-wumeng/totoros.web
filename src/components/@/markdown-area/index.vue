@@ -131,11 +131,13 @@
   .markdown-area{
     width: 100%;
     word-break: break-all;
+    line-height: 25px;
+    font-size: 14px;
 
     *{
-      font-size: 14px;
-      color: #111;
       text-align: justify;
+      font-size: inherit;
+      color: #273340;
     }
 
     >*:not(:last-child){
@@ -143,7 +145,7 @@
     }
 
     p{
-      line-height: 22px;
+      line-height: inherit;
     }
 
     em{

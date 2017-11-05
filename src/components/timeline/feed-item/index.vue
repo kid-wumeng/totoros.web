@@ -2,7 +2,7 @@
   .feed-item.row.-left.-top
     .left
       face(:feed="feed")
-    .right
+    .right.box-frame.-outset
       c-head(:feed="feed")
       c-body(:feed="feed")
       c-foot(:feed="feed")
@@ -34,9 +34,6 @@
       margin-left: 16px;
       background-color: #FFF;
       border-top: 1px solid #FFF;
-      border-bottom: 1px solid #FFF;
-      border-radius: 3px;
-      box-shadow: 0 0 6px -3px #000;
       position: relative;
       &::before{
         content: " ";

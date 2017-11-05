@@ -57,6 +57,8 @@
     }
     .markdown-area{
       margin-top: 5px;
+      line-height: 20px;
+      font-size: 13px;
     }
   }
 </style>

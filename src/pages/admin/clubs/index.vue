@@ -4,7 +4,7 @@
     club-list
     create-club-modal
     update-club-modal
-    club-banner-modal
+    club-face-modal
 </template>
 
 
@@ -15,7 +15,7 @@
       'club-list':         require('./club-list')
       'create-club-modal': require('components/bbs/create-club-modal')
       'update-club-modal': require('components/bbs/update-club-modal')
-      'club-banner-modal': require('components/bbs/club-banner-modal')
+      'club-face-modal':   require('components/bbs/club-face-modal')
 
     methods:
       init: ->

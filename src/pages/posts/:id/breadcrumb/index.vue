@@ -21,9 +21,9 @@
 <style lang="less" scoped>
   .breadcrumb{
     .club{
-      font-weight: 600;
+      font-weight: 500;
       font-size: 14px;
-      color: #A2AEBA;
+      color: #707C88;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -31,7 +31,7 @@
     }
     .sep{
       font-size: 13px;
-      color: #A2AEBA;
+      color: #CCC;
       margin: 0 6px;
     }
     .title{

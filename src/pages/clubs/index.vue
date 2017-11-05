@@ -1,7 +1,8 @@
 <template lang="jade">
   #clubs
-    tab-bar
-    router-view
+    .wrap
+      tab-bar
+      router-view
 </template>
 
 
@@ -9,17 +10,15 @@
   module.exports =
     components:
       'tab-bar': require('./tab-bar')
-
-    data: ->
-      club: null
-
-    methods:
-      init: ->
-        @club = await api.call('club.get', @routeID)
 </script>
 
 
 <style lang="less" scoped>
   #clubs{
+    border-top: 1px solid rgba(245, 245, 245, 1);
+    .wrap{
+      margin: 16px auto;
+      width: 800px;
+    }
   }
 </style>

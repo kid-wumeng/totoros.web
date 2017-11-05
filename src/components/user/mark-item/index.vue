@@ -9,7 +9,7 @@
           .desc {{ desc }}
         row.-center
           .date {{ model.date.display(mark.createDate) }}
-          c-button.-gray(v-if="isMe(mark.user)" @click="update") 修改标记
+          .update(v-if="isMe(mark.user)" @click="update") 修改标记
       row
         mark-score(:mark="mark")
         text-area.comment(:text="comment")
@@ -82,8 +82,15 @@
       font-size: 12px;
       color: #A2AEBA;
     }
-    .button{
+    .update{
       margin-left: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      color: #707C88;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
     }
     .mark-score{
       flex: none;

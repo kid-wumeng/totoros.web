@@ -1,13 +1,11 @@
 <template lang="jade">
   #posts-id(v-if="post")
-    row
-      .left
-        breadcrumb(:post="post")
-        c-main(:post="post")
-        comment-list(:post="post")
-        comment-form(:post="post")
-      .right
-        h1 这是侧栏
+    .wrap
+      breadcrumb(:post="post")
+      c-header(:post="post")
+      c-content(:post="post")
+      comment-list(:post="post")
+      comment-form(:post="post")
 </template>
 
 
@@ -15,7 +13,8 @@
   module.exports =
     components:
       'breadcrumb':   require('./breadcrumb')
-      'c-main':       require('./main')
+      'c-header':     require('./header')
+      'c-content':    require('./content')
       'comment-list': require('./comment-list')
       'comment-form': require('./comment-form')
 
@@ -30,17 +29,18 @@
 
 <style lang="less" scoped>
   #posts-id{
-    background-color: #FFF;
     overflow: hidden;
-    .left{
+    box-sizing: border-box;
+    background-color: #FFF;
+    .wrap{
       margin: 20px auto;
-      width: 660px;
+      width: 640px;
       >*{
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+        &:last-child{
+          margin-bottom: 0;
+        }
       }
-    }
-    .right{
-      width: 200px;
     }
   }
 </style>

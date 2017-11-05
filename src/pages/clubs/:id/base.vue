@@ -3,7 +3,7 @@
     .left
       club-face(:club="club")
     .right
-      .name  {{ club.name }}
+      .name {{ club.name }}
       .intro {{ club.intro }}
 </template>
 
@@ -26,13 +26,18 @@
       margin-left: 10px;
     }
     .club-face{
-      width: 40px;
+      width: 64px;
     }
     .name{
       font-weight: 600;
+      font-size: 14px;
+      color: #273340;
     }
     .intro{
+      margin-top: 2px;
+      width: 400px;
       font-size: 13px;
+      color: #707C88;
     }
   }
 </style>

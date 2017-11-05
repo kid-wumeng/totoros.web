@@ -33,7 +33,7 @@
 <style lang="less" scoped>
   .comment-list{
     @padding: 12px;
-    @border: 1px solid #F2F2F2;
+    @border: 1px dashed #F2F2F2;
     padding: @padding;
     .comment-item{
       margin-bottom:  @padding;

@@ -24,18 +24,16 @@
     line-height: 26px;
     padding: 0 10px;
     cursor: pointer;
-    border: 1px solid #FFF;
     border-radius: 100px;
-    box-shadow: 0 0 6px -3px #000;
+    box-shadow: 0 0 5px -3px #000;
     .icon{
       display: inline;
       color: #C3CCD4;
     }
     span{
       margin-left: 8px;
-      font-weight: bold;
       font-size: 12px;
-      color: #C1C8CF;
+      color: #777;
     }
   }
 </style>

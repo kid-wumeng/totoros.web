@@ -119,7 +119,7 @@
 
   body{
     height: 100%;
-    background-color: rgba(250, 250, 250, 0.93);
+    background-color: rgba(250, 250, 250, 1);
   }
 
   #app{

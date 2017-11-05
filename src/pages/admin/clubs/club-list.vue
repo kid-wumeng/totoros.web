@@ -7,7 +7,7 @@
         .open(:class="{'-open': club.open}") {{ club.open ? '开放ing' : '未开放' }}
         .actions
           c-button(@click="update(club)") 修改
-          c-button(@click="uploadBanner(club)") 上传BANNER
+          c-button(@click="uploadFace(club)") 上传FACE
 </template>
 
 
@@ -24,8 +24,8 @@
       update: (club) ->
         @dispatch('update-club-modal/show', club.id)
 
-      uploadBanner: (club) ->
-        @dispatch('club-banner-modal/show', club.id)
+      uploadFace: (club) ->
+        @dispatch('club-face-modal/show', club.id)
 </script>
 
 

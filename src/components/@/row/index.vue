@@ -23,5 +23,8 @@
     &.-center{
       align-items: center;
     }
+    &.-bottom{
+      align-items: flex-end;
+    }
   }
 </style>

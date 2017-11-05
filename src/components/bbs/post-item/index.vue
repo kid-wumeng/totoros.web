@@ -4,15 +4,16 @@
       user-face(:user="post.user")
     .right
       column.-between
-        .title(@click="toPostPage(post)") {{ post.title }}
         row.-between.-center
           row.left.-center
             user-name(:user="post.user")
-            .date {{ model.date.display(post.createDate) }}
           row.right.-center
             .hint Last by
             user-name(:user="post.user")
             .date {{ model.date.display(post.createDate) }}
+        row.-center
+          .title(@click="toPostPage(post)") {{ post.title }}
+          .comment-count(v-if="commentCount") +{{ commentCount }}
 </template>
 
 
@@ -27,6 +28,9 @@
       'post':
         type: Object
         required: true
+
+    computed:
+      commentCount: -> @post.commentCount ? 0
 </script>
 
 
@@ -42,18 +46,8 @@
       }
     }
     .user-face{
-      width: 42px;
+      width: 40px;
       margin-right: 10px;
-    }
-    .title{
-      align-self: flex-start;
-      font-weight: 600;
-      font-size: 14px;
-      color: #707C88;
-      cursor: pointer;
-      &:hover{
-        text-decoration: underline;
-      }
     }
     .user-name{
       margin-right: 6px;
@@ -61,7 +55,6 @@
       font-size: 12px;
     }
     .date{
-      margin-right: 6px;
       font-size: 12px;
       color: #BBB;
     }
@@ -70,13 +63,21 @@
       font-size: 12px;
       color: #BBB;
     }
+    .title{
+      align-self: flex-start;
+      font-weight: 400;
+      font-size: 14px;
+      color: #222;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
     .comment-count{
-      padding: 2px 6px;
+      margin-left: 6px;
       font-weight: 600;
       font-size: 12px;
-      color: #BBB;
-      border-radius: 100px;
-      background-color: #F2F2F2;
+      color: #F47983;
     }
   }
 </style>

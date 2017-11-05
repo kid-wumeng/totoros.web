@@ -1,6 +1,6 @@
 <template lang="jade">
   .comment-form(v-if="login")
-    input-area(v-model="content" placeholder="说几句吧~", :rows="6")
+    input-area(v-model="content" placeholder="说几句吧~", :rows="8")
     c-button(@click="submit") 发表回复
 </template>
 
