@@ -30,7 +30,7 @@
       margin: 0 auto;
       width: 1000px;
       >.row2{
-        height: 64px;
+        height: 60px;
       }
     }
   }

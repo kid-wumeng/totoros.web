@@ -30,7 +30,7 @@
         required: true
 
     computed:
-      commentCount: -> @post.commentCount ? 0
+      commentCount: -> @post.commentCount ? 15
 </script>
 
 
@@ -51,23 +51,23 @@
     }
     .user-name{
       margin-right: 6px;
-      font-weight: 600;
       font-size: 12px;
+      color: #A2AEBA;
     }
     .date{
       font-size: 12px;
-      color: #BBB;
+      color: #A2AEBA;
     }
     .hint{
       margin-right: 6px;
       font-size: 12px;
-      color: #BBB;
+      color: #A2AEBA;
     }
     .title{
       align-self: flex-start;
       font-weight: 400;
       font-size: 14px;
-      color: #222;
+      color: #333;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -77,7 +77,7 @@
       margin-left: 6px;
       font-weight: 600;
       font-size: 12px;
-      color: #F47983;
+      color: #A2AEBA;
     }
   }
 </style>

@@ -23,7 +23,7 @@
     .club{
       font-weight: 500;
       font-size: 14px;
-      color: #707C88;
+      color: #A2AEBA;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -37,7 +37,7 @@
     .title{
       font-weight: 600;
       font-size: 16px;
-      color: #273340;
+      color: #333;
     }
   }
 </style>

@@ -1,7 +1,7 @@
 <template lang="jade">
   .search(@click="search")
     .icon.fa-search
-    span Totoros成员 / ACG词条
+    span
 </template>
 
 
@@ -19,7 +19,7 @@
 <style lang="less" scoped>
   .search{
     margin-left: 24px;
-    width: 200px;
+    width: 160px;
     height: 26px;
     line-height: 26px;
     padding: 0 10px;

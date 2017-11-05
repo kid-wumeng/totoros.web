@@ -44,12 +44,11 @@
       flex: none;
     }
     .user-face{
-      width: 64px;
+      width: 72px;
       margin-right: 10px;
     }
     .user-name{
-      font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
       color: #445669;
     }
     .motto{
@@ -60,7 +59,7 @@
     .date{
       margin-right: 6px;
       font-size: 12px;
-      color: #CCC;
+      color: #A2AEBA;
     }
     .button{
       margin-left: 6px;

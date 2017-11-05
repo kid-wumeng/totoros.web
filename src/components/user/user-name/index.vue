@@ -14,8 +14,9 @@
 
 <style lang="less" scoped>
   .user-name{
-    font-weight: 600;
-    color: #A2AEBA;
+    font-family: "Helvetica Neue";
+    font-weight: 500;
+    color: #59ABE3;
     cursor: pointer;
     &:hover{
       text-decoration: underline;

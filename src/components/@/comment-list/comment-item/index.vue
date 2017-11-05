@@ -6,7 +6,7 @@
       row.-between.-center
         row.left.-center
           user-name(:user="comment.user")
-          .motto {{ comment.user.motto }}
+          .motto(v-if="comment.user.motto") {{ comment.user.motto }}
         .right
           .date {{ model.date.display(comment.createDate) }}
       markdown-area(:content="comment.content")
@@ -40,23 +40,20 @@
       margin-right: 9px;
     }
     .user-name{
-      margin-right: 6px;
-      font-weight: 600;
       font-size: 13px;
-      color: #445669;
     }
     .motto{
-      margin-right: 6px;
+      margin-left: 4px;
       font-size: 12px;
       color: #A2AEBA;
     }
     .date{
       margin-right: 6px;
       font-size: 12px;
-      color: #CCC;
+      color: #A2AEBA;
     }
     .markdown-area{
-      margin-top: 5px;
+      margin-top: 4px;
       line-height: 20px;
       font-size: 13px;
     }
