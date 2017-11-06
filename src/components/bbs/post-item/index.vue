@@ -61,8 +61,8 @@
     .title{
       align-self: flex-start;
       font-weight: 400;
-      font-size: 13px;
-      color: #333;
+      font-size: 14px;
+      color: #111;
       cursor: pointer;
       &:hover{
         text-decoration: underline;

@@ -1,6 +1,6 @@
 <template lang="jade">
-  .head.row
-    .left.row.-left
+  row.head.-between.-center
+    .row.left
       user-name(:user="user")
       c-desc(:feed="feed")
     .right
@@ -26,14 +26,24 @@
 
 <style lang="less" scoped>
   .head{
-    padding: 0 16px;
+    box-sizing: border-box;
+    padding: 0 12px;
     height: 36px;
     border-bottom: 1px solid #EEE;
+    >.right{
+      flex: none;
+    }
     .user-name{
+      flex: none;
       font-size: 13px;
+      font-weight: 500;
       color: #445669;
     }
+    .desc{
+      flex: auto;
+    }
     .date{
+      flex: none;
       font-size: 12px;
       color: #A2AEBA;
     }

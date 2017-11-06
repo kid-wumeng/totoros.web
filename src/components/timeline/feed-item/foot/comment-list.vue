@@ -23,7 +23,6 @@
 
 <style lang="less" scoped>
   .comment-list{
-    margin-top: 6px;
     .comment{
       .user-name{
         display: inline;

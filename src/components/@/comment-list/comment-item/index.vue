@@ -1,15 +1,16 @@
 <template lang="jade">
-  .comment-item.row.-left
-    .left
-      user-face(:user="comment.user")
-    .right
-      row.-between.-center
-        row.left.-center
-          user-name(:user="comment.user")
-          .motto(v-if="comment.user.motto") {{ comment.user.motto }}
-        .right
-          .date {{ model.date.display(comment.createDate) }}
-      markdown-area(:content="comment.content")
+  .comment-item
+    row
+      .left
+        user-face(:user="comment.user")
+      .right
+        row.-between.-center
+          row.left.-center
+            user-name(:user="comment.user")
+            .motto(v-if="comment.user.motto") ({{ comment.user.motto }})
+          .right
+            .date {{ model.date.display(comment.createDate) }}
+        markdown-area(:content="comment.content")
 </template>
 
 
@@ -32,30 +33,30 @@
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
-    >.right{
-      flex: auto;
-    }
-    .user-face{
-      width: 48px;
-      margin-right: 9px;
-    }
-    .user-name{
-      font-size: 13px;
-    }
-    .motto{
-      margin-left: 4px;
-      font-size: 12px;
-      color: #A2AEBA;
-    }
-    .date{
-      margin-right: 6px;
-      font-size: 12px;
-      color: #A2AEBA;
-    }
-    .markdown-area{
-      margin-top: 4px;
-      line-height: 20px;
-      font-size: 13px;
+    >.row2{
+      >.right{
+        flex: auto;
+      }
+      .user-face{
+        width: 40px;
+        margin-right: 9px;
+      }
+      .user-name{
+        font-size: 12px;
+      }
+      .motto{
+        margin-left: 4px;
+        font-size: 12px;
+        color: #A2AEBA;
+      }
+      .date{
+        margin-right: 6px;
+        font-size: 12px;
+        color: #A2AEBA;
+      }
+      .markdown-area{
+        margin-top: 4px;
+      }
     }
   }
 </style>

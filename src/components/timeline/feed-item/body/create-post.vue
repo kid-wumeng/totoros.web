@@ -1,6 +1,6 @@
 <template lang="jade">
   .create-post
-    text-area(:text="content")
+    text-area.content(v-if="content", :text="content")
     picture-grid(v-if="pictures.length", :pictures="pictures")
 </template>
 

@@ -33,8 +33,8 @@
     box-sizing: border-box;
     background-color: #FFF;
     .wrap{
-      margin: 20px auto;
-      width: 640px;
+      margin: 28px auto;
+      width: 600px;
       >*{
         margin-bottom: 24px;
         &:last-child{

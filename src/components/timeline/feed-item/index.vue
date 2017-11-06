@@ -29,7 +29,8 @@
     box-sizing: border-box;
     width: 100%;
     >.right{
-      flex: auto;
+      width: 100%;
+      flex: none;
       box-sizing: border-box;
       margin-left: 16px;
       background-color: #FFF;

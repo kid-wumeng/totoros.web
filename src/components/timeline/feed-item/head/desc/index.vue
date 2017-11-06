@@ -1,5 +1,5 @@
 <template lang="jade">
-  component.desc(:is="component", :feed="feed")
+  component.desc.-more(:is="component", :feed="feed")
 </template>
 
 
@@ -25,8 +25,10 @@
 
 <style lang="less" scoped>
   .desc{
+    width: 400px;
     margin-left: 6px;
     font-size: 13px;
+    font-weight: 500;
     color: #A2AEBA;
   }
 </style>

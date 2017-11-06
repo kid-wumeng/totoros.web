@@ -29,7 +29,7 @@
 <style lang="less" scoped>
   #public-timeline{
     margin: 32px auto;
-    width: 700px;
+    width: 600px;
     .more{
       border-top: 1px solid #EEE;
       border-bottom: 1px solid #EEE;

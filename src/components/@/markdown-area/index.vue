@@ -122,7 +122,7 @@
     computed:
       html: ->
         html = marked(@content)
-        html = html.replace(/<br>/g, '')
+        html = html.replace(/(<br>)+/g, '<br>')
         return html
 </script>
 
@@ -131,11 +131,10 @@
   .markdown-area{
     width: 100%;
     word-break: break-all;
-    line-height: 25px;
-    font-size: 14px;
+    line-height: 20px;
+    font-size: 13px;
 
     *{
-      text-align: justify;
       font-size: inherit;
       color: #222;
     }

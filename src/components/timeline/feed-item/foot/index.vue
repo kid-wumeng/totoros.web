@@ -41,6 +41,9 @@
       flex: auto;
       margin-right: 80px;
     }
+    >.right{
+      flex: none;
+    }
     .action{
       color: #A2AEBA;
     }

@@ -44,11 +44,11 @@
       flex: none;
     }
     .user-face{
-      width: 72px;
+      width: 64px;
       margin-right: 10px;
     }
     .user-name{
-      font-size: 15px;
+      font-size: 14px;
       color: #445669;
     }
     .motto{

@@ -1,5 +1,5 @@
 <template lang="jade">
-  .comment-list(v-if="comments.length")
+  .comment-list.box-frame.-outset(v-if="comments.length")
     comment-item(v-for="comment in comments", :key="comment.id", :comment="comment")
     page-bar(:page="page", :size="size", :total="total" @change="changePage")
 </template>
@@ -33,16 +33,20 @@
 <style lang="less" scoped>
   .comment-list{
     @padding: 12px;
-    @border: 1px dashed #F2F2F2;
-    padding: @padding;
+    @border: 1px solid #F4F4F4;
+
     .comment-item{
-      margin-bottom:  @padding;
+      padding: 12px;
+      // margin-bottom:  @padding;
       border-bottom:  @border;
-      padding-bottom: @padding + 1;
+      // padding-bottom: @padding + 1;
       &:last-child{
-        margin-bottom: 0;
+        // margin-bottom: 0;
         border-bottom: none;
-        padding-bottom: 0;
+        // padding-bottom: 0;
+      }
+      &:nth-child(odd){
+        background-color: rgba(250, 250, 250, 0.93);
       }
     }
   }

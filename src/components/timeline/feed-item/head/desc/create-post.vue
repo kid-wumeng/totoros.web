@@ -1,9 +1,7 @@
 <template lang="jade">
   .create-post
-    span 发布了新的帖子
-    span 『
+    span 发了帖 -
     span.post-title(@click="toPostPage(post)") {{ title }}
-    span 』
 </template>
 
 
@@ -27,8 +25,8 @@
       color: inherit;
     }
     .post-title{
-      margin: 0 2px;
-      font-weight: 600;
+      margin-left: 4px;
+      font-weight: 500;
       color: #445669;
       cursor: pointer;
       &:hover{

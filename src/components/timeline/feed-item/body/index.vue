@@ -1,5 +1,5 @@
 <template lang="jade">
-  component.body(:is="component", :feed="feed")
+  component.feed-body(:is="component", :feed="feed")
 </template>
 
 
@@ -24,8 +24,8 @@
 
 
 <style lang="less" scoped>
-  .body{
+  .feed-body{
     box-sizing: border-box;
-    padding: 16px;
+    padding: 20px;
   }
 </style>

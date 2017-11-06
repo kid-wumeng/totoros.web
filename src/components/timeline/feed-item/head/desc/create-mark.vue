@@ -35,7 +35,7 @@
     }
     .subject-name{
       margin: 0 2px;
-      font-weight: 600;
+      font-weight: 500;
       color: #445669;
       cursor: pointer;
       &:hover{
