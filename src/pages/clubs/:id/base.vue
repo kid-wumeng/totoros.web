@@ -36,7 +36,7 @@
     .intro{
       margin-top: 2px;
       width: 400px;
-      font-size: 13px;
+      font-size: 12px;
       color: #707C88;
     }
   }

@@ -137,7 +137,7 @@
     *{
       text-align: justify;
       font-size: inherit;
-      color: #273340;
+      color: #222;
     }
 
     >*:not(:last-child){

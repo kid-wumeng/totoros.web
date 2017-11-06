@@ -16,7 +16,7 @@
   .user-name{
     font-family: "Helvetica Neue";
     font-weight: 500;
-    color: #59ABE3;
+    color: #3db8c1;
     cursor: pointer;
     &:hover{
       text-decoration: underline;

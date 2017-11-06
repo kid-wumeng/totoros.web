@@ -2,18 +2,14 @@
   .post-item.row.-left
     .left
       user-face(:user="post.user")
-    .right
-      column.-between
-        row.-between.-center
-          row.left.-center
-            user-name(:user="post.user")
-          row.right.-center
-            .hint Last by
-            user-name(:user="post.user")
-            .date {{ model.date.display(post.createDate) }}
-        row.-center
-          .title(@click="toPostPage(post)") {{ post.title }}
-          .comment-count(v-if="commentCount") +{{ commentCount }}
+    row.right.-between.-center
+      row.-center
+        .title(@click="toPostPage(post)") {{ post.title }}
+        .comment-count(v-if="commentCount") replies +{{ commentCount }}
+      row.-center
+        .hint Last by
+        user-name(:user="post.user")
+        .date {{ model.date.display(post.createDate) }}
 </template>
 
 
@@ -46,13 +42,12 @@
       }
     }
     .user-face{
-      width: 40px;
+      width: 32px;
       margin-right: 10px;
     }
     .user-name{
       margin-right: 6px;
       font-size: 12px;
-      color: #A2AEBA;
     }
     .date{
       font-size: 12px;
@@ -66,7 +61,7 @@
     .title{
       align-self: flex-start;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 13px;
       color: #333;
       cursor: pointer;
       &:hover{
@@ -75,9 +70,10 @@
     }
     .comment-count{
       margin-left: 6px;
-      font-weight: 600;
       font-size: 12px;
-      color: #A2AEBA;
+      color: #317589;
+      opacity: 0.6;
+      cursor: pointer;
     }
   }
 </style>
