@@ -32,7 +32,7 @@
       width: 100%;
       flex: none;
       box-sizing: border-box;
-      margin-left: 16px;
+      margin-left: 18px;
       background-color: #FFF;
       border-top: 1px solid #FFF;
       position: relative;
@@ -41,7 +41,7 @@
         border-width: 8px;
         border-right-color: #d1d5da;
         position: absolute;
-        top: 11px;
+        top: 12px;
         right: 100%;
         left: -10px;
         display: block;
@@ -58,7 +58,7 @@
         border-width: 7px;
         border-right-color: #d1d5da;
         position: absolute;
-        top: 11px;
+        top: 12px;
         right: 100%;
         left: -10px;
         display: block;

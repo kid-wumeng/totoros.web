@@ -1,8 +1,7 @@
 <template lang="jade">
   .create-mark
     .row.-left(v-if="model.mark.isShowScore(status)", :style="rateRowStyle")
-      rate(:score="score" size="12px")
-      favor-group(:favor="favor", :subject="subject" size="12px")
+      mark-score(:mark="mark")
     text-area.comment(v-if="comment", :text="comment")
     .subject.row.-top
       .left
@@ -15,8 +14,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'rate':         require('components/@/rate')
-      'favor-group':  require('components/@/favor-group')
+      'mark-score':   require('components/user/mark-score')
       'text-area':    require('components/@/text-area')
       'subject-face': require('components/image/subject-face')
 
@@ -50,14 +48,6 @@
     .left{
       flex: auto;
       margin-right: 12px;
-    }
-    .rate{
-      color: #445669;
-    }
-    .favor-group{
-      margin-left: 8px;
-      font-weight: 500;
-      color: #445669;
     }
     .comment{
       margin-bottom: 12px;

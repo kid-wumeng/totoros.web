@@ -1,6 +1,6 @@
 <template lang="jade">
   row.head.-between.-center
-    .row.left
+    row.left.-center
       user-name(:user="user")
       c-desc(:feed="feed")
     .right
@@ -27,8 +27,8 @@
 <style lang="less" scoped>
   .head{
     box-sizing: border-box;
-    padding: 0 12px;
-    height: 36px;
+    padding: 0 12px 1px;
+    height: 40px;
     border-bottom: 1px solid #EEE;
     >.right{
       flex: none;

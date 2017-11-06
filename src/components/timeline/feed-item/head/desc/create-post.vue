@@ -1,6 +1,6 @@
 <template lang="jade">
   .create-post
-    span 发了帖 -
+    span 发布了帖子 -
     span.post-title(@click="toPostPage(post)") {{ title }}
 </template>
 
