@@ -36,7 +36,6 @@ module.exports =
       state.feeds = state.feeds.concat(feeds)
 
     'public-timeline/RESET': (state) ->
-      state.feeds = []
       state.total = 0
       state.page  = 1
       state.more     = false
@@ -44,6 +43,7 @@ module.exports =
 
   actions:
     'public-timeline/init': ({state, commit, dispatch}) ->
+      commit('public-timeline/RESET')
       result = await api.call('feed.getAllByPublic', {
         page: 1
         size: state.size
