@@ -48,8 +48,8 @@
     .title{
       align-self: flex-start;
       font-weight: 500;
-      font-size: 15px;
-      color: #111;
+      font-size: 14px;
+      color: #6C7A89;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -59,7 +59,7 @@
       margin-left: 6px;
       font-size: 12px;
       font-weight: 500;
-      color: #F62459;
+      color: #C3272B;
       opacity: 0.6;
       cursor: pointer;
     }
