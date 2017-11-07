@@ -1,6 +1,6 @@
 <template lang="jade">
   .by1
-    c-picture(:picture="pictures[0]" square)
+    c-picture(:picture="pictures[0]")
 </template>
 
 

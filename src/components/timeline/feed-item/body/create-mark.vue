@@ -1,13 +1,14 @@
 <template lang="jade">
   .create-mark
-    .row.-left(v-if="model.mark.isShowScore(status)", :style="rateRowStyle")
-      mark-score(:mark="mark")
-    text-area.comment(v-if="comment", :text="comment")
-    .subject.row.-top
+    row
+      mark-score(v-if="model.mark.isShowScore(status)", :mark="mark")
+      text-area.comment(v-if="comment", :text="comment")
+    .subject.row.-top.box-frame.-outset
       .left
-        text-area.intro(:text="subject.intro", :limit="120" indent)
+        .name(@click="toSubjectPage(subject)") {{ name }}
+        text-area.intro(v-if="subject.intro", :text="subject.intro", :limit="120" indent)
       .right
-        subject-face(:subject="subject" frame)
+        subject-face(:subject="subject")
 </template>
 
 
@@ -30,39 +31,48 @@
       score:   -> @mark?.score
       favor:   -> @mark?.favor
       comment: -> @mark?.comment
-
-      rateRowStyle: ->
-        if @model.mark.isShowScore(@status)
-          if @comment
-            return {marginBottom: '6px'}
-          else
-            return {marginBottom: '12px'}
+      name:    -> @subject?.name
 </script>
 
 
 <style lang="less" scoped>
   .create-mark{
-    >.row:first-child{
-      margin-top: -4px;
+    >.row2:first-child{
+      margin-bottom: 16px;
     }
     .left{
       flex: auto;
       margin-right: 12px;
     }
+    .mark-score{
+      flex: none;
+      margin-right: 13px;
+    }
     .comment{
-      margin-bottom: 12px;
       font-size: 13px;
-      color: #333;
     }
     .subject{
       box-sizing: border-box;
-      padding: 12px 12px;
+      padding: 12px 14px;
       background-color: rgba(250, 250, 250, 1);
-      .subject-face{
-        width: 100px;
+      border-radius: 0;
+      .name{
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
       }
       .intro{
-        color: #555;
+        margin-top: 6px;
+        margin-right: 1px;
+        font-size: 13px;
+        color: #707C88;
+      }
+      .subject-face{
+        width: 96px;
       }
     }
   }

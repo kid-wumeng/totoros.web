@@ -36,7 +36,8 @@
 <style lang="less" scoped>
   .foot{
     box-sizing: border-box;
-    padding: 0 16px 16px 16px;
+    padding: 20px;
+    padding-top: 0;
     >.left{
       flex: auto;
       margin-right: 80px;

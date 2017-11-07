@@ -1,7 +1,6 @@
 <template lang="jade">
   .create-post
-    span 发了贴 -
-    span.post-title(@click="toPostPage(post)") {{ title }}
+    span 发起了一个话题
 </template>
 
 
@@ -11,10 +10,6 @@
       'feed':
         type: Object
         required: true
-
-    computed:
-      post:  -> @feed.post
-      title: -> @post?.title
 </script>
 
 
@@ -23,15 +18,6 @@
     >*{
       font-size: inherit;
       color: inherit;
-    }
-    .post-title{
-      margin-left: 4px;
-      font-weight: 500;
-      color: #445669;
-      cursor: pointer;
-      &:hover{
-        text-decoration: underline;
-      }
     }
   }
 </style>

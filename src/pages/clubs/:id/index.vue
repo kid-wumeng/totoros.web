@@ -30,7 +30,7 @@
 
     methods:
       init: ->
-        @club  = await api.call('club.get', @routeID)
+        @club  = await api.call('club.get', @routeID, {open: true})
         result = await api.call('post.getAll', {
           cid:  @routeID
           page: @routePage

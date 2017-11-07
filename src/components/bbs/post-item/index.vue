@@ -3,10 +3,10 @@
     .left
       user-face(:user="post.user")
     row.right.-between.-center
-      row.-center
-        .title(@click="toPostPage(post)") {{ post.title }}
-        .comment-count(v-if="commentCount") replies +{{ commentCount }}
-      row.-center
+      div
+        span.title(@click="toPostPage(post)") {{ post.title }}
+        span.comment-count(v-if="commentCount") replies +{{ commentCount }}
+      row.last.-center
         .hint Last by
         user-name(:user="post.user")
         .date {{ model.date.display(post.createDate) }}
@@ -42,8 +42,29 @@
       }
     }
     .user-face{
-      width: 32px;
+      width: 28px;
       margin-right: 10px;
+    }
+    .title{
+      align-self: flex-start;
+      font-weight: 400;
+      font-size: 14px;
+      color: #222;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .comment-count{
+      margin-left: 6px;
+      font-size: 12px;
+      color: #317589;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    .last{
+      margin-left: 8px;
+      flex: none;
     }
     .user-name{
       margin-right: 6px;
@@ -57,23 +78,6 @@
       margin-right: 6px;
       font-size: 12px;
       color: #A2AEBA;
-    }
-    .title{
-      align-self: flex-start;
-      font-weight: 400;
-      font-size: 14px;
-      color: #111;
-      cursor: pointer;
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-    .comment-count{
-      margin-left: 6px;
-      font-size: 12px;
-      color: #317589;
-      opacity: 0.6;
-      cursor: pointer;
     }
   }
 </style>

@@ -1,9 +1,6 @@
 <template lang="jade">
   .create-mark
     span {{ verb }}
-    span 『
-    span.subject-name(@click="toSubjectPage(subject)") {{ name }}
-    span 』
 </template>
 
 
@@ -19,7 +16,6 @@
       status:  -> @mark?.status
       subject: -> @mark?.subject
       type:    -> @subject?.type
-      name:    -> @subject?.name
       verb:    ->
         status = @model.mark.displayStatus(@status, @type)
         type   = @model.subject.displayTypes(@type)[0]
@@ -32,15 +28,6 @@
     >*{
       font-size: inherit;
       color: inherit;
-    }
-    .subject-name{
-      margin: 0 2px;
-      font-weight: 500;
-      color: #445669;
-      cursor: pointer;
-      &:hover{
-        text-decoration: underline;
-      }
     }
   }
 </style>

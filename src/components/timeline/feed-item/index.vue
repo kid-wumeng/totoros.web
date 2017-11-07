@@ -1,11 +1,12 @@
 <template lang="jade">
-  .feed-item.row.-left.-top
+  row.feed-item
     .left
       face(:feed="feed")
-    .right.box-frame.-outset
-      c-head(:feed="feed")
-      c-body(:feed="feed")
-      c-foot(:feed="feed")
+    .right
+      .wrap
+        c-head(:feed="feed")
+        c-body(:feed="feed")
+        c-foot(:feed="feed")
 </template>
 
 
@@ -33,7 +34,9 @@
       box-sizing: border-box;
       margin-left: 18px;
       background-color: #FFF;
-      border-top: 1px solid #FFF;
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(100, 100, 100, 0.1);
       position: relative;
       &::before{
         content: " ";
@@ -48,7 +51,7 @@
         height: 0;
         border-style: solid;
         border-width: 8px 10px 8px 0;
-        border-color: transparent #E6E6E6 transparent transparent;
+        border-color: transparent rgb(230, 230, 230) transparent transparent;
       }
       &::after{
         content: " ";
@@ -66,6 +69,10 @@
         border-style: solid;
         border-width: 7px 8px 7px 0;
         border-color: transparent rgba(250, 250, 250, 1) transparent transparent;
+      }
+      .wrap{
+        border-radius: 5px;
+        overflow: hidden;
       }
     }
     .head{

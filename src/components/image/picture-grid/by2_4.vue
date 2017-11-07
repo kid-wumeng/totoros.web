@@ -23,7 +23,6 @@
     flex-wrap: wrap;
     .item{
       box-sizing: border-box;
-      padding: 1px;
       width: 50%;
       .picture{
         width: 100%;

@@ -1,21 +1,23 @@
 <template lang="jade">
   #timeline
     row
-      left-timeline
+      public-timeline
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'left-timeline':  require('./left-timeline')
-      'right-timeline': require('./right-timeline')
+      'public-timeline':  require('./public-timeline')
 </script>
 
 
 <style lang="less" scoped>
   #timeline{
-    margin: 32px auto;
-    width: 1000px;
+    overflow: hidden;
+    >.row2{
+      margin: 32px auto;
+      width: 720px;
+    }
   }
 </style>

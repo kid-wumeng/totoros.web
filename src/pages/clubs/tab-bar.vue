@@ -26,7 +26,7 @@
 
     methods:
       init: ->
-        @clubs = await api.call('club.getAll')
+        @clubs = await api.call('club.getAll', {open: true})
 
       change: (tab) ->
         @$router.replace('/clubs/' + tab.value)

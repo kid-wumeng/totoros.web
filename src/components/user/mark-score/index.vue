@@ -65,7 +65,7 @@
         border-radius: 2px;
         .active{
           height: 10px;
-          border-radius: 2px;
+          border-radius: 1px;
         }
       }
       .score{

@@ -26,6 +26,6 @@
 <style lang="less" scoped>
   .c-body{
     box-sizing: border-box;
-    padding: 20px;
+    padding: 16px 20px;
   }
 </style>

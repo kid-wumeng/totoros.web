@@ -20,6 +20,6 @@
 
 <style lang="less" scoped>
   .face{
-    width: 56px;
+    width: 48px;
   }
 </style>

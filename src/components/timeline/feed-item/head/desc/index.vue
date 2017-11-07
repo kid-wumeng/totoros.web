@@ -25,10 +25,10 @@
 
 <style lang="less" scoped>
   .desc{
-    margin-left: 6px;
+    margin-left: 5px;
     margin-right: 30px;
-    font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 14px;
     color: #A2AEBA;
   }
 </style>

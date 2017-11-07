@@ -1,6 +1,7 @@
 <template lang="jade">
   .create-post
-    text-area.content(v-if="content", :text="content")
+    .title(@click="toPostPage(post)") {{ post.title }}
+    markdown-area.content(v-if="content", :content="content")
     picture-grid(v-if="pictures.length", :pictures="pictures")
 </template>
 
@@ -9,6 +10,7 @@
   module.exports =
     components:
       'text-area':    require('components/@/text-area')
+      'markdown-area': require('components/@/markdown-area')
       'picture-grid': require('components/image/picture-grid')
 
     props:
@@ -25,10 +27,27 @@
 
 <style lang="less" scoped>
   .create-post{
+    .title{
+      display: inline-block;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .content{
+      margin-top: 7px;
+      width: 90%;
+      line-height: 20px;
+      text-align: justify;
+      font-size: 13px;
+      color: #4A4A4A;
+    }
     .picture-grid{
-      margin-top: 12px;
+      margin-top: 13px;
       width: 60%;
-      background-color: #000;
     }
   }
 </style>

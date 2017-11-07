@@ -15,7 +15,7 @@
 <style lang="less" scoped>
   .navigator{
     margin-left: 16px;
-    font-weight: 500;
+    font-weight: 600;
     a{
       font-size: 14px;
       margin-left: 16px;

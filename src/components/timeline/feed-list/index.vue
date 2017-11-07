@@ -20,7 +20,7 @@
   .feed-list{
     width: 100%;
     .feed-item{
-      margin-bottom: 32px;
+      margin-bottom: 56px;
       &:last-child{
         margin-bottom: 0;
       }

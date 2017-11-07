@@ -40,6 +40,7 @@
 
 <style lang="less" scoped>
   .comment-form{
+    margin-bottom: 12px;
     .input{
       flex: auto;
       &::placeholder{

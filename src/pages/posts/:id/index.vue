@@ -34,7 +34,7 @@
     background-color: #FFF;
     .wrap{
       margin: 28px auto;
-      width: 600px;
+      width: 660px;
       >*{
         margin-bottom: 24px;
         &:last-child{
