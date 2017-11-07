@@ -1,21 +1,19 @@
 <template lang="jade">
-  .feed-item.row.-left.-top
+  row.feed-item-simple
     .left
-      face(:feed="feed")
+      user-face(:user="feed.user")
     .right.box-frame.-outset
-      c-head(:feed="feed")
+      c-desc(:feed="feed")
       c-body(:feed="feed")
-      c-foot(:feed="feed")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-head': require('./head')
-      'c-body': require('./body')
-      'c-foot': require('./foot')
-      'face':   require('./face')
+      'user-face': require('components/image/user-face')
+      'c-desc':    require('./desc')
+      'c-body':    require('./body')
 
     props:
       'feed':
@@ -25,22 +23,25 @@
 
 
 <style lang="less" scoped>
-  .feed-item{
+  .feed-item-simple{
     box-sizing: border-box;
     width: 100%;
+    align-items: stretch;
+    >.left{
+      flex: none;
+    }
     >.right{
       flex: auto;
       box-sizing: border-box;
-      margin-left: 18px;
-      background-color: #FFF;
-      border-top: 1px solid #FFF;
+      margin-left: 12px;
+      padding: 8px;
       position: relative;
       &::before{
         content: " ";
         border-width: 8px;
         border-right-color: #d1d5da;
         position: absolute;
-        top: 12px;
+        top: 8px;
         right: 100%;
         left: -10px;
         display: block;
@@ -48,7 +49,7 @@
         height: 0;
         border-style: solid;
         border-width: 8px 10px 8px 0;
-        border-color: transparent #E6E6E6 transparent transparent;
+        border-color: transparent #EEE transparent transparent;
       }
       &::after{
         content: " ";
@@ -57,7 +58,7 @@
         border-width: 7px;
         border-right-color: #d1d5da;
         position: absolute;
-        top: 12px;
+        top: 8px;
         right: 100%;
         left: -10px;
         display: block;
@@ -68,8 +69,13 @@
         border-color: transparent rgba(250, 250, 250, 1) transparent transparent;
       }
     }
-    .head{
-      background-color: rgba(250, 250, 250, 1);
+    .user-face{
+      flex: none;
+      width: 36px;
+    }
+    .user-name{
+      display: inline;
+      font-size: 12px;
     }
   }
 </style>

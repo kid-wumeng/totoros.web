@@ -1,6 +1,5 @@
 <template lang="jade">
   .create-post
-    span 发了贴 -
     span.post-title(@click="toPostPage(post)") {{ title }}
 </template>
 
@@ -20,12 +19,13 @@
 
 <style lang="less" scoped>
   .create-post{
-    >*{
-      font-size: inherit;
-      color: inherit;
+    span{
+      word-break: break-all;
+      font-weight: 500;
+      font-size: 12px;
+      color: #A2AEBA;
     }
     .post-title{
-      margin-left: 4px;
       font-weight: 500;
       color: #445669;
       cursor: pointer;

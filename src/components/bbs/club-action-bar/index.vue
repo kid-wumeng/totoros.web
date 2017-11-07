@@ -2,7 +2,7 @@
   .club-action-bar.row
     .left
     .right
-      c-button(@click="publish") 发布帖子
+      c-button(@click="publish") 发布贴子
 </template>
 
 

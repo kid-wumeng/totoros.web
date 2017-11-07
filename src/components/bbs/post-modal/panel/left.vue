@@ -1,6 +1,6 @@
 <template lang="jade">
   .left
-    h1 {{ id ? '修改帖子' : '发布新帖子' }}
+    h1 {{ id ? '修改贴子' : '发布新贴子' }}
     c-input(v-model="title", placeholder="标题")
     input-content(v-model="content")
     .row.-right

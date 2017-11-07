@@ -1,7 +1,7 @@
 <template lang="jade">
   .action-bar.row(v-if="login")
     .action(v-if="admin") 置顶
-    .action(v-if="isMe(post.user)", @click="update") 修改帖子
+    .action(v-if="isMe(post.user)", @click="update") 修改贴子
 </template>
 
 

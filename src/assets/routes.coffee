@@ -122,7 +122,7 @@ module.exports = [{
 
 },{
 
-  # 帖子
+  # 贴子
   path: '/posts/:id'
   component: -> System.import('pages/posts/:id')
   meta:

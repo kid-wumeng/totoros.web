@@ -10,7 +10,7 @@
           .date {{ model.date.display(post.createDate) }}
     .right
       c-button.-gray(v-if="admin") 置顶
-      c-button.-gray(v-if="isMe(post.user)", @click="update") 修改帖子
+      c-button.-gray(v-if="isMe(post.user)", @click="update") 修改贴子
 </template>
 
 

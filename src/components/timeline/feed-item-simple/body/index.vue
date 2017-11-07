@@ -1,5 +1,5 @@
 <template lang="jade">
-  component.desc.-more(:is="component", :feed="feed")
+  component.c-body(:is="component", :feed="feed")
 </template>
 
 
@@ -24,11 +24,6 @@
 
 
 <style lang="less" scoped>
-  .desc{
-    margin-left: 6px;
-    margin-right: 30px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #A2AEBA;
+  .c-body{
   }
 </style>

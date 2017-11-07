@@ -1,18 +1,21 @@
 <template lang="jade">
   #timeline
-    public-timeline
+    row
+      left-timeline
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'public-timeline': require('./public-timeline')
+      'left-timeline':  require('./left-timeline')
+      'right-timeline': require('./right-timeline')
 </script>
 
 
 <style lang="less" scoped>
   #timeline{
-    padding: 20px 0;
+    margin: 32px auto;
+    width: 1000px;
   }
 </style>
