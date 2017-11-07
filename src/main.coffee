@@ -74,6 +74,7 @@ Vue.use({
     Vue.prototype.prompt     = methods.prompt
     Vue.prototype.readDataUrl = methods.readDataUrl
     Vue.prototype.toUserPage              = methods.toUserPage
+    Vue.prototype.replaceUserPage         = methods.replaceUserPage
     Vue.prototype.toSubjectPage           = methods.toSubjectPage
     Vue.prototype.replaceSubjectPage      = methods.replaceSubjectPage
     Vue.prototype.toRolePage              = methods.toRolePage

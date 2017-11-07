@@ -106,6 +106,24 @@ module.exports = [{
         prefix: 'user-detail'
         params: ['id']
     component: -> System.import('pages/users/:id/games')
+  },{
+    path: 'idols'
+    meta:
+      path: 'idols'
+      keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
+    component: -> System.import('pages/users/:id/idols')
+  },{
+    path: 'fans'
+    meta:
+      path: 'fans'
+      keepAlive: true
+      key:
+        prefix: 'user-detail'
+        params: ['id']
+    component: -> System.import('pages/users/:id/fans')
   }]
 
 },{

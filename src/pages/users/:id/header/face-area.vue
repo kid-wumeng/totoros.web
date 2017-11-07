@@ -1,7 +1,10 @@
 <template lang="jade">
   .face-area
-    user-face(:user="user", :class="{'-clickable': isMe(user)}" prevent @click="click")
+    user-face(:user="user", :class="{'-clickable': isMe(user)}" prevent @click="uploadFace")
     c-button(v-if="isMe(user)" @click="$router.push('/setting')") Setting
+    div(v-else)
+      c-button(v-if="followSure && !followed" @click="follow") + 关注
+      c-button.-gray(v-if="followSure && followed" @click="unfollow") 取消关注
 
     user-face-modal
 </template>
@@ -19,10 +22,30 @@
         type: Object
         required: true
 
+    data: ->
+      followed:   false
+      followSure: false
+
     methods:
-      click: ->
+      init: ->
+        @followed   = await api.call('user.followSure', @user.id)
+        @followSure = true
+
+      uploadFace: ->
         if @isMe(@user)
           @commit('user-face-modal/SHOW')
+
+      follow: ->
+        if(@login)
+          await api.call('user.follow', @user.id)
+          @followed = true
+          @notify('done', '关注成功')
+
+      unfollow: ->
+        if(@login)
+          await api.call('user.unfollow', @user.id)
+          @followed = false
+          @notify('done', '取消成功')
 </script>
 
 
@@ -41,12 +64,15 @@
       cursor: auto;
     }
 
-    >.button{
+    .button{
       margin-top: @padding;
       width: 100%;
       height: 28px;
       line-height: 28px;
       font-size: 13px;
+    }
+    .button.-gray{
+      background-color: rgba(250, 250, 250, 1);
     }
   }
 </style>

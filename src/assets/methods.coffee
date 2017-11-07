@@ -105,6 +105,12 @@ exports.toUserPage = (user, subPath='') ->
   @$router.push(path)
 
 
+exports.replaceUserPage = (user, subPath='') ->
+  path = "/users/#{user.id}/#{subPath}"
+  path = path.replace(/\/$/, '')
+  @$router.replace(path)
+
+
 exports.toRolePage = (role) ->
   @$router.push("/roles/#{role.id}")
 
