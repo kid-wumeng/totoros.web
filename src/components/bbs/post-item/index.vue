@@ -43,13 +43,13 @@
     }
     .user-face{
       width: 30px;
-      margin-right: 9px;
+      margin-right: 10px;
     }
     .title{
       align-self: flex-start;
       font-weight: 500;
-      font-size: 14px;
-      color: #676F75;
+      font-size: 15px;
+      color: #111;
       cursor: pointer;
       &:hover{
         text-decoration: underline;

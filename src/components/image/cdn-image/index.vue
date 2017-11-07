@@ -34,7 +34,15 @@
 
     computed:
       url: ->
-        return if @path then "#{@cdn}/#{@path}" else ''
+        if(@width)
+          if @path
+            url = "#{@cdn}/#{@path}"
+            url = @appendQuery(url, "imageView2/2/w/#{@width*@dpr}")
+            return url
+          else
+            return ''
+        else
+          return ''
 
       defaultUrl: ->
         return "#{@cdn}/#{@defaultPath}"
@@ -53,6 +61,13 @@
 
     mounted: ->
       @width = @$el.offsetWidth
+
+    methods:
+      appendQuery: (url, key) ->
+        if(url.indexOf('?') > -1)
+          return url + "&#{key}"
+        else
+          return url + "?#{key}"
 </script>
 
 
