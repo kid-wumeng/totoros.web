@@ -31,7 +31,7 @@
       display: inline-block;
       font-weight: 600;
       font-size: 15px;
-      color: #111;
+      color: #333;
       cursor: pointer;
       &:hover{
         text-decoration: underline;

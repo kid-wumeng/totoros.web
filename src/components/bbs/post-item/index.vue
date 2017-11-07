@@ -5,7 +5,7 @@
     row.right.-between.-center
       div
         span.title(@click="toPostPage(post)") {{ post.title }}
-        span.comment-count(v-if="commentCount") replies +{{ commentCount }}
+        span.comment-count(v-if="commentCount") +{{ commentCount }}
       row.last.-center
         .hint Last by
         user-name(:user="post.user")
@@ -42,14 +42,14 @@
       }
     }
     .user-face{
-      width: 28px;
-      margin-right: 10px;
+      width: 30px;
+      margin-right: 9px;
     }
     .title{
       align-self: flex-start;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 14px;
-      color: #222;
+      color: #676F75;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
@@ -58,7 +58,8 @@
     .comment-count{
       margin-left: 6px;
       font-size: 12px;
-      color: #317589;
+      font-weight: 500;
+      color: #F62459;
       opacity: 0.6;
       cursor: pointer;
     }

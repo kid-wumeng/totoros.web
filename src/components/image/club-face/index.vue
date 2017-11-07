@@ -32,6 +32,5 @@
 
 <style lang="less" scoped>
   .club-face{
-    cursor: pointer;
   }
 </style>
