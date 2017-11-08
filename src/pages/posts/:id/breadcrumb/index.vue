@@ -23,20 +23,20 @@
     .club{
       font-weight: 600;
       font-size: 14px;
-      color: #A0D5C5;
       cursor: pointer;
+      color: #A2AEBA;
       &:hover{
         text-decoration: underline;
       }
     }
     .sep{
-      font-size: 13px;
-      color: #BBB;
+      font-size: 14px;
+      color: #CCC;
       margin: 0 6px;
     }
     .title{
       font-weight: 600;
-      font-size: 15px;
+      font-size: 16px;
       color: #333;
     }
   }

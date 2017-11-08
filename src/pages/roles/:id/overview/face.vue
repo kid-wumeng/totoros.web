@@ -22,7 +22,7 @@
     justify-content: center;
     .role-face{
       width: 160px;
-      cursor: auto;
+      cursor: auto !important;
     }
   }
 </style>

@@ -42,6 +42,7 @@
 <style lang="less" scoped>
   .image{
     .bg-image{
+      width: 100%;
       height: 100%;
       box-sizing: border-box;
       background-position: center;

@@ -59,7 +59,7 @@
         margin-top: 4px;
         line-height: 20px;
         font-size: 13px;
-        color: #445669;
+        color: #273340;
       }
     }
   }

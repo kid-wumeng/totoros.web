@@ -1,6 +1,6 @@
 <template lang="jade">
   .face
-    person-face(:person="person" frame)
+    person-face(:person="person" frame prevent @click="editFace")
 </template>
 
 
@@ -13,6 +13,10 @@
       'person':
         type: Object
         required: true
+
+    methods:
+      editFace: ->
+        @dispatch('wiki-face-modal/show', {type: 'person', id: @person.id})
 </script>
 
 
@@ -22,7 +26,6 @@
     justify-content: center;
     .person-face{
       width: 160px;
-      cursor: auto;
     }
   }
 </style>

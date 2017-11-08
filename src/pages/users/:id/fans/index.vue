@@ -2,7 +2,7 @@
   #user-detail-fans
     grid
       user-card(v-for="fan in fans", :key="fan.id", :user="fan")
-    //- page-bar(:user="user")
+    page-bar(:page="routePage", :size="size", :total="total", @change="change")
 </template>
 
 
@@ -11,6 +11,7 @@
     components:
       'grid':      require('components/@/grid')
       'user-card': require('components/user/user-card')
+      'page-bar':  require('components/@/page-bar')
 
     props:
       'user':
@@ -18,7 +19,9 @@
         required: true
 
     data: ->
-      fans: []
+      fans:  []
+      size:  0
+      total: 0
 
     watch:
       'routePage': -> @init()
@@ -29,6 +32,13 @@
           page: @routePage
         })
         @fans = result.fans
+        @size  = result.size
+        @total = result.total
+
+      change: (page) ->
+        @$router.push({
+          hash: "##{page}"
+        })
 </script>
 
 
@@ -36,8 +46,11 @@
   #user-detail-fans{
     width: 100%;
     .user-card{
-      padding: 5px;
       width: 25%;
+      padding: 10px;
+    }
+    .page-bar{
+      margin-top: 20px;
     }
   }
 </style>

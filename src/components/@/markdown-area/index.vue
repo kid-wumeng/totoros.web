@@ -178,6 +178,12 @@
       margin-left: 1.5em;
     }
 
+    pre{
+      width: 100%;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+
     blockquote{
       box-sizing: border-box;
       padding: 11px 16px;

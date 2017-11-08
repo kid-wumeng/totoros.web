@@ -48,6 +48,7 @@
       margin-right: 10px;
     }
     .user-name{
+      display: inline-block;
       font-size: 14px;
       color: #445669;
     }

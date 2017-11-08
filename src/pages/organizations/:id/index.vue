@@ -17,7 +17,9 @@
 
     methods:
       init: ->
-        @organization = await api.call('organization.get', @routeID)
+        @organization = await api.call('organization.get', @routeID, {
+          staffs: true
+        })
 
       updateOrganization: (organization) ->
         if isSame(organization, @organization)

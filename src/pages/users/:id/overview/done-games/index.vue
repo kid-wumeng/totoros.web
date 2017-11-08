@@ -2,7 +2,7 @@
   .done-games
     detail-area(:title="title", :tabs="tabs")
       gallery(:cols="7", :padding="5")
-        subject-face(v-for="mark in marks", :key="mark.id", :subject="mark.subject" frame fixed-height)
+        subject-face(v-for="mark in marks", :key="mark.id", :subject="mark.subject" fixed-height)
 </template>
 
 

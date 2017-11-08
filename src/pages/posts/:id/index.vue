@@ -1,9 +1,10 @@
 <template lang="jade">
   #posts-id(v-if="post")
-    .wrap
+    .wrap1
       breadcrumb(:post="post")
       c-header(:post="post")
       c-content(:post="post")
+    .wrap2
       comment-list(:post="post")
       comment-form(:post="post")
 </template>
@@ -32,9 +33,16 @@
     overflow: hidden;
     box-sizing: border-box;
     background-color: #FFF;
-    .wrap{
+    .wrap1{
       margin: 28px auto;
       width: 660px;
+      >*{
+        margin-bottom: 24px;
+      }
+    }
+    .wrap2{
+      margin: 0 auto;
+      width: 800px;
       >*{
         margin-bottom: 24px;
         &:last-child{

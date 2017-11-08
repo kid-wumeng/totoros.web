@@ -1,7 +1,7 @@
 <template lang="jade">
   .navigator
-    router-link(:class="{'-active': $route.path === '/'}" to="/")         TIME-LINE
-    router-link(:class="{'-active': isClub}" to="/clubs/2")               讨论版
+    router-link(:class="{'-active': $route.path === '/'}" to="/") TIME-LINE
+    router-link(:class="{'-active': isClub}" to="/clubs/2") 讨论版
     router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
 </template>
 
@@ -21,10 +21,9 @@
       margin-left: 16px;
       font-weight: 600;
       font-size: 14px;
-      color: #AAA;
+      color: #445669;
     }
     a.-active{
-      color: #445669;
     }
   }
 </style>

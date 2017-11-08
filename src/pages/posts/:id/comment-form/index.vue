@@ -1,6 +1,6 @@
 <template lang="jade">
   .comment-form(v-if="login")
-    input-area(v-model="content" placeholder="说几句吧~", :rows="8")
+    input-area(v-model="content" placeholder="说几句吧~", :rows="6")
     c-button(@click="submit") 发表回复
 </template>
 
@@ -40,10 +40,6 @@
 
 <style lang="less" scoped>
   .comment-form{
-    padding: 12px;
-    border: 1px solid #FFF;
-    border-radius: 3px;
-    box-shadow: 0 0 6px -3px #000;
     .button{
       margin-top: 12px;
     }

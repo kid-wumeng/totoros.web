@@ -6,6 +6,7 @@
         c-base(:role="role")
       .right
         intro(:role="role")
+        casts(:role="role")
 </template>
 
 
@@ -15,6 +16,7 @@
       'face':   require('./face')
       'c-base': require('./base')
       'intro':  require('./intro')
+      'casts':  require('./casts')
 
     props:
       'role':

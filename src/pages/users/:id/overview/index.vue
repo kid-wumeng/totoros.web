@@ -18,7 +18,6 @@
       'done-animes': require('./done-animes')
       'done-comics': require('./done-comics')
       'done-games':  require('./done-games')
-      'done-marks':  require('./done-marks')
       'doing-marks': require('./doing-marks')
 
     props:

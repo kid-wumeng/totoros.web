@@ -17,7 +17,9 @@
 
     methods:
       init: ->
-        @role = await api.call('role.get', @routeID)
+        @role = await api.call('role.get', @routeID, {
+          casts: true
+        })
 
       updateRole: (role) ->
         if isSame(role, @role)

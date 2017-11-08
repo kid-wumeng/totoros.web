@@ -17,7 +17,10 @@
 
     methods:
       init: ->
-        @person = await api.call('person.get', @routeID)
+        @person = await api.call('person.get', @routeID, {
+          casts:  true
+          staffs: true
+        })
 
       updatePerson: (person) ->
         if isSame(person, @person)

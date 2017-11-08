@@ -14,7 +14,7 @@
         required: true
       'active':
         type: null
-        required: true
+        default: null
 
     methods:
       click: (tab) ->

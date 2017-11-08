@@ -6,6 +6,8 @@
         c-base(:person="person")
       .right
         intro(:person="person")
+        casts(:person="person")
+        staffs(:person="person")
 </template>
 
 
@@ -15,6 +17,8 @@
       'face':   require('./face')
       'c-base': require('./base')
       'intro':  require('./intro')
+      'casts':  require('./casts')
+      'staffs': require('./staffs')
 
     props:
       'person':

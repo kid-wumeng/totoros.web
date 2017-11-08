@@ -14,7 +14,7 @@
         required: true
       'active':
         type: String
-        required: true
+        default: null
 
     methods:
       change: (tab) -> @$emit('change', tab)

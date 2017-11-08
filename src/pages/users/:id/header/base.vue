@@ -1,10 +1,11 @@
 <template lang="jade">
   .base
-    .name {{ user.name }}
+    row.-center
+      .name {{ user.name }}
+      .idolCount(v-if="user.idolCount" @click="replaceUserPage(user, 'idols')") 关注{{ user.idolCount }}人
+      .fanCount(v-if="user.fanCount"   @click="replaceUserPage(user, 'fans')") 被{{ user.fanCount }}人追随
     row.-center
       .motto {{ user.motto }}
-      .idolCount(v-if="user.idolCount" @click="replaceUserPage(user, 'idols')") 关注 {{ user.idolCount }} 人
-      .fanCount(v-if="user.fanCount"   @click="replaceUserPage(user, 'fans')") 被 {{ user.fanCount }} 人关注
 </template>
 
 
@@ -23,20 +24,17 @@
     .name{
       font-weight: 600;
       font-size: 16px;
-      margin-bottom: 5px;
     }
     .motto{
+      margin-top: 5px;
       font-size: 13px;
       color: #707C88;
     }
-    .idolCount{
-      margin-left: 10px;
-      font-size: 12px;
-      cursor: pointer;
-    }
+    .idolCount,
     .fanCount{
       margin-left: 10px;
       font-size: 12px;
+      color: #A2AEBA;
       cursor: pointer;
     }
   }

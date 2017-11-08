@@ -6,6 +6,7 @@
         c-base(:organization="organization")
       .right
         intro(:organization="organization")
+        staffs(:organization="organization")
 </template>
 
 
@@ -15,6 +16,7 @@
       'face':   require('./face')
       'c-base': require('./base')
       'intro':  require('./intro')
+      'staffs': require('./staffs')
 
     props:
       'organization':
