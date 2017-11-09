@@ -16,7 +16,7 @@
   .toast{
     position: fixed;
     top: 35%;
-    z-index: 10;
+    z-index: 1000;
     animation-duration: 0.3s;
     .message{
       padding: 5px 14px;

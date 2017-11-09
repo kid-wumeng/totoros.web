@@ -130,6 +130,7 @@
     .body{
       flex: auto;
       width: 100%;
+      padding-top: 64px;
       margin-bottom: 30px;
     }
   }

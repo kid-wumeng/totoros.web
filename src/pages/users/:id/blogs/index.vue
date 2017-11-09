@@ -1,5 +1,5 @@
 <template lang="jade">
-  #user-detail-blogs blogs
+  #user-detail-blogs 本功能等待开发中。。。
 </template>
 
 

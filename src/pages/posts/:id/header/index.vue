@@ -63,7 +63,7 @@
       color: #A2AEBA;
     }
     .button{
-      margin-left: 6px;
+      margin-left: 8px;
       &:first-child{
         margin-left: 0;
       }

@@ -14,6 +14,6 @@
 
 <style lang="less" scoped>
   .prompt{
-    z-index: 12;
+    z-index: 12 !important;
   }
 </style>

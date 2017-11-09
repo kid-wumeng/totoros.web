@@ -15,7 +15,6 @@
 
 <style lang="less" scoped>
   #clubs{
-    border-top: 1px solid rgba(245, 245, 245, 1);
     overflow: hidden;
     .wrap{
       margin: 16px auto;

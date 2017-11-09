@@ -53,14 +53,14 @@ module.exports = [{
         params: ['id']
     component: -> System.import('pages/users/:id/overview')
   },{
-    path: 'timeline'
+    path: 'feeds'
     meta:
-      path: 'timeline'
+      path: 'feeds'
       keepAlive: true
       key:
         prefix: 'user-detail'
         params: ['id']
-    component: -> System.import('pages/users/:id/timeline')
+    component: -> System.import('pages/users/:id/feeds')
   },{
     path: 'blogs'
     meta:

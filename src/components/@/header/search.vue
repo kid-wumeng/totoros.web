@@ -24,11 +24,11 @@
     line-height: 26px;
     padding: 0 10px;
     cursor: pointer;
+    border: 1px solid #445669;
     border-radius: 100px;
-    box-shadow: 0 0 5px -3px #000;
     .icon{
       display: inline;
-      color: #C3CCD4;
+      color: #445669;
     }
     span{
       margin-left: 8px;

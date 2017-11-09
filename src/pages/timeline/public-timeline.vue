@@ -1,5 +1,5 @@
 <template lang="jade">
-  #left-timeline(v-if="feeds.length")
+  #public-timeline(v-if="feeds.length")
     feed-list(:feeds="feeds")
     .hint(v-if="moreSure")
       .more(v-if="moreShow", @click="more") ... 加载更多
@@ -27,7 +27,7 @@
 
 
 <style lang="less" scoped>
-  #left-timeline{
+  #public-timeline{
     flex: none;
     box-sizing: border-box;
     width: 100%;

@@ -1,7 +1,6 @@
 <template lang="jade">
-  #user-detail-fans
-    grid
-      user-card(v-for="fan in fans", :key="fan.id", :user="fan")
+  #user-detail-feeds
+    feed-list(:feeds="feeds")
     page-bar(:page="routePage", :size="size", :total="total", @change="change")
 </template>
 
@@ -9,8 +8,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'grid':      require('components/@/grid')
-      'user-card': require('components/user/user-card')
+      'feed-list': require('components/timeline/feed-list')
       'page-bar':  require('components/@/page-bar')
 
     props:
@@ -19,7 +17,7 @@
         required: true
 
     data: ->
-      fans:  []
+      feeds: []
       size:  0
       total: 0
 
@@ -28,10 +26,10 @@
 
     methods:
       init: ->
-        result = await api.call('user.getFans', @user.id, {
+        result = await api.call('feed.getAllByUser', @user.id, {
           page: @routePage
         })
-        @fans = result.fans
+        @feeds = result.feeds
         @size  = result.size
         @total = result.total
 
@@ -43,14 +41,12 @@
 
 
 <style lang="less" scoped>
-  #user-detail-fans{
-    width: 100%;
-    .user-card{
-      width: 25%;
-      padding: 5px;
+  #user-detail-feeds{
+    .feed-list{
+      width: 720px;
     }
     .page-bar{
-      margin-top: 20px;
+      margin-top: 48px;
     }
   }
 </style>

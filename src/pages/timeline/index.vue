@@ -16,7 +16,7 @@
   #timeline{
     overflow: hidden;
     >.row2{
-      margin: 32px auto;
+      margin: 40px auto;
       width: 720px;
     }
   }

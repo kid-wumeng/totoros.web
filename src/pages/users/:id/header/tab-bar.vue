@@ -19,7 +19,7 @@
         value: ''
       },{
         label: '动态'
-        value: 'timeline'
+        value: 'feeds'
         count: @user.feedCount
       },{
         label: '日志'

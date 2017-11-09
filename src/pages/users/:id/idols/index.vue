@@ -47,7 +47,7 @@
     width: 100%;
     .user-card{
       width: 25%;
-      padding: 10px;
+      padding: 5px;
     }
     .page-bar{
       margin-top: 20px;

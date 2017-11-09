@@ -51,7 +51,7 @@ module.exports =
 
 
     'input-content/mountPicture': ({dispatch}, picture) ->
-      string = "![](#{picture.hash})\n"
+      string = "![](id=#{picture.id}&hash=#{picture.hash})\n"
       dispatch('input-content/mount', string)
 
 

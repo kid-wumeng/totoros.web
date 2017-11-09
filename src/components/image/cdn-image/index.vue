@@ -37,7 +37,7 @@
         if(@width)
           if @path
             url = "#{@cdn}/#{@path}"
-            url = @appendQuery(url, "imageView2/2/w/#{@width*@dpr}")
+            url = @appendQuery(url, "imageView2/2/w/#{@width*(@dpr+1)}")
             return url
           else
             return ''

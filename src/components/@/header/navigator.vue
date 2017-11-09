@@ -16,11 +16,14 @@
 
 <style lang="less" scoped>
   .navigator{
-    margin-left: 16px;
+    margin-left: 44px;
     a{
-      margin-left: 16px;
-      font-weight: 600;
+      display: inline-block;
+      height: 64px;
+      line-height: 64px;
+      padding: 0 10px;
       font-size: 14px;
+      font-weight: 600;
       color: #445669;
     }
     a.-active{

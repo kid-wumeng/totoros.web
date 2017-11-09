@@ -30,9 +30,9 @@
 
 <style lang="less" scoped>
   #posts-id{
-    overflow: hidden;
     box-sizing: border-box;
     background-color: #FFF;
+    overflow: hidden;
     .wrap1{
       margin: 28px auto;
       width: 660px;
@@ -42,12 +42,10 @@
     }
     .wrap2{
       margin: 0 auto;
+      margin-top: 40px;
       width: 800px;
       >*{
         margin-bottom: 24px;
-        &:last-child{
-          margin-bottom: 0;
-        }
       }
     }
   }

@@ -1,7 +1,7 @@
 <template lang="jade">
   row.item
     .left
-      subject-face(:subject="mark.subject" frame)
+      subject-face(:subject="mark.subject")
     .right
       .name {{ mark.subject.name }}
       mark-progress(:mark="mark")

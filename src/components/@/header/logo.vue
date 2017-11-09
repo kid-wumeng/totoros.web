@@ -1,5 +1,7 @@
 <template lang="jade">
-  cdn-image.logo(path="assets/logo?2017-11-05.2", @click.native="$router.push('/')")
+  .logo
+    cdn-image(path="assets/logo?2017-11-09", @click.native="$router.push('/')")
+    .version 6.0 Beta
 </template>
 
 
@@ -12,11 +14,23 @@
 
 <style lang="less" scoped>
   .logo{
-    @width: 86px;
-    width: @width;
-    height: @width / 4.54;
+    @width: 76px;
     position: relative;
     top: -2px;
     cursor: pointer;
+    position: relative;
+    .cdn-image{
+      width: @width;
+      height: @width / 5.5125;
+      opacity: 0.8;
+    }
+    .version{
+      position: absolute;
+      right: -20px;
+      bottom: -16px;
+      font-size: 12px;
+      color: #A2AEBA;
+      transform: scale3d(0.85, 0.85, 1);
+    }
   }
 </style>

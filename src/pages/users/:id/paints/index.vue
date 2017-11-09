@@ -1,5 +1,5 @@
 <template lang="jade">
-  #user-detail-paints paints
+  #user-detail-paints 本功能等待开发中。。。
 </template>
 
 

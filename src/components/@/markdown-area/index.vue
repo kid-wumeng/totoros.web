@@ -93,9 +93,10 @@
 
 
   renderer.image = (url, title, text) ->
-    hash = url
     if not /^(http|https)/i.test(url)
-      url = "#{cdn}/pictures/#{hash}"
+      query = model.assets.parseQuery(url)
+      hash  = query.hash
+      url   = "#{cdn}/pictures/#{hash}"
     return "
       <div class='image'>
         <img src='#{url}'/>
@@ -122,7 +123,7 @@
     computed:
       html: ->
         html = marked(@content)
-        html = html.replace(/(<br>)+/g, '<br>')
+        html = html.replace(/<\/div>(<br>)+/g, '</div>')
         return html
 </script>
 
@@ -133,7 +134,7 @@
     word-break: break-all;
     line-height: 24px;
     font-size: 14px;
-    color: #111;
+    color: #333;
 
     *{
       font-size: inherit;
@@ -142,6 +143,12 @@
 
     >*:not(:last-child){
       margin-bottom: 14px;
+    }
+
+    br{
+      margin-bottom: 0 !important;
+      height: 0 !important;
+      line-height: 0 !important;
     }
 
     p{
@@ -163,14 +170,16 @@
     }
 
     .image{
-      width: 100%;
+      display: inline-block;
       img{
-        display: inline-block;
+        display: block;
         max-width: 100%;
       }
       .desc{
+        margin-top: 4px;
+        text-align: center;
         font-size: 13px;
-        color: #888;
+        color: #A2AEBA;
       }
     }
 

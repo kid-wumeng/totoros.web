@@ -1,15 +1,15 @@
 <template lang="jade">
   .post-item.row.-left
     .left
-      user-face(:user="post.user")
+      user-face(:user="user")
     row.right.-between.-center
       div
-        span.title(@click="toPostPage(post)") {{ post.title }}
+        span.title(@click="toPostPage(post)") {{ title }}
         span.comment-count(v-if="commentCount") +{{ commentCount }}
-      row.last.-center
+      row.last.-center(v-if="lastCommentDate")
         .hint Last by
-        user-name(:user="post.user")
-        .date {{ model.date.display(post.createDate) }}
+        user-name(:user="lastCommentUser")
+        .date {{ model.date.display(lastCommentDate) }}
 </template>
 
 
@@ -26,7 +26,11 @@
         required: true
 
     computed:
-      commentCount: -> @post.commentCount ? 15
+      user:            -> @post.user
+      title:           -> @post.title
+      commentCount:    -> @post.commentCount ? 0
+      lastCommentDate: -> @post.lastCommentDate
+      lastCommentUser: -> @post.lastCommentUser
 </script>
 
 

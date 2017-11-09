@@ -32,18 +32,11 @@
 
 <style lang="less" scoped>
   .comment-list{
-    @padding: 12px;
-    @border: 1px solid #F4F4F4;
-
     .comment-item{
-      padding: 12px;
-      // margin-bottom:  @padding;
-      border-bottom:  @border;
-      // padding-bottom: @padding + 1;
+      padding: 16px;
+      border-bottom: 1px solid #F4F4F4;
       &:last-child{
-        // margin-bottom: 0;
         border-bottom: none;
-        // padding-bottom: 0;
       }
       &:nth-child(odd){
         background-color: rgba(250, 250, 250, 0.93);
