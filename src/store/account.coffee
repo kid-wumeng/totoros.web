@@ -23,4 +23,4 @@ module.exports =
         result = await api.call('account.checkin', tokenString)
         localStorage.setItem('tokenString', result.tokenString)
         commit('account/SET_USER', result.user)
-        commit('account/SET_CHECKINED', true)
+      commit('account/SET_CHECKINED', true)
