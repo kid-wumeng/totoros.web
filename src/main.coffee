@@ -10,7 +10,16 @@ directives = require('./assets/directives')
 routes     = require('./assets/routes')
 
 
-window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
+##################################################
+## 判断是否处于开发环境
+##################################################
+if process.env.NODE_ENV isnt 'production'
+  window.dev = true
+
+if(window.dev)
+  window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
+else
+  window.api = new Sai.RemoteApp('ws://139.196.39.110:3000')
 
 window.addEventListener 'unhandledrejection', (event) ->
   error = event.reason
@@ -23,14 +32,7 @@ window.Vue = Vue
 window.model = model
 
 
-##################################################
-## 判断是否处于开发环境
-##################################################
-if process.env.NODE_ENV isnt 'production'
-  window.dev = true
-
-
-if dev
+if window.dev
   window.cdn = 'http://oy0aiwj7c.bkt.clouddn.com'
 else
   window.cdn = 'http://oy0az8u94.bkt.clouddn.com'
