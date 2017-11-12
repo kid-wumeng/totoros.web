@@ -1,7 +1,7 @@
 <template lang="jade">
   .navigator
     router-link(:class="{'-active': $route.path === '/'}" to="/") TIME-LINE
-    router-link(:class="{'-active': isClub}" to="/clubs/2") 讨论版
+    router-link(:class="{'-active': isforum}" to="/forums/2") 讨论版
     //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
 </template>
 
@@ -9,8 +9,8 @@
 <script lang="coffee">
   module.exports =
     computed:
-      isClub: ->
-        return /^\/clubs\//.test(@$route.path)
+      isforum: ->
+        return /^\/forums\//.test(@$route.path)
 </script>
 
 

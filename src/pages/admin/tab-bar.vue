@@ -11,7 +11,7 @@
     computed:
       tabs: -> [{
         label: '讨论版'
-        value: 'clubs'
+        value: 'forums'
       },{
         label: '反馈'
         value: 'feedbacks'

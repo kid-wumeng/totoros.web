@@ -135,8 +135,8 @@ exports.replaceOrganizationPage = (organization) ->
   @$router.replace("/organizations/#{organization.id}")
 
 
-exports.toClubPage = (club) ->
-  @$router.push("/clubs/#{club.id}")
+exports.toforumPage = (forum) ->
+  @$router.push("/forums/#{forum.id}")
 
 
 exports.toPostPage = (post) ->

@@ -129,13 +129,13 @@ module.exports = [{
 },{
 
   # 讨论版
-  path: '/clubs'
-  component: -> System.import('pages/clubs')
+  path: '/forums'
+  component: -> System.import('pages/forums')
   children: [{
     path: ':id'
     meta:
       keepAlive: true
-    component: -> System.import('pages/clubs/:id')
+    component: -> System.import('pages/forums/:id')
   }]
 
 },{
@@ -259,12 +259,12 @@ module.exports = [{
 
   # 管理
   path: '/admin'
-  redirect: path: '/admin/clubs'
+  redirect: path: '/admin/forums'
   component: -> System.import('pages/admin')
   children: [{
-    path: 'clubs'
-    meta: path: 'clubs'
-    component: -> System.import('pages/admin/clubs')
+    path: 'forums'
+    meta: path: 'forums'
+    component: -> System.import('pages/admin/forums')
   },{
     path: 'feedbacks'
     meta: path: 'feedbacks'
