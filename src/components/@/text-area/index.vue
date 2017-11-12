@@ -1,6 +1,6 @@
 <template lang="jade">
   .text-area(:style="textStyle")
-    .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", @click="click") {{ paragraph }}
+    .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", v-html="paragraph", @click="click")
 </template>
 
 
@@ -51,6 +51,7 @@
           text = text.slice(0, @limit)
           text = @addHint(text)
           @clickable = @more
+        text = text.replace(/\n{2,}/g, '<br/><br/>')
         @formatText = text
 
       isOver: (text) ->

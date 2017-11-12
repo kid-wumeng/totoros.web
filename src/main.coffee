@@ -43,10 +43,12 @@ window.sleep = (ms) ->
   return new Promise (resolve) ->
     setTimeout(resolve, ms)
 
-window.isSame = methods.isSame
-window.update = methods.update
-window.remove = methods.remove
-window.inc    = methods.inc
+window.isSame     = methods.isSame
+window.update     = methods.update
+window.updateItem = methods.updateItem
+window.remove     = methods.remove
+window.removeItem = methods.removeItem
+window.inc        = methods.inc
 
 
 Vue.use({

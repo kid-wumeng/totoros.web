@@ -38,6 +38,10 @@
       'status':    -> @init()
       'routePage': -> @init()
 
+    created: ->
+      @listen('UPDATE_MARK', @updateMark)
+      @listen('REMOVE_MARK', @removeMark)
+
     methods:
       init: ->
         result = await api.call('mark.getAll', {
@@ -48,6 +52,9 @@
           sort:   '-average'
         })
         @marks = result.marks
+
+      updateMark: (mark) -> @updateItem(@marks, mark)
+      removeMark: (mark) -> @removeItem(@marks, mark)
 </script>
 
 

@@ -9,6 +9,9 @@ module.exports =
     moreSure: false
 
   mutations:
+    REMOVE_FEED: (state, feed) ->
+      removeItem(state.feeds, feed)
+
     ADD_FEED_COMMENT: (state, {feed, comment}) ->
       for _, i in state.feeds
         if isSame(state.feeds[i], feed)

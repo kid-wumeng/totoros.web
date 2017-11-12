@@ -1,7 +1,8 @@
 <template lang="jade">
-  .logo
-    cdn-image(path="assets/logo?2017-11-09", @click.native="$router.push('/')")
-    .version 6.0 Beta
+  .logo(@click="$router.push('/')")
+    .wrap
+      cdn-image(path="assets/logo?2017-11-09")
+      .version 0.6 Beta
 </template>
 
 
@@ -17,8 +18,12 @@
     @width: 76px;
     position: relative;
     top: -2px;
+    height: 64px;
+    line-height: 64px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
     .cdn-image{
       width: @width;
       height: @width / 5.5125;

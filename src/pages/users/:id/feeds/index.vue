@@ -24,6 +24,9 @@
     watch:
       'routePage': -> @init()
 
+    created: ->
+      @listen('REMOVE_FEED', @removeFeed)
+
     methods:
       init: ->
         result = await api.call('feed.getAllByUser', @user.id, {
@@ -37,6 +40,8 @@
         @$router.push({
           hash: "##{page}"
         })
+
+      removeFeed: (feed) -> @removeItem(@feeds, feed)
 </script>
 
 

@@ -47,10 +47,10 @@
 <style lang="less" scoped>
   .mark-score{
     box-sizing: border-box;
-    width: 140px;
+    width: 130px;
     .item{
-      height: 18px;
-      line-height: 18px;
+      height: 16px;
+      line-height: 16px;
       .label{
         flex: none;
         margin-right: 3px;
@@ -58,13 +58,13 @@
       }
       .value{
         flex: auto;
-        height: 10px;
+        height: 8px;
         padding: 1px;
         background-color: rgba(247, 247, 247, 1);
         border: 1px solid rgb(240, 240, 240);
         border-radius: 2px;
         .active{
-          height: 10px;
+          height: 8px;
           border-radius: 1px;
         }
       }

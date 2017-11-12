@@ -150,6 +150,7 @@ module.exports = [{
       params: ['id']
 
 },{
+
   # 维基
   path: '/wiki'
   component: -> System.import('pages/wiki')

@@ -10,6 +10,7 @@
         row.-center
           .date {{ model.date.display(mark.createDate) }}
           .update(v-if="isMe(mark.user)" @click="update") 修改标记
+          action-sheet(:actions="actions")
       row
         mark-score(:mark="mark")
         text-area.comment(:text="comment")
@@ -26,6 +27,7 @@
       'mark-score':    require('components/user/mark-score')
       'mark-progress': require('components/user/mark-progress')
       'text-area':     require('components/@/text-area')
+      'action-sheet':  require('components/@/action-sheet')
       'c-button':      require('components/@/button')
       'resources':     require('./resources')
 
@@ -33,6 +35,12 @@
       'mark':
         type: Object
         required: true
+
+    data: ->
+      actions: [{
+        label: '删除本条标记'
+        click: => @remove()
+      }]
 
     computed:
       subject: -> @mark.subject
@@ -49,6 +57,10 @@
     methods:
       update: ->
         @dispatch('mark-modal/show', {subject: @subject})
+
+      remove: ->
+        await @api.call('mark.remove', @mark.id)
+        @commit('REMOVE_MARK', @mark)
 </script>
 
 
@@ -83,7 +95,8 @@
       color: #A2AEBA;
     }
     .update{
-      margin-left: 8px;
+      margin-left: 16px;
+      margin-right: 16px;
       font-weight: 600;
       font-size: 12px;
       color: #707C88;

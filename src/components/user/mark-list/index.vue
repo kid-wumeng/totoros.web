@@ -18,11 +18,11 @@
 
 <style lang="less" scoped>
   .mark-list{
-    @padding: 8px;
+    @padding: 16px;
     .mark-item{
-      padding-left: @padding;
-      padding-right: @padding;
-      padding-top:  @padding;
+      padding-left:   @padding;
+      padding-right:  @padding;
+      padding-top:    @padding;
       padding-bottom: @padding + 1;
       &:nth-child(even){
         background-color: #FFF;
