@@ -2,7 +2,7 @@
   .navigator
     router-link(:class="{'-active': $route.path === '/'}" to="/") TIME-LINE
     router-link(:class="{'-active': isForum}" to="/forums/2") 讨论版
-    router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
+    //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
 </template>
 
 
