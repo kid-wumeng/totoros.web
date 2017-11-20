@@ -24,14 +24,14 @@
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
-      color: #A2AEBA;
+      color: #BBB;
       &:hover{
         text-decoration: underline;
       }
     }
     .sep{
       font-size: 14px;
-      color: #CCC;
+      color: #DDD;
       margin: 0 6px;
     }
     .title{

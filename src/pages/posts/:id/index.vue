@@ -35,7 +35,7 @@
     overflow: hidden;
     .wrap1{
       margin: 28px auto;
-      width: 660px;
+      width: 750px;
       >*{
         margin-bottom: 24px;
       }
@@ -43,7 +43,7 @@
     .wrap2{
       margin: 0 auto;
       margin-top: 40px;
-      width: 800px;
+      width: 900px;
       >*{
         margin-bottom: 24px;
       }

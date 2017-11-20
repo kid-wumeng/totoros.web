@@ -1,18 +1,16 @@
 <template lang="jade">
-  .comment-item
+  .reply-item
     row
       .left
-        user-face(:user="comment.user")
+        user-face(:user="reply.user")
       .right
         row.-between.-center
           row.left.-center
-            user-name(:user="comment.user")
-            .motto(v-if="comment.user.motto") {{ comment.user.motto }}
+            user-name(:user="reply.user")
+            .motto(v-if="reply.user.motto") {{ reply.user.motto }}
           .right
-            .date {{ model.date.display(comment.createDate) }}
-        markdown-area(:content="comment.content")
-        reply-list(:comment="comment")
-        reply-form(:comment="comment")
+            .date {{ model.date.display(reply.createDate) }}
+        markdown-area(:content="reply.content")
 </template>
 
 
@@ -22,27 +20,26 @@
       'user-face':     require('components/image/user-face')
       'user-name':     require('components/user/user-name')
       'markdown-area': require('components/@/markdown-area')
-      'reply-form':    require('./reply-form')
-      'reply-list':    require('./reply-list')
 
     props:
-      'comment':
+      'reply':
         type: Object
         required: true
 </script>
 
 
 <style lang="less" scoped>
-  .comment-item{
+  .reply-item{
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
+    padding: 8px 0;
     >.row2{
       >.right{
         flex: auto;
       }
       .user-face{
-        width: 48px;
+        width: 40px;
         margin-right: 10px;
       }
       .user-name{
@@ -61,7 +58,7 @@
       }
       .markdown-area{
         margin-left: 12px;
-        margin-top: 6px;
+        margin-top: 4px;
         width: 85%;
         line-height: 20px;
         font-size: 13px;

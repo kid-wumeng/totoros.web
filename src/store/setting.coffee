@@ -12,9 +12,9 @@ module.exports =
       state.user = user
 
   actions:
-    'setting/init': ({dispatch}, id) ->
+    'setting/init': ({dispatch}) ->
       dispatch('setting/load-user')
 
-    'setting/load-user': ({commit}, id) ->
-      user = await api.call('user.get', id)
+    'setting/load-user': ({commit}) ->
+      user = await api.call('account.get')
       commit('setting/SET_USER', user)

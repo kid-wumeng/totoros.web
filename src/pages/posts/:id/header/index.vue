@@ -2,15 +2,13 @@
   row.header.-between.-center(v-if="routePage === 1")
     row.left
       user-face(:user="user")
-      column.-between
-        .top
-          user-name(:user="user")
-          .motto(v-if="user.motto") {{ user.motto }}
-        .bottom
-          .date {{ model.date.display(post.createDate) }}
+      column
+        user-name(:user="user")
+        .motto(v-if="user.motto") {{ user.motto }}
     .right
       c-button.-gray(v-if="admin") 置顶
       c-button.-gray(v-if="isMe(post.user)", @click="update") 修改贴子
+      .date {{ model.date.display(post.createDate) }}
 </template>
 
 
@@ -44,13 +42,13 @@
       flex: none;
     }
     .user-face{
-      width: 64px;
+      width: 52px;
       margin-right: 10px;
     }
     .user-name{
       display: inline-block;
       font-size: 14px;
-      color: #445669;
+      color: #000;
     }
     .motto{
       margin-top: 2px;
@@ -58,7 +56,7 @@
       color: #A2AEBA;
     }
     .date{
-      margin-right: 6px;
+      margin-left: 6px;
       font-size: 12px;
       color: #A2AEBA;
     }
