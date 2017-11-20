@@ -2,7 +2,7 @@
   .logo(@click="$router.push('/')")
     .wrap
       cdn-image(path="assets/logo?2017-11-09")
-      .version 0.6 Beta
+      .version 0.6.1 Beta
 </template>
 
 
