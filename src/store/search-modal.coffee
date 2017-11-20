@@ -42,7 +42,7 @@ module.exports =
       return new Promise (resolve) ->
         commit('search-modal/SHOW', {allowType, redirect, resolve})
         setTimeout (->
-          dispatch('search-modal/search', '-id')
+          dispatch('search-modal/search', '+id')
         ), 300  # 延时加载：防止DOM渲染影响动画性能
 
 
