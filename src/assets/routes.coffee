@@ -20,6 +20,12 @@ module.exports = [{
 
 },{
 
+  # 重置密码
+  path: '/reset-pass'
+  component: -> System.import('pages/reset-pass')
+
+},{
+
   # 个人设定
   path: '/setting'
   redirect: path: '/setting/base'

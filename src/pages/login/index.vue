@@ -1,9 +1,11 @@
 <template lang="jade">
   #login(v-if="checkined && !login")
     .wrap
+      row.-right
+        .forget(@click="$router.push('/reset-pass')") 忘记密码？
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码" type="password")
-      c-button(@click="submit") 登登登 ... 录 ~ ！
+      c-button(@click="submit") 登录 totoros
 </template>
 
 
@@ -44,6 +46,12 @@
     .wrap{
       margin-top: 10%;
       width: 260px;
+      .forget{
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
       .input{
         margin-bottom: 12px;
       }

@@ -69,6 +69,8 @@ exports.toast = (message, duration) ->
 
 
 exports.notify = (type, message, duration) ->
+  if typeof(message) is 'object'
+    message = message.message
   @dispatch('notify/show', {type, message, duration})
 
 

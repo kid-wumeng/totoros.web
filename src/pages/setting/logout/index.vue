@@ -13,8 +13,7 @@
       logout: ->
         localStorage.removeItem('tokenString')
         @commit('account/SET_USER', null)
-        @commit('account/SET_CHECKINED', false)
-        @notify('done', '已成功退出登录，欢迎再次回归 ~')
+        @notify('done', '已成功退出登录，欢迎再次回归 ~', 4000)
         @$router.replace('/')
 </script>
 
