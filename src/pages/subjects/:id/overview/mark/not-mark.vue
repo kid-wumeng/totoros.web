@@ -1,5 +1,5 @@
 <template lang="jade">
-  detail-box.not-mark(title="标记")
+  .not-mark
     row
       c-button(@click="showModal('will-do')") {{ model.mark.displayStatus('will-do', subject.type) }}
       c-button(@click="showModal('doing')")   {{ model.mark.displayStatus('doing',   subject.type) }}
@@ -11,8 +11,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-button':   require('components/@/button')
-      'detail-box': require('components/wiki/detail-box')
+      'c-button': require('components/@/button')
 
     props:
       'subject':
@@ -35,7 +34,6 @@
   .not-mark{
     .button{
       flex: auto;
-      font-size: 13px;
       margin-right: 6px;
       &:last-child{
         margin-right: 0;

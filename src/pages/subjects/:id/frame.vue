@@ -55,6 +55,10 @@
         label: 'STAFF'
         value: 'staffs'
         count: @subject.staffCount
+      },{
+        label: '标记'
+        value: 'marks'
+        count: @model.subject.markStat(@subject)
       }]
 
     methods:

@@ -211,6 +211,15 @@ module.exports = [{
         prefix: 'subject-detail'
         params: ['id']
     component: -> System.import('pages/subjects/:id/episodes')
+  },{
+    path: 'marks'
+    meta:
+      path: 'marks'
+      keepAlive: true
+      key:
+        prefix: 'subject-detail'
+        params: ['id']
+    component: -> System.import('pages/subjects/:id/marks')
   }]
 
 },{

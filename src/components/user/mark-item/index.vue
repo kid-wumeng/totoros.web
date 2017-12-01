@@ -1,16 +1,16 @@
 <template lang="jade">
   row.mark-item
     .left
-      subject-face(:subject="subject" frame)
+      face(:mark="mark", :showUser="showUser", :showSubject="showSubject")
     .right
       row.-between.-center
         row.-center
-          .name(@click="toSubjectPage(subject)") {{ name }}
-          .desc {{ desc }}
+          name(:mark="mark", :showUser="showUser", :showSubject="showSubject")
+          .desc(v-if="showSubject") {{ desc }}
         row.-center
           .date {{ model.date.display(mark.createDate) }}
           .update(v-if="isMe(mark.user)" @click="update") 修改标记
-          action-sheet(:actions="actions")
+          action-sheet(v-if="isMe(mark.user)", :actions="actions")
       row
         mark-score(:mark="mark")
         text-area.comment(:text="comment")
@@ -23,18 +23,25 @@
 <script lang="coffee">
   module.exports =
     components:
-      'subject-face':  require('components/image/subject-face')
       'mark-score':    require('components/user/mark-score')
       'mark-progress': require('components/user/mark-progress')
       'text-area':     require('components/@/text-area')
       'action-sheet':  require('components/@/action-sheet')
       'c-button':      require('components/@/button')
+      'face':          require('./face')
+      'name':          require('./name')
       'resources':     require('./resources')
 
     props:
       'mark':
         type: Object
         required: true
+      'showUser':
+        type: Boolean
+        default: false
+      'showSubject':
+        type: Boolean
+        default: false
 
     data: ->
       actions: [{
@@ -69,20 +76,10 @@
     box-sizing: border-box;
     >.right{
       flex: auto;
-      margin-left: 14px;
+      margin-left: 12px;
+      margin-top: -1px;
       >:nth-child(2){
         margin-top: 8px;
-      }
-    }
-    .subject-face{
-      width: 80px;
-    }
-    .name{
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      &:hover{
-        text-decoration: underline;
       }
     }
     .desc{
@@ -115,7 +112,6 @@
       line-height: 19px;
       font-size: 13px;
     }
-
     .column{
       flex: auto;
     }

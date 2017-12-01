@@ -55,16 +55,17 @@
         flex: none;
         margin-right: 3px;
         font-size: 12px;
+        color: #A2AEBA;
       }
       .value{
         flex: auto;
-        height: 8px;
+        height: 10px;
         padding: 1px;
         background-color: rgba(247, 247, 247, 1);
         border: 1px solid rgb(240, 240, 240);
         border-radius: 2px;
         .active{
-          height: 8px;
+          height: 10px;
           border-radius: 1px;
         }
       }

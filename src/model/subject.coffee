@@ -198,3 +198,19 @@ exports.displayGamePlatform = (gamePlatform) =>
     when 29 then '街机'
     when 30 then '桌游'
     else ''
+
+
+exports.markStat = (subject, status) ->
+  if !status
+    count = 0
+    count += @markStat(subject, 'will-do')
+    count += @markStat(subject, 'doing')
+    count += @markStat(subject, 'done')
+    count += @markStat(subject, 'do-not')
+    return count
+
+  switch status
+    when 'will-do' then subject.markStat?['will-do'] ? 0
+    when 'doing'   then subject.markStat?['doing']   ? 0
+    when 'done'    then subject.markStat?['done']    ? 0
+    when 'do-not'  then subject.markStat?['do-not']  ? 0
