@@ -11,19 +11,18 @@
           .date {{ model.date.display(mark.createDate) }}
           .update(v-if="isMe(mark.user)" @click="update") 修改标记
           action-sheet(v-if="isMe(mark.user)", :actions="actions")
-      row
-        mark-score(:mark="mark")
-        text-area.comment(:text="comment")
-        column.-right
-          mark-progress(v-if="mark.status === 'doing'", :mark="mark")
-          resources(:subject="mark.subject")
+      row.-between
+        column
+          text-area.comment(v-if="comment", :text="comment")
+          mark-score-simple(:mark="mark")
+        resources(:subject="mark.subject")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'mark-score':    require('components/user/mark-score')
+      'mark-score-simple':    require('components/user/mark-score-simple')
       'mark-progress': require('components/user/mark-progress')
       'text-area':     require('components/@/text-area')
       'action-sheet':  require('components/@/action-sheet')
@@ -55,7 +54,7 @@
       type:    -> @model.subject.displayType(@subject.type)
       season:  -> @subject.season
       desc:    ->
-        desc = @type
+        desc = ''
         if(@season)
           desc += " / Season #{@season}"
         return desc
@@ -76,11 +75,8 @@
     box-sizing: border-box;
     >.right{
       flex: auto;
-      margin-left: 12px;
+      margin-left: 20px;
       margin-top: -1px;
-      >:nth-child(2){
-        margin-top: 8px;
-      }
     }
     .desc{
       margin-left: 9px;
@@ -102,23 +98,20 @@
         text-decoration: underline;
       }
     }
-    .mark-score{
-      flex: none;
-    }
     .comment{
       flex: none;
       width: 480px;
-      margin-left: 12px;
+      margin-top: 16px;
       line-height: 19px;
       font-size: 13px;
+      color: #262626;
+      font-weight: 200;
+    }
+    .mark-score-simple{
+      margin-top: 18px;
     }
     .column{
       flex: auto;
-    }
-    .mark-progress{
-      flex: none;
-      box-sizing: border-box;
-      padding-left: 80px;
     }
   }
 </style>

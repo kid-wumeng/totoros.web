@@ -24,7 +24,10 @@
     methods:
       submit: ->
         reply = await @api.call('comment.addReply', @comment.id, @content)
-        console.log reply
+        @commit('ADD_COMMENT_REPLY', {
+          comment: @comment,
+          reply: reply
+        })
         @open = false
 </script>
 

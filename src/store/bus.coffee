@@ -35,3 +35,4 @@ module.exports =
     CREATE_POST: (state, post) -> bus.$emit('CREATE_POST', post)
 
     CREATE_COMMENT: (state, comment) -> bus.$emit('CREATE_COMMENT', comment)
+    ADD_COMMENT_REPLY: (state, {comment, reply}) -> bus.$emit('ADD_COMMENT_REPLY', {comment, reply})

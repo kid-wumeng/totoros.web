@@ -1,7 +1,7 @@
 <template lang="jade">
   row.item.-top
     .left
-      role-face(:role="role" square)
+      role-face(:role="role" square, :cover="false")
     .right
       row.-between.-center
         row.-center

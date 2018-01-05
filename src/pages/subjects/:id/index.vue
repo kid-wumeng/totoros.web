@@ -28,6 +28,7 @@
           episodes: true
           casts:    true
           staffs:   true
+          marks:    true
         })
 
       updateSubject: (subject) ->

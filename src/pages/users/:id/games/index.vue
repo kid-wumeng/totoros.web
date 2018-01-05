@@ -1,9 +1,10 @@
 <template lang="jade">
   #user-detail-games
-    row.-between
+    row.action-bar.-between
       mark-type-radio-bar(:user="user")
       mark-status-radio-bar(:user="user")
-    mark-list(:marks="marks")
+    .wrap
+      mark-list(:marks="marks")
     page-bar(:user="user")
 </template>
 
@@ -60,8 +61,27 @@
 
 <style lang="less" scoped>
   #user-detail-games{
-    .mark-list{
+    width: 100%;
+    >.action-bar{
+      margin: 0 auto;
+      width: 1000px;
+    }
+    >.wrap{
+      background-color: #FFF;
+      border-top: 1px solid #F2F2F2;
+      border-bottom: 1px solid #F2F2F2;
+      overflow: hidden;
       margin-top: 24px;
+      .mark-list{
+        width: 1000px;
+        margin: 0 auto;
+      }
+    }
+    .user-page-bar{
+      width: 1000px;
+      margin: 0 auto;
+      margin-top: 24px;
+      margin-bottom: 72px;
     }
   }
 </style>

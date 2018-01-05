@@ -1,12 +1,12 @@
 <template lang="jade">
-  .edit.col
-    c-button.-gray(v-show="$route.meta.path === ''" @click="editFace")      编辑：封面
-    c-button.-gray(v-show="$route.meta.path === ''" @click="editBase")      编辑：基本档案
-    c-button.-gray(v-show="$route.meta.path === ''" @click="editResources") 编辑：资源Links
-    c-button.-gray(v-show="$route.meta.path === ''" @click="editWorld")     编辑：世界观
-    c-button.-gray(v-show="$route.meta.path === 'episodes'" @click="editEpisodes")  编辑：Episodes
-    c-button.-gray(v-show="$route.meta.path === 'casts'"    @click="editCasts")     编辑：Casts
-    c-button.-gray(v-show="$route.meta.path === 'staffs'"   @click="editStaffs")    编辑：Staffs
+  detail-box.edit.col(v-show="show")
+    .edit-action(v-show="$route.meta.path === ''" @click="editFace")      编辑：作品封面
+    .edit-action(v-show="$route.meta.path === ''" @click="editBase")      编辑：基本档案
+    .edit-action(v-show="$route.meta.path === ''" @click="editResources") 编辑：资源Links
+    //- .edit-action(v-show="$route.meta.path === ''" @click="editWorld")     编辑：世界观
+    .edit-action(v-show="$route.meta.path === 'episodes'" @click="editEpisodes")  编辑：Episodes
+    .edit-action(v-show="$route.meta.path === 'casts'"    @click="editCasts")     编辑：Casts
+    .edit-action(v-show="$route.meta.path === 'staffs'"   @click="editStaffs")    编辑：Staffs
 
     edit-subject-resources-modal
     edit-subject-episodes-modal
@@ -18,7 +18,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-button':                     require('components/@/button')
+      'detail-box':                   require('components/wiki/detail-box')
       'edit-subject-resources-modal': require('components/wiki/edit-subject-resources-modal')
       'edit-subject-episodes-modal':  require('components/wiki/edit-subject-episodes-modal')
       'edit-subject-casts-modal':     require('components/wiki/edit-subject-casts-modal')
@@ -31,6 +31,13 @@
 
     computed:
       path: -> @$route.meta.path
+      show: ->
+        switch @path
+          when ''         then true
+          when 'episodes' then true
+          when 'casts'    then true
+          when 'staffs'   then true
+          else false
 
     methods:
       editFace: ->
@@ -59,11 +66,17 @@
 <style lang="less" scoped>
   .edit{
     align-items: stretch;
-    .button{
+    .edit-action{
+      padding: 8px 12px;
       text-align: left;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 13px;
-      margin-bottom: 6px;
+      cursor: pointer;
+      border-radius: 3px;
+      &:hover{
+        color: #FFF;
+        background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
+      }
     }
   }
 </style>

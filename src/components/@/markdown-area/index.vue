@@ -134,7 +134,7 @@
     word-break: break-all;
     line-height: 24px;
     font-size: 14px;
-    color: #333;
+    color: #666;
 
     *{
       font-size: inherit;

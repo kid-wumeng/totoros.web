@@ -11,6 +11,7 @@
         intro(:subject="subject")
         casts(:subject="subject")
         staffs(:subject="subject")
+        marks(:subject="subject")
 </template>
 
 
@@ -25,6 +26,7 @@
       'resources':  require('./resources')
       'casts':      require('./casts')
       'staffs':     require('./staffs')
+      'marks':      require('./marks')
 
     props:
       'subject':

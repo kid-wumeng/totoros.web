@@ -39,12 +39,12 @@
         flex: auto;
       }
       .user-face{
-        width: 40px;
+        width: 32px;
         margin-right: 10px;
       }
       .user-name{
         font-size: 12px;
-        color: #000;
+        color: #E09F7D;
       }
       .motto{
         margin-left: 5px;
@@ -57,11 +57,8 @@
         color: #A2AEBA;
       }
       .markdown-area{
-        margin-left: 12px;
         margin-top: 4px;
         width: 85%;
-        line-height: 20px;
-        font-size: 13px;
       }
     }
   }

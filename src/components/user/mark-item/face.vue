@@ -35,7 +35,7 @@
       width: 48px;
     }
     .subject-face{
-      width: 80px;
+      width: 60px;
     }
   }
 </style>

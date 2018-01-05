@@ -54,10 +54,10 @@
       margin-top: 12px;
       >.main{
         box-sizing: border-box;
-        width: 700px;
+        width: 750px;
       }
       >.side{
-        width: 200px;
+        width: 160px;
       }
     }
   }

@@ -35,6 +35,8 @@
     }
     .subject-name{
       font-size: 14px;
+      font-weight: 600;
+      color: #222;
     }
   }
 </style>

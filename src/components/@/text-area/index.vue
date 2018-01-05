@@ -18,7 +18,7 @@
         default: false
       'gap':
         type: Number
-        default: 0
+        default: 8
       'more':
         type: Boolean
         default: false
@@ -51,7 +51,10 @@
           text = text.slice(0, @limit)
           text = @addHint(text)
           @clickable = @more
-        text = text.replace(/\n{2,}/g, '<br/><br/>')
+        texts = text.split(/\n/)
+        texts = texts.map (text) -> '　　' + text
+        text = texts.join('\n')
+        text = text.replace(/\n/g, '<br/>')
         @formatText = text
 
       isOver: (text) ->

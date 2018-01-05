@@ -46,12 +46,12 @@
         margin-right: 10px;
       }
       .user-name{
-        font-size: 12px;
-        color: #000;
+        font-size: 13px;
+        color: #E09F7D;
       }
       .motto{
         margin-left: 5px;
-        font-size: 12px;
+        font-size: 13px;
         color: #A2AEBA;
       }
       .date{
@@ -63,8 +63,6 @@
         margin-left: 12px;
         margin-top: 6px;
         width: 85%;
-        line-height: 20px;
-        font-size: 13px;
       }
     }
   }

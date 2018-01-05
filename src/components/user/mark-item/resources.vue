@@ -26,8 +26,8 @@
   .resources{
     margin-top: 10px;
     width: 160px;
+    text-align: right;
     .resource{
-      text-align: right;
       a{
         display: inline-block;
         font-size: 13px;

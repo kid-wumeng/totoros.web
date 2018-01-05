@@ -29,7 +29,7 @@
     >.content{
       margin-top: 7px;
       box-sizing: border-box;
-      padding: 12px 12px;
+      padding: 12px;
       border: 1px solid #F2F2F2;
       border-radius: 3px;
     }

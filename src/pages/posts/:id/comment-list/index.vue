@@ -24,6 +24,7 @@
 
     created: ->
       @listen('CREATE_COMMENT', @createComment)
+      @listen('ADD_COMMENT_REPLY', @addCommentReply)
 
     watch:
       'routePage': -> @init()
@@ -44,6 +45,12 @@
       createComment: (comment) ->
         if isSame(comment.post, @post)
           @comments.push(comment)
+
+      addCommentReply: ({comment, reply}) ->
+        for c in @comments
+          if isSame(c, comment)
+            c.replies ?= []
+            c.replies.push(reply)
 </script>
 
 
