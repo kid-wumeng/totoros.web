@@ -25,7 +25,6 @@
 
 <style lang="less" scoped>
   #users-detail{
-    background-color: rgba(250, 250, 250, 0.93);
     .main{
       margin: -55px auto 0;
     }

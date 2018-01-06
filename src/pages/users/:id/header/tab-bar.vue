@@ -18,17 +18,9 @@
         label: @user.name
         value: ''
       },{
-        label: '动态'
-        value: 'feeds'
-        count: @user.feedCount
-      },{
         label: '日志'
         value: 'blogs'
         count: @user.blogCount
-      },{
-        label: '绘画'
-        value: 'paints'
-        count: @user.paintCount
       },{
         label: 'Animes'
         value: 'animes'

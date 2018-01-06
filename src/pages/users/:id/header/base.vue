@@ -2,8 +2,8 @@
   .base
     row.-center
       .name {{ user.name }}
-      .idolCount(v-if="user.idolCount" @click="replaceUserPage(user, 'idols')") 关注{{ user.idolCount }}人
-      .fanCount(v-if="user.fanCount"   @click="replaceUserPage(user, 'fans')") 被{{ user.fanCount }}人追随
+      //- .idolCount(v-if="user.idolCount" @click="replaceUserPage(user, 'idols')") 关注{{ user.idolCount }}人
+      //- .fanCount(v-if="user.fanCount"   @click="replaceUserPage(user, 'fans')") 被{{ user.fanCount }}人追随
     row.-center
       .motto {{ user.motto }}
 </template>
