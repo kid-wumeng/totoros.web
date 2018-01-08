@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
-    router-link(:class="{'-active': $route.path === '/'}" to="/") TIME-LINE
     router-link(:class="{'-active': isForum}" to="/forums/2") 讨论版
     //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
+    router-link(:class="{'-active': $route.path === '/marks'}" to="/marks") MARKS
 </template>
 
 
@@ -21,7 +21,7 @@
       display: inline-block;
       height: 64px;
       line-height: 64px;
-      padding: 0 10px;
+      padding: 0 16px;
       font-size: 14px;
       font-weight: 600;
       color: #445669;

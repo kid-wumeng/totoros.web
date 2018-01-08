@@ -31,6 +31,7 @@
 
     data: ->
       width: 0
+      loaded: false
 
     computed:
       url: ->
@@ -55,6 +56,9 @@
 
       style: ->
         if @height
+          if(!@loaded)
+            @$emit('load', { height: @height })
+            @loaded = true
           return{ height: @height + 'px' }
         else
           return {}

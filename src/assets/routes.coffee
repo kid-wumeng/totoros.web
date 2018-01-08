@@ -163,6 +163,14 @@ module.exports = [{
 
 },{
 
+  # 标记
+  path: '/marks'
+  meta:
+    keepAlive: true
+  component: -> System.import('pages/marks')
+
+},{
+
   # 作品
   path: '/subjects/:id'
   component: -> System.import('pages/subjects/:id')

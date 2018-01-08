@@ -1,5 +1,5 @@
 <template lang="jade">
-  .text-area(:style="textStyle")
+  .text-area(v-if="text", :style="textStyle")
     .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", v-html="paragraph", @click="click")
 </template>
 
@@ -35,7 +35,6 @@
         'cursor': if @clickable then 'pointer' else 'inherit'
 
       paragraphStyle: ->
-        'textIndent': if @indent then "2em" else 0
         'marginTop': @gap + 'px'
 
     created: ->
@@ -51,9 +50,10 @@
           text = text.slice(0, @limit)
           text = @addHint(text)
           @clickable = @more
-        texts = text.split(/\n/)
-        texts = texts.map (text) -> '　　' + text
-        text = texts.join('\n')
+        if(@indent)
+          texts = text.split(/\n/)
+          texts = texts.map (text) -> '　　' + text
+          text = texts.join('\n')
         text = text.replace(/\n/g, '<br/>')
         @formatText = text
 

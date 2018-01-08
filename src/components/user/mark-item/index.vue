@@ -102,13 +102,13 @@
       flex: none;
       width: 480px;
       margin-top: 16px;
+      margin-left: 13px;
       line-height: 19px;
       font-size: 13px;
-      color: #262626;
-      font-weight: 200;
+      color: #707C88;
     }
     .mark-score-simple{
-      margin-top: 18px;
+      margin-top: 20px;
     }
     .column{
       flex: auto;

@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.mark-score-simple.-center
+  row.mark-score-simple.-center(v-if="isShowStory || isShowImage || isShowMusic || isShowEnjoy")
     row.item.-center(v-if="isShowStory", :score="story", :class="{'-active': activeStory}")
       .label 剧情
       .score
@@ -36,10 +36,10 @@
       isShowImage: -> @model.mark.isShowItem(@mark.subject.type, 'image') and @image
       isShowMusic: -> @model.mark.isShowItem(@mark.subject.type, 'music') and @music
       isShowEnjoy: -> @model.mark.isShowItem(@mark.subject.type, 'enjoy') and @enjoy
-      activeStory: -> @mark.story and @mark.story >= 5
-      activeImage: -> @mark.image and @mark.image >= 5
-      activeMusic: -> @mark.music and @mark.music >= 5
-      activeEnjoy: -> @mark.enjoy and @mark.enjoy >= 5
+      activeStory: -> @mark.story and @mark.story >= 6
+      activeImage: -> @mark.image and @mark.image >= 6
+      activeMusic: -> @mark.music and @mark.music >= 6
+      activeEnjoy: -> @mark.enjoy and @mark.enjoy >= 6
 </script>
 
 

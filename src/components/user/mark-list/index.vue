@@ -19,8 +19,8 @@
 <style lang="less" scoped>
   .mark-list{
     .mark-item{
-      padding: 30px 20px;
-      border-bottom: 1px dashed rgb(221, 221, 221);
+      padding: 20px 16px;
+      border-bottom: 1px solid rgb(240, 240, 240);
     }
     .mark-item:last-child{
       border-bottom: none;
