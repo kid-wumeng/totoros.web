@@ -30,9 +30,9 @@
 
     methods:
       init: ->
-        @forum  = await api.call('forum.get', @routeID, {open: true})
+        @forum  = await api.call('forum.get', 1, {open: true})
         result = await api.call('post.getAll', {
-          cid:  @routeID
+          fid:  1
           page: @routePage
         })
         @posts = result.posts
@@ -50,7 +50,7 @@
   #forums-detail{
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 24px;
-    width: 800px;
+    margin-top: 30px;
+    width: 750px;
   }
 </style>

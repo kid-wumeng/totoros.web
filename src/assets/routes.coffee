@@ -4,7 +4,7 @@ module.exports = [{
   path: '/'
   meta:
     keepAlive: true
-  component: -> System.import('pages/timeline')
+  component: -> System.import('pages/forums/:id')
 
 },{
 

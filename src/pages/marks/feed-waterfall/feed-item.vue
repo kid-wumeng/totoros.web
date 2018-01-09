@@ -1,5 +1,5 @@
 <template lang="jade">
-  .feed-item
+  .feed-item(:style="style")
     .wrap
       subject-face(:subject="subject" @load="load")
       .panel
@@ -28,6 +28,9 @@
       'colHeights':
         type: Array
         required: true
+      'width':
+        type: Number
+        required: true
 
     computed:
       mark:    -> @feed.mark
@@ -38,6 +41,9 @@
       subject: -> @mark.subject
       type:    -> @subject.type
       name:    -> @subject.name
+
+      style: ->
+        width: @width + 'px'
 
     methods:
       load: (data) ->
@@ -59,21 +65,21 @@
   .feed-item{
     position: absolute;
     box-sizing: border-box;
-    width: 224px;
     padding: 5px;
     .wrap{
       .panel{
         box-sizing: border-box;
-        padding: 18px 20px;
+        padding: 18px 20px 16px;
         background-color: #FFF;
         .mark-score-simple{
           margin-top: 11px;
         }
         .comment{
           margin-top: 11px;
+          text-align: left;
         }
         .user{
-          margin-top: 11px;
+          margin-top: 18px;
           display: flex;
           justify-content: flex-end;
           align-items: center;

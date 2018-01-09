@@ -1,6 +1,6 @@
 <template lang="jade">
   #marks
-    feed-waterfall(:feeds="feeds")
+    feed-waterfall(v-show="feeds.length", :feeds="feeds")
     .more(v-if="showMoreButton")
       .more-button(@click="more") 加载更多标记
 </template>
@@ -52,18 +52,15 @@
 
 <style lang="less" scoped>
   #marks{
-    // background-image: url(http://oy0aiwj7c.bkt.clouddn.com/assets/marks-bg?2018-01-08);
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    background-color: rgba(245, 245, 245, 1);
+    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
     overflow: hidden;
     .feed-waterfall{
-      margin: 30px auto 10px;
+      margin: 5px auto 10px;
     }
     .more{
-      padding: 60px 0;
+      padding: 24px 0;
       text-align: center;
+      background-color: #FFF;
       .more-button{
         display: inline-block;
         padding: 10px 24px;

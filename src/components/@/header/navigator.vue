@@ -1,6 +1,6 @@
 <template lang="jade">
   .navigator
-    router-link(:class="{'-active': isForum}" to="/forums/2") 讨论版
+    router-link(:class="{'-active': isForum}" to="/") 讨论版
     //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
     router-link(:class="{'-active': $route.path === '/marks'}" to="/marks") MARKS
 </template>
@@ -16,7 +16,7 @@
 
 <style lang="less" scoped>
   .navigator{
-    margin-left: 44px;
+    margin-left: 32px;
     a{
       display: inline-block;
       height: 64px;

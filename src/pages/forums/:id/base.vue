@@ -4,7 +4,7 @@
       forum-face(:forum="forum")
     .right
       .name {{ forum.name }}
-      .intro {{ forum.intro }}
+      text-area.intro(:text="forum.intro")
 </template>
 
 
@@ -12,6 +12,7 @@
   module.exports =
     components:
       'forum-face': require('components/image/forum-face')
+      'text-area':  require('components/@/text-area')
 
     props:
       'forum':
@@ -35,7 +36,7 @@
     }
     .intro{
       margin-top: 2px;
-      width: 400px;
+      width: 600px;
       font-size: 12px;
       color: #707C88;
     }

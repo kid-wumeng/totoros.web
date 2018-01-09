@@ -1,7 +1,7 @@
 <template lang="jade">
   #forums
     .wrap
-      tab-bar
+      //- tab-bar
       router-view
 </template>
 
@@ -17,7 +17,7 @@
   #forums{
     overflow: hidden;
     .wrap{
-      margin: 16px auto;
+      margin: 32px auto;
       width: 800px;
     }
   }
