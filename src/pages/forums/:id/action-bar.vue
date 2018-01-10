@@ -1,6 +1,6 @@
 <template lang="jade">
   row.action-bar.-right
-    c-button(@click="publish") 吼一个话题
+    c-button(@click="publish") 发布帖子
 </template>
 
 

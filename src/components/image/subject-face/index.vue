@@ -1,8 +1,8 @@
 <template lang="jade">
-.subject-face(@click="click")
+.subject-face
   photo-frame(v-if="frame")
-    cdn-image(:path="path", :ratio="ratio", :square="square" cover @load="load")
-  cdn-image(v-else :path="path", :ratio="ratio", :square="square" cover @load="load")
+    cdn-image(:path="path", :ratio="ratio", :square="square" cover @load="load" @click="click")
+  cdn-image(v-else :path="path", :ratio="ratio", :square="square" cover @load="load" @click="click")
 </template>
 
 

@@ -1,29 +1,15 @@
 <template lang="jade">
   .comment-item
-    row
-      .left
-        user-face(:user="comment.user")
-      .right
-        row.-between.-center
-          row.left.-center
-            user-name(:user="comment.user")
-            .motto(v-if="comment.user.motto") {{ comment.user.motto }}
-          .right
-            .date {{ model.date.display(comment.createDate) }}
-        markdown-area(:content="comment.content")
-        reply-list(:comment="comment")
-        reply-form(:comment="comment")
+    floor(:user="comment.user", :content="comment.content", :date="comment.createDate", :floor="'#'+comment.floor")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'user-face':     require('components/image/user-face')
-      'user-name':     require('components/user/user-name')
-      'markdown-area': require('components/@/markdown-area')
-      'reply-form':    require('./reply-form')
-      'reply-list':    require('./reply-list')
+      'floor':      require('components/@/floor')
+      # 'reply-form': require('./reply-form')
+      # 'reply-list': require('./reply-list')
 
     props:
       'comment':

@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.user-face(:path="path", square :radius="3" cover @click="click")
+  cdn-image.user-face(:path="path", square, :circle="circle", :radius="3" cover @click="click")
 </template>
 
 
@@ -12,6 +12,9 @@
       'user':
         type: Object
         required: true
+      'circle':
+        type: Boolean
+        default: false
       'prevent':
         type: Boolean
         default: false

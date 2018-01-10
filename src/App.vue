@@ -1,5 +1,5 @@
 <template lang="jade">
-  #app
+  #app(:style="appStyle")
     c-header
     .body
       keep-alive
@@ -59,6 +59,12 @@
 
         key = prefix + params.join('') + query.join('')
         return if key then key else null
+
+      appStyle: ->
+        if(@$route?.meta?.bgColor)
+          return{
+            backgroundColor: 'rgba(250, 250, 250, 1)'
+          }
 
     watch:
       '$route': ->

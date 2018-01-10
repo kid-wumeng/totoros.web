@@ -2,22 +2,14 @@ module.exports =
 
   state:
     content: ''
-    pictures: []
     getCursorPosition: null
 
   mutations:
     'input-content/SET_CONTENT': (state, content) ->
       state.content = content ? ''
 
-    'input-content/SET_PICTURES': (state, pictures) ->
-      state.pictures = pictures ? []
-
     'input-content/SET_GET_CURSOR_POSITION': (state, getCursorPosition) ->
       state.getCursorPosition = getCursorPosition ? (-> 0)
-
-    'input-content/ADD_PICTURE': (state, picture) ->
-      state.pictures.push(picture)
-
 
   actions:
     'input-content/add-pictures': ({dispatch, commit}, files) ->
@@ -28,7 +20,6 @@ module.exports =
       tasks = []
       for file in files
         task = api.task('picture.upload', file).done (picture) ->
-          commit('input-content/ADD_PICTURE', picture)
           dispatch('input-content/mountPicture', picture)
           count++
           if count is total
@@ -51,7 +42,7 @@ module.exports =
 
 
     'input-content/mountPicture': ({dispatch}, picture) ->
-      string = "![](id=#{picture.id}&hash=#{picture.hash})\n"
+      string = "![](#{picture.hash})\n"
       dispatch('input-content/mount', string)
 
 
@@ -61,7 +52,12 @@ module.exports =
       type    = subject.type
       season  = subject.season ? ''
       version = subject.face?.version ? ''
-      string  = "[#{name}](subject?id=#{id}&type=#{type}&season=#{season}&face.version=#{version})\n"
+      string  = "[#{name}](subject?id=#{id}&type=#{type}"
+      if(season)
+        string += "&season=#{season}"
+      if(version)
+        string += "&face.version=#{version}"
+      string += ')\n'
       dispatch('input-content/mount', string)
 
 
@@ -69,7 +65,10 @@ module.exports =
       id      = role.id
       name    = role.name
       version = role.face?.version ? ''
-      string  = "[#{name}](role?id=#{id}&face.version=#{version})\n"
+      string  = "[#{name}](role?id=#{id}"
+      if(version)
+        string += "&face.version=#{version}"
+      string += ')\n'
       dispatch('input-content/mount', string)
 
 
@@ -78,7 +77,12 @@ module.exports =
       name    = person.name
       version = person.face?.version   ? ''
       year    = person.birthDate?.year ? ''
-      string  = "[#{name}](person?id=#{id}&birthDate.year=#{year}&face.version=#{version})\n"
+      string  = "[#{name}](person?id=#{id}"
+      if(year)
+        string += "&birthDate.year=#{year}"
+      if(version)
+        string += "&face.version=#{version}"
+      string += ')\n'
       dispatch('input-content/mount', string)
 
 
@@ -87,5 +91,10 @@ module.exports =
       name    = organization.name
       version = organization.face?.version       ? ''
       year    = organization.establishDate?.year ? ''
-      string  = "[#{name}](organization?id=#{id}&establishDate.year=#{year}&face.version=#{version})\n"
+      string  = "[#{name}](organization?id=#{id}"
+      if(year)
+        string += "&establishDate.year=#{year}"
+      if(version)
+        string += "&face.version=#{version}"
+      string += ')\n'
       dispatch('input-content/mount', string)

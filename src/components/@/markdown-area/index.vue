@@ -61,13 +61,12 @@
 
 
   renderCard = (card) ->
-    onclick   = "window.router.push('/#{card.path}')"
-    faceUrl   = "#{cdn}/#{card.face}"
-    faceStyle = "background-image: url(#{faceUrl})"
+    onclick = "window.router.push('/#{card.path}')"
+    faceUrl = "#{cdn}/#{card.face}"
     return "
       <div class='card' onclick=\"#{onclick}\">
         <div class='left'>
-          <div class='face' style='#{faceStyle}'></div>
+          <img class='face' src=\"#{faceUrl}\"/>
         </div>
         <div class='right'>
           <div class='name'>#{card.name}</div>
@@ -75,7 +74,6 @@
         </div>
       </div>
     "
-
 
 
   renderer.link = (url, title, text) ->
@@ -94,9 +92,8 @@
 
   renderer.image = (url, title, text) ->
     if not /^(http|https)/i.test(url)
-      query = model.assets.parseQuery(url)
-      hash  = query.hash
-      url   = "#{cdn}/pictures/#{hash}"
+      hash = url
+      url  = "#{cdn}/pictures/#{hash}"
     return "
       <div class='image'>
         <img src='#{url}'/>
@@ -134,7 +131,7 @@
     word-break: break-all;
     line-height: 24px;
     font-size: 14px;
-    color: #666;
+    color: #262626;
 
     *{
       font-size: inherit;
@@ -179,7 +176,8 @@
         margin-top: 4px;
         text-align: center;
         font-size: 13px;
-        color: #A2AEBA;
+        font-weight: 500;
+        color: #707C88;
       }
     }
 

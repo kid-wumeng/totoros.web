@@ -21,13 +21,13 @@
     @padding: 12px;
     @border: 1px solid #F2F2F2;
     .post-item{
-      margin-bottom:  @padding;
+      padding-top: @padding;
       border-bottom:  @border;
       padding-bottom: @padding + 1;
       &:first-child{
-        margin-top:  @padding + 1;
+        padding-top: @padding + 1;
         border-top:  @border;
-        padding-top: @padding;
+        padding-bottom: @padding;
       }
     }
   }

@@ -22,8 +22,8 @@
       title: @state['post-modal'].post?.title ? ''
 
     computed:
-      content:  -> @state['input-content'].content
-      pictures: -> @state['input-content'].pictures
+      content: -> @state['input-content'].content
+      relativeSubjects: -> @state['post-modal'].relativeSubjects ? []
 
     methods:
       submit: ->
@@ -31,15 +31,11 @@
           @check()
 
           data =
-            title:    @title
-            content:  @content
-            pictures: @pictures.map (pic) -> {
-              id:    pic.id
-              hash:  pic.hash
-              image: pic.image
-            }
+            title:        @title
+            content:      @content
+            relativeSIDs: @relativeSubjects.map (subject) -> subject.id
 
-          if @id
+          if(@id)
             post = await api.call('post.update', @id, data)
             @notify('done', '修改成功')
             @commit('UPDATE_POST', post)
@@ -63,9 +59,12 @@
     width: 600px;
     >*{
       margin-bottom: 16px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
     >h1{
-      font-size: 20px;
+      font-size: 17px;
     }
   }
 </style>

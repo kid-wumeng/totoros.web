@@ -1,5 +1,5 @@
 <template lang="jade">
-  .user-name(@click="toUserPage(user)") {{ user.name }}
+  .user-name(@click.stop="toUserPage(user)") {{ user.name }}
 </template>
 
 

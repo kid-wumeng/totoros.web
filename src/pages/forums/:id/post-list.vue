@@ -19,14 +19,17 @@
 <style lang="less" scoped>
   .post-list{
     @padding: 6px;
-    @border: 1px dashed #F2F2F2;
-    margin-top: 20px;
+    margin-top: 30px;
+    border-top: 1px dashed #EEE;
+    box-sizing: border-box;
     .post-item{
-      margin-bottom:  @padding;
+      padding-top:  @padding;
+      border-bottom:  1px dashed #EEE;
       padding-bottom: @padding + 1;
+      padding-left: 4px;
+      padding-right: 4px;
       &:first-child{
-        margin-top:  @padding + 1;
-        padding-top: @padding;
+        padding-top: @padding + 1;
       }
     }
   }

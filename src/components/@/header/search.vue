@@ -18,7 +18,7 @@
 
 <style lang="less" scoped>
   .search{
-    margin-left: 24px;
+    margin-left: 28px;
     width: 160px;
     height: 26px;
     line-height: 26px;

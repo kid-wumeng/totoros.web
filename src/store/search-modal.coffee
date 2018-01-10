@@ -54,7 +54,7 @@ module.exports =
         when 'person'       then method = 'person.getAll'
         when 'organization' then method = 'organization.getAll'
 
-      result = await api.call(method, {q: state.q, intro: true, sort, size: 50})
+      result = await api.call(method, {q: state.q, intro: true, sort, size: 20})
 
       switch state.type
         when 'user'         then commit('search-modal/SET_RESULTS', {results: result.users})

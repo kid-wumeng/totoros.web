@@ -1,15 +1,12 @@
 <template lang="jade">
-  markdown-area.content(v-if="routePage === 1", :content="post.content")
+  floor.content(v-if="routePage === 1", :user="post.user", :content="post.content", :date="post.createDate", floor="楼主")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'user-face':     require('components/image/user-face')
-      'user-name':     require('components/user/user-name')
-      'markdown-area': require('components/@/markdown-area')
-      'action-bar':    require('./action-bar')
+      'floor': require('components/@/floor')
 
     props:
       'post':
@@ -20,5 +17,7 @@
 
 <style lang="less" scoped>
   .content{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F2F2F2;
   }
 </style>

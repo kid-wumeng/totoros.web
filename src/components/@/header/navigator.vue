@@ -16,12 +16,12 @@
 
 <style lang="less" scoped>
   .navigator{
-    margin-left: 32px;
+    margin-left: 40px;
     a{
       display: inline-block;
       height: 64px;
       line-height: 64px;
-      padding: 0 16px;
+      padding: 0 20px;
       font-size: 14px;
       font-weight: 600;
       color: #445669;

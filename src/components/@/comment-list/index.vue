@@ -1,6 +1,7 @@
 <template lang="jade">
-  .comment-list.box-frame.-outset(v-if="comments.length")
-    comment-item(v-for="comment in comments", :key="comment.id", :comment="comment")
+  .comment-list(v-if="comments.length")
+    .wrap
+      comment-item(v-for="comment in comments", :key="comment.id", :comment="comment")
     page-bar(:page="page", :size="size", :total="total" @change="changePage")
 </template>
 
@@ -32,14 +33,13 @@
 
 <style lang="less" scoped>
   .comment-list{
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     .comment-item{
-      padding: 16px;
-      &:last-child{
-        border-bottom: none;
-      }
-      &:nth-child(odd){
-      }
+      padding-bottom: 20px;
+      border-bottom: 1px solid #F2F2F2;
+      margin-bottom: 20px;
+    }
+    .page-bar{
+      margin-top: 20px;
     }
   }
 </style>

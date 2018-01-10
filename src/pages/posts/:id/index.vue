@@ -1,51 +1,65 @@
 <template lang="jade">
   #posts-id(v-if="post")
-    .wrap1
-      breadcrumb(:post="post")
-      c-header(:post="post")
-      c-content(:post="post")
-    .wrap2
-      comment-list(:post="post")
-      comment-form(:post="post")
+    row.wrap
+      .left
+        c-header(:post="post")
+        c-content(:post="post")
+        comment-list(:post="post")
+        comment-form(:post="post")
+      .right
+        action-sheets(:post="post")
+        relative-wiki(:post="post")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'breadcrumb':   require('./breadcrumb')
-      'c-header':     require('./header')
-      'c-content':    require('./content')
-      'comment-list': require('./comment-list')
-      'comment-form': require('./comment-form')
+      'c-header':      require('./header')
+      'c-content':     require('./content')
+      'comment-list':  require('./comment-list')
+      'comment-form':  require('./comment-form')
+      'action-sheets': require('./action-sheets')
+      'relative-wiki': require('./relative-wiki')
 
     data: ->
       post: null
 
+    created: ->
+      @listen('UPDATE_POST', @updatePost)
+
     methods:
       init: ->
         @post = await api.call('post.get', @routeID)
+
+      updatePost: (post) ->
+        if isSame(@post, post)
+          @post = post
 </script>
 
 
 <style lang="less" scoped>
   #posts-id{
     box-sizing: border-box;
-    background-color: #FFF;
     overflow: hidden;
-    .wrap1{
-      margin: 28px auto;
-      width: 650px;
-      >*{
-        margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    .wrap{
+      margin-top: 36px;
+      .left{
+        width: 650px;
+        flex: auto;
+        >*{
+          margin-bottom: 24px;
+        }
       }
-    }
-    .wrap2{
-      margin: 0 auto;
-      margin-top: 40px;
-      width: 800px;
-      >*{
-        margin-bottom: 24px;
+      .right{
+        flex: none;
+        margin-left: 80px;
+        width: 240px;
+        >*{
+          margin-bottom: 36px;
+        }
       }
     }
   }

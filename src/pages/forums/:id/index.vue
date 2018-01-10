@@ -1,10 +1,11 @@
 <template lang="jade">
   #forums-detail(v-if="forum")
-    row.-between.-center
-      c-base(:forum="forum")
-      action-bar(:forum="forum")
-    post-list(:posts="posts")
-    page-bar(:page="routePage", :size="30", :total="total" @change="changePage")
+    .wrap
+      row.-between.-center
+        c-base(:forum="forum")
+        action-bar(:forum="forum")
+      post-list(:posts="posts")
+      page-bar(:page="routePage", :size="30", :total="total" @change="changePage")
 </template>
 
 
@@ -48,9 +49,11 @@
 
 <style lang="less" scoped>
   #forums-detail{
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 750px;
+    .wrap{
+      overflow: hidden;
+      margin: 0 auto;
+      padding-top: 30px;
+      width: 800px;
+    }
   }
 </style>

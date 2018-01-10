@@ -1,10 +1,10 @@
 <template lang="jade">
-  .post-item.row.-left
+  .post-item.row.-left(@click="toPostPage(post)")
     .left
-      user-face(:user="user")
+      user-face(:user="user" circle)
     row.right.-between.-center
       div
-        span.title(@click="toPostPage(post)") {{ title }}
+        span.title {{ title }}
         span.comment-count(v-if="commentCount") +{{ commentCount }}
       row.last.-center(v-if="lastCommentDate")
         .hint Last by
@@ -39,6 +39,10 @@
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(250, 250, 250, 1);
+    }
     >.right{
       flex: auto;
       .column{
@@ -46,18 +50,15 @@
       }
     }
     .user-face{
-      width: 30px;
-      margin-right: 10px;
+      width: 36px;
+      margin-right: 12px;
     }
     .title{
       align-self: flex-start;
       font-weight: 500;
       font-size: 14px;
-      color: #6C7A89;
+      color: #273340;
       cursor: pointer;
-      &:hover{
-        text-decoration: underline;
-      }
     }
     .comment-count{
       margin-left: 6px;
