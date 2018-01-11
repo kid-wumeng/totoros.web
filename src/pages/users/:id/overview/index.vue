@@ -8,18 +8,21 @@
         games(:user="user")
       .right
         mark-feeds(:user="user")
+        posts(:user="user")
+        comment-posts(:user="user")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'intro':  require('./intro')
-      'animes': require('./animes')
-      'comics': require('./comics')
-      'games':  require('./games')
-      'mark-feeds': require('./mark-feeds')
-      'doing-marks': require('./doing-marks')
+      'intro':         require('./intro')
+      'animes':        require('./animes')
+      'comics':        require('./comics')
+      'games':         require('./games')
+      'mark-feeds':    require('./mark-feeds')
+      'posts':         require('./posts')
+      'comment-posts': require('./comment-posts')
 
     props:
       'user':
