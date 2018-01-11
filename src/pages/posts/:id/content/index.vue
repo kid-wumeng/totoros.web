@@ -1,5 +1,5 @@
 <template lang="jade">
-  floor.content(v-if="routePage === 1", :user="post.user", :content="post.content", :date="post.createDate", floor="楼主")
+  floor.content(v-if="routePage === 1", :user="post.user", :content="post.content", :date="post.createDate", floor="主帖")
 </template>
 
 

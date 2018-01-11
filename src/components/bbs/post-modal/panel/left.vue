@@ -18,7 +18,7 @@
     data: ->
       forum: @state['post-modal'].forum
       post:  @state['post-modal'].post
-      id:    @state['post-modal'].post?.id ? 0
+      id:    @state['post-modal'].post?.id    ? 0
       title: @state['post-modal'].post?.title ? ''
 
     computed:

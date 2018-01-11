@@ -20,11 +20,5 @@
 
 <style lang="less" scoped>
   .relative-wiki{
-    .subject-card{
-      margin-bottom: 10px;
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
   }
 </style>

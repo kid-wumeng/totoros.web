@@ -193,9 +193,13 @@
 
     blockquote{
       box-sizing: border-box;
-      padding: 11px 16px;
-      font-size: 0.9375em;
-      background-color: #F5F5F5;
+      width: 80%;
+      padding: 0 12px;
+      line-height: 19px;
+      font-size: 13px;
+      color: #A2AEBA;
+      border-left: 3px solid #ADD9CF;
+      text-align: justify;
     }
   }
 </style>

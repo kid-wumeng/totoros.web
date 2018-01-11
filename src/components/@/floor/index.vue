@@ -3,9 +3,19 @@
     .left
       user-face(:user="user" circle)
     .right
-      .desc
-        user-name(:user="user")
-        .date {{ model.date.display(date) }}
+      row.-between
+        .desc
+          user-name(:user="user")
+          .date {{ model.date.display(date) }}
+          .edit(v-if="showEdit && login")
+            span (
+            span.text(v-if="isMe(user)" @click="clickUpdate") 修改
+            span.text(v-else @click="clickReference") 引用
+            span )
+        .display-floor {{ floor }}
+      .reference(v-if="reference")
+        span.user @{{ reference.user.name }}
+        span.content {{ reference.content }}
       markdown-area(:content="content")
 </template>
 
@@ -28,6 +38,15 @@
         type: Date
       'floor':
         type: String
+      'reference':
+        type: Object
+      'showEdit':
+        type: Boolean
+        default: false
+
+    methods:
+      clickUpdate:    -> @$emit('update')
+      clickReference: -> @$emit('reference')
 </script>
 
 
@@ -44,6 +63,9 @@
       width: 36px;
       margin-right: 12px;
     }
+    .desc{
+      flex: none;
+    }
     .desc > *{
       display: inline;
     }
@@ -52,13 +74,52 @@
     }
     .date{
       margin-left: 8px;
-      font-size: 13px;
+      font-size: 12px;
       color: #A2AEBA;
+    }
+    .edit{
+      margin-left: 8px;
+      >*{
+        font-size: 12px;
+        color: #A2AEBA;
+      }
+      >.text{
+        margin: 0 2px;
+        font-weight: 500;
+        color: #707C88;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .display-floor{
+      font-size: 13px;
+      font-weight: 600;
+      color: #A2AEBA;
+    }
+    .reference{
+      width: 80%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 13px;
+      padding: 0 12px;
+      border-left: 3px solid #ADD9CF;
+      line-height: 19px;
+      text-align: justify;
+      .user{
+        margin-right: 6px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .content{
+        font-size: 13px;
+        color: #A2AEBA;
+      }
     }
     .markdown-area{
       margin-left: 13px;
       margin-top: 13px;
-      text-align: justify;
     }
   }
 </style>

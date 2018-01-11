@@ -12,6 +12,7 @@
     confirm
     prompt
     search-modal
+    comment-modal
     mark-modal
     post-modal
     create-subject-modal
@@ -36,6 +37,7 @@
       'prompt':   require('components/@/prompt')
       'confirm':  require('components/@/confirm')
       'search-modal':                 require('components/@/search-modal')
+      'comment-modal':                require('components/@/comment-modal')
       'mark-modal':                   require('components/user/mark-modal')
       'post-modal':                   require('components/bbs/post-modal')
       'create-subject-modal':         require('components/wiki/create-subject-modal')

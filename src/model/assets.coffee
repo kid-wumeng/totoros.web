@@ -104,7 +104,7 @@ exports.parseQuery = (queryString) ->
 exports.checkCommentContent = (content) ->
   if !content
     throw "内容不能为空"
-  if @lenString(content) > 5000
+  if @lenString(content) > 60000
     throw "内容太长了"
 
 

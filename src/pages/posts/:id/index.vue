@@ -9,6 +9,8 @@
       .right
         action-sheets(:post="post")
         relative-wiki(:post="post")
+
+    reference-comment-modal
 </template>
 
 
@@ -21,6 +23,7 @@
       'comment-form':  require('./comment-form')
       'action-sheets': require('./action-sheets')
       'relative-wiki': require('./relative-wiki')
+      'reference-comment-modal': require('components/comment/reference-comment-modal')
 
     data: ->
       post: null
@@ -55,7 +58,7 @@
       }
       .right{
         flex: none;
-        margin-left: 80px;
+        margin-left: 90px;
         width: 240px;
         >*{
           margin-bottom: 36px;

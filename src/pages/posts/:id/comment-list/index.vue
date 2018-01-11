@@ -4,6 +4,7 @@
     :page="routePage",
     :total="total",
     @change-page="changePage"
+    @reference="reference"
   )
 </template>
 
@@ -24,6 +25,7 @@
 
     created: ->
       @listen('CREATE_COMMENT', @createComment)
+      @listen('UPDATE_COMMENT', @updateComment)
       @listen('ADD_COMMENT_REPLY', @addCommentReply)
 
     watch:
@@ -42,9 +44,19 @@
       changePage: (page) ->
         @$router.push("##{page}")
 
+      reference: (referenceComment) ->
+        @dispatch('reference-comment-modal/show', {
+          referenceComment: referenceComment
+          createMethod:     'createAtPost'
+          atID:             @post.id
+        })
+
       createComment: (comment) ->
-        if isSame(comment.post, @post)
+        if @isSame(comment.post, @post)
           @comments.push(comment)
+
+      updateComment: (comment) ->
+        @updateItem(@comments, comment)
 
       addCommentReply: ({comment, reply}) ->
         for c in @comments

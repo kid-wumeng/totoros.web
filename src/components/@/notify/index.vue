@@ -34,7 +34,7 @@
   .notify{
     position: fixed;
     top: 20px;
-    z-index: 10;
+    z-index: 1000;
     animation-duration: 0.3s;
     .row{
       min-width: 300px;

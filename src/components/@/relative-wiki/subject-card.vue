@@ -1,9 +1,9 @@
 <template lang="jade">
-  row.subject-card
+  row.subject-card(@click="toSubjectPage(subject)")
     .left
       subject-face(:subject="subject" frame)
     .right
-      subject-name(:subject="subject")
+      .name {{ subject.name }}
       .desc {{ desc }}
 </template>
 
@@ -34,6 +34,11 @@
 
 <style lang="less" scoped>
   .subject-card{
+    padding: 12px;
+    cursor: pointer;
+    &:nth-child(even){
+      background-color: rgb(250, 250, 250);
+    }
     .left{
       .subject-face{
         width: 36px;
@@ -42,8 +47,10 @@
     .right{
       margin-left: 7px;
       margin-top: -2px;
-      .subject-name{
-        font-size: 12px;
+      .name{
+        line-height: 18px;
+        font-weight: 600;
+        font-size: 13px;
       }
       .desc{
         line-height: 18px;

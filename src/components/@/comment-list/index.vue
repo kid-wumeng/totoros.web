@@ -1,7 +1,7 @@
 <template lang="jade">
   .comment-list(v-if="comments.length")
     .wrap
-      comment-item(v-for="comment in comments", :key="comment.id", :comment="comment")
+      comment-item(v-for="comment in comments", :key="comment.id", :comment="comment" @reference="reference(comment)")
     page-bar(:page="page", :size="size", :total="total" @change="changePage")
 </template>
 
@@ -27,7 +27,11 @@
         default: 0
 
     methods:
-      changePage: (page) -> @$emit('change-page', page)
+      changePage: (page) ->
+        @$emit('change-page', page)
+
+      reference: (comment) ->
+        @$emit('reference', comment)
 </script>
 
 

@@ -1,7 +1,7 @@
 <template lang="jade">
   .input-content
     action-bar
-    input-area(ref="input-area", :value="content", placeholder="内容", :rows="20" @input="input")
+    input-area(ref="input-area", :value="content", placeholder="内容", :rows="rows" @input="input")
 </template>
 
 
@@ -10,6 +10,11 @@
     components:
       'input-area': require('components/@/input-area')
       'action-bar': require('./action-bar')
+
+    props:
+      'rows':
+        type: Number
+        default: 20
 
     computed:
       content: -> @state['input-content'].content
