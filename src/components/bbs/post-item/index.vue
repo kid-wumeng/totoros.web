@@ -4,6 +4,7 @@
       user-face(:user="user" circle)
     row.right.-between.-center
       div
+        span.top(v-if="top") [置顶]
         span.title {{ title }}
         span.comment-count(v-if="commentCount") +{{ commentCount }}
       row.last.-center(v-if="lastCommentDate")
@@ -28,6 +29,7 @@
     computed:
       user:            -> @post.user
       title:           -> @post.title
+      top:             -> @post.top
       commentCount:    -> @post.commentCount ? 0
       lastCommentDate: -> @post.lastCommentDate
       lastCommentUser: -> @post.lastCommentUser
@@ -52,6 +54,11 @@
     .user-face{
       width: 36px;
       margin-right: 12px;
+    }
+    .top{
+      margin-right: 9px;
+      font-size: 12px;
+      color: #A2AEBA;
     }
     .title{
       align-self: flex-start;

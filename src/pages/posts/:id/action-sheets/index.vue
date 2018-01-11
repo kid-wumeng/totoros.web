@@ -2,8 +2,8 @@
   .action-sheets(v-if="admin || isMe(post.user)")
     detail-box(title="操作")
       .wrap
-        .action(v-if="admin") ADMIN：置顶
         .action(v-if="isMe(post.user)", @click="update") 修改帖子
+        .action(v-if="admin", @click="top") ADMIN：{{ displayTop }}
 </template>
 
 
@@ -17,9 +17,17 @@
         type: Object
         required: true
 
+    computed:
+      displayTop: -> if @post.top then '取消置顶' else '置顶'
+
     methods:
       update: ->
         @dispatch('post-modal/show', {post: @post})
+
+      top: ->
+        await @api.call('post.setTop', @post.id, !@post.top)
+        @$set(@post, 'top', !@post.top)
+        @notify('done', '操作成功')
 </script>
 
 

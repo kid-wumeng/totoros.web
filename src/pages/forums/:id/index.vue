@@ -31,13 +31,18 @@
 
     methods:
       init: ->
-        @forum  = await api.call('forum.get', 1, {open: true})
-        result = await api.call('post.getAll', {
+        @forum = await api.call('forum.get', 1, {open: true})
+        { posts, total } = await api.call('post.getAll', {
           fid:  1
           page: @routePage
         })
-        @posts = result.posts
-        @total = result.total
+
+        if(@routePage is 1)
+          topResult = await api.call('post.getAll', {top: true})
+          posts = topResult.posts.concat(posts)
+
+        @posts = posts
+        @total = total
 
       changePage: (page) ->
         @$router.push("##{page}")
