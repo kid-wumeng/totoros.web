@@ -8,13 +8,11 @@
           radio(:label="model.mark.displayStatus('doing',   subject.type)", value="doing")
           radio(:label="model.mark.displayStatus('done',    subject.type)", value="done")
           radio(:label="model.mark.displayStatus('do-not',  subject.type)", value="do-not")
-        rate(v-if="model.mark.isShowItem(subject.type, 'story')" v-model="story" label="　故事")
-        rate(v-if="model.mark.isShowItem(subject.type, 'image')" v-model="image" label="　画面")
-        rate(v-if="model.mark.isShowItem(subject.type, 'music')" v-model="music" label="　音乐")
-        rate(v-if="model.mark.isShowItem(subject.type, 'enjoy')" v-model="enjoy" label="游戏性")
+        rate(v-if="status !== 'will-do' && model.mark.isShowItem(subject.type, 'story')" v-model="story" label="　故事")
+        rate(v-if="status !== 'will-do' && model.mark.isShowItem(subject.type, 'image')" v-model="image" label="　画面")
+        rate(v-if="status !== 'will-do' && model.mark.isShowItem(subject.type, 'music')" v-model="music" label="　音乐")
+        rate(v-if="status !== 'will-do' && model.mark.isShowItem(subject.type, 'enjoy')" v-model="enjoy" label="游戏性")
         input-area.comment(v-model="comment" placeholder="说几句吧...", :rows="5")
-      .right
-        c-progress(v-model="progress", :subject="subject")
     .wrap
       row.action-bar.-between.-center
         check(v-model="share" label="分享至TIME-LINE")
@@ -31,7 +29,6 @@
       'check':      require('components/@/check')
       'c-button':   require('components/@/button')
       'rate':       require('./rate')
-      'c-progress': require('./progress')
 
     data: ->
       subject:  @state['mark-modal'].subject
@@ -89,13 +86,6 @@
     .left{
       align-self: stretch;
       width: @width;
-    }
-    .right{
-      height: 100%;
-      width: @width;
-      margin-left: @padding;
-      padding-left: @padding;
-      border-left: 1px solid #F2F2F2;
     }
     >.wrap{
       margin-top: 32px;

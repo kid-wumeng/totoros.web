@@ -18,7 +18,7 @@
       'page-bar':   require('components/@/page-bar')
 
     data: ->
-      forum:  null
+      forum: null
       posts: []
       total: 0
 
