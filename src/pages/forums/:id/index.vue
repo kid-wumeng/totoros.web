@@ -22,12 +22,15 @@
       posts: []
       total: 0
 
-    watch:
-      routeID:   -> @init()
-      routePage: -> @init()
+    # watch:
+    #   routeID:   -> @init()
+    #   routePage: -> @init()
 
     created: ->
       @listen('CREATE_POST', @createPost)
+
+    activated: ->
+      @init()
 
     methods:
       init: ->

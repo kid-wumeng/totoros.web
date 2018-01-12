@@ -31,6 +31,9 @@
     created: ->
       @listen('UPDATE_POST', @updatePost)
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
         @post = await api.call('post.get', @routeID)

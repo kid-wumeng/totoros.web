@@ -55,11 +55,12 @@
         prefix = @$route?.meta?.key?.prefix ? ''
         params = @$route?.meta?.key?.params ? []
         query  = @$route?.meta?.key?.query  ? []
+        hash   = @$route?.hash
 
         params = params.map (name) => @$route.params?[name] ? ''
         query  = query.map  (name) => @$route.query?[name]  ? ''
 
-        key = prefix + params.join('') + query.join('')
+        key = prefix + params.join('') + query.join('') + hash
         return if key then key else null
 
       appStyle: ->

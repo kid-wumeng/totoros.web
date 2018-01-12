@@ -15,6 +15,9 @@
     created: ->
       @listen('UPDATE_PERSON',  @updatePerson)
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
         @person = await api.call('person.get', @routeID, {

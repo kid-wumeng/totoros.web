@@ -51,7 +51,13 @@
 
     computed:
       width:  -> @cols * @eachWidth
-      height: -> @getMax() + 5
+      height: ->
+        clientHeight = document.body.clientHeight
+        max = @getMax() + 5
+        if(clientHeight > max)
+          return clientHeight
+        else
+          return max
 
       style: ->
         width:  @width  + 'px'
@@ -59,6 +65,7 @@
 
     methods:
       init: ->
+        console.log 2222
         clientWidth = document.body.clientWidth
 
         if(clientWidth <= 346)

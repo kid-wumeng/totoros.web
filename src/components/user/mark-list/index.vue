@@ -1,6 +1,12 @@
 <template lang="jade">
   .mark-list
-    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark", :showSubject="true" showActions showResources)
+    mark-item(
+      v-for="mark in marks",
+      :key="mark.id",
+      :mark="mark",
+      :show-subject="true",
+      :show-actions="true",
+      :show-resources="true")
 </template>
 
 

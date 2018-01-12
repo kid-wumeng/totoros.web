@@ -1,6 +1,6 @@
 module.exports = [{
 
-  # 时间线（首页）
+  # 首页（论坛列表）
   path: '/'
   meta:
     keepAlive: true
@@ -59,15 +59,6 @@ module.exports = [{
         params: ['id']
     component: -> System.import('pages/users/:id/overview')
   },{
-    path: 'feeds'
-    meta:
-      path: 'feeds'
-      keepAlive: true
-      key:
-        prefix: 'user-detail'
-        params: ['id']
-    component: -> System.import('pages/users/:id/feeds')
-  },{
     path: 'blogs'
     meta:
       path: 'blogs'
@@ -76,15 +67,6 @@ module.exports = [{
         prefix: 'user-detail'
         params: ['id']
     component: -> System.import('pages/users/:id/blogs')
-  },{
-    path: 'paints'
-    meta:
-      path: 'paints'
-      keepAlive: true
-      key:
-        prefix: 'user-detail'
-        params: ['id']
-    component: -> System.import('pages/users/:id/paints')
   },{
     path: 'animes'
     meta:

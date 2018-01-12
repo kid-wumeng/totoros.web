@@ -15,6 +15,9 @@
     computed:
       user: -> @state['setting'].user
 
+    created: ->
+      @init()
+
     methods:
       init: ->
         @dispatch('setting/init')

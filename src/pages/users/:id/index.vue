@@ -1,7 +1,8 @@
 <template lang="jade">
   #users-detail(v-if="user")
     c-header(:user="user")
-    router-view.main(:user="user")
+    keep-alive
+      router-view.main(:user="user", :key="routeKey")
 </template>
 
 
@@ -12,6 +13,12 @@
 
     data: ->
       user: null
+
+    computed:
+      routeKey: -> "#{@$route.path}-#{@$route.query.type}-#{@$route.query.status}-#{@$route.hash}"
+
+    created: ->
+      @init()
 
     methods:
       init: ->

@@ -1,6 +1,6 @@
 <template lang="jade">
   #marks
-    feed-waterfall(v-if="feeds.length", :feeds="feeds")
+    feed-waterfall(:feeds="feeds")
     .more(v-if="showMoreButton")
       .more-button(@click="more") 加载更多标记
 </template>
@@ -14,15 +14,17 @@
     data: ->
       feeds: []
       page:  0
-      size:  50
+      size:  10
       total: 0
       loading: false
       showMoreButton: false
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
-        @feeds = []
-        @page  = 0
+        @page = 0
         @showMoreButton = false
         @load()
 
@@ -41,7 +43,10 @@
           size: @size
         })
         if(result.feeds.length)
-          @feeds = @feeds.concat(result.feeds)
+          if(@page is 1)
+            @feeds = result.feeds
+          else
+            @feeds = @feeds.concat(result.feeds)
           @total = result.total
         else
           @toast('没有更多了')

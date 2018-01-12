@@ -15,6 +15,9 @@
     created: ->
       @listen('UPDATE_ROLE',  @updateRole)
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
         @role = await api.call('role.get', @routeID, {

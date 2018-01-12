@@ -15,6 +15,9 @@
     created: ->
       @listen('UPDATE_ORGANIZATION',  @updateOrganization)
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
         @organization = await api.call('organization.get', @routeID, {

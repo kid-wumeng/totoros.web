@@ -34,14 +34,11 @@
 
       status: -> @$route.query.status
 
-    watch:
-      'type':      -> @init()
-      'status':    -> @init()
-      'routePage': -> @init()
-
     created: ->
       @listen('UPDATE_MARK', @updateMark)
       @listen('REMOVE_MARK', @removeMark)
+
+    activated: -> @init()
 
     methods:
       init: ->

@@ -22,6 +22,9 @@
       @listen('CREATE_EPISODES', @createEpisodes)
       @listen('REMOVE_EPISODE',  @removeEpisode)
 
+    activated: ->
+      @init()
+
     methods:
       init: ->
         @subject = await api.call('subject.get', @routeID, {

@@ -21,8 +21,12 @@
       markSure: false
 
     created: ->
+      @init()
       @listen('CREATE_MARK', @createMark)
       @listen('UPDATE_MARK', @updateMark)
+
+    activated: ->
+      @init()
 
     methods:
       init: ->

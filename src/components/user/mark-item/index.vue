@@ -107,7 +107,7 @@
     .comment{
       flex: none;
       width: 480px;
-      margin-top: 16px;
+      margin-top: 15px;
       margin-left: 13px;
       line-height: 19px;
       font-size: 13px;

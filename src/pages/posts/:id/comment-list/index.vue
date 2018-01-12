@@ -24,12 +24,13 @@
       total: 0
 
     created: ->
+      @init()
       @listen('CREATE_COMMENT', @createComment)
       @listen('UPDATE_COMMENT', @updateComment)
       @listen('ADD_COMMENT_REPLY', @addCommentReply)
 
-    watch:
-      'routePage': -> @init()
+    activated: ->
+      @init()
 
     methods:
       init: ->

@@ -24,7 +24,7 @@
           return @main
 
       page:  -> @routePage
-      size:  -> 20
+      size:  -> 30
       total: -> @model.user.markStat(@user, @status, @type)
 
     methods:
