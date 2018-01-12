@@ -25,9 +25,6 @@
       'feed':
         type: Object
         required: true
-      'colHeights':
-        type: Array
-        required: true
       'width':
         type: Number
         required: true
@@ -46,18 +43,10 @@
         width: @width + 'px'
 
     methods:
-      load: (data) ->
-        i = @getMinIndex()
-        width = @$el.offsetWidth
-        height = data.height + @$el.offsetHeight
-        @$el.style.left = width * i + 'px'
-        @$el.style.top = @colHeights[i] + 'px'
-        @$emit('complete-layout', {i, height})
-
-      getMinIndex: ->
-        min = Math.min.apply(null, @colHeights);
-        index = @colHeights.indexOf(min)
-        return index
+      load: ({ height }) ->
+        $el = @$el
+        height += $el.offsetHeight
+        @$emit('load', {$el, height})
 </script>
 
 

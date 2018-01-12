@@ -2,16 +2,11 @@
   .image
     .bg-image(v-if="url", :style="style")
     .bg-image.default(v-else, :style="style")
-  //- .image(v-if="url", v-lazy:background-image="url", :style="style")
-  //- .image.default(v-else, v-lazy:background-image="defaultUrl", :style="{'backgroundSize': 'contain'}")
 </template>
 
 
 <script lang="coffee">
   module.exports =
-    components:
-      'load-trigger': require('./load-trigger')
-
     props:
       'url':
         type: String

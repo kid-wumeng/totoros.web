@@ -1,8 +1,6 @@
 <template lang="jade">
-  #marks
-    feed-waterfall(:feeds="feeds")
-    .more(v-if="showMoreButton")
-      .more-button(@click="more") 加载更多标记
+  #marks(:style="style")
+    feed-waterfall(v-if="showFeedWaterfall")
 </template>
 
 
@@ -12,46 +10,19 @@
       'feed-waterfall': require('./feed-waterfall')
 
     data: ->
-      feeds: []
-      page:  0
-      size:  10
-      total: 0
-      loading: false
-      showMoreButton: false
+      showFeedWaterfall: true
 
-    activated: ->
-      @init()
+    computed:
+      style: ->
+        'minHeight': document.body.clientHeight - 64 + 'px'
+
+    created: ->
+      @listen('RESET_MARKS', @resetMarks)
 
     methods:
-      init: ->
-        @page = 0
-        @showMoreButton = false
-        @load()
-
-      more: ->
-        @load()
-
-      load: ->
-        if(@loading)
-          return
-
-        @loading = true
-        @page += 1
-        result = await api.call('feed.getAll', {
-          types: ['create-post', 'update-post']
-          page: @page
-          size: @size
-        })
-        if(result.feeds.length)
-          if(@page is 1)
-            @feeds = result.feeds
-          else
-            @feeds = @feeds.concat(result.feeds)
-          @total = result.total
-        else
-          @toast('没有更多了')
-        @showMoreButton = true
-        @loading = false
+      resetMarks: ->
+        @showFeedWaterfall = false
+        setTimeout (=> @showFeedWaterfall = true), 0
 </script>
 
 
@@ -59,22 +30,6 @@
   #marks{
     background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
     overflow: hidden;
-    .feed-waterfall{
-      margin: 5px auto 10px;
-    }
-    .more{
-      padding: 24px 0;
-      text-align: center;
-      background-color: #FFF;
-      .more-button{
-        display: inline-block;
-        padding: 10px 24px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #707C88;
-        border: 2px solid #707C88;
-        cursor: pointer;
-      }
-    }
+    width: 100%;
   }
 </style>

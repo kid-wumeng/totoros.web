@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
-    router-link(:class="{'-active': isForum}" to="/") 讨论版
+    .item(@click="$router.push('/')") 讨论版
     //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
-    router-link(:class="{'-active': $route.path === '/marks'}" to="/marks") MARKS
+    .item(@click="toMarks") MARKS
 </template>
 
 
@@ -11,13 +11,19 @@
     computed:
       isForum: ->
         return /^\/forums\//.test(@$route.path)
+
+    methods:
+      toMarks: ->
+        if(@$route.path isnt '/marks')
+          @commit('RESET_MARKS')
+          @$router.push('/marks')
 </script>
 
 
 <style lang="less" scoped>
   .navigator{
     margin-left: 40px;
-    a{
+    .item{
       display: inline-block;
       height: 64px;
       line-height: 64px;
@@ -25,8 +31,8 @@
       font-size: 14px;
       font-weight: 600;
       color: #445669;
-    }
-    a.-active{
+      cursor: pointer;
+      user-select: none;
     }
   }
 </style>

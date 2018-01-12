@@ -1,12 +1,15 @@
 <template lang="jade">
-  .feed-waterfall(:style="style")
-    feed-item(
-      v-for="feed in feeds",
-      :key="feed.id",
-      :feed="feed",
-      :col-heights="colHeights",
-      :width="eachWidth"
-      @complete-layout="completeLayout")
+  .feed-waterfall(v-if="feeds.length")
+    .wrap(:style="wrapStyle")
+      feed-item(
+        v-for="feed in feeds",
+        :key="feed.id",
+        :feed="feed",
+        :width="eachWidth",
+        @load="load"
+      )
+    .more(v-if="showMoreButton")
+      .more-button(@click="more") 加载更多标记
 </template>
 
 
@@ -15,93 +18,132 @@
     components:
       'feed-item': require('./feed-item')
 
-    props:
-      'feeds':
-        type: Array
-        default: -> []
-
     data: ->
-      clientWidth = document.body.clientWidth
+      feeds: []
+      page:  1
+      size:  50
+      total: 0
+      loading: false
+      showMoreButton: false
 
-      if(clientWidth <= 346)
-        cols = 1
-      else if(clientWidth <= 570)
-        cols = 2
-      else if(clientWidth <= 794)
-        cols = 3
-      else if(clientWidth <= 1018)
-        cols = 4
-      else if(clientWidth <= 1242)
-        cols = 5
-      else if(clientWidth <= 1466)
-        cols = 6
-      else if(clientWidth <= 1690)
-        cols = 7
-      else
-        cols = 8
-
-      eachWidth = (clientWidth - 10) / cols
-      colHeights = []
-      colHeights[i] = 0 for i in [0...cols]
-      return{
-        cols: cols
-        colHeights: colHeights
-        eachWidth: eachWidth
-      }
+      cols: 0
+      eachWidth: 0
+      colHeights: []
 
     computed:
-      width:  -> @cols * @eachWidth
-      height: ->
-        clientHeight = document.body.clientHeight
-        max = @getMax() + 5
-        if(clientHeight > max)
-          return clientHeight
-        else
-          return max
+      wrapWidth:  -> @cols * @eachWidth
+      wrapHeight: -> @getMax() + 5
+      wrapStyle: ->
+        width:  @wrapWidth  + 'px'
+        height: @wrapHeight + 'px'
 
-      style: ->
-        width:  @width  + 'px'
-        height: @height + 'px'
+    created: ->
+      @init()
 
     methods:
       init: ->
-        console.log 2222
-        clientWidth = document.body.clientWidth
+        @computeCols()
+        @computeEachWidth()
+        @initColHeights()
+        @feeds = await @fetch()
 
-        if(clientWidth <= 346)
-          cols = 1
-        else if(clientWidth <= 570)
-          cols = 2
-        else if(clientWidth <= 794)
-          cols = 3
-        else if(clientWidth <= 1018)
-          cols = 4
-        else if(clientWidth <= 1242)
-          cols = 5
-        else if(clientWidth <= 1466)
-          cols = 6
-        else if(clientWidth <= 1690)
-          cols = 7
+      more: ->
+        @page += 1
+        feeds = await @fetch()
+        if(feeds.length)
+          @feeds = @feeds.concat(feeds)
         else
-          cols = 8
+          @toast('没有更多了')
 
-        @eachWidth = (clientWidth - 10) / cols
+      # 计算列数
+      computeCols: ->
+        clientWidth = document.body.clientWidth
+        if(clientWidth <= 346)
+          @cols = 1
+        else if(clientWidth <= 570)
+          @cols = 2
+        else if(clientWidth <= 794)
+          @cols = 3
+        else if(clientWidth <= 1018)
+          @cols = 4
+        else if(clientWidth <= 1242)
+          @cols = 5
+        else if(clientWidth <= 1466)
+          @cols = 6
+        else if(clientWidth <= 1690)
+          @cols = 7
+        else
+          @cols = 8
+
+      # 计算每列的宽度
+      computeEachWidth: ->
+        clientWidth = document.body.clientWidth
+        @eachWidth = (clientWidth - 10) / @cols
+
+      # 初始化colHeights
+      initColHeights: ->
         colHeights = []
-        colHeights[i] = 0 for i in [0...cols]
-        @cols = cols
+        colHeights[i] = 0 for i in [0...@cols]
         @colHeights = colHeights
 
+      # 获取最小高度的列
+      getMinIndex: ->
+        min = Math.min.apply(null, @colHeights);
+        index = @colHeights.indexOf(min)
+        return index
+
+      # 获取最大高度
       getMax: ->
         return Math.max.apply(null, @colHeights);
 
-      completeLayout: ({i, height}) ->
-        @$set(@colHeights, i, @colHeights[i] + height)
+      # item加载完毕事件，计算并设置left与top
+      load: ({$el, height}) ->
+        index  = @getMinIndex()
+        width  = @eachWidth
+        height = height
+        $el.style.left = width * index + 'px'
+        $el.style.top = @colHeights[index] + 'px'
+        @$set(@colHeights, index, @colHeights[index] + height)
+
+      fetch: ->
+        if(@loading)
+          return
+        else
+          @loading = true
+
+        result = await api.call('feed.getAll', {
+          types: ['create-post', 'update-post']
+          page: @page
+          size: @size
+        })
+
+        @total          = result.total
+        @showMoreButton = true
+        @loading        = false
+
+        return result.feeds
 </script>
 
 
 <style lang="less" scoped>
   .feed-waterfall{
-    margin-top: 60px;
-    position: relative;
+    >.wrap{
+      margin: 5px auto 0;
+      position: relative;
+    }
+    >.more{
+      padding: 24px 0;
+      text-align: center;
+      background-color: #FFF;
+      .more-button{
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #707C88;
+        border: 2px solid #707C88;
+        cursor: pointer;
+      }
+    }
   }
 </style>

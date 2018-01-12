@@ -38,3 +38,5 @@ module.exports =
     CREATE_COMMENT: (state, comment) -> bus.$emit('CREATE_COMMENT', comment)
     UPDATE_COMMENT: (state, comment) -> bus.$emit('UPDATE_COMMENT', comment)
     ADD_COMMENT_REPLY: (state, {comment, reply}) -> bus.$emit('ADD_COMMENT_REPLY', {comment, reply})
+
+    RESET_MARKS: (state) -> bus.$emit('RESET_MARKS')

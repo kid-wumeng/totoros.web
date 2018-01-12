@@ -149,6 +149,8 @@ module.exports = [{
   path: '/marks'
   meta:
     keepAlive: true
+    key:
+      prefix: 'marks'
   component: -> System.import('pages/marks')
 
 },{
