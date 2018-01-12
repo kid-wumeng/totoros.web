@@ -1,5 +1,5 @@
 <template lang="jade">
-  .detail-box
+  .wiki-detail-box
     .title {{ title }}
     .content
       slot
@@ -19,7 +19,7 @@
 
 
 <style lang="less">
-  .detail-box{
+  .wiki-detail-box{
     >.title{
       text-align: center;
       font-size: 13px;

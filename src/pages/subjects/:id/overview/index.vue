@@ -1,12 +1,12 @@
 <template lang="jade">
   #subjects-id-overview
-    .row.-left.-top
+    row
       .left
         face(:subject="subject")
         resources(:subject="subject")
         c-base(:subject="subject")
       .right
-        score-card(:subject="subject")
+        //- score-card(:subject="subject")
         c-mark(:subject="subject" v-if="checkined")
         intro(:subject="subject")
         casts(:subject="subject")
@@ -37,12 +37,12 @@
 
 <style lang="less" scoped>
   #subjects-id-overview{
-    margin-top: 4px;
-    >.row{
+    margin-top: 16px;
+    >.row2{
       >.left{
         width: 200px;
         >*{
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           &:last-child{
             margin-bottom: 0;
           }
@@ -51,11 +51,11 @@
       >.right{
         width: 500px;
         flex: auto;
-        margin-left: 32px;
+        margin-left: 40px;
         display: flex;
         flex-direction: column;
         >*{
-          margin-bottom: 24px;
+          margin-bottom: 28px;
           &:last-child{
             margin-bottom: 0;
           }

@@ -54,7 +54,7 @@
       margin-top: 12px;
       >.main{
         box-sizing: border-box;
-        width: 750px;
+        width: 800px;
       }
       >.side{
         width: 160px;

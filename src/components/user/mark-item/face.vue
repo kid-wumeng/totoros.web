@@ -32,7 +32,7 @@
   .face{
     box-sizing: border-box;
     .user-face{
-      width: 48px;
+      width: 40px;
     }
     .subject-face{
       width: 60px;

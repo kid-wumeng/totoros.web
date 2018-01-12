@@ -31,6 +31,7 @@
       a{
         display: inline-block;
         font-size: 13px;
+        color: #3db8c1;
       }
     }
   }

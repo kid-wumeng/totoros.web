@@ -68,7 +68,6 @@
     }
     >.wrap{
       background-color: #FFF;
-      border-top: 1px solid #F2F2F2;
       border-bottom: 1px solid #F2F2F2;
       overflow: hidden;
       margin-top: 24px;

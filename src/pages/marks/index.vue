@@ -1,6 +1,6 @@
 <template lang="jade">
   #marks
-    feed-waterfall(v-show="feeds.length", :feeds="feeds")
+    feed-waterfall(v-if="feeds.length", :feeds="feeds")
     .more(v-if="showMoreButton")
       .more-button(@click="more") 加载更多标记
 </template>

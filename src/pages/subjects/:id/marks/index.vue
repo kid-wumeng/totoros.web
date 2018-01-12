@@ -1,6 +1,6 @@
 <template lang="jade">
   #subjects-detail-marks
-    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark" showUser)
+    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark", :showUser="true")
     page-bar(:page="routePage", :size="size", :total="total" @change="change")
 </template>
 
@@ -45,10 +45,8 @@
 <style lang="less" scoped>
   #subjects-detail-marks{
     .mark-item{
-      padding: 16px;
-      &:nth-child(even){
-        background-color: #FFF;
-      }
+      padding: 16px 12px;
+      border-bottom: 1px dashed rgb(240, 240, 240);
     }
     .page-bar{
       margin-top: 24px;

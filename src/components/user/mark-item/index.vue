@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.mark-item
+  row.mark-item(:class="{'-showUser': showUser}")
     .left
       face(:mark="mark", :showUser="showUser", :showSubject="showSubject")
     .right
@@ -9,13 +9,13 @@
           .desc(v-if="showSubject") {{ desc }}
         row.-center
           .date {{ model.date.display(mark.createDate) }}
-          .update(v-if="isMe(mark.user)" @click="update") 修改标记
-          action-sheet(v-if="isMe(mark.user)", :actions="actions")
+          .update(v-if="showActions && isMe(mark.user)" @click="update") 修改标记
+          action-sheet(v-if="showActions && isMe(mark.user)", :actions="actions")
       row.-between
         column
           text-area.comment(v-if="comment", :text="comment")
           mark-score-simple(:mark="mark")
-        resources(:subject="mark.subject")
+        resources(v-if="showResources", :subject="mark.subject")
 </template>
 
 
@@ -39,6 +39,12 @@
         type: Boolean
         default: false
       'showSubject':
+        type: Boolean
+        default: false
+      'showActions':
+        type: Boolean
+        default: false
+      'showResources':
         type: Boolean
         default: false
 
@@ -108,10 +114,21 @@
       color: #707C88;
     }
     .mark-score-simple{
-      margin-top: 20px;
+      margin-top: 16px;
     }
     .column{
       flex: auto;
+    }
+  }
+  .mark-item.-showUser{
+    >.right{
+      margin-left: 12px;
+    }
+    .comment{
+      margin-top: 9px;
+    }
+    .mark-score-simple{
+      margin-top: 10px;
     }
   }
 </style>

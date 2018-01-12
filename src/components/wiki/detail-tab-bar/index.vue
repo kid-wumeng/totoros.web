@@ -28,22 +28,26 @@
       height: 28px;
       line-height: 28px;
       font-weight: 600;
-      color: #A2AEBA;
       border-radius: 3px 3px 0 0;
       user-select: none;
       .label{
         font-size: 13px;
-        color: inherit;
+        color: #CDD6E0;
       }
       .count{
         font-size: 13px;
-        color: inherit;
+        color: #A2AEBA;
         margin-left: 4px;
       }
     }
     .tab.-active{
-      color: #FFF;
       background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
+      .label{
+        color: #FFF;
+      }
+      .count{
+        color: #FFF;
+      }
     }
   }
 </style>

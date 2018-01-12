@@ -40,9 +40,9 @@
       >.column{
         align-self: stretch;
         flex: auto;
-        padding-top: 16px;
-        padding-left: 22px;
-        padding-right: 22px;
+        padding-top: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
         position: relative;
         justify-content: space-between;
         >.top{

@@ -41,9 +41,6 @@
         label: if @nameOrigin then @nameOrigin else @name
         value: ''
       },{
-        label: '世界观'
-        value: 'world'
-      },{
         label: 'EPISODE'
         value: 'episodes'
         count: @subject.episodeCount

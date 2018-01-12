@@ -3,7 +3,9 @@
     .left
       face(:result="result")
     .right
-      .name {{ result.name }}
+      row.-center
+        .name {{ result.name }}
+        .desc(v-if="desc") {{ desc }}
       text-area.intro(:text="result.intro", :limit="120")
 </template>
 
@@ -24,6 +26,14 @@
       results:  -> @state['search-modal'].results
       redirect: -> @state['search-modal'].redirect
       resolve:  -> @state['search-modal'].resolve
+
+      desc: ->
+        desc = ''
+        if(@type is 'subject')
+          desc += model.subject.displayType(@result.type)
+          if(@result.season)
+            desc += " / Season #{@result.season}"
+        return desc
 
     methods:
       click: ->
@@ -61,9 +71,15 @@
       font-size: 15px;
       color: #FFF;
     }
+    .desc{
+      margin-left: 8px;
+      font-size: 13px;
+      color: #DDD;
+    }
     .intro{
       margin-top: 4px;
-      color: #EEE;
+      width: 70%;
+      color: #DDD;
     }
   }
 </style>

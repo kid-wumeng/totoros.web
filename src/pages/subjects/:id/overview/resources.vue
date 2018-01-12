@@ -30,6 +30,7 @@
     a{
       display: block;
       font-size: 13px;
+      color: #3db8c1;
       padding-bottom: 2px;
       &:last-child{
         padding-bottom: 0;

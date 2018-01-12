@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     .subject-face{
-      width: 160px;
+      width: 180px;
       cursor: auto;
     }
   }

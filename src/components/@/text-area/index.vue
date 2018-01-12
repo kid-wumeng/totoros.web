@@ -1,5 +1,5 @@
 <template lang="jade">
-  .text-area(v-if="text", :style="textStyle")
+  .text-area(v-if="text", :class="textClass")
     .paragraph(v-for="paragraph in paragraphs", :style="paragraphStyle", v-html="paragraph", @click="click")
 </template>
 
@@ -18,24 +18,25 @@
         default: false
       'gap':
         type: Number
-        default: 8
+        default: 0
       'more':
         type: Boolean
         default: false
 
     data: ->
-      formatText: ''
+      formatTexts: []
+      unfold: false
       clickable: false
 
     computed:
-      paragraphs: ->
-        return @formatText.split(/\n+/g)
+      paragraphs: -> @formatTexts
 
-      textStyle: ->
-        'cursor': if @clickable then 'pointer' else 'inherit'
+      textClass: ->
+        '-clickable': @clickable
 
       paragraphStyle: ->
         'marginTop': @gap + 'px'
+        'textIndent': if @indent then '2em' else 0
 
     created: ->
       @format()
@@ -46,16 +47,12 @@
     methods:
       format: ->
         text = @trim(@text)
-        if @isOver(text)
+        if @isOver(text) and !@unfold
           text = text.slice(0, @limit)
           text = @addHint(text)
           @clickable = @more
-        if(@indent)
-          texts = text.split(/\n/)
-          texts = texts.map (text) -> '　　' + text
-          text = texts.join('\n')
-        text = text.replace(/\n/g, '<br/>')
-        @formatText = text
+        texts = text.split(/\n/)
+        @formatTexts = texts
 
       isOver: (text) ->
         len = text.length
@@ -66,15 +63,15 @@
 
       addHint: (text) ->
         if(@more)
-          return "#{text} ... (more)"
+          return "#{text}... (more)"
         else
           return "#{text}..."
 
       click: ->
-        if @more
-          text = @trim(@text)
-          @formatText = text
-          @clickable  = false
+        if(@more)
+          @unfold = true
+          @format()
+          @clickable = false
 </script>
 
 
@@ -93,5 +90,11 @@
         margin-top: 0 !important;
       }
     }
+    .paragraph:empty{
+      height: 12px;
+    }
+  }
+  .text-area.-clickable{
+    cursor: pointer;
   }
 </style>

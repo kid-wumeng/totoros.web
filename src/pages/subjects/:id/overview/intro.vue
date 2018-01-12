@@ -1,5 +1,5 @@
 <template lang="jade">
-  text-area.intro(:text="subject.intro" indent, :limit="400" more :gap="4")
+  text-area.intro(:text="subject.intro" indent, :limit="400" more)
 </template>
 
 

@@ -26,7 +26,7 @@
 <style lang="less" scoped>
   #users-detail{
     .main{
-      margin: -55px auto 0;
+      margin: -55px auto 50px;
     }
   }
 </style>

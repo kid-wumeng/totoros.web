@@ -39,7 +39,7 @@
     .left{
       width: 70%;
       >*{
-        margin-bottom: 70px;
+        margin-bottom: 50px;
         &:last-child{
           margin-bottom: 0;
         }

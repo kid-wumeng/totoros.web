@@ -1,6 +1,6 @@
 <template lang="jade">
   .account
-    user-face(v-if="checkined && login", :user="state.account.user")
+    user-face(v-if="checkined && login", :user="state.account.user" circle)
     c-button.-gray(v-if="checkined && !login" @click="$router.push('/login')") LOGIN
     c-button(v-if="checkined && !login" @click="$router.push('/register')")    注册，加入我们
 </template>
@@ -17,8 +17,8 @@
 <style lang="less" scoped>
   .account{
     .user-face{
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
     }
     .button:first-child{
       position: relative;
