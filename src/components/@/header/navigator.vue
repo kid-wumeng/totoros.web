@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
     .item(@click="$router.push('/')") 讨论版
-    //- router-link(:class="{'-active': $route.path === '/wiki'}" to="/wiki") 维基计划
     .item(@click="toMarks") MARKS
+    .item(v-if="admin" @click="$router.push('/wiki')") 维基计划
 </template>
 
 
@@ -22,7 +22,7 @@
 
 <style lang="less" scoped>
   .navigator{
-    margin-left: 40px;
+    margin-left: 36px;
     .item{
       display: inline-block;
       height: 64px;

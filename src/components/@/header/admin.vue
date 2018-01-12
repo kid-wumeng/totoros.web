@@ -1,6 +1,6 @@
 <template lang="jade">
   .admin.-underline(v-if="admin" @click="$router.push('/admin')")
-    span ADMIN-CENTER
+    span ADMIN
 </template>
 
 

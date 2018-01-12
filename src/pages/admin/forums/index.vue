@@ -11,7 +11,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'action-bar':        require('./action-bar')
+      'action-bar':         require('./action-bar')
       'forum-list':         require('./forum-list')
       'create-forum-modal': require('components/bbs/create-forum-modal')
       'update-forum-modal': require('components/bbs/update-forum-modal')

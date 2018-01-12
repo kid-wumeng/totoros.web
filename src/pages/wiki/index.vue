@@ -20,5 +20,8 @@
   #wiki{
     margin: 60px auto;
     width: 800px;
+    >*{
+      margin-right: 16px;
+    }
   }
 </style>
