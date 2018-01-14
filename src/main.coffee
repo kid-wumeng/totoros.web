@@ -4,10 +4,19 @@ Lazyload   = require('vue-lazyload')
 Sai        = require('./assets/sai.io')
 store      = require('./store')
 model      = require('./model')
-App        = require('./App')
 methods    = require('./assets/methods')
 directives = require('./assets/directives')
-routes     = require('./assets/routes')
+
+
+##################################################
+## Polyfill: Array.prototype.includes
+##################################################
+if typeof [].includes isnt 'function'
+  Array.prototype.includes = (value) ->
+    for item in @
+      if value is item
+        return true
+    return false
 
 
 ##################################################
@@ -26,6 +35,18 @@ window.addEventListener 'unhandledrejection', (event) ->
   store.dispatch('notify/show', {type: 'fail', message: error.message, duration: 4000})
 
 api.on('open', -> store.dispatch('account/checkin'))
+
+
+
+##################################################
+## 判断是处于PC还是H5环境
+##################################################
+clientWidth = document.documentElement.clientWidth
+if clientWidth > 1024
+  window.isPC = true
+else
+  window.isH5 = true
+
 
 
 window.Vue = Vue
@@ -106,6 +127,11 @@ Vue.component('column', require('components/@/column'))
 
 Vue.use(Lazyload)
 
+if window.isH5
+  routes = require('./assets/routes.h5')
+else
+  routes = require('./assets/routes')
+
 
 Vue.use(Router)
 router = new Router({
@@ -116,6 +142,12 @@ router = new Router({
 
 window.router = router
 
+
+
+if window.isH5
+  App = require('./App.h5')
+else
+  App = require('./App')
 
 new Vue({
   el: '#app'

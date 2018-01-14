@@ -42,9 +42,11 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.coffee'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'assets':     resolve('src/assets'),
-      'components': resolve('src/components'),
-      'pages':      resolve('src/pages'),
+      'assets':        resolve('src/assets'),
+      'components':    resolve('src/components'),
+      'components.h5': resolve('src/components.h5'),
+      'pages':         resolve('src/pages'),
+      'pages.h5':      resolve('src/pages.h5'),
     }
   },
   externals: {

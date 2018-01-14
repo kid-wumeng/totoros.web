@@ -6,9 +6,6 @@
       :date="comment.createDate",
       :floor="floor",
       :reference="comment.referenceComment",
-      show-edit
-      @update="update"
-      @reference="reference"
     )
 </template>
 
@@ -16,9 +13,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'floor': require('components/@/floor')
-      # 'reply-form': require('./reply-form')
-      # 'reply-list': require('./reply-list')
+      'floor': require('components.h5/floor')
 
     props:
       'comment':
@@ -31,13 +26,6 @@
           return "##{@comment.floor}"
         else
           return ''
-
-    methods:
-      update: ->
-        @dispatch('comment-modal/show', {comment: @comment})
-
-      reference: ->
-        @$emit('reference')
 </script>
 
 

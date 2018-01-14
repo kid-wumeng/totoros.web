@@ -127,6 +127,7 @@
 
 <style lang="less">
   .markdown-area{
+    box-sizing: border-box;
     width: 100%;
     word-break: break-all;
     line-height: 24px;

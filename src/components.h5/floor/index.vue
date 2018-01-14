@@ -1,22 +1,16 @@
 <template lang="jade">
-  row.floor
-    .left
-      user-face(:user="user" circle)
-    .right
-      row.-between
-        .desc
-          user-name(:user="user")
-          .date {{ model.date.display(date) }}
-          .edit(v-if="showEdit && login")
-            span (
-            span.text(v-if="isMe(user)" @click="clickUpdate") 修改
-            span.text(v-else @click="clickReference") 引用
-            span )
+  .floor
+    row.-between.-center
+      row.left.-center
+        user-face(:user="user" circle)
+        user-name(:user="user")
+        .date {{ model.date.display(date) }}
+      .right
         .display-floor {{ floor }}
-      .reference(v-if="reference")
-        span.user @{{ reference.user.name }}
-        span.content {{ reference.content }}
-      markdown-area(:content="content")
+    .reference(v-if="reference")
+      span.user @{{ reference.user.name }}
+      span.content {{ reference.content }}
+    markdown-area(:content="content")
 </template>
 
 
@@ -40,13 +34,6 @@
         type: String
       'reference':
         type: Object
-      'showEdit':
-        type: Boolean
-        default: false
-
-    methods:
-      clickUpdate:    -> @$emit('update')
-      clickReference: -> @$emit('reference')
 </script>
 
 
@@ -54,20 +41,11 @@
   .floor{
     box-sizing: border-box;
     width: 100%;
+    padding: 20px;
     align-items: stretch;
-    >.right{
-      margin-top: 8px;
-      flex: auto;
-    }
     .user-face{
       width: 36px;
       margin-right: 12px;
-    }
-    .desc{
-      flex: none;
-    }
-    .desc > *{
-      display: inline;
     }
     .user-name{
       font-size: 13px;
@@ -77,32 +55,14 @@
       font-size: 12px;
       color: #A2AEBA;
     }
-    .edit{
-      margin-left: 8px;
-      >*{
-        font-size: 12px;
-        color: #A2AEBA;
-      }
-      >.text{
-        margin: 0 2px;
-        font-weight: 500;
-        color: #707C88;
-        cursor: pointer;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
     .display-floor{
       font-size: 13px;
       font-weight: 600;
       color: #A2AEBA;
     }
     .reference{
-      width: 80%;
       margin-top: 20px;
       margin-bottom: 20px;
-      margin-left: 13px;
       padding: 0 12px;
       border-left: 3px solid #ADD9CF;
       line-height: 19px;
@@ -118,8 +78,6 @@
       }
     }
     .markdown-area{
-      padding-left: 13px;
-      padding-right: 13px;
       margin-top: 13px;
       text-align: justify;
     }

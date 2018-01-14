@@ -135,3 +135,9 @@ exports.displayStaffJob = (job) ->
     when 206 then '播放电视台'
 
     else ''
+
+
+
+exports.hasMorePage = (page, size, total) ->
+  maxPage = Math.floor(total / size)
+  return page < maxPage
