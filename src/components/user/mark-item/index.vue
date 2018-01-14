@@ -22,14 +22,13 @@
 <script lang="coffee">
   module.exports =
     components:
-      'mark-score-simple':    require('components/user/mark-score-simple')
-      'mark-progress': require('components/user/mark-progress')
-      'text-area':     require('components/@/text-area')
-      'action-sheet':  require('components/@/action-sheet')
-      'c-button':      require('components/@/button')
-      'face':          require('./face')
-      'name':          require('./name')
-      'resources':     require('./resources')
+      'mark-score-simple': require('components/user/mark-score-simple')
+      'text-area':         require('components/@/text-area')
+      'action-sheet':      require('components/@/action-sheet')
+      'c-button':          require('components/@/button')
+      'face':              require('./face')
+      'name':              require('./name')
+      'resources':         require('./resources')
 
     props:
       'mark':

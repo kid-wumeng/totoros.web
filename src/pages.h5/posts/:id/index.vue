@@ -18,19 +18,12 @@
     data: ->
       post: null
 
-    created: ->
-      @listen('UPDATE_POST', @updatePost)
-
     activated: ->
       @init()
 
     methods:
       init: ->
         @post = await api.call('post.get', @routeID)
-
-      updatePost: (post) ->
-        if isSame(@post, post)
-          @post = post
 </script>
 
 

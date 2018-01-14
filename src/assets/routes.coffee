@@ -1,6 +1,6 @@
 module.exports = [{
 
-  # 首页（论坛列表）
+  # 首页（讨论版）
   path: '/'
   meta:
     keepAlive: true

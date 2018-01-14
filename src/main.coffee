@@ -8,6 +8,7 @@ methods    = require('./assets/methods')
 directives = require('./assets/directives')
 
 
+
 ##################################################
 ## Polyfill: Array.prototype.includes
 ##################################################
@@ -26,7 +27,7 @@ if process.env.NODE_ENV isnt 'production'
   window.dev = true
 
 if(window.dev)
-  window.api = new Sai.RemoteApp('ws://127.0.0.1:3000')
+  window.api = new Sai.RemoteApp("ws://#{location.hostname}:3000")
 else
   window.api = new Sai.RemoteApp('ws://139.196.39.110:3000')
 
@@ -56,7 +57,7 @@ window.model = model
 if window.dev
   window.cdn = 'http://oy0aiwj7c.bkt.clouddn.com'
 else
-  window.cdn = 'http://oy0az8u94.bkt.clouddn.com'
+  window.cdn = 'http://cdn.totoros.cc'
 
 
 window.dpr = window.devicePixelRatio ? 1

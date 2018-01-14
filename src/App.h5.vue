@@ -1,11 +1,6 @@
 <template lang="jade">
   #app(:style="appStyle")
-    row.header.-between.-center
-      .left
-        cdn-image.logo(path="assets/logo?2017-11-09")
-      row.right.-right.-center
-        .item 讨论版
-        .item MARKS
+    c-header
     .body
       keep-alive
         router-view(v-if="$route.meta.keepAlive", :key="key")
@@ -16,7 +11,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'cdn-image': require('components/image/cdn-image')
+      'c-header': require('components.h5/header')
 
     computed:
       key: ->
@@ -84,29 +79,6 @@
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  .header{
-    box-sizing: border-box;
-    padding: 0 32px;
-    width: 100%;
-    height: 48px;
-    border-bottom: 1px solid rgb(245, 245, 245);
-    >.left{
-      >.logo{
-        @width: 72px;
-        width: @width;
-        height: @width / 5;
-        opacity: 0.9;
-      }
-    }
-    >.right{
-      >.item{
-        text-align: center;
-        font-size: 14px;
-        font-weight: 600;
-        margin-left: 32px;
-      }
-    }
+    background-color: rgb(250, 250, 250);
   }
 </style>
