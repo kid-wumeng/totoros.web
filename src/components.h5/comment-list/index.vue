@@ -30,13 +30,5 @@
 
 <style lang="less" scoped>
   .comment-list{
-    .item{
-      padding-bottom: 20px;
-      border-bottom: 1px solid #F2F2F2;
-      margin-bottom: 20px;
-    }
-    .page-bar{
-      margin-top: 20px;
-    }
   }
 </style>

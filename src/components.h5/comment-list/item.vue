@@ -34,5 +34,8 @@
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
+    &:last-child .floor{
+      margin-bottom: 0;
+    }
   }
 </style>

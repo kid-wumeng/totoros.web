@@ -139,5 +139,5 @@ exports.displayStaffJob = (job) ->
 
 
 exports.hasMorePage = (page, size, total) ->
-  maxPage = Math.floor(total / size)
+  maxPage = Math.ceil(total / size)
   return page < maxPage

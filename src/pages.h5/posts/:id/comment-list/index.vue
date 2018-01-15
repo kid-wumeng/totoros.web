@@ -2,6 +2,7 @@
   comment-list(
     :comments="comments",
     :page="page",
+    :size="size",
     :total="total",
     @more="more"
   )
@@ -21,6 +22,7 @@
     data: ->
       comments: []
       page: 0
+      size: 50
       total: 0
 
     created: ->
@@ -40,6 +42,7 @@
           at:   'post'
           id:   @routeID
           page: @page
+          size: @size
         })
         @comments = @comments.concat(result.comments)
         @total = result.total

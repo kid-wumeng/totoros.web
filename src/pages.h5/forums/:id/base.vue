@@ -1,10 +1,6 @@
 <template lang="jade">
-  row.base
-    .left
-      forum-face(:forum="forum")
-    .right
-      .name {{ forum.name }}
-      text-area.intro(:text="forum.intro")
+  desc-card(:name="forum.name", :desc="forum.intro")
+    forum-face(slot="face", :forum="forum")
 </template>
 
 
@@ -12,7 +8,7 @@
   module.exports =
     components:
       'forum-face': require('components/image/forum-face')
-      'text-area':  require('components/@/text-area')
+      'desc-card':  require('components.h5/desc-card')
 
     props:
       'forum':
@@ -22,22 +18,11 @@
 
 
 <style lang="less" scoped>
-  .base{
-    .right{
-      margin-left: 10px;
-    }
+  .desc-card{
+    padding: 20px;
+    background-color: #FFF;
     .forum-face{
       width: 64px;
-    }
-    .name{
-      font-weight: 600;
-      font-size: 14px;
-      color: #273340;
-    }
-    .intro{
-      margin-top: 2px;
-      font-size: 12px;
-      color: #707C88;
     }
   }
 </style>

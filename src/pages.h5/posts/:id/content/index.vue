@@ -17,7 +17,5 @@
 
 <style lang="less" scoped>
   .content{
-    padding-bottom: 20px;
-    border-bottom: 1px solid #F2F2F2;
   }
 </style>

@@ -79,6 +79,6 @@
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(250, 250, 250);
+    background-color: rgba(242, 243, 245, 0.8);
   }
 </style>

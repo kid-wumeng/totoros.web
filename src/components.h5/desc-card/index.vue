@@ -1,44 +1,45 @@
 <template lang="jade">
-  row.base
+  row.desc-card
     .left
-      forum-face(:forum="forum")
+      slot(name="face")
     .right
-      .name {{ forum.name }}
-      text-area.intro(:text="forum.intro")
+      .name {{ name }}
+      text-area.desc(:text="desc")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'forum-face': require('components/image/forum-face')
       'text-area':  require('components/@/text-area')
 
     props:
-      'forum':
-        type: Object
-        required: true
+      'name':
+        type: String
+        default: ''
+      'desc':
+        type: String
+        default: ''
 </script>
 
 
 <style lang="less" scoped>
-  .base{
+  .desc-card{
+    .left > *{
+      width: 64px;
+    }
     .right{
       margin-left: 12px;
-    }
-    .forum-face{
-      width: 64px;
     }
     .name{
       font-weight: 600;
       font-size: 14px;
       color: #273340;
     }
-    .intro{
-      margin-top: 5px;
-      width: 600px;
-      line-height: 18px;
-      font-size: 12px;
+    .desc{
+      margin-top: 4px;
+      font-size: 13px;
+      line-height: 21px;
       color: #707C88;
     }
   }

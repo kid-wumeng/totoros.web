@@ -14,7 +14,7 @@
     data: ->
       forum: null
       feeds: []
-      page: 1
+      page: 0
       size: 20
       total: 0
 

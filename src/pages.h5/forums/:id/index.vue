@@ -17,8 +17,8 @@
     data: ->
       forum: null
       posts: []
-      page: 1
-      size: 1
+      page: 0
+      size: 30
       total: 0
 
     activated: ->
@@ -48,7 +48,6 @@
   #forums-detail{
     .wrap{
       box-sizing: border-box;
-      padding: 16px;
       width: 100%;
     }
   }

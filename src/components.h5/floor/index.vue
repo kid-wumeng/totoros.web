@@ -43,9 +43,11 @@
     width: 100%;
     padding: 20px;
     align-items: stretch;
+    background-color: #FFF;
+    margin-bottom: 8px;
     .user-face{
-      width: 36px;
-      margin-right: 12px;
+      width: 32px;
+      margin-right: 9px;
     }
     .user-name{
       font-size: 13px;
@@ -61,12 +63,11 @@
       color: #A2AEBA;
     }
     .reference{
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin: 0 9px;
+      margin-top: 19px;
       padding: 0 12px;
-      border-left: 3px solid #ADD9CF;
-      line-height: 19px;
       text-align: justify;
+      border-left: 3px solid #ADD9CF;
       .user{
         margin-right: 6px;
         font-weight: 600;
@@ -78,7 +79,8 @@
       }
     }
     .markdown-area{
-      margin-top: 13px;
+      margin-top: 16px;
+      padding: 0 7px;
       text-align: justify;
     }
   }

@@ -1,21 +1,16 @@
 <template lang="jade">
   .item(@click="toPostPage(post)")
-    row.-between.-center
-      row.-center.user-row
-        user-face(:user="user")
-        column
-          row.-between.-center
-            user-name(:user="user")
-            row.-center(v-if="commentCount")
-              .comment-icon.icon.fa-comments-o
-              .comment-count {{ commentCount }}
-          row.last.-center(v-if="lastCommentDate")
-            .hint 最后回复
-            .name {{ lastCommentUser.name }}
-            .date {{ model.date.display(lastCommentDate) }}
     .title-row
+      user-face(:user="user" circle)
       span.top(v-if="top") [置顶]
       span.title {{ title }}
+    .user-row(v-if="lastCommentDate")
+      span.comment-count +{{ commentCount }}
+      span.sep /
+      span.hint last by
+      span.name {{ lastCommentUser.name }}
+      span.sep /
+      span.date {{ model.date.display(lastCommentDate) }}
 </template>
 
 
@@ -45,45 +40,38 @@
   .item{
     box-sizing: border-box;
     width: 100%;
-    align-items: stretch;
+    padding: 16px 20px;
+    background-color: #FFF;
     cursor: pointer;
-    .user-row{
-      flex: auto;
-    }
-    .column{
-      flex: auto;
-    }
-    .user-face{
-      width: 40px;
-      margin-right: 12px;
-    }
-    .last{
-      flex: none;
-      >*{
-        margin-right: 6px;
+    margin-top: 8px;
+    .title-row{
+      text-align: justify;
+      .user-face{
+        display: inline-block;
+        margin-right: 9px;
+        width: 20px;
+        vertical-align: middle;
+      }
+      .top{
+        margin-right: 8px;
         font-size: 12px;
         color: #A2AEBA;
+        vertical-align: middle;
+      }
+      .title{
+        align-self: flex-start;
+        font-size: 16px;
+        color: #262626;
+        vertical-align: middle;
       }
     }
-    .comment-icon{
-      font-size: 13px;
-      color: #A2AEBA;
-    }
-    .comment-count{
-      margin-left: 6px;
-      font-size: 12px;
-      color: #A2AEBA;
-    }
-    .top{
-      margin-right: 9px;
-      font-size: 12px;
-      color: #A2AEBA;
-    }
-    .title{
-      align-self: flex-start;
-      font-weight: 500;
-      font-size: 14px;
-      color: #273340;
+    .user-row{
+      margin-top: 6px;
+      >*{
+        margin-right: 4px;
+        font-size: 11px;
+        color: #A2AEBA;
+      }
     }
   }
 </style>
