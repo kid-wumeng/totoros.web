@@ -17,6 +17,9 @@
       'update-forum-modal': require('components/bbs/update-forum-modal')
       'forum-face-modal':   require('components/bbs/forum-face-modal')
 
+    created: ->
+      @init()
+
     methods:
       init: ->
         @dispatch('admin-forums/init')

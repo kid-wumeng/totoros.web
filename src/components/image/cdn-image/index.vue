@@ -87,4 +87,7 @@
 
 
 <style lang="less" scoped>
+  .cdn-image{
+    overflow: hidden;
+  }
 </style>

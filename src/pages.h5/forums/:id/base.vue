@@ -1,6 +1,7 @@
 <template lang="jade">
-  desc-card(:name="forum.name", :desc="forum.intro")
-    forum-face(slot="face", :forum="forum")
+  .base
+    desc-card(:name="forum.name", :desc="forum.intro")
+      forum-face(slot="face", :forum="forum")
 </template>
 
 
@@ -18,7 +19,7 @@
 
 
 <style lang="less" scoped>
-  .desc-card{
+  .base{
     padding: 20px;
     background-color: #FFF;
     .forum-face{
