@@ -57,6 +57,7 @@
         width: 800px;
       }
       >.side{
+        margin-top: 8px;
         width: 160px;
       }
     }

@@ -105,7 +105,6 @@
     }
     .comment{
       flex: none;
-      width: 480px;
       margin-top: 15px;
       margin-left: 13px;
       line-height: 19px;
@@ -113,7 +112,7 @@
       color: #707C88;
     }
     .mark-score-simple{
-      margin-top: 16px;
+      margin-top: 13px !important;
     }
     .column{
       flex: auto;

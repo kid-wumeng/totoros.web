@@ -32,6 +32,7 @@
           casts:    true
           staffs:   true
           marks:    true
+          posts:    true
         })
 
       updateSubject: (subject) ->

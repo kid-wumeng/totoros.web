@@ -11,6 +11,7 @@
         intro(:subject="subject")
         casts(:subject="subject")
         staffs(:subject="subject")
+        posts(:subject="subject")
         marks(:subject="subject")
 </template>
 
@@ -27,6 +28,7 @@
       'casts':      require('./casts')
       'staffs':     require('./staffs')
       'marks':      require('./marks')
+      'posts':      require('./posts')
 
     props:
       'subject':

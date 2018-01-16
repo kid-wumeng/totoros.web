@@ -13,6 +13,7 @@
   .line{
     box-sizing: border-box;
     width: 100%;
+    color: #E4E8EB;
     border-bottom: 1px solid currentColor;
   }
 </style>

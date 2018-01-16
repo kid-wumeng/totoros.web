@@ -22,15 +22,16 @@
   .wiki-detail-box{
     >.title{
       text-align: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
+      color: #A2AEBA;
     }
     >.content{
       margin-top: 7px;
       box-sizing: border-box;
-      padding: 6px;
-      border: 1px solid #F2F2F2;
+      border: 1px solid #E4E8EB;
       border-radius: 3px;
+      overflow: hidden;
     }
   }
 </style>

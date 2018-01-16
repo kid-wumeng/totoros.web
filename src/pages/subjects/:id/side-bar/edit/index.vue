@@ -1,12 +1,13 @@
 <template lang="jade">
   detail-box.edit.col(v-show="show")
-    .edit-action(v-show="$route.meta.path === ''" @click="editFace")      编辑：作品封面
-    .edit-action(v-show="$route.meta.path === ''" @click="editBase")      编辑：基本档案
-    .edit-action(v-show="$route.meta.path === ''" @click="editResources") 编辑：资源Links
-    //- .edit-action(v-show="$route.meta.path === ''" @click="editWorld")     编辑：世界观
-    .edit-action(v-show="$route.meta.path === 'episodes'" @click="editEpisodes")  编辑：Episodes
-    .edit-action(v-show="$route.meta.path === 'casts'"    @click="editCasts")     编辑：Casts
-    .edit-action(v-show="$route.meta.path === 'staffs'"   @click="editStaffs")    编辑：Staffs
+    .wrap
+      .edit-action(v-show="path === ''" @click="editFace")      编辑：作品封面
+      .edit-action(v-show="path === ''" @click="editBase")      编辑：基本档案
+      .edit-action(v-show="path === ''" @click="editResources") 编辑：资源Links
+      //- .edit-action(v-show="path === ''" @click="editWorld")     编辑：世界观
+      .edit-action(v-show="path === 'episodes'" @click="editEpisodes")  编辑：Episodes
+      .edit-action(v-show="path === 'casts'"    @click="editCasts")     编辑：Casts
+      .edit-action(v-show="path === 'staffs'"   @click="editStaffs")    编辑：Staffs
 
     edit-subject-resources-modal
     edit-subject-episodes-modal
@@ -66,16 +67,19 @@
 <style lang="less" scoped>
   .edit{
     align-items: stretch;
-    .edit-action{
-      padding: 8px 12px;
-      text-align: left;
-      font-weight: 500;
-      font-size: 13px;
-      cursor: pointer;
-      border-radius: 3px;
-      &:hover{
-        color: #FFF;
-        background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
+    .wrap{
+      padding: 6px;
+      .edit-action{
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 3px;
+        &:hover{
+          color: #FFF;
+          background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
+        }
       }
     }
   }

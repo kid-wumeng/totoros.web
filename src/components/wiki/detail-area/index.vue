@@ -24,12 +24,11 @@
       text-align: right;
       font-size: 14px;
       font-weight: 600;
-      color: #707C88;
+      color: #A2AEBA;
     }
     >.line{
-      margin-top: 6px;
-      margin-bottom: 6px;
-      color: #EAEDEF;
+      margin-top: 7px;
+      margin-bottom: 7px;
     }
   }
 </style>

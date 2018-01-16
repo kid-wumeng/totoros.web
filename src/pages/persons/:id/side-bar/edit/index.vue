@@ -1,14 +1,14 @@
 <template lang="jade">
-  .edit.col
-    c-button.-gray(v-show="path === ''" @click="editFace") 编辑：头像
-    c-button.-gray(v-show="path === ''" @click="editBase") 编辑：基本档案
+  detail-box.edit.col
+    .wrap
+      .edit-action(v-show="path === ''" @click="editFace") 编辑：头像
+      .edit-action(v-show="path === ''" @click="editBase") 编辑：基本档案
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-button':   require('components/@/button')
       'detail-box': require('components/wiki/detail-box')
 
     props:
@@ -31,11 +31,20 @@
 <style lang="less" scoped>
   .edit{
     align-items: stretch;
-    .button{
-      text-align: left;
-      font-weight: 400;
-      font-size: 13px;
-      margin-bottom: 6px;
+    .wrap{
+      padding: 6px;
+      .edit-action{
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 3px;
+        &:hover{
+          color: #FFF;
+          background-image: linear-gradient(-180deg, #66C277 0%, #16a085 90%);
+        }
+      }
     }
   }
 </style>

@@ -1,6 +1,6 @@
 <template lang="jade">
-  detail-box.marks(v-if="marks.length" title="标记")
-    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark", :showUser="true")
+  detail-box.posts(v-if="posts.length" title="相关帖子")
+    post-item(v-for="post in posts", :key="post.id", :post="post")
 </template>
 
 
@@ -8,7 +8,7 @@
   module.exports =
     components:
       'detail-box': require('components/wiki/detail-box')
-      'mark-item':  require('components/user/mark-item')
+      'post-item':  require('components/wiki/post-item')
 
     props:
       'subject':
@@ -16,15 +16,15 @@
         required: true
 
     computed:
-      marks: -> @subject.marks ? []
+      posts: -> @subject.posts ? []
 </script>
 
 
 <style lang="less" scoped>
-  .marks{
-    .mark-item{
+  .posts{
+    .post-item{
       box-sizing: border-box;
-      padding: 16px 16px;
+      padding: 12px 16px;
       &:nth-child(odd){
         background-color: rgb(249, 249, 249);
       }
