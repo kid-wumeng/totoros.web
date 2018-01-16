@@ -33,8 +33,10 @@
 
     methods:
       clickReference: ->
+        floor = @comment.floor ? 0
+        page  = Math.ceil(floor / 50)
         switch @notice.at
-          when 'post' then @toPostPage(@notice.post, {comment: @comment.referenceComment})
+          when 'post' then @toPostPage(@notice.post, {comment: @comment.referenceComment, page})
 </script>
 
 

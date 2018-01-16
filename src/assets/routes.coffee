@@ -133,6 +133,7 @@ module.exports = [{
   component: -> System.import('pages/posts/:id')
   meta:
     keepAlive: true
+    bgColor: true
     key:
       prefix: 'post-detail'
       params: ['id']

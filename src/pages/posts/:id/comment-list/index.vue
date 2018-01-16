@@ -2,6 +2,7 @@
   comment-list(
     :comments="comments",
     :page="routePage",
+    :size="size",
     :total="total",
     @change-page="changePage"
     @reference="reference"
@@ -21,6 +22,7 @@
 
     data: ->
       comments: []
+      size:  50
       total: 0
 
     created: ->
@@ -38,6 +40,7 @@
           at:   'post'
           id:   @routeID
           page: @routePage
+          size: @size
         })
         @comments = result.comments
         @total    = result.total
@@ -69,5 +72,6 @@
 
 <style lang="less" scoped>
   .comment-list{
+    background-color: #FFF;
   }
 </style>

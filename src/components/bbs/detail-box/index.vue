@@ -27,10 +27,7 @@
       color: #A2AEBA;
     }
     >.content{
-      margin-top: 7px;
       box-sizing: border-box;
-      border: 1px solid #F2F2F2;
-      border-radius: 3px;
       overflow: hidden;
     }
   }

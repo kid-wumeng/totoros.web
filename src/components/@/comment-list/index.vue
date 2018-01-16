@@ -1,7 +1,13 @@
 <template lang="jade">
   .comment-list(v-if="comments.length")
     .wrap
-      comment-item(v-for="comment in comments", :key="comment.id", :comment="comment" @reference="reference(comment)")
+      comment-item(
+        v-for="comment in comments",
+        :key="comment.id",
+        :comment="comment",
+        :active="comment.id === cid",
+        @reference="reference(comment)"
+      )
     page-bar(:page="page", :size="size", :total="total" @change="changePage")
 </template>
 
@@ -26,6 +32,14 @@
         type: Number
         default: 0
 
+    computed:
+      cid: ->
+        cid = @$route?.query?.cid
+        if(cid)
+          return parseInt(cid)
+        else
+          return 0
+
     mounted: ->
       setTimeout(@posToComment.bind(this), 300)
 
@@ -40,12 +54,11 @@
         @$emit('reference', comment)
 
       posToComment: ->
-        cid = @$route?.query?.cid
-        if(cid)
-          id = "#comment-id-#{cid}"
-          el = document.querySelector(id)
+        if(@cid)
+          id = "comment-id-#{@cid}"
+          el = document.querySelector("##{id}")
           if(el)
-            top = el.getBoundingClientRect().top - 84
+            top = el.getBoundingClientRect().top - 65
             window.scrollTo(0, top)
 </script>
 
@@ -53,12 +66,14 @@
 <style lang="less" scoped>
   .comment-list{
     .comment-item{
-      padding-bottom: 20px;
-      border-bottom: 1px solid #F2F2F2;
-      margin-bottom: 20px;
+      border-bottom: 1px dashed #E4E8EB;
+      &:last-child{
+        border-bottom: none;
+      }
     }
     .page-bar{
-      margin-top: 20px;
+      border-top: 1px dashed #E4E8EB;
+      padding: 30px;
     }
   }
 </style>

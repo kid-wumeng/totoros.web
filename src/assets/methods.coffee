@@ -145,7 +145,7 @@ exports.toPostPage = (post, query={}) ->
   path = "/posts/#{post.id}"
   if(query.comment)
     path += "?cid=#{query.comment.id}"
-  if(query.page)
+  if(query.page and query.page > 1)
     path += "##{query.page}"
   @$router.push(path)
 

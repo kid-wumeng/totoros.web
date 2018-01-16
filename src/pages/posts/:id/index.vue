@@ -2,8 +2,7 @@
   #posts-id(v-if="post")
     row.wrap
       .left
-        c-header(:post="post")
-        c-content(:post="post")
+        main-post(:post="post")
         comment-list(:post="post")
         comment-form(:post="post")
       .right
@@ -17,8 +16,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-header':      require('./header')
-      'c-content':     require('./content')
+      'main-post':     require('./main-post')
       'comment-list':  require('./comment-list')
       'comment-form':  require('./comment-form')
       'action-sheets': require('./action-sheets')
@@ -50,21 +48,28 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
+    padding: 30px 0;
     .wrap{
-      margin-top: 36px;
       .left{
-        width: 700px;
+        box-sizing: border-box;
+        width: 750px;
         flex: auto;
-        >*{
-          margin-bottom: 24px;
-        }
+        border-radius: 2px;
+        overflow: hidden;
       }
       .right{
         flex: none;
-        margin-left: 50px;
-        width: 240px;
+        margin-left: 12px;
+        box-sizing: border-box;
+        width: 280px;
+        background-color: #FFF;
+        border-radius: 2px;
+        overflow: hidden;
         >*{
-          margin-bottom: 36px;
+          margin-top: 30px;
+          &:last-child{
+          }
         }
       }
     }

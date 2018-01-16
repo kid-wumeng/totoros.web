@@ -40,6 +40,10 @@
 
 <style lang="less" scoped>
   .comment-form{
+    box-sizing: border-box;
+    padding: 30px;
+    padding-top: 0;
+    background-color: #FFF;
     .button{
       margin-top: 12px;
     }

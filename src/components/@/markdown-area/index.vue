@@ -140,7 +140,7 @@
     }
 
     >*:not(:last-child){
-      margin-bottom: 14px;
+      margin-bottom: 20px;
     }
 
     br{

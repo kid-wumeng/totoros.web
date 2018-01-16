@@ -36,12 +36,12 @@
   .subject-card{
     padding: 12px;
     cursor: pointer;
-    &:nth-child(even){
-      background-color: rgb(250, 250, 250);
+    &:nth-child(odd){
+      background-color: rgb(249, 249, 249);
     }
     .left{
       .subject-face{
-        width: 36px;
+        width: 40px;
       }
     }
     .right{

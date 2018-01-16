@@ -1,7 +1,7 @@
 <template lang="jade">
   row.floor
     .left
-      user-face(:user="user" circle)
+      user-face(:user="user")
     .right
       row.-between
         .desc
@@ -54,14 +54,14 @@
   .floor{
     box-sizing: border-box;
     width: 100%;
+    padding: 30px;
     align-items: stretch;
     >.right{
-      margin-top: 8px;
       flex: auto;
     }
     .user-face{
-      width: 32px;
-      margin-right: 12px;
+      width: 60px;
+      margin-right: 25px;
     }
     .desc{
       flex: none;
@@ -74,13 +74,13 @@
     }
     .date{
       margin-left: 8px;
-      font-size: 12px;
+      font-size: 13px;
       color: #A2AEBA;
     }
     .edit{
       margin-left: 8px;
       >*{
-        font-size: 12px;
+        font-size: 13px;
         color: #A2AEBA;
       }
       >.text{
@@ -100,9 +100,8 @@
     }
     .reference{
       width: 80%;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 13px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       padding: 0 12px;
       border-left: 3px solid #ADD9CF;
       line-height: 19px;
@@ -110,7 +109,7 @@
       .user{
         margin-right: 6px;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 12px;
       }
       .content{
         font-size: 13px;
@@ -118,9 +117,8 @@
       }
     }
     .markdown-area{
-      padding-left: 13px;
-      padding-right: 13px;
-      margin-top: 13px;
+      margin-top: 20px;
+      padding-right: 20px;
       text-align: justify;
     }
   }

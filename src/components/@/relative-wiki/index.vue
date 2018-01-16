@@ -20,5 +20,8 @@
 
 <style lang="less" scoped>
   .relative-wiki{
+    .subject-card:first-child{
+      margin-top: 12px;
+    }
   }
 </style>
