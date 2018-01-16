@@ -14,8 +14,8 @@
 
 <style lang="less" scoped>
   .user-name{
-    font-family: "Helvetica Neue";
-    font-weight: 500;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+    font-weight: 700;
     color: #445669;
     cursor: pointer;
     &:hover{

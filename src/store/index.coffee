@@ -38,6 +38,7 @@ module.exports = new Vuex.Store({
     'prompt':                       require('./prompt')
     'public-timeline':              require('./public-timeline')
     'reference-comment-modal':      require('./reference-comment-modal')
+    'reminder':                     require('./reminder')
     'router':                       require('./router')
     'search-modal':                 require('./search-modal')
     'setting':                      require('./setting')

@@ -1,29 +1,36 @@
 <template lang="jade">
-  #notices
-    list(:notices="notices")
+  #notices(v-if="notices.length")
+    .wrap
+      list(:notices="notices")
+      page-bar(:page="routePage", :size="size", :total="total" @change="changePage")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'list': require('./list')
+      'list':     require('./list')
+      'page-bar': require('components/@/page-bar')
 
     data: ->
       notices: []
+      size: 30
       total: 0
 
-    created: ->
+    activated: ->
       @init()
 
     methods:
       init: ->
-        result = await api.call('notice.getAll', {
+        @commit('reminder/SET_COUNT', 0)
+        result = await @api.call('notice.getAll', {
           types: ['comment']
           page: @routePage
+          size: @size
         })
         @notices = result.notices
         @total   = result.total
+        await @api.call('notice.read', ['comment'])
 
       changePage: (page) ->
         @$router.push("##{page}")
@@ -32,7 +39,16 @@
 
 <style lang="less" scoped>
   #notices{
-    margin: 20px auto;
-    width: 600px;
+    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
+    overflow: hidden;
+    .wrap{
+      margin: 36px auto;
+      width: 800px;
+      background-color: #FFF;
+      border-radius: 2px;
+      .page-bar{
+        padding: 30px;
+      }
+    }
   }
 </style>

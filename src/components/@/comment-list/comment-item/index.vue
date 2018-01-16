@@ -6,7 +6,7 @@
       :date="comment.createDate",
       :floor="floor",
       :reference="comment.referenceComment",
-      :class="floorClass",
+      :active="active",
       show-edit
       @update="update"
       @reference="reference"
@@ -36,9 +36,6 @@
         else
           return ''
 
-      floorClass: ->
-        '-active': @active
-
       id: -> "comment-id-#{@comment.id}"
 
     methods:
@@ -55,8 +52,5 @@
     box-sizing: border-box;
     width: 100%;
     align-items: stretch;
-    .floor.-active{
-      font-weight: 500;
-    }
   }
 </style>

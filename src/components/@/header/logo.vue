@@ -27,7 +27,7 @@
     .cdn-image{
       width: @width;
       height: @width / 5.5125;
-      opacity: 0.9;
+      opacity: 1;
     }
     .version{
       position: absolute;

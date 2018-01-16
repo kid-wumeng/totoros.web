@@ -1,19 +1,18 @@
 <template lang="jade">
   .item
-    row.user.-center
+    .head
       user-name(:user="comment.user")
-      .date {{ model.date.display(notice.createDate) }}
-      .hint 回复你
-    text-area.content(:text="content")
-    .reference(@click="clickReference")
-      span.title.-more(v-if="!referenceContent") 『 {{ title }} 』
-      .referenceContent.-more(v-if="referenceContent") {{ referenceContent }}
+      .hint {{ hint }}
+      .desc(:class="descClass", @click="clickReference") {{ desc }}
+    text-area.content(:text="content" @click.native="click")
+    .date {{ model.date.display(notice.createDate) }}
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
+      'user-face': require('components/image/user-face')
       'user-name': require('components/user/user-name')
       'text-area': require('components/@/text-area')
 
@@ -25,64 +24,88 @@
     computed:
       comment:          -> @notice.comment
       content:          -> @comment?.content
-      referenceContent: -> @comment?.referenceComment?.content
+      referenceContent: -> @model.assets.trim(@comment?.referenceComment?.content ? '')
 
       title: ->
         switch @notice.at
           when 'post' then @notice.post.title
 
+      hint: ->
+        if(@referenceContent)
+          return '回复了'
+        else
+          return '评论了'
+
+      desc: ->
+        if(@referenceContent)
+          desc = "“#{@referenceContent}”"
+        else
+          desc = "#{@title}"
+
+        if(desc.length > 36)
+          return desc.slice(0, 36) + '...'
+        else
+          return desc
+
+      descClass: ->
+        '-title': if @referenceContent then false else true
+
     methods:
-      clickReference: ->
+      click: ->
         floor = @comment.floor ? 0
         page  = Math.ceil(floor / 50)
         switch @notice.at
-          when 'post' then @toPostPage(@notice.post, {comment: @comment.referenceComment, page})
+          when 'post' then @toPostPage(@notice.post, {comment: @comment, page})
+
+      clickReference: (e) ->
+        if(!@referenceContent)
+          switch @notice.at
+            when 'post' then @toPostPage(@notice.post)
+          e.stopPropagation()
 </script>
 
 
 <style lang="less" scoped>
   .item{
-    .user{
-      .user-name{
-        font-size: 12px;
-      }
-      .date{
-        margin-left: 6px;
-        font-size: 12px;
-        color: #A2AEBA;
+    .head{
+      >*{
+        display: inline;
+        font-size: 14px;
       }
       .hint{
-        margin-left: 6px;
-        font-size: 12px;
+        margin-left: 7px;
         color: #A2AEBA;
+      }
+      .desc{
+        margin-left: 6px;
+        color: #A2AEBA;
+      }
+      .desc.-title{
+        font-weight: 600;
+        color: #445669;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
     .content{
-      margin-top: 16px;
-      margin-left: 13px;
-    }
-    .reference{
-      margin-top: 20px;
       box-sizing: border-box;
-      padding: 7px 16px 10px;
-      border-left: 3px solid #ADD9CF;
-      line-height: 19px;
+      margin: 30px 16px;
+      padding: 0 20px;
+      line-height: 24px;
       text-align: justify;
+      font-size: 14px;
+      color: #445669;
+      border-left: 3px solid #ADD9CF;
       cursor: pointer;
-      background-color: rgb(250, 250, 250);
       &:hover{
-        background-color: rgb(247, 247, 247);
+        color: #6C7A89;
       }
-      .title{
-        font-weight: 600;
-        font-size: 13px;
-        color: #A2AEBA;
-      }
-      .referenceContent{
-        margin-top: 4px;
-        font-size: 13px;
-        color: #A2AEBA;
-      }
+    }
+    .date{
+      font-size: 12px;
+      color: #A2AEBA;
     }
   }
 </style>

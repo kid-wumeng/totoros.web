@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.floor
+  row.floor(:class="floorClass")
     .left
       user-face(:user="user")
     .right
@@ -40,9 +40,16 @@
         type: String
       'reference':
         type: Object
+      'active':
+        type: Boolean
+        default: false
       'showEdit':
         type: Boolean
         default: false
+
+    computed:
+      floorClass: ->
+        '-active': @active
 
     methods:
       clickUpdate:    -> @$emit('update')
@@ -120,6 +127,11 @@
       margin-top: 20px;
       padding-right: 20px;
       text-align: justify;
+    }
+  }
+  .floor.-active{
+    .markdown-area{
+      font-weight: 500;
     }
   }
 </style>

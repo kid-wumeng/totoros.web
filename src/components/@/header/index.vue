@@ -7,7 +7,7 @@
         search
       row.-center
         admin
-        reminder
+        reminder(v-if="login")
         account
 </template>
 

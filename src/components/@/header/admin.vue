@@ -13,7 +13,7 @@
 
 <style lang="less" scoped>
   .admin{
-    margin-right: 20px;
+    margin-right: 28px;
     font-weight: 600;
     cursor: pointer;
     span{

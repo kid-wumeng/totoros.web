@@ -19,9 +19,7 @@
 <style lang="less" scoped>
   .list{
     .item{
-      padding-bottom: 28px;
-      border-bottom: 1px solid #F2F2F2;
-      margin-bottom: 28px;
+      border-bottom: 1px dashed #E4E8EB;
     }
   }
 </style>
