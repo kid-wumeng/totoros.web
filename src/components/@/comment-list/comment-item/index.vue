@@ -1,5 +1,5 @@
 <template lang="jade">
-  .comment-item
+  .comment-item(:id="id")
     floor(
       :user="comment.user",
       :content="comment.content",
@@ -31,6 +31,8 @@
           return "##{@comment.floor}"
         else
           return ''
+
+      id: -> "comment-id-#{@comment.id}"
 
     methods:
       update: ->

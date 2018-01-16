@@ -141,8 +141,13 @@ exports.toforumPage = (forum) ->
   @$router.push("/forums/#{forum.id}")
 
 
-exports.toPostPage = (post) ->
-  @$router.push("/posts/#{post.id}")
+exports.toPostPage = (post, query={}) ->
+  path = "/posts/#{post.id}"
+  if(query.comment)
+    path += "?cid=#{query.comment.id}"
+  if(query.page)
+    path += "##{query.page}"
+  @$router.push(path)
 
 
 exports.toPicturePage = (picture) ->

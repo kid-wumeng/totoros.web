@@ -26,12 +26,27 @@
         type: Number
         default: 0
 
+    mounted: ->
+      setTimeout(@posToComment.bind(this), 300)
+
+    activated: ->
+      setTimeout(@posToComment.bind(this), 300)
+
     methods:
       changePage: (page) ->
         @$emit('change-page', page)
 
       reference: (comment) ->
         @$emit('reference', comment)
+
+      posToComment: ->
+        cid = @$route?.query?.cid
+        if(cid)
+          id = "#comment-id-#{cid}"
+          el = document.querySelector(id)
+          if(el)
+            top = el.getBoundingClientRect().top - 84
+            window.scrollTo(0, top)
 </script>
 
 

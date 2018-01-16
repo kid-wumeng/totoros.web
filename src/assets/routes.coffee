@@ -155,6 +155,16 @@ module.exports = [{
 
 },{
 
+  # 标记
+  path: '/notices'
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'notices'
+  component: -> System.import('pages/notices')
+
+},{
+
   # 作品
   path: '/subjects/:id'
   component: -> System.import('pages/subjects/:id')

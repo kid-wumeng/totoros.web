@@ -21,4 +21,5 @@ module.exports =
 
   actions:
     'reference-comment-modal/show': ({commit}, {referenceComment, createMethod, atID}) ->
+      commit('input-content/SET_CONTENT', '')
       commit('reference-comment-modal/SHOW', {referenceComment, createMethod, atID})

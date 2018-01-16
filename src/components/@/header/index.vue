@@ -7,6 +7,7 @@
         search
       row.-center
         admin
+        reminder
         account
 </template>
 
@@ -18,6 +19,7 @@
       'navigator': require('./navigator')
       'search':    require('./search')
       'admin':     require('./admin')
+      'reminder':  require('./reminder')
       'account':   require('./account')
 </script>
 

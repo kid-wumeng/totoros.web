@@ -10,7 +10,7 @@
           .edit(v-if="showEdit && login")
             span (
             span.text(v-if="isMe(user)" @click="clickUpdate") 修改
-            span.text(v-else @click="clickReference") 引用
+            span.text(v-else @click="clickReference") 回复
             span )
         .display-floor {{ floor }}
       .reference(v-if="reference")
@@ -60,7 +60,7 @@
       flex: auto;
     }
     .user-face{
-      width: 36px;
+      width: 32px;
       margin-right: 12px;
     }
     .desc{
@@ -114,7 +114,7 @@
       }
       .content{
         font-size: 13px;
-        color: #A2AEBA;
+        color: #707C88;
       }
     }
     .markdown-area{

@@ -53,7 +53,7 @@
     .wrap{
       margin-top: 36px;
       .left{
-        width: 650px;
+        width: 700px;
         flex: auto;
         >*{
           margin-bottom: 24px;
@@ -61,7 +61,7 @@
       }
       .right{
         flex: none;
-        margin-left: 90px;
+        margin-left: 50px;
         width: 240px;
         >*{
           margin-bottom: 36px;
