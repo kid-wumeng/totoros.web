@@ -17,7 +17,7 @@
         required: true
 
     computed:
-      main:   -> @$route.meta.path.replace(/s$/, '')
+      main:   -> (@$route.meta.path ? '').replace(/s$/, '')
       type:   -> @$route.query.type   ? ''
       status: -> @$route.query.status ? ''
 

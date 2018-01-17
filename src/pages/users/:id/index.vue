@@ -19,6 +19,7 @@
 
     created: ->
       @init()
+      @listen('UPDATE_USER',  @updateUser)
 
     methods:
       init: ->
@@ -27,6 +28,10 @@
 
       change: (tab) ->
         @toUserPage(@user, tab.value)
+
+      updateUser: (user) ->
+        if isSame(user, @user)
+          @user = user
 </script>
 
 

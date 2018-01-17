@@ -50,6 +50,7 @@
           user = await @api.call('account.updateBase', data)
           @commit('UPDATE_USER', user)
           @notify('done', '修改成功')
+          @toUserPage(@loginUser)
         catch error
           @notify('fail', error.message, 3000)
 </script>

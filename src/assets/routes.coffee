@@ -10,18 +10,24 @@ module.exports = [{
 
   # 注册
   path: '/register'
+  meta:
+    login: false
   component: -> System.import('pages/register')
 
 },{
 
   # 登录
   path: '/login'
+  meta:
+    login: false
   component: -> System.import('pages/login')
 
 },{
 
   # 重置密码
   path: '/reset-pass'
+  meta:
+    login: false
   component: -> System.import('pages/reset-pass')
 
 },{
@@ -32,15 +38,21 @@ module.exports = [{
   component: -> System.import('pages/setting')
   children: [{
     path: 'base'
-    meta: path: 'base'
+    meta:
+      path: 'base'
+      login: true
     component: -> System.import('pages/setting/base')
   },{
     path: 'pass'
-    meta: path: 'pass'
+    meta:
+      path: 'pass'
+      login: true
     component: -> System.import('pages/setting/pass')
   },{
     path: 'logout'
-    meta: path: 'logout'
+    meta:
+      path: 'logout'
+      login: true
     component: -> System.import('pages/setting/logout')
   }]
 
@@ -162,6 +174,7 @@ module.exports = [{
     keepAlive: true
     key:
       prefix: 'notices'
+    login: true
   component: -> System.import('pages/notices')
 
 },{
@@ -281,15 +294,21 @@ module.exports = [{
   component: -> System.import('pages/admin')
   children: [{
     path: 'forums'
-    meta: path: 'forums'
+    meta:
+      path: 'forums'
+      admin: true
     component: -> System.import('pages/admin/forums')
   },{
     path: 'feedbacks'
-    meta: path: 'feedbacks'
+    meta:
+      path: 'feedbacks'
+      admin: true
     component: -> System.import('pages/admin/feedbacks')
   },{
     path: 'sync'
-    meta: path: 'sync'
+    meta:
+      path: 'sync'
+      admin: true
     component: -> System.import('pages/admin/sync')
   }]
 }]

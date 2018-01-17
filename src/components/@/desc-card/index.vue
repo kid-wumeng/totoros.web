@@ -37,9 +37,10 @@
       color: #273340;
     }
     .desc{
-      margin-top: 4px;
-      font-size: 13px;
-      line-height: 21px;
+      margin-top: 5px;
+      width: 600px;
+      line-height: 18px;
+      font-size: 12px;
       color: #707C88;
     }
   }

@@ -1,5 +1,6 @@
 <template lang="jade">
   #marks(:style="style")
+    c-head
     feed-waterfall(v-if="showFeedWaterfall")
 </template>
 
@@ -7,6 +8,7 @@
 <script lang="coffee">
   module.exports =
     components:
+      'c-head':         require('./head')
       'feed-waterfall': require('./feed-waterfall')
 
     data: ->

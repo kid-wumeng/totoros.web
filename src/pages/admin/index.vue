@@ -1,7 +1,7 @@
 <template lang="jade">
   #admin(v-if="admin")
     .wrap
-      h1 ADMIN-CENTER
+      h1 ADMIN
       tab-bar
       .main
         router-view

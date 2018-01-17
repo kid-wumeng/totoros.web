@@ -25,8 +25,8 @@
     .post-item{
       box-sizing: border-box;
       padding: 12px 16px;
-      &:nth-child(odd){
-        background-color: rgb(249, 249, 249);
+      &:nth-child(even){
+        background-color: rgb(250, 250, 250);
       }
     }
   }

@@ -8,6 +8,8 @@ module.exports =
     'bus/ADD_EVENT_LISTENER': (state, {event, callback}) ->
       bus.$on(event, callback)
 
+    UPDATE_USER: (state, user) -> bus.$emit('UPDATE_USER', user)
+
     UPDATE_SUBJECT:      (state, subject)      -> bus.$emit('UPDATE_SUBJECT', subject)
     UPDATE_ROLE:         (state, role)         -> bus.$emit('UPDATE_ROLE', role)
     UPDATE_PERSON:       (state, person)       -> bus.$emit('UPDATE_PERSON', person)

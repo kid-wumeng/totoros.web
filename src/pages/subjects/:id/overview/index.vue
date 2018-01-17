@@ -7,7 +7,7 @@
         c-base(:subject="subject")
       .right
         //- score-card(:subject="subject")
-        c-mark(:subject="subject" v-if="checkined")
+        c-mark(:subject="subject" v-if="checkined && login")
         intro(:subject="subject")
         casts(:subject="subject")
         staffs(:subject="subject")
@@ -57,10 +57,13 @@
         display: flex;
         flex-direction: column;
         >*{
-          margin-bottom: 28px;
+          margin-bottom: 50px;
           &:last-child{
             margin-bottom: 0;
           }
+        }
+        >.mark{
+          margin-bottom: 28px;
         }
       }
     }

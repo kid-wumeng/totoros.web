@@ -3,8 +3,8 @@
     c-header
     .body
       keep-alive
-        router-view(v-if="$route.meta.keepAlive", :key="key")
-      router-view(v-if="!$route.meta.keepAlive")
+        router-view(v-if="$route.meta.keepAlive && auth", :key="key")
+      router-view(v-if="!$route.meta.keepAlive && auth")
 
     //- totoro
     toast
@@ -62,6 +62,29 @@
 
         key = prefix + params.join('') + query.join('') + hash
         return if key then key else null
+
+
+      auth: ->
+        if(@$route.meta.admin is true)
+          if(@admin)
+            return true
+          else
+            return false
+
+        if(@$route.meta.login is true)
+          if(@login)
+            return true
+          else
+            return false
+
+        if(@$route.meta.login is false)
+          if(!@login)
+            return true
+          else
+            return false
+            
+        return true
+
 
       appStyle: ->
         if(@$route?.meta?.bgColor)
