@@ -1,6 +1,6 @@
 <template lang="jade">
   #subjects-detail-marks
-    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark", :showUser="true")
+    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark", :show-user="true")
     page-bar(:page="routePage", :size="size", :total="total" @change="change")
 </template>
 
@@ -21,8 +21,11 @@
       total: 0
       size:  0
 
-    watch:
-      'routePage': -> @init()
+    created: ->
+      @init()
+
+    activated: ->
+      @init()
 
     methods:
       init: ->

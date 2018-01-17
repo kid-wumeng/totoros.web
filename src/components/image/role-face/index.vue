@@ -39,7 +39,7 @@
       version: -> @role.face?.version
       path:    -> if @version then "roles/#{@id}/face?v=#{@version}" else ''
       ratio:   -> if @height and @width then @height / @width else 1
-      radius:  -> if @square then 3 else 0
+      radius:  -> if @square then 0 else 0
 
     methods:
       click: ->

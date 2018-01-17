@@ -35,37 +35,12 @@
           posts:    true
         })
 
-      updateSubject: (subject) ->
-        if isSame(subject, @subject)
-          for key, value of subject
-            @subject[key] = value
-
-      createCast: (cast) ->
-        if @isSame(cast.subject, @subject)
-          @inc(@subject, 'castCount')
-
-      removeCast: (cast) ->
-        if @isSame(cast.subject, @subject)
-          @dec(@subject, 'castCount')
-
-      createStaff: (staff) ->
-        if @isSame(staff.subject, @subject)
-          @inc(@subject, 'staffCount')
-
-      removeStaff: (staff) ->
-        if @isSame(staff.subject, @subject)
-          @dec(@subject, 'staffCount')
-
-      createEpisode: (episode) ->
-        if @isSame(episode.subject, @subject)
-          @inc(@subject, 'episodeCount')
-
-      createEpisodes: (episodes) ->
-        for episode in episodes
-          if @isSame(episode.subject, @subject)
-            @inc(@subject, 'episodeCount')
-
-      removeEpisode: (episode) ->
-        if @isSame(episode.subject, @subject)
-          @dec(@subject, 'episodeCount')
+      updateSubject:  (subject)  -> @init()
+      createCast:     (cast)     -> @init()
+      removeCast:     (cast)     -> @init()
+      createStaff:    (staff)    -> @init()
+      removeStaff:    (staff)    -> @init()
+      createEpisode:  (episode)  -> @init()
+      createEpisodes: (episodes) -> @init()
+      removeEpisode:  (episode)  -> @init()
 </script>

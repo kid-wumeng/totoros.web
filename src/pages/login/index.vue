@@ -40,12 +40,13 @@
 
 <style lang="less" scoped>
   #login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .wrap{
-      margin-top: 10%;
+      position: fixed;
+      left: 50%;
+      top: 50%;
       width: 260px;
+      margin-left: -130px;
+      margin-top: -76px;
       .forget{
         display: flex;
         justify-content: flex-end;

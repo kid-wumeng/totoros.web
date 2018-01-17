@@ -5,12 +5,12 @@
         face(:subject="subject")
         resources(:subject="subject")
         c-base(:subject="subject")
+        staffs(:subject="subject")
       .right
         //- score-card(:subject="subject")
         c-mark(:subject="subject" v-if="checkined && login")
         intro(:subject="subject")
         casts(:subject="subject")
-        staffs(:subject="subject")
         posts(:subject="subject")
         marks(:subject="subject")
 </template>
@@ -21,12 +21,12 @@
     components:
       'face':       require('./face')
       'c-base':     require('./base')
+      'staffs':     require('./staffs')
       'score-card': require('./score-card')
       'c-mark':     require('./mark')
       'intro':      require('./intro')
       'resources':  require('./resources')
       'casts':      require('./casts')
-      'staffs':     require('./staffs')
       'marks':      require('./marks')
       'posts':      require('./posts')
 
@@ -42,9 +42,9 @@
     margin-top: 16px;
     >.row2{
       >.left{
-        width: 200px;
+        width: 240px;
         >*{
-          margin-bottom: 24px;
+          margin-bottom: 50px;
           &:last-child{
             margin-bottom: 0;
           }

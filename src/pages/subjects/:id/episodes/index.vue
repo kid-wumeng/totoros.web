@@ -22,10 +22,14 @@
       episodes: []
 
     created: ->
+      @init()
       @listen('CREATE_EPISODE',  @createEpisode)
       @listen('CREATE_EPISODES', @createEpisodes)
       @listen('UPDATE_EPISODE',  @updateEpisode)
       @listen('REMOVE_EPISODE',  @removeEpisode)
+
+    activated: ->
+      @init()
 
     methods:
       init: ->

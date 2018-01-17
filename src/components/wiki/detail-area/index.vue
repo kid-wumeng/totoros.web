@@ -1,6 +1,6 @@
 <template lang="jade">
   .detail-area
-    .title {{ title }}
+    .title(:class="titleClass") {{ title }}
     c-line
     slot
 </template>
@@ -15,13 +15,20 @@
       'title':
         type: String
         default: ''
+      'titleCenter':
+        type: Boolean
+        default: false
+
+    computed:
+      titleClass: ->
+        '-title-center': @titleCenter
 </script>
 
 
 <style lang="less" scoped>
   .detail-area{
     >.title{
-      text-align: right;
+      text-align: center;
       font-size: 14px;
       font-weight: 600;
       color: #A2AEBA;

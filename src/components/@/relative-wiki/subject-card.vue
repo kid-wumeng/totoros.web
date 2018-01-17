@@ -12,7 +12,6 @@
   module.exports =
     components:
       'subject-face': require('components/image/subject-face')
-      'subject-name': require('components/wiki/subject-name')
 
     props:
       'subject':

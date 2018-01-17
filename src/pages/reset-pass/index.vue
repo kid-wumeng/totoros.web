@@ -18,8 +18,5 @@
 
 <style lang="less" scoped>
   #reset-pass{
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 </style>

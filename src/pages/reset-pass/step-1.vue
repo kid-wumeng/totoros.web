@@ -27,8 +27,12 @@
 
 <style lang="less" scoped>
   .step-1{
-    margin-top: 10%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
     width: 260px;
+    margin-left: -130px;
+    margin-top: -39px;
     .input{
       margin-bottom: 12px;
     }

@@ -1,5 +1,5 @@
 <template lang="jade">
-  detail-area.casts(v-if="casts.length" title="CAST")
+  detail-area.casts(v-if="casts.length" title="CAST" title-center)
     grid
       .cast(v-for="cast in casts", :key="cast.id")
         role-face(:role="cast.role" circle)
@@ -28,21 +28,22 @@
 
 <style lang="less" scoped>
   .casts{
-    .cast{
-      width: 20%;
-      padding: 10px;
-      text-align: center;
-      .role-face{
-      }
-      .importance{
-        margin-top: 5px;
-        font-size: 12px;
-        color: #A2AEBA;
-      }
-      .role-name{
-        display: inline-block;
-        margin-top: 2px;
-        font-size: 13px;
+    box-sizing: border-box;
+    .grid{
+      .cast{
+        width: 16.66%;
+        padding: 10px;
+        text-align: center;
+        .importance{
+          margin-top: 5px;
+          font-size: 12px;
+          color: #A2AEBA;
+        }
+        .role-name{
+          display: inline-block;
+          margin-top: 2px;
+          font-size: 13px;
+        }
       }
     }
   }

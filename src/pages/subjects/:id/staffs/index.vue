@@ -18,9 +18,13 @@
       staffs: []
 
     created: ->
+      @init()
       @listen('CREATE_STAFF', @createStaff)
       @listen('UPDATE_STAFF', @updateStaff)
       @listen('REMOVE_STAFF', @removeStaff)
+
+    activated: ->
+      @init()
 
     methods:
       init: ->

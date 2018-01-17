@@ -1,7 +1,7 @@
 <template lang="jade">
   .wiki-detail-box
     .title {{ title }}
-    .content
+    .content(:class="contentClass")
       slot
 </template>
 
@@ -15,6 +15,13 @@
       'title':
         type: String
         default: ''
+      'noBorder':
+        type: Boolean
+        default: false
+
+    computed:
+      contentClass: ->
+        '-no-border': @noBorder
 </script>
 
 
@@ -32,6 +39,9 @@
       border: 1px solid #E4E8EB;
       border-radius: 3px;
       overflow: hidden;
+    }
+    >.content.-no-border{
+      border: none;
     }
   }
 </style>

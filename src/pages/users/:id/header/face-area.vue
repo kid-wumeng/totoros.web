@@ -5,6 +5,7 @@
     div(v-else)
       c-button(v-if="followSure && !followed" @click="follow") + 关注
       c-button.-gray(v-if="followSure && followed" @click="unfollow") 取消关注
+    c-button(v-if="!login" @click="$router.push('/register')") + 关注
 
     user-face-modal
 </template>
@@ -25,6 +26,12 @@
     data: ->
       followed:   false
       followSure: false
+
+    created: ->
+      @init()
+
+    activated: ->
+      @init()
 
     methods:
       init: ->
@@ -67,12 +74,15 @@
     .button{
       margin-top: @padding;
       width: 100%;
-      height: 28px;
-      line-height: 28px;
+      height: 30px;
+      line-height: 30px;
       font-size: 13px;
     }
     .button.-gray{
-      background-color: rgba(250, 250, 250, 1);
+      line-height: 29px;
+      &:hover{
+        background-color: rgba(250, 250, 250, 1);
+      }
     }
   }
 </style>
