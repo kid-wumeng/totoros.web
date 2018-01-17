@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0",
     "build": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "start": "./node_modules/.bin/serve -p 8080 -i src/,package.json,webpack.config.js --single ./ --cache 0"
+    "start": "./node_modules/.bin/serve -p 8081 -i src/,package.json,webpack.config.js --single ./ --cache 0"
   },
   "dependencies": {
     "autoprefixer": "^7.2.5",

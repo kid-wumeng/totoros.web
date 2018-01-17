@@ -42,11 +42,14 @@ api.on('open', -> store.dispatch('account/checkin'))
 ##################################################
 ## 判断是处于PC还是H5环境
 ##################################################
-clientWidth = document.documentElement.clientWidth
-if clientWidth > 1024
+if /seo-request/.test(location.href)
   window.isPC = true
 else
-  window.isH5 = true
+  clientWidth = document?.documentElement?.clientWidth
+  if(clientWidth > 1024)
+    window.isPC = true
+  else
+    window.isH5 = true
 
 
 
@@ -144,7 +147,6 @@ router = new Router({
 window.router = router
 
 
-
 if window.isH5
   App = require('./App.h5')
 else
@@ -156,3 +158,6 @@ new Vue({
   router: router
   render: (h) => h(App)
 })
+
+
+setTimeout (-> window.isPageReady=1), 5000
