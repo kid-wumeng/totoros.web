@@ -1,5 +1,5 @@
 <template lang="jade">
-  .page-button(:class="rootClass") {{ page }}
+  a.page-button(:href="'#'+page", :class="rootClass") {{ page }}
 </template>
 
 

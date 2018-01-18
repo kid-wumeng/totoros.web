@@ -1,6 +1,12 @@
 <template lang="jade">
   row.tab-bar
-    row.tab(v-for="(tab, i) in tabs", :key="i", :class="{'-active': tab.value === active}" @click="click(tab)")
+    a.tab(
+      v-for="(tab, i) in tabs",
+      :key="i",
+      :href="href(tab)",
+      :class="{'-active': tab.value === active}"
+      @click.prevent="click(tab)"
+    )
       .label {{ tab.label }}
       .count(v-if="tab.count") {{ tab.count }}
 </template>
@@ -17,6 +23,8 @@
         default: null
 
     methods:
+      href: (tab) -> if(tab.link) then tab.link else 'javascript:void(0);'
+
       click: (tab) ->
         if tab.value isnt @active
           @$emit('change', tab)

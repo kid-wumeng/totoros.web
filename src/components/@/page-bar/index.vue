@@ -3,24 +3,27 @@
     text-button.prev(
       v-show="currentPage > 1",
       text="上一页",
-      @click.native="prev"
+      :page="currentPage - 1",
+      @click.native.prevent="prev"
     )
     page-button(
       v-for="page in pages",
       :key="page",
       :page="page",
       :disabled="page === currentPage"
-      @click.native="skip(page)"
+      @click.native.prevent="skip(page)"
     )
     text-button.next(
       v-show="currentPage < maxPage",
       text="下一页",
-      @click.native="next"
+      :page="currentPage + 1",
+      @click.native.prevent="next"
     )
     text-button.last(
       v-show="currentPage < maxPage",
       text=">> 最后",
-      @click.native="last"
+      :page="maxPage",
+      @click.native.prevent="last"
     )
 </template>
 

@@ -17,6 +17,7 @@
           return
             label: forum.name
             value: forum.id
+            link:  "/forums/#{forum.id}"
 
       active: ->
         if /^\/forums/.test(@$route.matched?[0]?.path ? '')

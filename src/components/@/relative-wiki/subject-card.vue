@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.subject-card(@click="toSubjectPage(subject)")
+  a.subject-card(:href="getSubjectPath(subject)")
     .left
       subject-face(:subject="subject" frame)
     .right
@@ -33,6 +33,7 @@
 
 <style lang="less" scoped>
   .subject-card{
+    display: flex;
     padding: 12px;
     cursor: pointer;
     &:nth-child(odd){

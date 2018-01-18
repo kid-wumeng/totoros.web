@@ -1,7 +1,7 @@
 <template lang="jade">
   .mark-type-radio-bar
     radio-bar(:value="type" @change="change")
-      radio(v-for="(radio, index) in radios", :key="index", :label="radio.label", :value="radio.value")
+      radio(v-for="(radio, index) in radios", :key="index", :label="radio.label", :value="radio.value", :link="radio.link")
 </template>
 
 
@@ -34,6 +34,7 @@
           label: "所有标记"
           value: ''
           count: count
+          link:  "#{@$route.path}"
         }]
 
         types = @model.subject.unfoldType(@main)
@@ -45,6 +46,7 @@
             label: "#{sub} #{count}"
             value: type.split('-')[1]
             count: count
+            link:  "#{@$route.path}?type=#{type}"
           })
 
         return radios.filter (radio) -> radio.count

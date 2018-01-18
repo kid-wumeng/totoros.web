@@ -17,22 +17,27 @@
       tabs: -> [{
         label: @user.name
         value: ''
+        link:  @getUserPath(@user)
       },{
         label: '日志'
         value: 'blogs'
         count: @user.blogCount
+        link:  @getUserPath(@user, 'blogs')
       },{
         label: 'Animes'
         value: 'animes'
         count: @model.user.markStat(@user, null, 'anime')
+        link:  @getUserPath(@user, 'animes')
       },{
         label: 'Comics'
         value: 'comics'
         count: @model.user.markStat(@user, null, 'comic')
+        link:  @getUserPath(@user, 'comics')
       },{
         label: 'Games'
         value: 'games'
         count: @model.user.markStat(@user, null, 'game')
+        link:  @getUserPath(@user, 'games')
       }]
 
     methods:

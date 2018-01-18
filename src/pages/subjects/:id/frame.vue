@@ -40,22 +40,27 @@
       tabs: -> [{
         label: if @nameOrigin then @nameOrigin else @name
         value: ''
+        link:  @getSubjectPath(@subject)
       },{
         label: 'EPISODE'
         value: 'episodes'
         count: @subject.episodeCount
+        link:  @getSubjectPath(@subject, 'episodes')
       },{
         label: 'CAST'
         value: 'casts'
         count: @subject.castCount
+        link:  @getSubjectPath(@subject, 'casts')
       },{
         label: 'STAFF'
         value: 'staffs'
         count: @subject.staffCount
+        link:  @getSubjectPath(@subject, 'staffs')
       },{
         label: '标记'
         value: 'marks'
         count: @model.subject.markStat(@subject)
+        link:  @getSubjectPath(@subject, 'marks')
       }]
 
     methods:

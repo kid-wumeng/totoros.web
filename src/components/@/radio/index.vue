@@ -1,5 +1,5 @@
 <template lang="jade">
-  .radio.-center(:class="radioClass" @click="change") {{ label }}
+  a.radio.-center(:href="href", :class="radioClass" @click.prevent="change") {{ label }}
 </template>
 
 
@@ -12,6 +12,8 @@
       'value':
         type: null
         required: true
+      'link':
+        type: String
 
     data: ->
       active:       false
@@ -21,6 +23,8 @@
       borderRight:  false
 
     computed:
+      href: -> if(@link) then @link else 'javascript:void(0);'
+
       radioClass: ->
         '-active':       @active
         '-borderTop':    @borderTop

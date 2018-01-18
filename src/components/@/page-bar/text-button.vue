@@ -1,5 +1,5 @@
 <template lang="jade">
-  .text-button {{ text }}
+  a.text-button(:href="'#'+page") {{ text }}
 </template>
 
 
@@ -8,6 +8,9 @@
     props:
       'text':
         type: String
+        required: true
+      'page':
+        type: Number
         required: true
 </script>
 

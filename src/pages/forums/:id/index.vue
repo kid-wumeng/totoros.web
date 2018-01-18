@@ -5,7 +5,7 @@
         c-base(:forum="forum")
         action-bar(:forum="forum")
       post-list(:posts="posts")
-      page-bar(:page="routePage", :size="30", :total="total" @change="changePage")
+      page-bar(:page="routePage", :size="size", :total="total" @change="changePage")
 </template>
 
 
@@ -20,6 +20,7 @@
     data: ->
       forum: null
       posts: []
+      size:  50
       total: 0
 
     # watch:
@@ -38,6 +39,7 @@
         { posts, total } = await api.call('post.getAll', {
           fid:  1
           page: @routePage
+          size: @size
         })
 
         if(@routePage is 1)
@@ -62,6 +64,9 @@
       margin: 0 auto;
       padding-top: 30px;
       width: 800px;
+      .page-bar{
+        margin-top: 20px;
+      }
     }
   }
 </style>

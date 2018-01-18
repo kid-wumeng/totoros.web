@@ -1,7 +1,7 @@
 <template lang="jade">
   .mark-status-radio-bar
     radio-bar(:value="status" @change="change")
-      radio(v-for="radio in radios", :key="radio.value", :label="radio.label", :value="radio.value")
+      radio(v-for="radio in radios", :key="radio.value", :label="radio.label", :value="radio.value", :link="radio.link")
 </template>
 
 
@@ -32,6 +32,7 @@
             label: "#{displayStatus} #{count}"
             value: status
             count: count
+            link:  "#{@$route.path}?status=#{status}"
           })
 
         return radios.filter (radio) -> radio.count
