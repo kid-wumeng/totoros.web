@@ -7,6 +7,7 @@
         comics(:user="user")
         games(:user="user")
       .right
+        follow(:user="user")
         mark-feeds(:user="user")
         posts(:user="user")
         comment-posts(:user="user")
@@ -20,6 +21,7 @@
       'animes':        require('./animes')
       'comics':        require('./comics')
       'games':         require('./games')
+      'follow':        require('./follow')
       'mark-feeds':    require('./mark-feeds')
       'posts':         require('./posts')
       'comment-posts': require('./comment-posts')
@@ -48,9 +50,9 @@
     .right{
       width: 30%;
       box-sizing: border-box;
-      padding-left: 50px;
+      padding-left: 80px;
       >*{
-        margin-bottom: 24px;
+        margin-bottom: 40px;
         &:last-child{
           margin-bottom: 0;
         }

@@ -27,9 +27,8 @@
       color: #A2AEBA;
     }
     >.content{
-      margin-top: 7px;
+      margin-top: 8px;
       box-sizing: border-box;
-      padding: 12px;
       border: 1px solid #F2F2F2;
       border-radius: 3px;
     }

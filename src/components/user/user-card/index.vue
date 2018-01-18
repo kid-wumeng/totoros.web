@@ -1,6 +1,6 @@
 <template lang="jade">
   .user-card
-    row(@click="toUserPage(user)")
+    router-link(:to="getUserPath(user)")
       user-face(:user="user")
       column
         .name {{ user.name }}
@@ -25,29 +25,34 @@
   .user-card{
     box-sizing: border-box;
     display: block;
-    >.row2{
+    > a{
+      display: flex;
       align-items: stretch;
-      padding: 8px;
-      border: 1px solid rgb(230, 230, 230);
-      border-radius: 3px;
-      box-shadow: 0 0 10px rgba(100, 100, 100, 0.1);
+      padding: 16px;
       cursor: pointer;
     }
     .user-face{
       flex: none;
-      width: 56px;
-      margin-right: 10px;
+      width: 40px;
+      margin-right: 12px;
     }
     .name{
       font-family: "Helvetica Neue";
-      font-weight: 600;
+      font-weight: 500;
       font-size: 13px;
       color: #445669;
     }
     .motto{
-      margin-top: 2px;
+      margin-top: 3px;
       font-size: 12px;
       color: #A2AEBA;
     }
+  }
+  .user-card:nth-child(10n+1),
+  .user-card:nth-child(10n+2),
+  .user-card:nth-child(10n+3),
+  .user-card:nth-child(10n+4),
+  .user-card:nth-child(10n+5){
+    background-color: rgb(249, 249, 249);
   }
 </style>

@@ -14,5 +14,6 @@
 
 <style lang="less" scoped>
   #user-detail-blogs{
+    text-align: center;
   }
 </style>

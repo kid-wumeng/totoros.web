@@ -23,8 +23,8 @@
       size:  0
       total: 0
 
-    watch:
-      'routePage': -> @init()
+    activated: ->
+      @init()
 
     methods:
       init: ->
@@ -44,13 +44,15 @@
 
 <style lang="less" scoped>
   #user-detail-fans{
+    box-sizing: border-box;
     width: 100%;
     .user-card{
-      width: 25%;
-      padding: 5px;
+      width: 20%;
     }
     .page-bar{
       margin-top: 20px;
+      margin-left: 15px;
+      margin-right: 15px;
     }
   }
 </style>

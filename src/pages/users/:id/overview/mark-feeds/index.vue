@@ -1,7 +1,8 @@
 <template lang="jade">
   .mark-feeds
     detail-box(title="最近的标记")
-      item(v-for="feed in feeds", :key="feed.id", :feed="feed")
+      .wrap
+        item(v-for="feed in feeds", :key="feed.id", :feed="feed")
 </template>
 
 
@@ -25,15 +26,18 @@
 
 <style lang="less" scoped>
   .mark-feeds{
-    .item{
-      padding-bottom: 8px;
-      border-bottom: 1px dotted #F2F2F2;
-      margin-bottom: 8px;
-    }
-    .item:last-child{
-      padding-bottom: 0;
-      border-bottom: none;
-      margin-bottom: 0;
+    .wrap{
+      padding: 12px;
+      .item{
+        padding-bottom: 8px;
+        border-bottom: 1px dotted #F2F2F2;
+        margin-bottom: 8px;
+      }
+      .item:last-child{
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+      }
     }
   }
 </style>

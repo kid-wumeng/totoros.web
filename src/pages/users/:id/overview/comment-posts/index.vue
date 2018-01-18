@@ -1,7 +1,8 @@
 <template lang="jade">
   .comment-posts
     detail-box(title="最近参与的帖")
-      item(v-for="post in posts", :key="post.id", :post="post")
+      .wrap
+        item(v-for="post in posts", :key="post.id", :post="post")
 </template>
 
 
@@ -25,15 +26,18 @@
 
 <style lang="less" scoped>
   .comment-posts{
-    .item{
-      padding-bottom: 8px;
-      border-bottom: 1px dotted #F2F2F2;
-      margin-bottom: 8px;
-    }
-    .item:last-child{
-      padding-bottom: 0;
-      border-bottom: none;
-      margin-bottom: 0;
+    .wrap{
+      padding: 12px;
+      .item{
+        padding-bottom: 8px;
+        border-bottom: 1px dotted #F2F2F2;
+        margin-bottom: 8px;
+      }
+      .item:last-child{
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+      }
     }
   }
 </style>
