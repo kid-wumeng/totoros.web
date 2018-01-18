@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
-    .item(@click="$router.push('/')") 讨论版
-    .item(@click="toMarks") MARKS
-    .item(v-if="admin" @click="$router.push('/wiki')") 维基
+    router-link.item(to="/") 讨论版
+    .item(@click="clickMarks") MARKS
+    router-link.item(v-if="admin" to="/wiki") 维基
 </template>
 
 
@@ -13,7 +13,7 @@
         return /^\/forums\//.test(@$route.path)
 
     methods:
-      toMarks: ->
+      clickMarks: (e) ->
         if(@$route.path isnt '/marks')
           @commit('RESET_MARKS')
           @$router.push('/marks')

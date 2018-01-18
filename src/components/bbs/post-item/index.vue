@@ -1,16 +1,17 @@
 <template lang="jade">
-  .post-item.row.-left(@click="toPostPage(post)")
-    .left
-      user-face(:user="user" circle)
-    row.right.-between.-center
-      div
-        span.top(v-if="top") [置顶]
-        span.title {{ title }}
-        span.comment-count(v-if="commentCount") +{{ commentCount }}
-      row.last.-center(v-if="lastCommentDate")
-        .hint Last by
-        user-name(:user="lastCommentUser")
-        .date {{ model.date.display(lastCommentDate) }}
+  router-link.post-item(:to="getPostPath(post)")
+    row.-center
+      .left
+        user-face(:user="user" circle)
+      row.right.-between.-center
+        div
+          span.top(v-if="top") [置顶]
+          span.title {{ title }}
+          span.comment-count(v-if="commentCount") +{{ commentCount }}
+        row.last.-center(v-if="lastCommentDate")
+          .hint Last by
+          user-name(:user="lastCommentUser")
+          .date {{ model.date.display(lastCommentDate) }}
 </template>
 
 
@@ -45,7 +46,7 @@
     &:hover{
       background-color: rgba(250, 250, 250, 1);
     }
-    >.right{
+    .right{
       flex: auto;
       .column{
         height: 100%;

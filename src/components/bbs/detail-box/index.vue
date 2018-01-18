@@ -1,5 +1,5 @@
 <template lang="jade">
-  .detail-box
+  .bbs-detail-box
     .title {{ title }}
     .content
       slot
@@ -19,7 +19,7 @@
 
 
 <style lang="less">
-  .detail-box{
+  .bbs-detail-box{
     >.title{
       text-align: center;
       font-size: 14px;

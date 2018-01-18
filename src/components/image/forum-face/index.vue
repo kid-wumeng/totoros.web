@@ -1,5 +1,5 @@
 <template lang="jade">
-  cdn-image.forum-face(:path="path", square :radius="3" cover @click="click")
+  cdn-image.forum-face(:path="path", square :radius="3" cover)
 </template>
 
 

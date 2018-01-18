@@ -1,5 +1,6 @@
 <template lang="jade">
-  cdn-image.user-face(:path="path", default-path="assets/default-user-face?2018-01-11", square, :circle="circle", :radius="3" cover @click="click")
+  a.user-face(:href="getUserPath(user)" @click.prevent="click")
+    cdn-image(:path="path", default-path="assets/default-user-face?2018-01-11", square, :circle="circle", :radius="3" cover)
 </template>
 
 

@@ -101,10 +101,22 @@ exports.replaceSubjectPage = (subject, subPath='') ->
   @$router.replace(path)
 
 
+exports.getSubjectPath = (subject, subPath='') ->
+  path = "/subjects/#{subject.id}/#{subPath}"
+  path = path.replace(/\/$/, '')
+  return path
+
+
 exports.toUserPage = (user, subPath='') ->
   path = "/users/#{user.id}/#{subPath}"
   path = path.replace(/\/$/, '')
   @$router.push(path)
+
+
+exports.getUserPath = (user, subPath='') ->
+  path = "/users/#{user.id}/#{subPath}"
+  path = path.replace(/\/$/, '')
+  return path
 
 
 exports.replaceUserPage = (user, subPath='') ->
@@ -117,6 +129,10 @@ exports.toRolePage = (role) ->
   @$router.push("/roles/#{role.id}")
 
 
+exports.getRolePath = (role) ->
+  return "/roles/#{role.id}"
+
+
 exports.replaceRolePage = (role) ->
   @$router.replace("/roles/#{role.id}")
 
@@ -125,12 +141,20 @@ exports.toPersonPage = (person) ->
   @$router.push("/persons/#{person.id}")
 
 
+exports.getPersonPath = (person) ->
+  return "/persons/#{person.id}"
+
+
 exports.replacePersonPage = (person) ->
   @$router.replace("/persons/#{person.id}")
 
 
 exports.toOrganizationPage = (organization) ->
   @$router.push("/organizations/#{organization.id}")
+
+
+exports.getOrganizationPath = (organization) ->
+  return "/organizations/#{organization.id}"
 
 
 exports.replaceOrganizationPage = (organization) ->
@@ -148,6 +172,15 @@ exports.toPostPage = (post, query={}) ->
   if(query.page and query.page > 1)
     path += "##{query.page}"
   @$router.push(path)
+
+
+exports.getPostPath = (post, query={}) ->
+  path = "/posts/#{post.id}"
+  if(query.comment)
+    path += "?cid=#{query.comment.id}"
+  if(query.page and query.page > 1)
+    path += "##{query.page}"
+  return path
 
 
 exports.toPicturePage = (picture) ->

@@ -132,10 +132,12 @@
     font-family: "Lato", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     font-size: 14px;
     color: #445669;
+    outline: none;
     -webkit-tap-highlight-color: transparent;
   }
 
   a{
+    display: block;
     text-decoration: none;
   }
 

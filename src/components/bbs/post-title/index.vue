@@ -1,5 +1,5 @@
 <template lang="jade">
-  .post-title(@click="toPostPage(post)") {{ post.title }}
+  router-link.post-title(:to="getPostPath(post)") {{ post.title }}
 </template>
 
 

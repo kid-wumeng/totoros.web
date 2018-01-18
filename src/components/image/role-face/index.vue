@@ -1,8 +1,8 @@
 <template lang="jade">
-  .role-face
+  a.role-face(:href="getRolePath(role)" @click.prevent="click")
     photo-frame(v-if="frame")
-      cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle", :cover="cover" @click="click")
-    cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle", :cover="cover" @click="click")
+      cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle", :cover="cover")
+    cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle", :cover="cover")
 </template>
 
 

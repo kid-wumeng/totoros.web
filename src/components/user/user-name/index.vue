@@ -1,5 +1,5 @@
 <template lang="jade">
-  .user-name(@click.stop="toUserPage(user)") {{ user.name }}
+  router-link.user-name(:to="getUserPath(user)") {{ user.name }}
 </template>
 
 

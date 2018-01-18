@@ -1,5 +1,5 @@
 <template lang="jade">
-  c-image.cdn-image(:url="url", :default-url="defaultUrl", :radius="radius", :circle="circle", :cover="cover", :style="style", @click.native="click")
+  c-image.cdn-image(:url="url", :default-url="defaultUrl", :radius="radius", :circle="circle", :cover="cover", :style="style", @click.native="$emit('click')")
 </template>
 
 
@@ -29,9 +29,6 @@
         type: Boolean
         default: false
       'cover':
-        type: Boolean
-        default: false
-      'noStop':
         type: Boolean
         default: false
 
@@ -78,11 +75,6 @@
           return url + "&#{key}"
         else
           return url + "?#{key}"
-
-      click: (e) ->
-        @$emit('click')
-        if(!@noStop)
-          e.stopPropagation()
 </script>
 
 

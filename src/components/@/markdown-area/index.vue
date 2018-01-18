@@ -61,18 +61,17 @@
 
 
   renderCard = (card) ->
-    onclick = "window.router.push('/#{card.path}')"
     faceUrl = "#{cdn}/#{card.face}"
     return "
-      <div class='card' onclick=\"#{onclick}\">
-        <div class='left'>
+      <a class='card' href=\"/#{card.path}\" onclick=\"window.toPathByPreventDefault(event, '/#{card.path}')\">
+        <span class='left'>
           <img class='face' src=\"#{faceUrl}\"/>
-        </div>
-        <div class='right'>
-          <div class='name'>#{card.name}</div>
-          <div class='subs'>#{card.subs.join(' / ')}</div>
-        </div>
-      </div>
+        </span>
+        <span class='right'>
+          <span class='name'>#{card.name}</span>
+          <span class='subs'>#{card.subs.join(' / ')}</span>
+        </span>
+      </a>
     "
 
 
@@ -159,7 +158,8 @@
       color: black !important;
     }
 
-    a{
+    a:not(.card){
+      display: inline;
       font-weight: 600;
       color: #3db8c1;
       &:hover{

@@ -1,8 +1,8 @@
 <template lang="jade">
-.subject-face
-  photo-frame(v-if="frame")
-    cdn-image(:path="path", :ratio="ratio", :square="square" cover @load="load" @click="click")
-  cdn-image(v-else :path="path", :ratio="ratio", :square="square" cover @load="load" @click="click")
+  a.subject-face(:href="getSubjectPath(subject)" @click.prevent="click")
+    photo-frame(v-if="frame")
+      cdn-image(:path="path", :ratio="ratio", :square="square" cover @load="load")
+    cdn-image(v-else :path="path", :ratio="ratio", :square="square" cover @load="load")
 </template>
 
 
@@ -50,6 +50,7 @@
           @$emit('click')
         else
           @toSubjectPage(@subject)
+
       load: (data) ->
         @$emit('load', data)
 </script>

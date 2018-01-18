@@ -26,8 +26,8 @@
       padding-top:  @padding;
       border-bottom:  1px dashed #EEE;
       padding-bottom: @padding + 1;
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: 8px;
+      padding-right: 8px;
       &:first-child{
         padding-top: @padding + 1;
       }

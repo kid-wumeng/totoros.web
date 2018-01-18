@@ -9,6 +9,10 @@ methods    = require('./assets/methods')
 directives = require('./assets/directives')
 
 
+window.toPathByPreventDefault = (e, path) ->
+  e.preventDefault()
+  window.router.push(path)
+
 
 ##################################################
 ## Polyfill: Array.prototype.includes
@@ -113,10 +117,17 @@ Vue.use({
     Vue.prototype.replacePersonPage       = methods.replacePersonPage
     Vue.prototype.toOrganizationPage      = methods.toOrganizationPage
     Vue.prototype.replaceOrganizationPage = methods.replaceOrganizationPage
-    Vue.prototype.toforumPage              = methods.toforumPage
+    Vue.prototype.toforumPage             = methods.toforumPage
     Vue.prototype.toPostPage              = methods.toPostPage
     Vue.prototype.toPicturePage           = methods.toPicturePage
-    Vue.prototype.toforumPage              = methods.toforumPage
+    Vue.prototype.toforumPage             = methods.toforumPage
+
+    Vue.prototype.getUserPath         = methods.getUserPath
+    Vue.prototype.getPostPath         = methods.getPostPath
+    Vue.prototype.getSubjectPath      = methods.getSubjectPath
+    Vue.prototype.getRolePath         = methods.getRolePath
+    Vue.prototype.getPersonPath       = methods.getPersonPath
+    Vue.prototype.getOrganizationPath = methods.getOrganizationPath
     Vue.directive('focus', directives.focus)
 })
 
@@ -163,4 +174,7 @@ new Vue({
 })
 
 
-setTimeout (-> window.isPageReady=1), 5000
+setTimeout (->
+  window.isPageReady=1
+  console.log document.getElementsByTagName('a').length
+), 5000

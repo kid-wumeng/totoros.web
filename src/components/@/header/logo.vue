@@ -1,5 +1,5 @@
 <template lang="jade">
-  .logo(@click="$router.push('/')")
+  router-link.logo(to="/")
     .wrap
       cdn-image(path="assets/logo?2017-11-09")
       .version 0.7.1 Beta

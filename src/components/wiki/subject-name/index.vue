@@ -1,5 +1,5 @@
 <template lang="jade">
-  .subject-name(@click="toSubjectPage(subject)") {{ subject.name }}
+  router-link.subject-name(:to="getSubjectPath(subject)") {{ subject.name }}
 </template>
 
 

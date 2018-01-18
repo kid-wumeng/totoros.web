@@ -1,8 +1,8 @@
 <template lang="jade">
-  .person-face
+  a.person-face(:href="getPersonPath(person)" @click.prevent="click")
     photo-frame(v-if="frame")
-      cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle" cover @click="click")
-    cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle" cover @click="click")
+      cdn-image(:path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle" cover)
+    cdn-image(v-else :path="path", :ratio="ratio", :square="square", :radius="radius", :circle="circle" cover)
 </template>
 
 
