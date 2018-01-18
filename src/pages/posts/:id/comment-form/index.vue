@@ -1,6 +1,6 @@
 <template lang="jade">
   .comment-form(v-if="login")
-    input-area(v-model="content" placeholder="说几句吧~", :rows="6")
+    editer(v-model="content" placeholder="说几句吧~", :rows="6")
     c-button(@click="submit") 发表回复
 </template>
 
@@ -8,8 +8,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'input-area': require('components/@/input-area')
-      'c-button':   require('components/@/button')
+      'editer':   require('components/@/editer')
+      'c-button': require('components/@/button')
 
     props:
       'post':
