@@ -2,7 +2,7 @@
   .navigator
     .item(@click="$router.push('/')") 讨论版
     .item(@click="toMarks") MARKS
-    .item(v-if="admin" @click="$router.push('/wiki')") 维基计划
+    .item(v-if="admin" @click="$router.push('/wiki')") 维基
 </template>
 
 

@@ -12,6 +12,9 @@
     data: ->
       role: null
 
+    metaInfo: ->
+      title: if @role then @role.name else ''
+
     created: ->
       @listen('UPDATE_ROLE',  @updateRole)
 

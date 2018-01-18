@@ -50,6 +50,10 @@
       'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
       'wiki-face-modal':              require('components/wiki/wiki-face-modal')
 
+    metaInfo: ->
+      titleTemplate: (title) ->
+        if title then "#{title} - totoros" else 'totoros'
+
     computed:
       key: ->
         prefix = @$route?.meta?.key?.prefix ? ''
@@ -82,7 +86,7 @@
             return true
           else
             return false
-            
+
         return true
 
 

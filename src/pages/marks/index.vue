@@ -14,6 +14,9 @@
     data: ->
       showFeedWaterfall: true
 
+    metaInfo: ->
+      title: '标记'
+
     computed:
       style: ->
         'minHeight': document.body.clientHeight - 64 + 'px'

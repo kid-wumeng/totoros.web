@@ -21,6 +21,9 @@
       pass2: ''
       name:  ''
 
+    metaInfo: ->
+      title: '注册'
+
     methods:
       submit: ->
         if @check()

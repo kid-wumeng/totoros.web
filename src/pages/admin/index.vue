@@ -12,6 +12,13 @@
   module.exports =
     components:
       'tab-bar': require('./tab-bar')
+
+    metaInfo: ->
+      switch @$route.meta.path
+        when 'forums'    then title = '讨论版'
+        when 'feedbacks' then title = '反馈'
+        when 'sync'      then title = '同步'
+      return {title}
 </script>
 
 

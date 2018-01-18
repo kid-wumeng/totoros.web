@@ -1,5 +1,6 @@
 Vue        = require('vue').default
 Router     = require('vue-router').default
+Meta       = require('vue-meta')
 Lazyload   = require('vue-lazyload')
 Sai        = require('./assets/sai.io')
 store      = require('./store')
@@ -129,7 +130,9 @@ Vue.component('row',    require('components/@/row'))
 Vue.component('column', require('components/@/column'))
 
 
+Vue.use(Meta)
 Vue.use(Lazyload)
+
 
 if window.isH5
   routes = require('./assets/routes.h5')

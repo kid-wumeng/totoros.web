@@ -12,6 +12,9 @@
     data: ->
       organization: null
 
+    metaInfo: ->
+      title: if @organization then @organization.name else ''
+
     created: ->
       @listen('UPDATE_ORGANIZATION',  @updateOrganization)
 

@@ -12,6 +12,13 @@
     components:
       'tab-bar': require('./tab-bar')
 
+    metaInfo: ->
+      switch @$route.meta.path
+        when 'base'   then title = '个人档案'
+        when 'pass'   then title = '密码'
+        when 'logout' then title = '退出登录'
+      return {title}
+
     computed:
       user: -> @state['setting'].user
 

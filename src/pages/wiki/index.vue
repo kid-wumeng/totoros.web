@@ -13,6 +13,9 @@
       'c-input':  require('components/@/input')
       'c-button': require('components/@/button')
       'page-bar': require('components/@/page-bar')
+
+    metaInfo: ->
+      title: '维基'
 </script>
 
 

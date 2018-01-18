@@ -12,6 +12,9 @@
     data: ->
       person: null
 
+    metaInfo: ->
+      title: if @person then @person.name else ''
+
     created: ->
       @listen('UPDATE_PERSON',  @updatePerson)
 

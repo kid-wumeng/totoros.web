@@ -26,6 +26,9 @@
     data: ->
       post: null
 
+    metaInfo: ->
+      title: if @post then @post.title else ''
+
     created: ->
       @listen('UPDATE_POST', @updatePost)
 

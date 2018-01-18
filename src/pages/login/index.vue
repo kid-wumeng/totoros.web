@@ -19,6 +19,9 @@
       email: ''
       pass:  ''
 
+    metaInfo: ->
+      title: '登录'
+
     methods:
       submit: ->
         try

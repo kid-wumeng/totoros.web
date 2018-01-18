@@ -17,6 +17,9 @@
       size: 30
       total: 0
 
+    metaInfo: ->
+      title: '消息'
+
     activated: ->
       @init()
 

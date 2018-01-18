@@ -13,6 +13,9 @@
 
     data: ->
       email: ''
+
+    metaInfo: ->
+      title: '重置密码'
 </script>
 
 

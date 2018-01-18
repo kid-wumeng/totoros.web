@@ -14,6 +14,9 @@
     data: ->
       user: null
 
+    metaInfo: ->
+      title: if @user then @user.name else ''
+
     computed:
       routeKey: -> "#{@$route.path}-#{@$route.query.type}-#{@$route.query.status}-#{@$route.hash}"
 
