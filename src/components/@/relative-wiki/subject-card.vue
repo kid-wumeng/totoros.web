@@ -1,5 +1,5 @@
 <template lang="jade">
-  a.subject-card(:href="getSubjectPath(subject)")
+  router-link.subject-card(:to="getSubjectPath(subject)")
     .left
       subject-face(:subject="subject" frame)
     .right

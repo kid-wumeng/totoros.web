@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.item(@click="click")
+  router-link.item(:to="to")
     .left
       person-face(v-if="staff.type === 'person'", :person="staff.person")
       organization-face(v-if="staff.type === 'organization'", :organization="staff.organization")
@@ -27,23 +27,24 @@
         required: true
 
     computed:
+      to: ->
+        switch @staff.type
+          when 'person'       then @getPersonPath(@staff.person)
+          when 'organization' then @getOrganizationPath(@staff.organization)
+
       jobs: ->
         jobs = @staff.jobs ? []
         jobs = jobs.map (job) => @model.staff.displayJob(job)
         return jobs.join('、')
-
-    methods:
-      click: ->
-        switch @staff.type
-          when 'person'       then @toPersonPage(@staff.person)
-          when 'organization' then @toOrganizationPage(@staff.organization)
 </script>
 
 
 <style lang="less" scoped>
   .item{
+    display: flex;
     padding: 12px;
     cursor: pointer;
+    user-select: none;
     &:nth-child(odd){
       background-color: rgb(249, 249, 249);
     }
