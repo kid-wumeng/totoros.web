@@ -42,8 +42,8 @@
   .comment-form{
     box-sizing: border-box;
     padding: 30px;
-    padding-top: 0;
     background-color: #FFF;
+    border-top: 1px dashed #E4E8EB;
     .button{
       margin-top: 12px;
     }

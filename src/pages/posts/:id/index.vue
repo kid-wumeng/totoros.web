@@ -71,8 +71,6 @@
         overflow: hidden;
         >*{
           margin-top: 30px;
-          &:last-child{
-          }
         }
       }
     }

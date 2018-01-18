@@ -1,8 +1,6 @@
 <template lang="jade">
   file-select(multiple @select="select")
-    action.action-picture
-      .icon.fa-picture-o
-      .label 本地图片
+    action.action-picture(icon="fa-picture-o" label="本地图片" @click="select")
 </template>
 
 
@@ -10,7 +8,7 @@
   module.exports =
     components:
       'file-select': require('components/@/file-select')
-      'action':      require('./action')
+      'action':      require('components/@/action')
 
     methods:
       select: (files) ->

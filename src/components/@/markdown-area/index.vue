@@ -63,15 +63,17 @@
   renderCard = (card) ->
     faceUrl = "#{cdn}/#{card.face}"
     return "
-      <a class='card' href=\"/#{card.path}\" onclick=\"window.toPathByPreventDefault(event, '/#{card.path}')\">
-        <span class='left'>
-          <img class='face' src=\"#{faceUrl}\"/>
-        </span>
-        <span class='right'>
-          <span class='name'>#{card.name}</span>
-          <span class='subs'>#{card.subs.join(' / ')}</span>
-        </span>
-      </a>
+      <div>
+        <a class='card' href=\"/#{card.path}\" onclick=\"window.toPathByPreventDefault(event, '/#{card.path}')\">
+          <span class='left'>
+            <img class='face' src=\"#{faceUrl}\"/>
+          </span>
+          <span class='right'>
+            <span class='name'>#{card.name}</span>
+            <span class='subs'>#{card.subs.join(' / ')}</span>
+          </span>
+        </a>
+      </div>
     "
 
 
@@ -96,7 +98,7 @@
     return "
       <div class='image'>
         <img src='#{url}'/>
-        <div class='desc'>#{text ? ''}</div>
+        <div class='desc2' style=\"display: #{if text then 'block' else 'none'}\">#{text ? ''}</div>
       </div>
     "
 
@@ -139,7 +141,7 @@
     }
 
     >*:not(:last-child){
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     br{
@@ -168,12 +170,12 @@
     }
 
     .image{
-      display: inline-block;
+      display: block;
       img{
         display: block;
         max-width: 100%;
       }
-      .desc{
+      .desc2{
         margin-top: 4px;
         text-align: center;
         font-size: 13px;

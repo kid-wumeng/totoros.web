@@ -19,12 +19,18 @@
 
 <style lang="less" scoped>
   .action{
-    padding: 0 13px;
+    padding: 8px 16px;
     text-align: center;
+    border: 1px solid #E4E8EB;
     border-radius: 3px;
     user-select: none;
+    color: #A2AEBA;
     cursor: pointer;
-    color: inherit;
+    transition: all 0.2s ease;
+    &:hover{
+      color: darken(#A2AEBA, 25%);
+      border: 1px solid #A2AEBA;
+    }
     .icon{
       height: 16px;
       font-size: 14px;

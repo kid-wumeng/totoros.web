@@ -28,5 +28,11 @@
 
 <style lang="less" scoped>
   .action-bar{
+    >*{
+      margin-right: 8px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
 </style>
