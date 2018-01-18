@@ -19,7 +19,7 @@
 
 <style lang="less" scoped>
   .action{
-    padding: 8px 16px;
+    padding: 8px 16px 6px;
     text-align: center;
     border: 1px solid #E4E8EB;
     border-radius: 3px;
