@@ -108,7 +108,7 @@
 <style lang="less" scoped>
   .editer{
     .input-area{
-      margin-top: 8px;
+      margin-top: 12px;
     }
   }
 </style>

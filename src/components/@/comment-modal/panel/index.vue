@@ -45,7 +45,7 @@
   .panel{
     width: 600px;
     >*{
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       &:last-child{
         margin-bottom: 0;
       }

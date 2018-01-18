@@ -31,7 +31,7 @@
 <style lang="less" scoped>
   .input-content{
     .input-area{
-      margin-top: 8px;
+      margin-top: 12px;
     }
   }
 </style>

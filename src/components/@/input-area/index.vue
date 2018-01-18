@@ -50,6 +50,7 @@
 
 <style lang="less" scoped>
   .input-area{
+    display: block;
     padding-top: 7px;
     padding-bottom: 7px;
     resize: none;
