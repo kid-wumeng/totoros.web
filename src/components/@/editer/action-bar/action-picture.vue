@@ -20,16 +20,30 @@
         @commit('toast/SHOW', "上传图片中，请耐心等待... #{count}/#{total}")
 
         tasks = []
+        allSuccess = true
+
         for file in files
-          task = @api.task('picture.upload', file).done (picture) =>
-            @$emit('add-picture', picture)
+
+          complete = =>
             count++
             if count is total
               @commit('toast/HIDE')
             else
               @commit('toast/SHOW', "上传图片中，请耐心等待... #{count}/#{total}")
+
+          done = (picture) =>
+            @$emit('add-picture', picture)
+            complete()
+
+          fail = (error) =>
+            @dispatch('notify/show', {type: 'fail', message: error.message, duration: 3000})
+            allSuccess = false
+            complete()
+
+          task = @api.task('picture.upload', file).done(done).fail(fail)
           tasks.push(task)
 
         @api.callSeq(tasks).done =>
-          @dispatch('notify/show', {type: 'done', message: '上传完成'})
+          if(allSuccess)
+            @dispatch('notify/show', {type: 'done', message: '上传完成'})
 </script>
