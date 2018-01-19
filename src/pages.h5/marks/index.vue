@@ -23,6 +23,9 @@
     activated: ->
       @init()
 
+    metaInfo: ->
+      title: 'MARKS'
+
     methods:
       init: ->
         @page = 0

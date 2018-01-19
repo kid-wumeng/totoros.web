@@ -31,6 +31,9 @@
 
 <style lang="less" scoped>
   .animes{
+    .grid{
+      margin-top: 12px;
+    }
     .subject-face{
       width: 25%;
     }

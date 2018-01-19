@@ -1,6 +1,7 @@
 <template lang="jade">
   #app(:style="appStyle")
     c-header
+    pc-hint
     .body
       keep-alive
         router-view(v-if="$route.meta.keepAlive", :key="key")
@@ -11,6 +12,7 @@
 <script lang="coffee">
   module.exports =
     components:
+      'pc-hint':  require('components.h5/pc-hint')
       'c-header': require('components.h5/header')
 
     metaInfo: ->

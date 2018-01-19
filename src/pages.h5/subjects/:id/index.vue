@@ -12,6 +12,9 @@
     data: ->
       subject: null
 
+    metaInfo: ->
+      title: if @subject then @subject.name else ''
+
     activated: ->
       @init()
 

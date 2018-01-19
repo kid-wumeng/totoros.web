@@ -21,6 +21,7 @@
     methods:
       init: ->
         @person = await api.call('person.get', @routeID, {
-          casts: true
+          casts:  true
+          staffs: true
         })
 </script>

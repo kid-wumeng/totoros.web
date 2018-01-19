@@ -41,17 +41,20 @@
 <style lang="less" scoped>
   .item{
     box-sizing: border-box;
-    padding: 20px;
+    padding: 16px 16px;
     background-color: #FFF;
     .left{
       flex: none;
     }
     .right{
       flex: auto;
-      margin-left: 20px;
+      margin-left: 14px;
     }
     .subject-face{
       width: 60px;
+    }
+    .subject-name{
+      font-size: 15px;
     }
     .mark-score-simple{
       margin-top: 11px;

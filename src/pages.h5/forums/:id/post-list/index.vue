@@ -20,6 +20,7 @@
   .post-list{
     box-sizing: border-box;
     .item{
+      margin-top: 6px;
     }
   }
 </style>

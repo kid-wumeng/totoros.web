@@ -18,11 +18,8 @@
 
 <style lang="less">
   .face{
-    display: flex;
-    justify-content: center;
     .organization-face{
-      width: 160px;
-      cursor: auto;
+      width: 80px;
     }
   }
 </style>

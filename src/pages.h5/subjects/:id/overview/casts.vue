@@ -29,6 +29,7 @@
 <style lang="less" scoped>
   .casts{
     .list{
+      margin-top: 12px;
       width: 100%;
       overflow-x: scroll;
       display: flex;

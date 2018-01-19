@@ -1,6 +1,7 @@
 <template lang="jade">
   detail-area.casts(v-if="casts.length" title="CAST")
-    item(v-for="cast in casts", :key="cast.id", :cast="cast")
+    .wrap(:class="wrapClass")
+      item(v-for="cast in casts", :key="cast.id", :cast="cast")
 </template>
 
 
@@ -14,9 +15,15 @@
       'person':
         type: Object
         required: true
+      'showSep':
+        type: Boolean
+        default: false
 
     computed:
       casts: -> @person.casts ? []
+
+      wrapClass: ->
+        '-showSep': @showSep
 </script>
 
 
@@ -28,7 +35,15 @@
       .item{
         padding: 20px;
         background-color: #FFF;
-        margin-top: 6px;
+        margin-bottom: 6px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    .wrap.-showSep{
+      .item:last-child{
+        margin-bottom: 6px;
       }
     }
   }

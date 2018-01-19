@@ -18,7 +18,7 @@
 
 <style lang="less" scoped>
   .intro{
-    padding: 0 20px;
+    padding: 0 24px;
     .markdown-area{
       line-height: 19px;
       text-align: justify;

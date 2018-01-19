@@ -43,7 +43,6 @@
     padding: 16px 20px;
     background-color: #FFF;
     cursor: pointer;
-    margin-top: 8px;
     .title-row{
       text-align: justify;
       .user-face{

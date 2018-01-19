@@ -33,13 +33,13 @@
     }
     .name{
       font-weight: 600;
-      font-size: 14px;
-      color: #273340;
+      font-size: 15px;
+      color: #445669;
     }
     .desc{
       margin-top: 4px;
       font-size: 13px;
-      line-height: 21px;
+      line-height: 19px;
       color: #707C88;
     }
   }

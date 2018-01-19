@@ -1,5 +1,5 @@
 <template lang="jade">
-  text-area.intro(:text="organization.intro" indent, :limit="400" more)
+  text-area.intro(:text="organization.intro" indent, :limit="200" more)
 </template>
 
 
@@ -15,7 +15,10 @@
 </script>
 
 
-<style lang="less">
+<style lang="less" scoped>
   .intro{
+    padding: 0 20px;
+    line-height: 21px;
+    font-size: 14px;
   }
 </style>

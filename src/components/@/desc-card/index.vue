@@ -38,7 +38,6 @@
     }
     .desc{
       margin-top: 5px;
-      width: 600px;
       line-height: 18px;
       font-size: 12px;
       color: #707C88;

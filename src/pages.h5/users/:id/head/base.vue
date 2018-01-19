@@ -22,8 +22,8 @@
       font-size: 16px;
     }
     .motto{
-      margin-top: 5px;
-      font-size: 13px;
+      margin-top: 3px;
+      font-size: 12px;
       color: #707C88;
     }
   }

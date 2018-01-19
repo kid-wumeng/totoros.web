@@ -14,6 +14,9 @@
     data: ->
       user: null
 
+    metaInfo: ->
+      title: if @user then @user.name else ''
+
     created: ->
       @init()
 

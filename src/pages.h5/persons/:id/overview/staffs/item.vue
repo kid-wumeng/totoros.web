@@ -29,23 +29,20 @@
 
 <style lang="less" scoped>
   .item{
-    padding: 8px;
-    &:nth-child(odd){
-      background-color: rgba(250, 250, 250, 1);
-    }
+    box-sizing: border-box;
     >.right{
       flex: auto;
-      margin-left: 8px;
+      margin-left: 10px;
     }
     .subject-face{
       width: 56px;
     }
     .subject-name{
-      font-size: 13px;
+      font-size: 14px;
     }
     .job{
       margin-top: 2px;
-      font-size: 12px;
+      font-size: 13px;
       color: #A2AEBA;
     }
   }

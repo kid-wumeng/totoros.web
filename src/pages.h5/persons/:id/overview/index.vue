@@ -7,7 +7,7 @@
         name-desc(:person="person")
     c-base(:person="person")
     intro(:person="person")
-    casts(:person="person")
+    casts(:person="person", :show-sep="showSep")
     staffs(:person="person")
 </template>
 
@@ -26,6 +26,9 @@
       'person':
         type: Object
         required: true
+
+    computed:
+      showSep: -> !!(@person.casts?.length and @person.staffs?.length)
 </script>
 
 

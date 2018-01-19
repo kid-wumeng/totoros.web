@@ -31,6 +31,9 @@
 
 <style lang="less" scoped>
   .games{
+    .grid{
+      margin-top: 12px;
+    }
     .subject-face{
       width: 25%;
     }

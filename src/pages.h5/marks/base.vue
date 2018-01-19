@@ -12,8 +12,8 @@
       'desc-card': require('components.h5/desc-card')
 
     data: ->
-      name: 'MARKS'
-      desc: '看看大家都标记了什么作品？'
+      name: '标记'
+      desc: '收藏、评价、分享你喜欢的ACG作品\n这里展示了T友们的标记'
 </script>
 
 

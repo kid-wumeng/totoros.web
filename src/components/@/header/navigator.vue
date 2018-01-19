@@ -1,8 +1,8 @@
 <template lang="jade">
   .navigator
-    router-link.item(to="/") 讨论版
-    .item(@click="clickMarks") MARKS
-    router-link.item(v-if="admin" to="/wiki") 维基
+    router-link.item(to="/", :class="{'-active': $route.path === '/'}") 讨论版
+    .item(@click="clickMarks", :class="{'-active': $route.path === '/marks'}") MARKS
+    router-link.item(v-if="admin" to="/wiki", :class="{'-active': $route.path === '/wiki'}") 维基
 </template>
 
 
@@ -29,10 +29,14 @@
       line-height: 64px;
       padding: 0 20px;
       font-size: 14px;
-      font-weight: 600;
-      color: #445669;
+      font-weight: 500;
+      color: #A2AEBA;
       cursor: pointer;
       user-select: none;
+    }
+    >.item.-active{
+      color: #273340;
+      cursor: auto;
     }
   }
 </style>

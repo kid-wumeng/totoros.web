@@ -18,6 +18,9 @@
     data: ->
       post: null
 
+    metaInfo: ->
+      title: if @post then @post.title else ''
+
     activated: ->
       @init()
 

@@ -29,7 +29,10 @@
       .item{
         padding: 20px;
         background-color: #FFF;
-        margin-top: 6px;
+        margin-bottom: 6px;
+        &:last-child{
+          margin-bottom: 0;
+        }
       }
     }
   }

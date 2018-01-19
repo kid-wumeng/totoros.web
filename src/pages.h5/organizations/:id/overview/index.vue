@@ -1,22 +1,24 @@
 <template lang="jade">
   #organizations-id-overview
-    .row.-left.-top
+    row.row1
       .left
         face(:organization="organization")
-        c-base(:organization="organization")
       .right
-        intro(:organization="organization")
-        staffs(:organization="organization")
+        name-desc(:organization="organization")
+    c-base(:organization="organization")
+    intro(:organization="organization")
+    staffs(:organization="organization")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'face':   require('./face')
-      'c-base': require('./base')
-      'intro':  require('./intro')
-      'staffs': require('./staffs')
+      'face':      require('./face')
+      'name-desc': require('./name-desc')
+      'c-base':    require('./base')
+      'intro':     require('./intro')
+      'staffs':    require('./staffs')
 
     props:
       'organization':
@@ -27,29 +29,18 @@
 
 <style lang="less" scoped>
   #organizations-id-overview{
-    >.row{
-      >.left{
-        width: 200px;
-        >*{
-          margin-bottom: 20px;
-          &:last-child{
-            margin-bottom: 0;
-          }
-        }
+    padding: 20px 0 0;
+    background-color: #FFF;
+    >*{
+      box-sizing: border-box;
+      margin-bottom: 32px;
+      &:last-child{
+        margin-bottom: 0;
       }
-      >.right{
-        width: 500px;
-        flex: auto;
-        margin-left: 20px;
-        display: flex;
-        flex-direction: column;
-        >*{
-          margin-bottom: 20px;
-          &:last-child{
-            margin-bottom: 0;
-          }
-        }
-      }
+    }
+    >.row1{
+      width: 100%;
+      padding: 0 20px;
     }
   }
 </style>

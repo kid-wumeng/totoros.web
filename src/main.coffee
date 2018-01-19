@@ -176,5 +176,5 @@ new Vue({
 
 setTimeout (->
   window.isPageReady=1
-  console.log document.getElementsByTagName('a').length
+  # console.log document.getElementsByTagName('a').length
 ), 5000

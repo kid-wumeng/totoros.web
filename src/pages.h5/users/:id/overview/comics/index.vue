@@ -31,6 +31,9 @@
 
 <style lang="less" scoped>
   .comics{
+    .grid{
+      margin-top: 12px;
+    }
     .subject-face{
       width: 25%;
     }

@@ -31,6 +31,9 @@
       border-bottom: 1px dotted #F2F2F2;
       margin-bottom: 8px;
     }
+    .item:first-child{
+      margin-top: 12px;
+    }
     .item:last-child{
       border-bottom: none;
       margin-bottom: 0;

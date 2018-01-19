@@ -28,7 +28,7 @@
     border-radius: 100px;
     .icon{
       display: inline;
-      color: #445669;
+      color: lighten(#445669, 5%);
     }
     span{
       margin-left: 8px;

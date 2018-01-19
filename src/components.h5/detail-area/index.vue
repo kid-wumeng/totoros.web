@@ -22,7 +22,6 @@
       font-size: 13px;
       font-weight: 600;
       color: #A2AEBA;
-      margin-bottom: 12px;
     }
   }
 </style>

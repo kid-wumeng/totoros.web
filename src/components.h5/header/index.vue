@@ -3,8 +3,8 @@
     .left
       cdn-image.logo(path="assets/logo?2017-11-09" @click="$router.push('/')")
     row.right.-right.-center
-      .item(@click="$router.push('/')") 讨论版
-      .item(@click="$router.push('/marks')") MARKS
+      .item(:class="{'-active': $route.path === '/'}" @click="$router.push('/')") 讨论版
+      .item(:class="{'-active': $route.path === '/marks'}" @click="$router.push('/marks')") MARKS
 </template>
 
 
@@ -19,11 +19,10 @@
   .header{
     box-sizing: border-box;
     padding-left: 20px;
-    padding-right: 32px;
+    padding-right: 20px;
     width: 100%;
     height: 48px;
     background-color: #FFF;
-    border-bottom: 1px solid rgb(245, 245, 245);
     >.left{
       >.logo{
         @width: 76px;
@@ -33,10 +32,16 @@
     }
     >.right{
       >.item{
+        padding: 0 16px;
+        height: 48px;
+        line-height: 48px;
         text-align: center;
         font-size: 15px;
         font-weight: 500;
-        margin-left: 32px;
+        color: #A2AEBA;
+      }
+      >.item.-active{
+        color: #273340;
       }
     }
   }
