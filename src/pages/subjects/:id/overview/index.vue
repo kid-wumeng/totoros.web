@@ -42,7 +42,7 @@
     margin-top: 16px;
     >.row2{
       >.left{
-        width: 240px;
+        width: 220px;
         >*{
           margin-bottom: 50px;
           &:last-child{
@@ -53,7 +53,7 @@
       >.right{
         width: 500px;
         flex: auto;
-        margin-left: 40px;
+        margin-left: 24px;
         display: flex;
         flex-direction: column;
         >*{

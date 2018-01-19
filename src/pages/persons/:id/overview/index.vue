@@ -31,9 +31,9 @@
   #persons-id-overview{
     >.row{
       >.left{
-        width: 200px;
+        width: 220px;
         >*{
-          margin-bottom: 20px;
+          margin-bottom: 50px;
           &:last-child{
             margin-bottom: 0;
           }
@@ -42,11 +42,11 @@
       >.right{
         width: 500px;
         flex: auto;
-        margin-left: 20px;
+        margin-left: 24px;
         display: flex;
         flex-direction: column;
         >*{
-          margin-bottom: 20px;
+          margin-bottom: 50px;
           &:last-child{
             margin-bottom: 0;
           }

@@ -1,5 +1,5 @@
 <template lang="jade">
-  detail-area.casts(v-if="casts.length" title="CAST")
+  detail-box.casts(v-if="casts.length" title="CAST")
     item(v-for="cast in casts", :key="cast.id", :cast="cast")
 </template>
 
@@ -7,8 +7,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'detail-area':  require('components/wiki/detail-area')
-      'item':         require('./item')
+      'detail-box': require('components/wiki/detail-box')
+      'item':       require('./item')
 
     props:
       'role':

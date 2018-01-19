@@ -15,8 +15,9 @@
 <style lang="less" scoped>
   .organization-name{
     display: inline;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
+    color: #445669;
     word-break: break-all;
     cursor: pointer;
     &:hover{
