@@ -60,7 +60,6 @@
     }
     .job{
       position: relative;
-      margin-top: 2px;
       font-size: 12px;
       color: #A2AEBA;
     }

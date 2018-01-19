@@ -11,7 +11,7 @@
           row.-center(v-for="(person, index) in persons", :key="index")
             person-face(:person="person" square border)
             person-name(:person="person")
-      .importance - {{ model.assets.displayCastImportance(cast.importance) }} -
+      .importance {{ model.assets.displayCastImportance(cast.importance) }}
       text-area.intro(:text="role.intro", :limit="120")
 </template>
 
@@ -57,7 +57,6 @@
       color: #A2AEBA;
     }
     .importance{
-      margin-top: 2px;
       font-size: 12px;
       color: #A2AEBA;
     }
