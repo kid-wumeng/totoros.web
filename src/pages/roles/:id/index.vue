@@ -14,6 +14,10 @@
 
     metaInfo: ->
       title: if @role then @role.name else ''
+      meta: [{
+        name: 'description'
+        content: (@role?.intro ? @role?.name) ? ''
+      }]
 
     created: ->
       @listen('UPDATE_ROLE',  @updateRole)

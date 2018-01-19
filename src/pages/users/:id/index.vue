@@ -16,6 +16,10 @@
 
     metaInfo: ->
       title: if @user then @user.name else ''
+      meta: [{
+        name: 'description'
+        content: (@user?.intro ? @user?.name) ? ''
+      }]
 
     computed:
       routeKey: -> "#{@$route.path}-#{@$route.query.type}-#{@$route.query.status}-#{@$route.hash}"

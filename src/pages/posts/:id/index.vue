@@ -28,6 +28,10 @@
 
     metaInfo: ->
       title: if @post then @post.title else ''
+      meta: [{
+        name: 'description'
+        content: (@post?.content ? @post?.title) ? ''
+      }]
 
     created: ->
       @listen('UPDATE_POST', @updatePost)

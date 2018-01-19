@@ -34,7 +34,7 @@
       color: #A2AEBA;
     }
     >.content{
-      margin-top: 7px;
+      margin-top: 8px;
       box-sizing: border-box;
       border: 1px solid #E4E8EB;
       border-radius: 3px;

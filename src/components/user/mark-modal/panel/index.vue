@@ -15,7 +15,7 @@
         input-area.comment(v-model="comment" placeholder="说几句吧...", :rows="5")
     .wrap
       row.action-bar.-between.-center
-        check(v-model="share" label="分享至TIME-LINE")
+        check(v-model="share" label="分享至MARKS")
         c-button(@click="submit") OK，标记
 </template>
 

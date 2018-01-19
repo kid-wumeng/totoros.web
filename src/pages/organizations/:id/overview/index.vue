@@ -1,6 +1,6 @@
 <template lang="jade">
   #organizations-id-overview
-    .row.-left.-top
+    row
       .left
         face(:organization="organization")
         c-base(:organization="organization")
@@ -27,7 +27,8 @@
 
 <style lang="less" scoped>
   #organizations-id-overview{
-    >.row{
+    margin-top: 16px;
+    >.row2{
       >.left{
         width: 220px;
         >*{

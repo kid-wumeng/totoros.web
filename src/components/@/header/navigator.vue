@@ -1,7 +1,7 @@
 <template lang="jade">
   .navigator
     router-link.item(to="/", :class="{'-active': $route.path === '/'}") 讨论版
-    .item(@click="clickMarks", :class="{'-active': $route.path === '/marks'}") MARKS
+    a.item(@click.prevent="clickMarks", to="/marks", :class="{'-active': $route.path === '/marks'}") MARKS
     router-link.item(v-if="admin" to="/wiki", :class="{'-active': $route.path === '/wiki'}") 维基
 </template>
 

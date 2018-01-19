@@ -14,6 +14,10 @@
 
     metaInfo: ->
       title: if @subject then @subject.name else ''
+      meta: [{
+        name: 'description'
+        content: (@subject?.intro ? @subject?.name) ? ''
+      }]
 
     created: ->
       @listen('UPDATE_SUBJECT',  @updateSubject)

@@ -1,6 +1,6 @@
 <template lang="jade">
   #persons-id-overview
-    .row.-left.-top
+    row
       .left
         face(:person="person")
         c-base(:person="person")
@@ -29,7 +29,8 @@
 
 <style lang="less" scoped>
   #persons-id-overview{
-    >.row{
+    margin-top: 16px;
+    >.row2{
       >.left{
         width: 220px;
         >*{

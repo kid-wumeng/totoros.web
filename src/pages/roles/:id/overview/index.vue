@@ -1,6 +1,6 @@
 <template lang="jade">
   #roles-id-overview
-    .row.-left.-top
+    row
       .left
         face(:role="role")
         c-base(:role="role")
@@ -27,7 +27,8 @@
 
 <style lang="less" scoped>
   #roles-id-overview{
-    >.row{
+    margin-top: 16px;
+    >.row2{
       >.left{
         width: 220px;
         >*{
