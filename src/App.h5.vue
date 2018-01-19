@@ -13,6 +13,10 @@
     components:
       'c-header': require('components.h5/header')
 
+    metaInfo: ->
+      titleTemplate: (title) ->
+        if title then "#{title} - totoros" else 'totoros'
+
     computed:
       key: ->
         prefix = @$route?.meta?.key?.prefix ? ''

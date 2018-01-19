@@ -49,4 +49,37 @@ module.exports = [{
       prefix: 'subject-detail'
       params: ['id']
 
+},{
+
+  # 角色
+  path: '/roles/:id'
+  component: -> System.import('pages.h5/roles/:id')
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'role-detail'
+      params: ['id']
+
+},{
+
+  # 人物
+  path: '/persons/:id'
+  component: -> System.import('pages.h5/persons/:id')
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'person-detail'
+      params: ['id']
+
+},{
+
+  # 团体
+  path: '/organizations/:id'
+  component: -> System.import('pages.h5/organizations/:id')
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'organization-detail'
+      params: ['id']
+
 }]

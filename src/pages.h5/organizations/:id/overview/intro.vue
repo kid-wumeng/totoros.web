@@ -1,5 +1,5 @@
 <template lang="jade">
-  text-area.intro(:text="subject.intro" indent, :limit="200" more)
+  text-area.intro(:text="organization.intro" indent, :limit="400" more)
 </template>
 
 
@@ -9,16 +9,13 @@
       'text-area': require('components/@/text-area')
 
     props:
-      'subject':
+      'organization':
         type: Object
         required: true
 </script>
 
 
-<style lang="less" scoped>
+<style lang="less">
   .intro{
-    padding: 0 20px;
-    line-height: 21px;
-    font-size: 14px;
   }
 </style>

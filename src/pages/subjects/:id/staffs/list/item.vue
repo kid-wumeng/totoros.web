@@ -1,8 +1,8 @@
 <template lang="jade">
   row.item.-top
     .left
-      person-face(v-if="type === 'person'", :person="person" square border)
-      organization-face(v-if="type === 'organization'", :organization="organization" square border)
+      person-face(v-if="type === 'person'", :person="person" frame)
+      organization-face(v-if="type === 'organization'", :organization="organization" frame)
     .right
       row.-center
         person-name(v-if="type === 'person'", :person="person")
@@ -38,9 +38,9 @@
 
 <style lang="less" scoped>
   .item{
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     border-bottom: 1px dotted #EAEAEA;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     >.right{
       position: relative;
       top: 0px;

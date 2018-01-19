@@ -1,7 +1,7 @@
 <template lang="jade">
   row.item.-top
     .left
-      role-face(:role="role" square, :cover="false")
+      role-face(:role="role" frame)
     .right
       row.-between.-center
         row.-center
@@ -40,9 +40,9 @@
 
 <style lang="less" scoped>
   .item{
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     border-bottom: 1px dotted #EAEAEA;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     >.right{
       flex: auto;
       position: relative;
