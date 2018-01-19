@@ -22,12 +22,12 @@
 
 <style lang="less" scoped>
   .navigator{
-    margin-left: 36px;
+    margin-left: 40px;
     .item{
       display: inline-block;
       height: 64px;
       line-height: 64px;
-      padding: 0 20px;
+      padding: 0 16px;
       font-size: 14px;
       font-weight: 500;
       color: #A2AEBA;
@@ -35,7 +35,7 @@
       user-select: none;
     }
     >.item.-active{
-      color: #273340;
+      color: #445669;
       cursor: auto;
     }
   }

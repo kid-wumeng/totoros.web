@@ -2,7 +2,7 @@
   router-link.logo(to="/")
     .wrap
       cdn-image(path="assets/logo?2017-11-09")
-      .version 0.7.1 Beta
+      .version 硬核漫画 0.7.1
 </template>
 
 
@@ -17,7 +17,7 @@
   .logo{
     @width: 76px;
     position: relative;
-    top: -2px;
+    top: -4px;
     height: 64px;
     line-height: 64px;
     cursor: pointer;
@@ -31,7 +31,7 @@
     }
     .version{
       position: absolute;
-      right: -20px;
+      right: -32px;
       bottom: -16px;
       font-size: 12px;
       color: #A2AEBA;

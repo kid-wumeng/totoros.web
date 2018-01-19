@@ -1,6 +1,6 @@
 <template lang="jade">
   row.header.-between.-center
-    .left
+    row.left.-center
       cdn-image.logo(path="assets/logo?2017-11-09" @click="$router.push('/')")
     row.right.-right.-center
       .item(:class="{'-active': $route.path === '/'}" @click="$router.push('/')") 讨论版
@@ -41,7 +41,7 @@
         color: #A2AEBA;
       }
       >.item.-active{
-        color: #273340;
+        color: #445669;
       }
     }
   }
