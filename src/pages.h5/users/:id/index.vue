@@ -1,6 +1,6 @@
 <template lang="jade">
   #users-detail(v-if="user")
-    c-header(:user="user")
+    c-head(:user="user")
     overview(:user="user")
 </template>
 
@@ -8,7 +8,7 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-header': require('./header')
+      'c-head':   require('./head')
       'overview': require('./overview')
 
     data: ->
@@ -26,5 +26,6 @@
 
 <style lang="less" scoped>
   #users-detail{
+    background-color: #FFF;
   }
 </style>

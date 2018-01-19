@@ -28,11 +28,11 @@
   .name-desc{
     margin-left: 16px;
     >.name{
-      font-weight: 600;
+      font-weight: 500;
       font-size: 18px;
     }
     >.desc{
-      font-weight: 600;
+      font-weight: 500;
       font-size: 13px;
       color: #A2AEBA;
     }

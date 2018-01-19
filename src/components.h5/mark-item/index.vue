@@ -1,10 +1,12 @@
 <template lang="jade">
   .mark-item
-    row.-center
-      user-face(:user="mark.user" circle)
-      user-name(:user="mark.user")
-      .date {{ model.date.display(mark.createDate) }}
-      .status {{ model.mark.displayStatus(mark.status, mark.subject.type) }}
+    row.-between.-center
+      row.left.-center
+        user-face(:user="mark.user" circle)
+        user-name(:user="mark.user")
+      row.right.-center
+        .date {{ model.date.display(mark.createDate) }}
+        .status {{ model.mark.displayStatus(mark.status, mark.subject.type) }}
     mark-score-simple(:mark="mark")
     text-area.comment(:text="mark.comment")
 </template>

@@ -29,7 +29,7 @@
       appStyle: ->
         if(@$route?.meta?.bgColor)
           return{
-            backgroundColor: 'rgba(250, 250, 250, 1)'
+            backgroundColor: 'rgba(242, 243, 245, 0.8)'
           }
 </script>
 
@@ -64,6 +64,7 @@
   }
 
   a{
+    display: block;
     text-decoration: none;
   }
 
@@ -79,6 +80,5 @@
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgba(242, 243, 245, 0.8);
   }
 </style>

@@ -74,7 +74,8 @@
         font-size: 13px;
       }
       .content{
-        font-size: 13px;
+        line-height: 20px;
+        font-size: 14px;
         color: #A2AEBA;
       }
     }
@@ -82,6 +83,7 @@
       margin-top: 16px;
       padding: 0 7px;
       text-align: justify;
+      font-size: 15px;
     }
   }
 </style>

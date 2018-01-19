@@ -32,7 +32,6 @@
       margin-bottom: 8px;
     }
     .item:last-child{
-      padding-bottom: 0;
       border-bottom: none;
       margin-bottom: 0;
     }

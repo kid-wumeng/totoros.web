@@ -32,9 +32,12 @@
   #user-detail-overview{
     margin: 0 auto;
     margin-top: -45px;
-    padding-top: 20px;
+    padding: 20px 0;
     >*{
       margin-bottom: 32px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
   }
 </style>

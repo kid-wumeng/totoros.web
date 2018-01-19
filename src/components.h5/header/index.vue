@@ -35,7 +35,7 @@
       >.item{
         text-align: center;
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 500;
         margin-left: 32px;
       }
     }

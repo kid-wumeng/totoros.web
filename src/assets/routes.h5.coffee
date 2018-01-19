@@ -4,6 +4,7 @@ module.exports = [{
   path: '/'
   meta:
     keepAlive: true
+    bgColor: true
   component: -> System.import('pages.h5/forums/:id')
 
 },{
@@ -11,6 +12,7 @@ module.exports = [{
   path: '/marks'
   meta:
     keepAlive: true
+    bgColor: true
   component: -> System.import('pages.h5/marks')
 
 },{
@@ -23,6 +25,7 @@ module.exports = [{
     key:
       prefix: 'post-detail'
       params: ['id']
+    bgColor: true
 
 },{
 

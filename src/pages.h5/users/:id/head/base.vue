@@ -26,12 +26,5 @@
       font-size: 13px;
       color: #707C88;
     }
-    .idolCount,
-    .fanCount{
-      margin-left: 10px;
-      font-size: 12px;
-      color: #A2AEBA;
-      cursor: pointer;
-    }
   }
 </style>

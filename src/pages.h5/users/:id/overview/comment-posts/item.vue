@@ -1,5 +1,5 @@
 <template lang="jade">
-  .item
+  row.item.-between.-center
     post-title(:post="post")
     .date {{ model.date.display(post.commentDate) }}
 </template>
@@ -20,7 +20,6 @@
 <style lang="less" scoped>
   .item{
     >*{
-      display: inline;
       font-size: 12px;
     }
     .post-title{
@@ -28,6 +27,7 @@
       margin-right: 6px;
     }
     .date{
+      flex: none;
       color: #A2AEBA;
     }
   }

@@ -21,6 +21,7 @@
           episodes: true
           casts:    true
           staffs:   true
+          posts:    true
           marks:    true
         })
 </script>

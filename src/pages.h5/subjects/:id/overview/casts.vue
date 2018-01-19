@@ -5,22 +5,6 @@
         role-face(:role="cast.role" circle)
         .importance {{ model.cast.displayImportance(cast.importance) }}
         role-name(:role="cast.role")
-      .cast(v-for="cast in casts", :key="cast.id")
-        role-face(:role="cast.role" circle)
-        .importance {{ model.cast.displayImportance(cast.importance) }}
-        role-name(:role="cast.role")
-      .cast(v-for="cast in casts", :key="cast.id")
-        role-face(:role="cast.role" circle)
-        .importance {{ model.cast.displayImportance(cast.importance) }}
-        role-name(:role="cast.role")
-      .cast(v-for="cast in casts", :key="cast.id")
-        role-face(:role="cast.role" circle)
-        .importance {{ model.cast.displayImportance(cast.importance) }}
-        role-name(:role="cast.role")
-      .cast(v-for="cast in casts", :key="cast.id")
-        role-face(:role="cast.role" circle)
-        .importance {{ model.cast.displayImportance(cast.importance) }}
-        role-name(:role="cast.role")
 </template>
 
 

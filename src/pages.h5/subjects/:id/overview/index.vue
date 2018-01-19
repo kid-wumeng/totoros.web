@@ -9,6 +9,7 @@
     intro(:subject="subject")
     casts(:subject="subject")
     //- staffs(:subject="subject")
+    posts(:subject="subject")
     marks(:subject="subject")
 </template>
 
@@ -21,7 +22,8 @@
       'c-base':    require('./base')
       'intro':     require('./intro')
       'casts':     require('./casts')
-      'staffs':    require('./staffs')
+      # 'staffs':    require('./staffs')
+      'posts':     require('./posts')
       'marks':     require('./marks')
 
     props:
@@ -33,10 +35,14 @@
 
 <style lang="less" scoped>
   #subjects-id-overview{
-    margin-top: 16px;
+    padding: 20px 0 0;
+    background-color: #FFF;
     >*{
-      margin-bottom: 32px;
       box-sizing: border-box;
+      margin-bottom: 32px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
     >.row1{
       width: 100%;

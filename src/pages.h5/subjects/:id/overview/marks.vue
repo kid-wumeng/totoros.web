@@ -1,6 +1,7 @@
 <template lang="jade">
   detail-area.marks(v-if="marks.length" title="标记")
-    mark-item(v-for="mark in marks", :key="mark.id", :mark="mark")
+    .wrap
+      mark-item(v-for="mark in marks", :key="mark.id", :mark="mark")
 </template>
 
 
@@ -22,11 +23,13 @@
 
 <style lang="less" scoped>
   .marks{
-    .mark-item{
-      padding: 20px;
-      border-bottom: 1px dashed rgb(240, 240, 240);
-      &:first-child{
-        border-top: 1px solid rgb(240, 240, 240);
+    .wrap{
+      background-color: rgba(249, 249, 249, 1);
+      overflow: hidden;
+      .mark-item{
+        padding: 20px;
+        background-color: #FFF;
+        margin-top: 6px;
       }
     }
   }

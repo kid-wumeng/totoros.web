@@ -1,5 +1,5 @@
 <template lang="jade">
-  .header
+  .head
     user-banner(:user="user")
     row.wrap
       .face-wrap: user-face(:user="user")
@@ -22,7 +22,7 @@
 
 
 <style lang="less" scoped>
-  .header{
+  .head{
     position: relative;
     .user-banner{
       height: 100px;

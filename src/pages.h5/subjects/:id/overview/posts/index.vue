@@ -1,7 +1,6 @@
 <template lang="jade">
-  .mark-feeds
-    detail-area(title="最近的标记")
-      item(v-for="feed in feeds", :key="feed.id", :feed="feed")
+  detail-area.posts(v-if="posts.length" title="相关帖子")
+    item(v-for="post in posts", :key="post.id", :post="post")
 </template>
 
 
@@ -12,19 +11,17 @@
       'item':        require('./item')
 
     props:
-      'user':
+      'subject':
         type: Object
         required: true
 
     computed:
-      feeds: ->
-        feeds = @user.markFeeds ? []
-        return feeds.slice(0, 10)
+      posts: -> @subject.posts ? []
 </script>
 
 
 <style lang="less" scoped>
-  .mark-feeds{
+  .posts{
     .item{
       padding: 0 20px;
       padding-bottom: 8px;

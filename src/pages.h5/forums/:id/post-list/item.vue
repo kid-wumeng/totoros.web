@@ -1,5 +1,5 @@
 <template lang="jade">
-  .item(@click="toPostPage(post)")
+  router-link.item(:to="getPostPath(post)")
     .title-row
       user-face(:user="user" circle)
       span.top(v-if="top") [置顶]

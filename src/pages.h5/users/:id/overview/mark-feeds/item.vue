@@ -1,9 +1,11 @@
 <template lang="jade">
-  .item
-    .status {{ model.mark.displayStatus(status, type) }}
-    .type {{ model.subject.displayTypes(type)[0] }}
-    subject-name(:subject="subject")
-    .date {{ model.date.display(date) }}
+  row.item.-between.-center
+    .left
+      .status {{ model.mark.displayStatus(status, type) }}
+      .type {{ model.subject.displayTypes(type)[0] }}
+      subject-name(:subject="subject")
+    .right
+      .date {{ model.date.display(date) }}
 </template>
 
 
@@ -29,9 +31,14 @@
 
 <style lang="less" scoped>
   .item{
-    >*{
-      display: inline;
+    *{
       font-size: 12px;
+    }
+    .left > *{
+      display: inline;
+    }
+    .right{
+      flex: none;
     }
     .subject-name{
       font-size: 12px;

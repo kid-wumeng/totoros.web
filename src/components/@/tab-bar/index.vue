@@ -37,6 +37,8 @@
     .tab{
       box-sizing: border-box;
       cursor: pointer;
+      display: flex;
+      align-items: center;
     }
     .tab.-active{
       cursor: default;
