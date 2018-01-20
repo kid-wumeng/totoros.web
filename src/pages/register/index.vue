@@ -1,6 +1,7 @@
 <template lang="jade">
   #register(v-if="checkined && !login")
-    .wrap
+    qa(v-if="!canRegister" @can-register="canRegister = true")
+    .wrap(v-if="canRegister")
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
       c-input(v-model="pass2" placeholder="密码确认" type="password")
@@ -14,8 +15,10 @@
     components:
       'c-input':  require('components/@/input')
       'c-button': require('components/@/button')
+      'qa':       require('./qa')
 
     data: ->
+      canRegister: false
       email: ''
       pass:  ''
       pass2: ''
