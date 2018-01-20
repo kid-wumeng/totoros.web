@@ -2,7 +2,7 @@
   router-link.logo(to="/")
     .wrap
       cdn-image(path="assets/logo?2017-11-09")
-      .version 硬核漫画 0.7.1
+      .version 硬核漫画 0.7.2
 </template>
 
 
