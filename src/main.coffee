@@ -49,6 +49,7 @@ api.on('open', -> store.dispatch('account/checkin'))
 ##################################################
 if /seo-request/.test(location.href)
   window.isPC = true
+  console.log 'seo'
 else
   clientWidth = document?.documentElement?.clientWidth
   if(clientWidth > 1024)
