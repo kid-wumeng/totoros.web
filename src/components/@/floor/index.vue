@@ -124,9 +124,11 @@
       }
     }
     .markdown-area{
-      margin-top: 20px;
+      margin-top: 17px;
       padding-right: 20px;
+      line-height: 22px;
       text-align: justify;
+      font-size: 13px;
     }
   }
   .floor.-active{

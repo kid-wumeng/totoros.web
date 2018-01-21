@@ -23,7 +23,6 @@
   .main-post{
     box-sizing: border-box;
     background-color: #FFF;
-    border-bottom: 1px dashed #E4E8EB;
     overflow: hidden;
     .title-row{
       box-sizing: border-box;
