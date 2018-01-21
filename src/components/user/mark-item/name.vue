@@ -34,9 +34,8 @@
       font-size: 13px;
     }
     .subject-name{
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: #273340;
     }
   }
 </style>

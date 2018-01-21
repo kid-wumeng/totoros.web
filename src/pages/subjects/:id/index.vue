@@ -1,13 +1,15 @@
 <template lang="jade">
   #subjects-detail(v-if="subject")
     frame(:subject="subject")
+    mark-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'frame': require('./frame')
+      'frame':      require('./frame')
+      'mark-modal': require('components/user/mark-modal')
 
     data: ->
       subject: null

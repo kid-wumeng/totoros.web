@@ -10,11 +10,11 @@
 
     computed:
       tabs: -> [{
+        label: '用户'
+        value: 'users'
+      },{
         label: '讨论版'
         value: 'forums'
-      },{
-        label: '反馈'
-        value: 'feedbacks'
       },{
         label: '同步'
         value: 'sync'

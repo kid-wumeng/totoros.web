@@ -3,13 +3,18 @@
     .wrap
       .edit-action.-gray(v-show="path === ''" @click="editFace") 编辑：头像
       .edit-action.-gray(v-show="path === ''" @click="editBase") 编辑：基本档案
+
+    edit-role-base-modal
+    wiki-face-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'detail-box': require('components/wiki/detail-box')
+      'detail-box':           require('components/wiki/detail-box')
+      'edit-role-base-modal': require('components/wiki/edit-role-base-modal')
+      'wiki-face-modal':      require('components/wiki/wiki-face-modal')
 
     props:
       'role':

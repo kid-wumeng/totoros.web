@@ -6,6 +6,8 @@
         action-bar(:forum="forum")
       post-list(:posts="posts")
       page-bar(:page="routePage", :size="size", :total="total" @change="changePage")
+
+    post-modal
 </template>
 
 
@@ -16,6 +18,7 @@
       'action-bar': require('./action-bar')
       'post-list':  require('./post-list')
       'page-bar':   require('components/@/page-bar')
+      'post-modal': require('components/bbs/post-modal')
 
     data: ->
       forum: null

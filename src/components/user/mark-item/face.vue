@@ -1,7 +1,7 @@
 <template lang="jade">
   .face
     user-face(v-if="showUser", :user="user")
-    subject-face(v-if="showSubject", :subject="subject" frame)
+    subject-face(v-if="showSubject", :subject="subject")
 </template>
 
 

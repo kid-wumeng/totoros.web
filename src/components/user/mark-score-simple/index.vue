@@ -71,7 +71,7 @@
     .item.-active{
       .label, span{
         font-weight: 600;
-        color: #3db8c1;
+        color: #5D8CAE;
       }
     }
   }

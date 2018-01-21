@@ -3,13 +3,16 @@
     c-header(:user="user")
     keep-alive
       router-view.main(:user="user", :key="routeKey")
+
+    mark-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-header': require('./header')
+      'c-header':   require('./header')
+      'mark-modal': require('components/user/mark-modal')
 
     data: ->
       user: null

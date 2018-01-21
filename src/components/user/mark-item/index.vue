@@ -112,7 +112,7 @@
       color: #707C88;
     }
     .mark-score-simple{
-      margin-top: 13px !important;
+      margin-top: 15px !important;
     }
     .column{
       flex: auto;

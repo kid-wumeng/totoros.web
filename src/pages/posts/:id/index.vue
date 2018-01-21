@@ -9,6 +9,8 @@
         action-sheets(:post="post")
         relative-wiki(:post="post")
 
+    post-modal
+    comment-modal
     reference-comment-modal
 </template>
 
@@ -21,6 +23,8 @@
       'comment-form':  require('./comment-form')
       'action-sheets': require('./action-sheets')
       'relative-wiki': require('./relative-wiki')
+      'post-modal':    require('components/bbs/post-modal')
+      'comment-modal': require('components/@/comment-modal')
       'reference-comment-modal': require('components/comment/reference-comment-modal')
 
     data: ->

@@ -36,6 +36,7 @@
 
 <style lang="less" scoped>
   .user-face{
+    display: block;
     cursor: pointer;
   }
 </style>

@@ -14,6 +14,6 @@
     padding: 1px;
     background-color: white;
     border: 1px solid #C7C7C9;
-    box-shadow: 0 0px 3px #CCC;
+    box-shadow: 0 0px 3px #DDD;
   }
 </style>

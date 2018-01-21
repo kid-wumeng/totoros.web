@@ -9,10 +9,12 @@
       .edit-action(v-show="path === 'casts'"    @click="editCasts")     编辑：Casts
       .edit-action(v-show="path === 'staffs'"   @click="editStaffs")    编辑：Staffs
 
+    edit-subject-base-modal
     edit-subject-resources-modal
     edit-subject-episodes-modal
     edit-subject-casts-modal
     edit-subject-staffs-modal
+    wiki-face-modal
 </template>
 
 
@@ -20,10 +22,12 @@
   module.exports =
     components:
       'detail-box':                   require('components/wiki/detail-box')
+      'edit-subject-base-modal':      require('components/wiki/edit-subject-base-modal')
       'edit-subject-resources-modal': require('components/wiki/edit-subject-resources-modal')
       'edit-subject-episodes-modal':  require('components/wiki/edit-subject-episodes-modal')
       'edit-subject-casts-modal':     require('components/wiki/edit-subject-casts-modal')
       'edit-subject-staffs-modal':    require('components/wiki/edit-subject-staffs-modal')
+      'wiki-face-modal':              require('components/wiki/wiki-face-modal')
 
     props:
       'subject':

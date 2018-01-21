@@ -12,43 +12,20 @@
     confirm
     prompt
     search-modal
-    comment-modal
-    mark-modal
-    post-modal
-    create-subject-modal
-    create-role-modal
-    create-person-modal
-    create-organization-modal
-    edit-subject-base-modal
-    edit-role-base-modal
-    edit-person-base-modal
-    edit-organization-base-modal
-    wiki-face-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-header': require('components/@/header')
-      'totoro':   require('components/@/totoro')
-      'toast':    require('components/@/toast')
-      'notify':   require('components/@/notify')
-      'prompt':   require('components/@/prompt')
-      'confirm':  require('components/@/confirm')
-      'search-modal':                 require('components/@/search-modal')
-      'comment-modal':                require('components/@/comment-modal')
-      'mark-modal':                   require('components/user/mark-modal')
-      'post-modal':                   require('components/bbs/post-modal')
-      'create-subject-modal':         require('components/wiki/create-subject-modal')
-      'create-role-modal':            require('components/wiki/create-role-modal')
-      'create-person-modal':          require('components/wiki/create-person-modal')
-      'create-organization-modal':    require('components/wiki/create-organization-modal')
-      'edit-subject-base-modal':      require('components/wiki/edit-subject-base-modal')
-      'edit-role-base-modal':         require('components/wiki/edit-role-base-modal')
-      'edit-person-base-modal':       require('components/wiki/edit-person-base-modal')
-      'edit-organization-base-modal': require('components/wiki/edit-organization-base-modal')
-      'wiki-face-modal':              require('components/wiki/wiki-face-modal')
+      'c-header':     require('components/@/header')
+      # 'totoro':       require('components/@/totoro')
+      'toast':        require('components/@/toast')
+      'notify':       require('components/@/notify')
+      'prompt':       require('components/@/prompt')
+      'confirm':      require('components/@/confirm')
+      'search-modal': require('components/@/search-modal')
+
 
     metaInfo: ->
       titleTemplate: (title) ->
