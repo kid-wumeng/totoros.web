@@ -120,7 +120,9 @@
 
     computed:
       html: ->
-        html = marked(@content)
+        contents = @content.split('\n')
+        htmls = contents.map (content) -> if(content) then marked(content) else '<p class="empty"></p>'
+        html = htmls.join('')
         html = html.replace(/<\/div>(<br>)+/g, '</div>')
         return html
 </script>
@@ -131,8 +133,8 @@
     box-sizing: border-box;
     width: 100%;
     word-break: break-all;
-    line-height: 24px;
-    font-size: 14px;
+    line-height: 22px;
+    font-size: 13px;
     color: #262626;
 
     *{
@@ -140,15 +142,21 @@
       color: inherit;
     }
 
-    >*:not(:last-child){
-      margin-bottom: 12px;
+    >*{
+      line-height: inherit;
+    }
+
+    > p.empty{
+      height: 12px;
     }
 
     h1{
       font-size: 20px;
+      line-height: 30px;
     }
     h2{
       font-size: 17px;
+      line-height: 26px;
     }
 
     br{
