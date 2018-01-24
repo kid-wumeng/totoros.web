@@ -1,6 +1,6 @@
 <template lang="jade">
-  .relative-wiki
-    detail-box(v-if="relativeSubjects.length" title="本帖关联作品")
+  .relative-wiki(v-if="relativeSubjects.length")
+    detail-box(title="本帖关联作品")
       subject-card(v-for="subject in relativeSubjects", :key="subject.id", :subject="subject")
 </template>
 

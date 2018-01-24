@@ -3,7 +3,7 @@
     row.title-row.-between.-center
       .title {{ post.title }}
       .label 主题
-    floor.content(:user="post.user", :content="post.content", :date="post.createDate")
+    floor.content(:user="post.user", :content="post.content", :date="post.createDate", :show-edit="true" @update="update")
 </template>
 
 
@@ -16,6 +16,10 @@
       'post':
         type: Object
         required: true
+
+    methods:
+      update: ->
+        @dispatch('post-modal/show', {post: @post})
 </script>
 
 

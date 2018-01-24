@@ -59,7 +59,6 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
     padding: 30px 0;
     .wrap{
       .left{

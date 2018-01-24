@@ -1,7 +1,7 @@
 <template lang="jade">
   #app(:style="appStyle")
     c-header
-    .body
+    .body(:style="bodyStyle")
       keep-alive
         router-view(v-if="$route.meta.keepAlive && auth", :key="key")
       router-view(v-if="!$route.meta.keepAlive && auth")
@@ -71,6 +71,12 @@
         if(@$route?.meta?.bgColor)
           return{
             backgroundColor: 'rgba(250, 250, 250, 1)'
+          }
+
+      bodyStyle: ->
+        if(@$route?.meta?.bgImage)
+          return{
+            backgroundImage: 'url(http://cdn.totoros.cc/assets/big-bg)'
           }
 
     watch:
@@ -144,7 +150,7 @@
     .body{
       flex: auto;
       width: 100%;
-      padding-top: 64px;
+      margin-top: 64px;
     }
   }
 </style>

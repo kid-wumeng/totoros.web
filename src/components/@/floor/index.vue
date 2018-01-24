@@ -125,7 +125,7 @@
     }
     .markdown-area{
       margin-top: 17px;
-      padding-right: 20px;
+      padding-right: 40px;
       line-height: 22px;
       text-align: justify;
       font-size: 13px;

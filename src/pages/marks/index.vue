@@ -33,7 +33,7 @@
 
 <style lang="less" scoped>
   #marks{
-    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
+    background-image: url(http://cdn.totoros.cc/assets/big-bg);
     overflow: hidden;
     width: 100%;
   }

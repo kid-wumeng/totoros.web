@@ -42,7 +42,7 @@
 
 <style lang="less" scoped>
   #notices{
-    background-image: url(http://pattern8.com/images/pattern-thumbs/pattern8-pattern-21a.png);
+    background-image: url(http://cdn.totoros.cc/assets/big-bg);
     overflow: hidden;
     .wrap{
       margin: 36px auto;

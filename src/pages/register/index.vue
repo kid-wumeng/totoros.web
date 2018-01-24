@@ -1,6 +1,6 @@
 <template lang="jade">
   #register(v-if="checkined && !login")
-    qa(v-if="!canRegister" @can-register="canRegister = true")
+    qa(v-if="!canRegister" @qa-pass="qaPass")
     .wrap(v-if="canRegister")
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
@@ -18,6 +18,7 @@
       'qa':       require('./qa')
 
     data: ->
+      qaRightCount: 0
       canRegister: false
       email: ''
       pass:  ''
@@ -28,6 +29,10 @@
       title: '注册'
 
     methods:
+      qaPass: (qaRightCount) ->
+        @qaRightCount = qaRightCount
+        @canRegister = true
+
       submit: ->
         if @check()
           @register()
@@ -44,7 +49,7 @@
 
       register: ->
         try
-          tokenString = await @api.call('account.register', @email, @pass, @name)
+          tokenString = await @api.call('account.register', @email, @pass, @name, @qaRightCount)
           @done(tokenString)
         catch error
           @fail(error)

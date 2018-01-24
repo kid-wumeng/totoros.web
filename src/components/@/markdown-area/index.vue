@@ -144,6 +144,13 @@
       margin-bottom: 12px;
     }
 
+    h1{
+      font-size: 20px;
+    }
+    h2{
+      font-size: 17px;
+    }
+
     br{
       margin-bottom: 0 !important;
       height: 0 !important;

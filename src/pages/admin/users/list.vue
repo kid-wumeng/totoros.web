@@ -7,6 +7,7 @@
         .name  {{ user.name }}
         .motto {{ user.motto }}
         .date  {{ model.date.display(user.createDate) }}
+        .qa    {{ displayQA(user.qaRightCount) }}
 </template>
 
 
@@ -26,6 +27,9 @@
       init: ->
         result = await @api.call('user.getAll')
         @users = result.users
+
+      displayQA: (qaRightCount) ->
+        return if qaRightCount then "答对#{qaRightCount}题" else ''
 </script>
 
 
@@ -47,6 +51,9 @@
         width: 30%;
       }
       .date{
+        width: 15%;
+      }
+      .qa{
         width: 15%;
       }
     }

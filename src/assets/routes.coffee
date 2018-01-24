@@ -145,11 +145,10 @@ module.exports = [{
   component: -> System.import('pages/posts/:id')
   meta:
     keepAlive: true
-    bgColor: true
+    bgImage: true
     key:
       prefix: 'post-detail'
       params: ['id']
-
 },{
 
   # 维基

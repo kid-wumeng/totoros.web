@@ -1,7 +1,7 @@
 <template lang="jade">
   .qa
     .wrap
-      .desc 这里有30道单选题，答对其中任意12道，即可正式注册 ~
+      .desc 这里有30道单选题，你需要答对其中任意12题
       .question(v-for="(question, qIndex) in questions", :key="qIndex")
         .title {{ qIndex + 1 }}. {{ question.title }}
         row.options
@@ -157,7 +157,7 @@
             rightCount++
         if(rightCount >= 12)
           @notify('done', "你答对了 #{rightCount} 道题，请一定加入我们 ~")
-          @$emit('can-register')
+          @$emit('qa-pass', rightCount)
         else
           @notify('fail', "你只答对了 #{rightCount} 道题，请再看看")
 </script>
