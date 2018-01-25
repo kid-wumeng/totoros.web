@@ -4,7 +4,7 @@
     .item.-center(v-for="i in 7", :key="i", @click="click(i)")
       cdn-image.icon.-active(v-if="i <= score" path="assets/star-active?2017-11-01")
       cdn-image.icon(v-if="i > score" path="assets/star?2017-11-01")
-    .text(v-if="score") {{ score }} - {{ model.mark.displayScore(score) }}
+    .text {{ score }} - {{ model.mark.displayScore(score) }}
     cdn-image.preload(path="assets/star-active?2017-11-01")
 </template>
 

@@ -68,7 +68,7 @@
 
 <style lang="less" scoped>
   .panel{
-    @width: 340px;
+    @width: 440px;
     @padding: 48px;
     position: relative;
     top: -10px;

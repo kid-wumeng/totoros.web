@@ -36,13 +36,14 @@ exports.displayVerb = (type) =>
 
 exports.displayScore = (score) =>
   switch score
-    when 7  then '神'
-    when 6  then '杰作品质'
-    when 5  then '很不错'
-    when 4  then '还行'
-    when 3  then '平庸'
-    when 2  then '较差'
-    when 1  then '烂到极致'
+    when 7  then '巅峰'
+    when 6  then '杰作水准'
+    when 5  then '优秀'
+    when 4  then '还算有亮点'
+    when 3  then '一般般'
+    when 2  then '差'
+    when 1  then '让人反感'
+    else         '不评价这项'
 
 
 exports.validFavor = (type, item) =>

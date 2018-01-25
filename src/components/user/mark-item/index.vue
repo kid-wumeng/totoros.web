@@ -107,7 +107,7 @@
       flex: none;
       margin-top: 15px;
       margin-left: 13px;
-      line-height: 19px;
+      line-height: 20px;
       font-size: 13px;
       color: #707C88;
       max-width: 540px;
