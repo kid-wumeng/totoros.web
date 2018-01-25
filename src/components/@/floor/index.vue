@@ -77,17 +77,17 @@
       display: inline;
     }
     .user-name{
-      font-size: 13px;
+      font-size: 12px;
     }
     .date{
       margin-left: 8px;
-      font-size: 13px;
+      font-size: 12px;
       color: #A2AEBA;
     }
     .edit{
       margin-left: 8px;
       >*{
-        font-size: 13px;
+        font-size: 12px;
         color: #A2AEBA;
       }
       >.text{
@@ -101,7 +101,7 @@
       }
     }
     .display-floor{
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: #A2AEBA;
     }
@@ -125,7 +125,7 @@
     }
     .markdown-area{
       margin-top: 17px;
-      padding-right: 40px;
+      padding-right: 20px;
       text-align: justify;
     }
   }

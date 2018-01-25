@@ -73,5 +73,6 @@
 <style lang="less" scoped>
   .comment-list{
     background-color: #FFF;
+    border-top: 1px dashed #E4E8EB;
   }
 </style>

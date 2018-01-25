@@ -135,7 +135,7 @@
     word-break: break-all;
     line-height: 25px;
     font-size: 14px;
-    color: #262626;
+    color: #273340;
 
     *{
       font-size: inherit;
@@ -147,7 +147,7 @@
     }
 
     > p.empty{
-      height: 12px;
+      height: 16px;
     }
 
     h1{
