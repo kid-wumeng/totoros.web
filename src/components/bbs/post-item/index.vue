@@ -63,9 +63,9 @@
     }
     .title{
       align-self: flex-start;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 14px;
-      color: #273340;
+      color: #445669;
       cursor: pointer;
     }
     .comment-count{

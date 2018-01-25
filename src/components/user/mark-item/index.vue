@@ -110,6 +110,7 @@
       line-height: 19px;
       font-size: 13px;
       color: #707C88;
+      max-width: 540px;
     }
     .mark-score-simple{
       margin-top: 15px !important;
