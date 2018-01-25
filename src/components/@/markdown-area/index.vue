@@ -133,8 +133,8 @@
     box-sizing: border-box;
     width: 100%;
     word-break: break-all;
-    line-height: 22px;
-    font-size: 13px;
+    line-height: 25px;
+    font-size: 14px;
     color: #262626;
 
     *{

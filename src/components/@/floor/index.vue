@@ -127,7 +127,6 @@
       margin-top: 17px;
       padding-right: 40px;
       text-align: justify;
-      font-size: 13px;
     }
   }
   .floor.-active{

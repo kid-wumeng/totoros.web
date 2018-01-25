@@ -63,7 +63,7 @@
     }
     .title{
       align-self: flex-start;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 14px;
       color: #273340;
       cursor: pointer;
