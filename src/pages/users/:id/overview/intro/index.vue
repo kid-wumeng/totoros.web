@@ -21,7 +21,7 @@
     padding: 0 12px;
     border-left: 3px solid #ADD9CF;
     .markdown-area{
-      line-height: 19px;
+      line-height: 20px;
       text-align: justify;
       font-size: 13px;
       color: #A2AEBA;
