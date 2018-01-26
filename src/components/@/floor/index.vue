@@ -61,14 +61,14 @@
   .floor{
     box-sizing: border-box;
     width: 100%;
-    padding: 30px;
+    padding: 36px;
     align-items: stretch;
     >.right{
       flex: auto;
     }
     .user-face{
       width: 60px;
-      margin-right: 25px;
+      margin-right: 30px;
     }
     .desc{
       flex: none;
@@ -77,23 +77,23 @@
       display: inline;
     }
     .user-name{
-      font-size: 12px;
+      font-size: 13px;
     }
     .date{
       margin-left: 8px;
-      font-size: 12px;
+      font-size: 13px;
       color: #A2AEBA;
     }
     .edit{
       margin-left: 8px;
       >*{
-        font-size: 12px;
+        font-size: 13px;
         color: #A2AEBA;
       }
       >.text{
         margin: 0 2px;
         font-weight: 500;
-        color: #707C88;
+        color: lighted(#707C88, 10%);
         cursor: pointer;
         &:hover{
           text-decoration: underline;
@@ -101,7 +101,7 @@
       }
     }
     .display-floor{
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: #A2AEBA;
     }
@@ -125,7 +125,7 @@
     }
     .markdown-area{
       margin-top: 17px;
-      padding-right: 20px;
+      padding-right: 40px;
       text-align: justify;
     }
   }

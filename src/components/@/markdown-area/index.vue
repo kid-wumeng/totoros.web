@@ -133,9 +133,9 @@
     box-sizing: border-box;
     width: 100%;
     word-break: break-all;
-    line-height: 25px;
+    line-height: 24px;
     font-size: 14px;
-    color: #273340;
+    color: darken(#445669, 10%);
 
     *{
       font-size: inherit;
