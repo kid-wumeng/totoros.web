@@ -1,9 +1,12 @@
 <template lang="jade">
   .item
-    .head
-      user-name(:user="comment.user")
-      .hint {{ hint }}
-      .desc(:class="descClass", @click="clickReference") {{ desc }}
+    row.head.-center
+      .left
+        user-face(:user="comment.user")
+      .right
+        user-name(:user="comment.user")
+        .hint {{ hint }}
+        .desc(:class="descClass", @click="clickReference") {{ desc }}
     text-area.content(:text="content" @click.native="click")
     .date {{ model.date.display(notice.createDate) }}
 </template>
@@ -67,10 +70,18 @@
 
 <style lang="less" scoped>
   .item{
-    .head{
+    .left{
+      .user-face{
+        width: 23px;
+      }
+    }
+    .right{
       >*{
         display: inline;
-        font-size: 14px;
+        font-size: 13px;
+      }
+      .user-name{
+        margin-left: 8px;
       }
       .hint{
         margin-left: 7px;
