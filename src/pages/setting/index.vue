@@ -25,6 +25,10 @@
     created: ->
       @init()
 
+    watch: ->
+      'loginUser': ->
+        @init()
+
     methods:
       init: ->
         @dispatch('setting/init')
