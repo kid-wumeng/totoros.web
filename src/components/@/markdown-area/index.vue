@@ -177,7 +177,7 @@
 
     a:not(.card){
       display: inline;
-      font-weight: 600;
+      font-weight: 500;
       color: #3db8c1;
       &:hover{
         text-decoration: underline;

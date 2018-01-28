@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.action-bar.-right
+  row.action-bar.-right(v-if="login")
     c-button(@click="publish") 发布帖子
 </template>
 

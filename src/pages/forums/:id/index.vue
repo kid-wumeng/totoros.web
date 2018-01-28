@@ -26,6 +26,9 @@
       size:  50
       total: 0
 
+    metaInfo: ->
+      title: '硬核漫画'
+
     # watch:
     #   routeID:   -> @init()
     #   routePage: -> @init()

@@ -14,7 +14,7 @@
     props:
       'rows':
         type: Number
-        default: 20
+        default: 16
 
     computed:
       content: -> @state['input-content'].content
