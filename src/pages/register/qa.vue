@@ -1,7 +1,7 @@
 <template lang="jade">
   .qa
     .wrap
-      .desc 这里有30道单选题，你需要答对其中任意12题
+      .desc 这里有30道单选题，你需要答对其中任意8题
       .question(v-for="(question, qIndex) in questions", :key="qIndex")
         .title {{ qIndex + 1 }}. {{ question.title }}
         row.options
@@ -155,7 +155,7 @@
         for question, i in @questions
           if(@answers[i] is question.right)
             rightCount++
-        if(rightCount >= 12)
+        if(rightCount >= 8)
           @notify('done', "你答对了 #{rightCount} 道题，请一定加入我们 ~")
           @$emit('qa-pass', rightCount)
         else
