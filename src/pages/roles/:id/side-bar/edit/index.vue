@@ -1,5 +1,5 @@
 <template lang="jade">
-  detail-box.edit.col
+  detail-box.edit.col(v-if="login")
     .wrap
       .edit-action.-gray(v-show="path === ''" @click="editFace") 编辑：头像
       .edit-action.-gray(v-show="path === ''" @click="editBase") 编辑：基本档案

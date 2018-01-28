@@ -1,5 +1,5 @@
 <template lang="jade">
-  detail-box.edit.col(v-show="show")
+  detail-box.edit.col(v-if="show")
     .wrap
       .edit-action(v-show="path === ''" @click="editFace")      编辑：作品封面
       .edit-action(v-show="path === ''" @click="editBase")      编辑：基本档案
@@ -37,6 +37,8 @@
     computed:
       path: -> @$route.meta.path
       show: ->
+        if(!@login)
+          return false
         switch @path
           when ''         then true
           when 'episodes' then true
