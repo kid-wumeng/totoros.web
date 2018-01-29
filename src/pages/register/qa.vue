@@ -6,6 +6,9 @@
         .title {{ qIndex + 1 }}. {{ question.title }}
         row.options
           .option(v-for="(option, oIndex) in question.options", :key="oIndex", :class="{'-active': isActive(qIndex, oIndex)}" @click="select(qIndex, oIndex)") {{ option }}
+      .hint
+        span 问题的答案，可以加官方Q群获取：
+        span.qq 699627090
       c-button(@click="submit") 提交、正式开始注册
 </template>
 
@@ -203,8 +206,17 @@
         }
       }
     }
+    .hint{
+      margin-top: 40px;
+      color: #6C7A89;
+      span{
+        font-weight: 600;
+        color: #2ABB9B;
+      }
+    }
     .button{
-      margin-top: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
   }
 </style>
