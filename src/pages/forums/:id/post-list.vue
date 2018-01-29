@@ -19,7 +19,7 @@
 <style lang="less" scoped>
   .post-list{
     @padding: 6px;
-    margin-top: 36px;
+    margin-top: 30px;
     border-top: 1px dashed #EEE;
     box-sizing: border-box;
     .post-item{
