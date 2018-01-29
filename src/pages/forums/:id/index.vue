@@ -69,6 +69,7 @@
       overflow: hidden;
       margin: 0 auto;
       padding-top: 30px;
+      padding-bottom: 30px;
       width: 800px;
       .page-bar{
         margin-top: 20px;
