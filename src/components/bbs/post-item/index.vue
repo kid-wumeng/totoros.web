@@ -65,7 +65,7 @@
       align-self: flex-start;
       font-weight: 400;
       font-size: 13px;
-      color: #333;
+      color: darken(#445669, 5%);
       cursor: pointer;
     }
     .comment-count{
