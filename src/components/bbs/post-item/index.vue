@@ -53,7 +53,7 @@
       }
     }
     .user-face{
-      width: 36px;
+      width: 24px;
       margin-right: 12px;
     }
     .top{
@@ -64,8 +64,8 @@
     .title{
       align-self: flex-start;
       font-weight: 500;
-      font-size: 14px;
-      color: #778087;
+      font-size: 13px;
+      color: #445669;
       cursor: pointer;
     }
     .comment-count{
