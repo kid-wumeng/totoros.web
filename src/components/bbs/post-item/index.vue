@@ -63,7 +63,7 @@
     }
     .title{
       align-self: flex-start;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 14px;
       color: darken(#445669, 5%);
       cursor: pointer;
