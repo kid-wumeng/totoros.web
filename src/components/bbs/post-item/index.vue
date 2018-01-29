@@ -53,7 +53,7 @@
       }
     }
     .user-face{
-      width: 30px;
+      width: 28px;
       margin-right: 12px;
     }
     .top{
