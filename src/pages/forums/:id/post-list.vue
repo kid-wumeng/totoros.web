@@ -18,7 +18,7 @@
 
 <style lang="less" scoped>
   .post-list{
-    @padding: 10px;
+    @padding: 8px;
     margin-top: 30px;
     border-top: 1px dashed #EEE;
     box-sizing: border-box;
