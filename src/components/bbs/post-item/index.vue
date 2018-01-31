@@ -6,7 +6,7 @@
       row.right.-between.-center
         div
           span.top(v-if="top") [置顶]
-          span.title.-noSmoothing {{ title }}
+          span.title {{ title }}
           span.comment-count(v-if="commentCount") +{{ commentCount }}
         row.last.-center(v-if="lastCommentDate")
           .hint Last by
@@ -63,7 +63,7 @@
     }
     .title{
       align-self: flex-start;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 13px;
       color: darken(#445669, 5%);
       cursor: pointer;
