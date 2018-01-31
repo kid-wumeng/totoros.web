@@ -6,7 +6,7 @@
       row.right.-between.-center
         div
           span.top(v-if="top") [置顶]
-          span.title {{ title }}
+          span.title.-noSmoothing {{ title }}
           span.comment-count(v-if="commentCount") +{{ commentCount }}
         row.last.-center(v-if="lastCommentDate")
           .hint Last by
@@ -53,7 +53,7 @@
       }
     }
     .user-face{
-      width: 36px;
+      width: 30px;
       margin-right: 12px;
     }
     .top{
@@ -64,7 +64,7 @@
     .title{
       align-self: flex-start;
       font-weight: 400;
-      font-size: 13px;
+      font-size: 14px;
       color: darken(#445669, 5%);
       cursor: pointer;
     }
