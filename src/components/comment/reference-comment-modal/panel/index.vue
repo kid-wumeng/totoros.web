@@ -22,8 +22,8 @@
       content:          -> @state['input-content'].content
       referenceContent: ->
         content = @referenceComment.content
-        if(content.length > 100)
-          return content.slice(0, 100) + '...'
+        if(content.length > 500)
+          return content.slice(0, 500) + '...'
         else
           return content
 

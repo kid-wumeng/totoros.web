@@ -1,7 +1,7 @@
 <template lang="jade">
   #register(v-if="checkined && !login")
-    qa(v-if="!canRegister" @qa-pass="qaPass")
-    .wrap(v-else)
+    //- qa(v-if="!canRegister" @qa-pass="qaPass")
+    .wrap
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
       c-input(v-model="pass2" placeholder="密码确认" type="password")

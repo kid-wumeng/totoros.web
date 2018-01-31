@@ -109,6 +109,7 @@
     breaks: true
   })
 
+
   module.exports =
     components:
       'c-button': require('components/@/button')
