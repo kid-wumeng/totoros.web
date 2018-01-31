@@ -2,7 +2,7 @@
   router-link.logo(to="/")
     .wrap
       cdn-image(path="assets/logo?2017-11-09")
-      .version 硬核动漫 0.7.2
+      .version 硬核系ACG
 </template>
 
 
