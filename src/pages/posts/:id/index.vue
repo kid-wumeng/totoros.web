@@ -38,7 +38,8 @@
       }]
 
     created: ->
-      @listen('UPDATE_POST', @updatePost)
+      @listen('UPDATE_POST',       @updatePost)
+      @listen('UPDATE_POST_FORUM', @updatePostForum)
 
     activated: ->
       @init()
@@ -48,6 +49,10 @@
         @post = await api.call('post.get', @routeID)
 
       updatePost: (post) ->
+        if isSame(@post, post)
+          @post = post
+
+      updatePostForum: (post) ->
         if isSame(@post, post)
           @post = post
 </script>
@@ -63,7 +68,7 @@
     .wrap{
       .left{
         box-sizing: border-box;
-        width: 750px;
+        width: 840px;
         flex: auto;
         border-radius: 2px;
         overflow: hidden;
@@ -72,7 +77,7 @@
         flex: none;
         margin-left: 12px;
         box-sizing: border-box;
-        width: 280px;
+        width: 240px;
         background-color: #FFF;
         border-radius: 2px;
         overflow: hidden;

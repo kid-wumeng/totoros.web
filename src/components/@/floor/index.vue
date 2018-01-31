@@ -1,20 +1,21 @@
 <template lang="jade">
   row.floor(:class="floorClass")
     .left
-      user-face(:user="user")
+      user-face(:user="user", :radius="0")
     .right
       row.-between
         .desc
           user-name(:user="user")
           .date {{ model.date.display(date) }}
+        row.desc-right.-center
           .edit(v-if="showEdit && login")
             span (
             span.text(v-if="isMe(user)" @click="clickUpdate") 修改
-            span.text(v-else @click="clickReference") 回复
+            span.text(v-else @click="clickReference") 引用回复
             span )
-        .display-floor {{ floor }}
+          //- .display-floor(v-if="floor") {{ floor }}
       .reference(v-if="reference")
-        span.user @{{ reference.user.name }}
+        router-link.user(:to="getUserPath(reference.user)") @{{ reference.user.name }}
         span.content {{ reference.content }}
       markdown-area(:content="content")
 </template>
@@ -61,39 +62,38 @@
   .floor{
     box-sizing: border-box;
     width: 100%;
-    padding: 36px;
+    padding: 30px;
     align-items: stretch;
     >.right{
       flex: auto;
     }
     .user-face{
-      width: 60px;
-      margin-right: 30px;
+      width: 100px;
+      margin-right: 27px;
     }
     .desc{
       flex: none;
     }
     .desc > *{
       display: inline;
+      vertical-align: middle;
     }
     .user-name{
-      font-size: 13px;
+      font-size: 14px;
     }
     .date{
-      margin-left: 8px;
-      font-size: 13px;
-      color: #A2AEBA;
+      margin-left: 12px;
+      font-size: 12px;
+      color: #CCC;
     }
     .edit{
-      margin-left: 8px;
       >*{
         font-size: 13px;
-        color: #A2AEBA;
+        color: lighten(#DB5A6B, 15%);
       }
       >.text{
         margin: 0 2px;
         font-weight: 500;
-        color: lighted(#707C88, 10%);
         cursor: pointer;
         &:hover{
           text-decoration: underline;
@@ -101,30 +101,39 @@
       }
     }
     .display-floor{
-      font-size: 13px;
+      margin-left: 12px;
+      font-size: 14px;
       font-weight: 600;
-      color: #A2AEBA;
+      color: #CCC;
     }
     .reference{
-      width: 80%;
       margin-top: 30px;
       margin-bottom: 30px;
-      padding: 0 12px;
+      margin-left: 17px;
+      margin-right: 40px;
+      padding-left: 12px;
       border-left: 3px solid #ADD9CF;
-      line-height: 19px;
+      line-height: 24px;
       text-align: justify;
       .user{
+        display: inline;
         margin-right: 6px;
-        font-weight: 600;
-        font-size: 12px;
+        font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #445669;
+        &:hover{
+          text-decoration: underline;
+        }
       }
       .content{
-        font-size: 13px;
-        color: #707C88;
+        font-size: 14px;
+        color: #A2AEBA;
       }
     }
     .markdown-area{
       margin-top: 17px;
+      padding-left: 14px;
       padding-right: 40px;
       text-align: justify;
     }

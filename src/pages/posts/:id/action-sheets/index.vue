@@ -1,15 +1,19 @@
 <template lang="jade">
   .action-sheets(v-if="admin")
-    detail-box(title="操作")
+    detail-box(title="管理")
       .wrap
-        .action(v-if="admin", @click="top") ADMIN：{{ displayTop }}
+        .action(@click="top")  {{ displayTop }}
+        .action(@click="move") 移动到其它版块
+
+    move-post-modal
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'detail-box': require('components/bbs/detail-box')
+      'detail-box':      require('components/bbs/detail-box')
+      'move-post-modal': require('components/bbs/move-post-modal')
 
     props:
       'post':
@@ -24,6 +28,9 @@
         await @api.call('post.setTop', @post.id, !@post.top)
         @$set(@post, 'top', !@post.top)
         @notify('done', '操作成功')
+
+      move: ->
+        @dispatch('move-post-modal/show', @post)
 </script>
 
 
@@ -32,7 +39,7 @@
     .wrap{
       padding: 8px;
       .action{
-        padding: 6px 8px;
+        padding: 7px 8px;
         text-align: left;
         font-weight: 500;
         font-size: 13px;

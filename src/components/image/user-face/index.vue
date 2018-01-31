@@ -1,6 +1,6 @@
 <template lang="jade">
   a.user-face(:href="getUserPath(user)" @click.prevent="click")
-    cdn-image(:path="path", default-path="assets/default-user-face?2018-01-11", square, :circle="circle", :radius="3" cover)
+    cdn-image(:path="path", default-path="assets/default-user-face?2018-01-11", square, :circle="circle", :radius="radius" cover)
 </template>
 
 
@@ -16,6 +16,9 @@
       'circle':
         type: Boolean
         default: false
+      'radius':
+        type: Number
+        default: 3
       'prevent':
         type: Boolean
         default: false

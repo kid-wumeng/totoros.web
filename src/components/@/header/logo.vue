@@ -1,8 +1,8 @@
 <template lang="jade">
   router-link.logo(to="/")
     .wrap
-      cdn-image(path="assets/logo?2017-11-09")
-      .version 硬核漫画 0.7.2
+      cdn-image(path="assets/logo?2018-02-01")
+      //- .version 硬核漫画 0.7.2
 </template>
 
 
@@ -15,9 +15,9 @@
 
 <style lang="less" scoped>
   .logo{
-    @width: 76px;
+    @width: 100px;
     position: relative;
-    top: -4px;
+    top: -1px;
     height: 64px;
     line-height: 64px;
     cursor: pointer;
@@ -26,8 +26,7 @@
     align-items: center;
     .cdn-image{
       width: @width;
-      height: @width / 5.5125;
-      opacity: 1;
+      height: @width / 7.4875;
     }
     .version{
       position: absolute;

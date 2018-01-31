@@ -4,7 +4,23 @@ module.exports = [{
   path: '/'
   meta:
     keepAlive: true
-  component: -> System.import('pages/forums/:id')
+    key:
+      prefix: 'forum-detail'
+      params: ['id']
+    hideLine: true
+  component: -> System.import('pages/forums')
+
+},{
+
+  # 讨论版
+  path: '/forums/:id'
+  meta:
+    keepAlive: true
+    key:
+      prefix: 'forum-detail'
+      params: ['id']
+    hideLine: true
+  component: -> System.import('pages/forums')
 
 },{
 
@@ -124,18 +140,6 @@ module.exports = [{
         prefix: 'user-detail'
         params: ['id']
     component: -> System.import('pages/users/:id/fans')
-  }]
-
-},{
-
-  # 讨论版
-  path: '/forums'
-  component: -> System.import('pages/forums')
-  children: [{
-    path: ':id'
-    meta:
-      keepAlive: true
-    component: -> System.import('pages/forums/:id')
   }]
 
 },{

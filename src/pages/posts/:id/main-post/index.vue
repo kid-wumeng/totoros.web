@@ -1,8 +1,12 @@
 <template lang="jade">
   .main-post(v-if="routePage === 1")
     row.title-row.-between.-center
-      .title {{ post.title }}
-      .label 主题
+      .left
+        router-link.forum-name(:to="getForumPath(post.forum)") {{ post.forum.name }}
+        .sep.icon.fa-angle-right
+        .title {{ post.title }}
+      .right
+        .label 主题
     floor.content(:user="post.user", :content="post.content", :date="post.createDate", :show-edit="true" @update="update")
 </template>
 
@@ -30,7 +34,29 @@
     overflow: hidden;
     .title-row{
       box-sizing: border-box;
-      padding: 30px 30px 0;
+      padding: 40px 30px 10px;
+      .left > *{
+        display: inline;
+        line-height: 25px;
+      }
+      .right{
+        flex: none;
+        margin-left: 60px;
+      }
+    }
+    .forum-name{
+      font-weight: 600;
+      font-size: 15px;
+      color: #A2AEBA;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .sep{
+      margin: 0 10px;
+      font-size: 15px;
+      color: #A2AEBA;
     }
     .title{
       font-weight: 600;

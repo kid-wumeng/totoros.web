@@ -31,6 +31,7 @@ module.exports = new Vuex.Store({
     'edit-subject-staffs-modal':    require('./edit-subject-staffs-modal')
     'input-content':                require('./input-content')
     'mark-modal':                   require('./mark-modal')
+    'move-post-modal':              require('./move-post-modal')
     'notify':                       require('./notify')
     'post-detail':                  require('./post-detail')
     'post-list':                    require('./post-list')

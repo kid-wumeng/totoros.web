@@ -120,7 +120,8 @@ Vue.use({
     Vue.prototype.toforumPage             = methods.toforumPage
     Vue.prototype.toPostPage              = methods.toPostPage
     Vue.prototype.toPicturePage           = methods.toPicturePage
-    Vue.prototype.toforumPage             = methods.toforumPage
+    Vue.prototype.toForumPage             = methods.toForumPage
+    Vue.prototype.getForumPath            = methods.getForumPath
 
     Vue.prototype.getUserPath         = methods.getUserPath
     Vue.prototype.getPostPath         = methods.getPostPath

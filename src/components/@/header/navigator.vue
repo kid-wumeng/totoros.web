@@ -2,7 +2,7 @@
   .navigator
     router-link.item(to="/", :class="{'-active': $route.path === '/'}") 讨论版
     a.item(@click.prevent="clickMarks", to="/marks", :class="{'-active': $route.path === '/marks'}") MARKS
-    router-link.item(v-if="admin" to="/wiki", :class="{'-active': $route.path === '/wiki'}") 维基
+    router-link.item(v-if="admin" to="/wiki", :class="{'-active': $route.path === '/wiki'}") 维基计划
 </template>
 
 

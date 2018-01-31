@@ -8,6 +8,7 @@
         .actions
           c-button(@click="update(forum)") 修改
           c-button(@click="uploadFace(forum)") 上传FACE
+          c-button(@click="uploadBanner(forum)") 上传BANNER
 </template>
 
 
@@ -26,6 +27,9 @@
 
       uploadFace: (forum) ->
         @dispatch('forum-face-modal/show', forum.id)
+
+      uploadBanner: (forum) ->
+        @dispatch('forum-banner-modal/show', forum.id)
 </script>
 
 
@@ -36,7 +40,7 @@
         width: 15%;
       }
       .name{
-        width: 40%;
+        width: 20%;
       }
       .open{
         width: 15%;

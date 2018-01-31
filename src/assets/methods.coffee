@@ -161,8 +161,12 @@ exports.replaceOrganizationPage = (organization) ->
   @$router.replace("/organizations/#{organization.id}")
 
 
-exports.toforumPage = (forum) ->
+exports.toForumPage = (forum) ->
   @$router.push("/forums/#{forum.id}")
+
+
+exports.getForumPath = (forum) ->
+  return "/forums/#{forum.id}"
 
 
 exports.toPostPage = (post, query={}) ->

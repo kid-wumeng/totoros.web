@@ -1,5 +1,5 @@
 <template lang="jade">
-  .header
+  .header(:class="headerClass")
     row.-between.-center
       row.-center
         logo
@@ -21,6 +21,10 @@
       'admin':     require('./admin')
       'reminder':  require('./reminder')
       'account':   require('./account')
+
+    computed:
+      headerClass: ->
+        '-hideLine': @$route.meta?.hideLine
 </script>
 
 
@@ -38,5 +42,8 @@
         height: 64px;
       }
     }
+  }
+  .header.-hideLine{
+    border-bottom-color: white;
   }
 </style>

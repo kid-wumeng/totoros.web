@@ -53,26 +53,27 @@
       }
     }
     .user-face{
-      width: 30px;
+      width: 36px;
       margin-right: 12px;
     }
     .top{
       margin-right: 9px;
-      font-size: 12px;
-      color: #A2AEBA;
+      font-weight: 600;
+      font-size: 14px;
+      color: lighten(#A2AEBA, 10%);
     }
     .title{
       align-self: flex-start;
-      font-weight: 500;
-      font-size: 13px;
+      font-weight: 600;
+      font-size: 14px;
       color: darken(#445669, 5%);
       cursor: pointer;
     }
     .comment-count{
       margin-left: 6px;
-      font-size: 12px;
-      font-weight: 500;
-      color: #C3272B;
+      font-size: 13px;
+      font-weight: 600;
+      color: #d9534f;
       opacity: 0.6;
       cursor: pointer;
     }
