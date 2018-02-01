@@ -1,5 +1,5 @@
 <template lang="jade">
-  row.action-bar.-between.-center(v-if="login")
+  row.action-bar.-between.-center
     .left
       c-button(@click="publish") 发布帖子
     .right(v-if="managers.length")
@@ -26,9 +26,10 @@
 
     methods:
       publish: ->
-        @dispatch('post-modal/show', {
-          forum: @forum
-        })
+        if(@login)
+          @dispatch('post-modal/show', {forum: @forum})
+        else
+          @$router.push('/register')
 </script>
 
 

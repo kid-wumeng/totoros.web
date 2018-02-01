@@ -22,6 +22,6 @@
 
 <style lang="less" scoped>
   .forum-banner{
-    height: 200px;
+    height: 230px;
   }
 </style>

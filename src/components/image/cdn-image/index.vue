@@ -28,9 +28,6 @@
       'cover':
         type: Boolean
         default: false
-      'cover':
-        type: Boolean
-        default: false
 
     data: ->
       width: 0

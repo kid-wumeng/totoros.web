@@ -41,7 +41,7 @@
         line-height: 48px;
         text-align: center;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 600;
         color: #A2AEBA;
       }
       >.item.-active{

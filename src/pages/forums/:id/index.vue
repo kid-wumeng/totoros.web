@@ -60,7 +60,7 @@
     margin: 0 auto;
     width: 800px;
     .page-bar{
-      margin-top: 28px;
+      margin-top: 20px;
     }
   }
 </style>

@@ -27,5 +27,6 @@
 
 <style lang="less" scoped>
   #forums{
+    padding-bottom: 100px;
   }
 </style>

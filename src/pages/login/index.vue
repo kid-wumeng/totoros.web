@@ -1,11 +1,12 @@
 <template lang="jade">
   #login(v-if="checkined && !login")
     .wrap
+      h1 龙猫 ACG 社区
       row.-right
         .forget(@click="$router.push('/reset-pass')") 忘记密码？
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码" type="password")
-      c-button(@click="submit") 登录 totoros
+      c-button(@click="submit") 登录
 </template>
 
 
@@ -49,7 +50,12 @@
       top: 50%;
       width: 260px;
       margin-left: -130px;
-      margin-top: -76px;
+      margin-top: -96px;
+      h1{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 36px;
+      }
       .forget{
         display: flex;
         justify-content: flex-end;

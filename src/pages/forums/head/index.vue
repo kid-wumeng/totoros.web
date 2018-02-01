@@ -22,7 +22,7 @@
 <style lang="less">
   .head{
     .tab-bar-wrap{
-      margin-bottom: 28px;
+      margin-bottom: 20px;
       border-bottom: 1px solid lighten(#E4E8EB, 4%);
     }
   }

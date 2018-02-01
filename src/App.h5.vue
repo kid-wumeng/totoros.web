@@ -17,7 +17,7 @@
 
     metaInfo: ->
       titleTemplate: (title) ->
-        if title then "#{title} - totoros" else 'totoros'
+        if title then "#{title} - 龙猫 ACG 社区" else '龙猫 ACG 社区'
 
     computed:
       key: ->

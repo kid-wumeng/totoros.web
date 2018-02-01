@@ -2,11 +2,12 @@
   #register(v-if="checkined && !login")
     //- qa(v-if="!canRegister" @qa-pass="qaPass")
     .wrap
+      h1 龙猫 ACG 社区
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
       c-input(v-model="pass2" placeholder="密码确认" type="password")
       c-input(v-model="name"  placeholder="昵称")
-      c-button(@click="submit") 加入 totoros
+      c-button(@click="submit") 加入我们
 </template>
 
 
@@ -75,7 +76,12 @@
       top: 50%;
       width: 260px;
       margin-left: -130px;
-      margin-top: -108px;
+      margin-top: -136px;
+      h1{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 36px;
+      }
       .input{
         margin-bottom: 12px;
       }

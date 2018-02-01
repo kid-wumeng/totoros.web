@@ -32,7 +32,7 @@
       line-height: 64px;
       padding: 0 16px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       color: #A2AEBA;
       cursor: pointer;
       user-select: none;
