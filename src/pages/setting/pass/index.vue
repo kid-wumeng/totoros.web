@@ -25,6 +25,9 @@
       newPass:  ''
       newPass2: ''
 
+    metaInfo: ->
+      title: '密码'
+
     methods:
       submit: ->
         if @check()
@@ -44,7 +47,7 @@
           @notify('done', '修改成功')
         catch error
           @notify('fail', error.message, 3000)
-          
+
         @oldPass  = ''
         @newPass  = ''
         @newPass2 = ''

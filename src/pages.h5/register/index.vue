@@ -1,8 +1,8 @@
 <template lang="jade">
   #register(v-if="checkined && !login")
-    //- qa(v-if="!canRegister" @qa-pass="qaPass")
     .wrap
       h1 龙猫 ACG 社区
+      .pc 电脑端网址：http://totoros.cc
       c-input(v-model="email" placeholder="Email")
       c-input(v-model="pass"  placeholder="密码"     type="password")
       c-input(v-model="pass2" placeholder="密码确认" type="password")
@@ -14,9 +14,8 @@
 <script lang="coffee">
   module.exports =
     components:
-      'c-input':  require('components/@/input')
-      'c-button': require('components/@/button')
-      'qa':       require('./qa')
+      'c-input':  require('components.h5/input')
+      'c-button': require('components.h5/button')
 
     data: ->
       qaRightCount: 0
@@ -71,21 +70,25 @@
 <style lang="less" scoped>
   #register{
     .wrap{
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      width: 260px;
-      margin-left: -130px;
-      margin-top: -136px;
+      margin: 0 auto;
+      margin-top: 60px;
+      width: 80%;
       h1{
         text-align: center;
-        font-size: 24px;
-        margin-bottom: 36px;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .pc{
+        text-align: center;
+        font-size: 13px;
+        color: #707C88;
+        margin-bottom: 40px;
       }
       .input{
         margin-bottom: 12px;
       }
       .button{
+        margin-top: 6px;
         display: block;
       }
     }

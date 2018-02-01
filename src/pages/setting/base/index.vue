@@ -26,6 +26,9 @@
       motto: @state['setting'].user.motto ? ''
       intro: @state['setting'].user.intro ? ''
 
+    metaInfo: ->
+      title: '个人档案'
+
     methods:
       submit: ->
         if @check()

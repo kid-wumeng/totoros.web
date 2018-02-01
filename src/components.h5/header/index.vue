@@ -5,6 +5,7 @@
     row.right.-right.-center
       .item(:class="{'-active': activeBBS()}" @click="$router.push('/')") 讨论版
       .item(:class="{'-active': $route.path === '/marks'}" @click="$router.push('/marks')") MARKS
+      user-face(v-if="login", :user="loginUser" circle)
 </template>
 
 
@@ -12,6 +13,7 @@
   module.exports =
     components:
       'cdn-image': require('components/image/cdn-image')
+      'user-face': require('components/image/user-face')
 
     methods:
       activeBBS: ->
@@ -32,11 +34,13 @@
         @width: 96px;
         width: @width;
         height: @width / 7.4875;
+        position: relative;
+        top: -1px;
       }
     }
     >.right{
       >.item{
-        padding: 0 16px;
+        padding: 0 14px;
         height: 48px;
         line-height: 48px;
         text-align: center;
@@ -46,6 +50,10 @@
       }
       >.item.-active{
         color: #445669;
+      }
+      >.user-face{
+        margin-left: 14px;
+        width: 26px;
       }
     }
   }

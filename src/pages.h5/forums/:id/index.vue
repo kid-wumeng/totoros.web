@@ -1,6 +1,7 @@
 <template lang="jade">
   #forums-detail
     .wrap
+      action-bar(:forum="forum")
       post-list(:posts="posts")
       more-button(:has-more-page="model.assets.hasMorePage(page, size, total)", @click="$emit('more')")
 </template>
@@ -9,8 +10,9 @@
 <script lang="coffee">
   module.exports =
     components:
-      'post-list':   require('./post-list')
       'more-button': require('components.h5/more-button')
+      'action-bar':  require('./action-bar')
+      'post-list':   require('./post-list')
 
     props:
       'forum':

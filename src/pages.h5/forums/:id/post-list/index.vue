@@ -20,9 +20,8 @@
   .post-list{
     box-sizing: border-box;
     .item{
-      margin-top: 6px;
+      margin-top: 4px;
       &:first-child{
-        margin-top: 0;
       }
     }
   }

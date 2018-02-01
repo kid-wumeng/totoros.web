@@ -53,7 +53,7 @@
       .user-face{
         display: inline-block;
         margin-right: 9px;
-        width: 20px;
+        width: 24px;
         vertical-align: middle;
       }
       .top{

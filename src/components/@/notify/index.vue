@@ -1,6 +1,6 @@
 <template lang="jade">
   c-animate(enter="fadeInDown" leave="fadeOutUp")
-    .notify(v-show="state.notify.open")
+    .notify(v-show="state.notify.open", :class="rootClass")
       .row
         .icon.-center(:class="typeClass", :style="typeStyle")
         .message {{ state.notify.message }}
@@ -12,7 +12,15 @@
     components:
       'c-animate': require('components/@/animate')
 
+    props:
+      'h5':
+        type: Boolean
+        default: false
+
     computed:
+      rootClass: ->
+        '-h5': @h5
+
       typeClass: ->
         'fa-check':       @state.notify.type is 'done'
         'fa-exclamation': @state.notify.type is 'warn'
@@ -52,6 +60,18 @@
         padding: 0 12px;
         font-weight: 500;
         color: #8391a5;
+      }
+    }
+  }
+  .notify.-h5{
+    top: 0;
+    width: 100%;
+    .row{
+      border-radius: 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      .icon{
+        width: 48px;
+        height: 48px;
       }
     }
   }

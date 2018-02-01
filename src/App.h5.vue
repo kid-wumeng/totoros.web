@@ -1,19 +1,22 @@
 <template lang="jade">
   #app(:style="appStyle")
     c-header
-    //- pc-hint
+    account
     .body
       keep-alive
         router-view(v-if="$route.meta.keepAlive", :key="key")
       router-view(v-if="!$route.meta.keepAlive")
+
+    notify(:h5='true')
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'pc-hint':  require('components.h5/pc-hint')
       'c-header': require('components.h5/header')
+      'account':  require('components.h5/account')
+      'notify':   require('components/@/notify')
 
     metaInfo: ->
       titleTemplate: (title) ->

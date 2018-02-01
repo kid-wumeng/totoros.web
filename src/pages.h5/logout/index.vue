@@ -1,5 +1,5 @@
 <template lang="jade">
-  #setting-logout
+  #logout(v-if="login")
     c-button.-gray(@click="logout") 退出登录
 </template>
 
@@ -22,16 +22,10 @@
 
 
 <style lang="less" scoped>
-  #setting-logout{
-    align-items: stretch;
-    >*{
-      margin-bottom: 16px;
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
-    >.button{
-      align-self: flex-end;
-    }
+  #logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
   }
 </style>

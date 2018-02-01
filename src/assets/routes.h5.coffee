@@ -9,6 +9,30 @@ module.exports = [{
 
 },{
 
+  # 注册
+  path: '/register'
+  meta:
+    login: false
+  component: -> System.import('pages.h5/register')
+
+},{
+
+  # 登录
+  path: '/login'
+  meta:
+    login: false
+  component: -> System.import('pages.h5/login')
+
+},{
+
+  # 退出登录
+  path: '/logout'
+  meta:
+    login: true
+  component: -> System.import('pages.h5/logout')
+
+},{
+
   # 贴子
   path: '/posts/:id'
   component: -> System.import('pages.h5/posts/:id')

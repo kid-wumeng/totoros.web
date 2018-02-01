@@ -66,8 +66,8 @@
     top: 1px;
     .tab{
       padding: 12px 28px;
-      font-weight: 500;
-      border-bottom: 1px dotted transparent;
+      font-weight: 600;
+      border-bottom: 2px dotted transparent;
       .label{
         font-size: 14px;
         color: #A2AEBA;
@@ -83,11 +83,11 @@
       }
     }
     .tab:not(.-active):hover{
-      border-bottom: 1px solid #445669;
+      border-bottom: 2px solid #445669;
     }
     .tab.-active{
       font-weight: 600;
-      border-bottom: 1px solid #445669;
+      border-bottom: 2px solid #445669;
       .label{
         color: #445669;
       }

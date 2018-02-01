@@ -23,7 +23,6 @@
 
 <style lang="less" scoped>
   .head{
-    position: relative;
     .user-banner{
       height: 100px;
     }
