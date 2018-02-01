@@ -6,7 +6,8 @@
         comment-list(:post="post")
         comment-form(:post="post")
       .right
-        action-sheets(:post="post")
+        admin-action-sheets(v-if="admin", :post="post")
+        manager-action-sheets(v-if="admin || isManager(post.forum)", :post="post")
         relative-wiki(:post="post")
 
     post-modal
@@ -18,13 +19,14 @@
 <script lang="coffee">
   module.exports =
     components:
-      'main-post':     require('./main-post')
-      'comment-list':  require('./comment-list')
-      'comment-form':  require('./comment-form')
-      'action-sheets': require('./action-sheets')
-      'relative-wiki': require('./relative-wiki')
-      'post-modal':    require('components/bbs/post-modal')
-      'comment-modal': require('components/@/comment-modal')
+      'main-post':               require('./main-post')
+      'comment-list':            require('./comment-list')
+      'comment-form':            require('./comment-form')
+      'admin-action-sheets':     require('./admin-action-sheets')
+      'manager-action-sheets':   require('./manager-action-sheets')
+      'relative-wiki':           require('./relative-wiki')
+      'post-modal':              require('components/bbs/post-modal')
+      'comment-modal':           require('components/@/comment-modal')
       'reference-comment-modal': require('components/comment/reference-comment-modal')
 
     data: ->

@@ -14,6 +14,14 @@ exports.isMe = (user) ->
   return @isSame(user, @loginUser)
 
 
+exports.isManager = (forum) ->
+  if(@loginUser)
+    if Array.isArray(@loginUser.manageForums)
+      if (@loginUser.manageForums.some (f) -> f.id is forum.id)
+        return true
+  return false
+
+
 exports.updateItem = (models, update_model) ->
   for model, i in models
     if isSame(model, update_model)

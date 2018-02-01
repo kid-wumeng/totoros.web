@@ -15,6 +15,7 @@ module.exports = new Vuex.Store({
     'comment-modal':                require('./comment-modal')
     'forum-banner-modal':           require('./forum-banner-modal')
     'forum-face-modal':             require('./forum-face-modal')
+    'forum-managers-modal':         require('./forum-managers-modal')
     'confirm':                      require('./confirm')
     'create-forum-modal':           require('./create-forum-modal')
     'create-organization-modal':    require('./create-organization-modal')

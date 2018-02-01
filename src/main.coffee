@@ -96,6 +96,7 @@ Vue.use({
     Vue.prototype.listen     = methods.listen
     Vue.prototype.isSame     = methods.isSame
     Vue.prototype.isMe       = methods.isMe
+    Vue.prototype.isManager  = methods.isManager
     Vue.prototype.updateItem = methods.updateItem
     Vue.prototype.removeItem = methods.removeItem
     Vue.prototype.inc        = methods.inc

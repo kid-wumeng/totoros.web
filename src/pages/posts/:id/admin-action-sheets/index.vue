@@ -1,9 +1,8 @@
 <template lang="jade">
-  .action-sheets(v-if="admin")
-    detail-box(title="版主管理")
+  .admin-action-sheets
+    detail-box(title="ADMIN")
       .wrap
-        .action(v-if="post.top !== 2" @click="top")  {{ displayTop }}
-        .action(@click="move") 移动到其它版块
+        .action(@click="top") {{ displayTop }}
 
     move-post-modal
 </template>
@@ -21,12 +20,17 @@
         required: true
 
     computed:
-      displayTop: -> if @post.top is 1 then '取消置顶' else '置顶'
+      displayTop: -> if @post.top is 2 then '取消全局置顶' else '全局置顶'
 
     methods:
       top: ->
-        await @api.call('post.setTop', @post.id, !@post.top)
-        @$set(@post, 'top', !@post.top)
+        if @post.top is 2
+          await @api.call('post.setTop', @post.id, 0)
+          @$set(@post, 'top', 0)
+        else
+          await @api.call('post.setTop', @post.id, 2)
+          @$set(@post, 'top', 2)
+
         @notify('done', '操作成功')
 
       move: ->
@@ -35,7 +39,7 @@
 
 
 <style lang="less" scoped>
-  .action-sheets{
+  .admin-action-sheets{
     .wrap{
       padding: 8px;
       .action{

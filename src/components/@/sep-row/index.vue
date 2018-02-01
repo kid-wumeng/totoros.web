@@ -19,14 +19,14 @@
             style =
               paddingLeft:  @$props.padding + 'px'
               paddingRight: @$props.padding + 'px'
-            sep = createElement('div', {class: 'sep', style}, @$props.sep)
+            sep = createElement('span', {class: 'sep', style}, @$props.sep)
             children.push(sep)
 
       if item
         if !item.tag
           children.pop()
 
-      return createElement('div', {class: 'sep-row'}, children)
+      return createElement('span', {class: 'sep-row'}, children)
 </script>
 
 

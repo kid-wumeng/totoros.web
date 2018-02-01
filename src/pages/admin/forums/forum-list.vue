@@ -6,9 +6,10 @@
         .name  {{ forum.name }}
         .open(:class="{'-open': forum.open}") {{ forum.open ? '开放ing' : '未开放' }}
         .actions
-          c-button(@click="update(forum)") 修改
-          c-button(@click="uploadFace(forum)") 上传FACE
-          c-button(@click="uploadBanner(forum)") 上传BANNER
+          c-button.-gray(@click="update(forum)") 基本设定
+          c-button.-gray(@click="updateManagers(forum)") 版主
+          c-button.-gray(@click="uploadFace(forum)") FACE
+          c-button.-gray(@click="uploadBanner(forum)") BANNER
 </template>
 
 
@@ -24,6 +25,9 @@
     methods:
       update: (forum) ->
         @dispatch('update-forum-modal/show', forum.id)
+
+      updateManagers: (forum) ->
+        @dispatch('forum-managers-modal/show', forum.id)
 
       uploadFace: (forum) ->
         @dispatch('forum-face-modal/show', forum.id)

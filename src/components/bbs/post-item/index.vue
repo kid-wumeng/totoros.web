@@ -5,7 +5,7 @@
         user-face(:user="user" circle)
       row.right.-between.-center
         div
-          span.top(v-if="top") [置顶]
+          span.top(v-if="top") {{ displayTop }}
           span.title {{ title }}
           span.comment-count(v-if="commentCount") +{{ commentCount }}
         row.last.-center(v-if="lastCommentDate")
@@ -34,6 +34,11 @@
       commentCount:    -> @post.commentCount ? 0
       lastCommentDate: -> @post.lastCommentDate
       lastCommentUser: -> @post.lastCommentUser
+
+      displayTop: ->
+        switch(@top)
+          when 2 then '[ 超 · 置顶 ]'
+          when 1 then '[ 置顶 ]'
 </script>
 
 

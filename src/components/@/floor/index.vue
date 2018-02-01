@@ -10,8 +10,8 @@
         row.desc-right.-center
           .edit(v-if="showEdit && login")
             span (
-            span.text(v-if="isMe(user)" @click="clickUpdate") 修改
-            span.text(v-else @click="clickReference") 引用回复
+            span.text.btn-update(v-if="isMe(user)" @click="clickUpdate") 修改
+            span.text.btn-reference(v-else @click="clickReference") 引用回复
             span )
           //- .display-floor(v-if="floor") {{ floor }}
       .reference(v-if="reference")
@@ -89,10 +89,13 @@
     .edit{
       >*{
         font-size: 13px;
-        color: lighten(#22A7F0, 15%);
+        color: #A2AEBA;
+      }
+      >.btn-reference{
+        color: #445669;
       }
       >.text{
-        margin: 0 2px;
+        margin: 0 3px;
         font-weight: 500;
         cursor: pointer;
         &:hover{
@@ -107,6 +110,7 @@
       color: #CCC;
     }
     .reference{
+      width: 80%;
       margin-top: 30px;
       margin-bottom: 30px;
       margin-left: 17px;
@@ -128,7 +132,7 @@
       }
       .content{
         font-size: 14px;
-        color: #A2AEBA;
+        color: darken(#A2AEBA, 10%);
       }
     }
     .markdown-area{

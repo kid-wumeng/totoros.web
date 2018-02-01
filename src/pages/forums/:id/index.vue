@@ -19,17 +19,37 @@
       'forum':
         type: Object
         required: true
-      'posts':
-        type: Array
-        default: -> []
-      'size':
-        type: Number
-        required: true
-      'total':
-        type: Number
-        required: true
+
+    data: ->
+      posts: []
+      size:  50
+      total: 0
+
+    created: ->
+      @init()
+
+    activated: ->
+      @init()
 
     methods:
+      init: ->
+        result = await api.call('post.getAll', {
+          fid:  @forum.id
+          page: @routePage
+          size: @size
+        })
+        @posts = result.posts
+        @total = result.total
+
+      createPost: (post) ->
+        if(post.forum.id is @forum.id)
+          index = 0
+          for p, i in @posts
+            if(!p.top)
+              index = i
+              break
+          @posts.splice(index, 0, post)
+
       changePage: (page) ->
         @$router.push("##{page}")
 </script>

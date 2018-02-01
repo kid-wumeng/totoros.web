@@ -34,18 +34,20 @@
 
     methods:
       init: ->
-        result = await api.call('post.getAll', {top: true})
-        @page  = 0
-        @more(result.posts)
+        @page = 0
+        @more()
 
-      more: (topPosts=[]) ->
+      more: ->
         @page += 1
         result = await api.call('post.getAll', {
           fid:  @forum.id
           page: @page
           size: @size
         })
-        @posts = topPosts.concat(result.posts)
+        if(@page is 1)
+          @posts = result.posts
+        else
+          @posts = @posts.concat(result.posts)
         @total = result.total
 
       createPost: (post) ->

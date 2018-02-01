@@ -22,6 +22,7 @@
 <style lang="less">
   .head{
     background-color: #FFF;
+    padding-bottom: 6px;
     .tab-bar-wrap{
       border-bottom: 1px solid lighten(#E4E8EB, 4%);
     }

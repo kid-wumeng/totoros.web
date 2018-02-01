@@ -2,7 +2,7 @@
   router-link.item(:to="getPostPath(post)")
     .title-row
       user-face(:user="user" circle)
-      span.top(v-if="top") [置顶]
+      span.top(v-if="top") {{ displayTop }}
       span.title {{ title }}
     .user-row(v-if="lastCommentDate")
       span.comment-count +{{ commentCount }}
@@ -33,6 +33,11 @@
       commentCount:    -> @post.commentCount ? 0
       lastCommentDate: -> @post.lastCommentDate
       lastCommentUser: -> @post.lastCommentUser
+
+      displayTop: ->
+        switch(@top)
+          when 2 then '[ 超 · 置顶 ]'
+          when 1 then '[ 置顶 ]'
 </script>
 
 
