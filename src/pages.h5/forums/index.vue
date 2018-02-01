@@ -1,24 +1,31 @@
 <template lang="jade">
-  #forums
-    .wrap
-      //- tab-bar
-      router-view
+  #forums(v-if="forum")
+    c-head(:forum="forum")
+    router-view(:forum="forum")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'tab-bar': require('./tab-bar')
+      'c-head': require('./head')
+
+    data: ->
+      forum: null
+
+    computed:
+      id: -> parseInt(if @routeID then @routeID else 2)
+
+    activated: ->
+      @init()
+
+    methods:
+      init: ->
+        @forum = await api.call('forum.get', @id, {open: true})
 </script>
 
 
 <style lang="less" scoped>
   #forums{
-    overflow: hidden;
-    .wrap{
-      margin: 32px auto;
-      width: 100%;
-    }
   }
 </style>

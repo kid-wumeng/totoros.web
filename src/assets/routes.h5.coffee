@@ -1,13 +1,5 @@
 module.exports = [{
 
-  # 首页（讨论版）
-  path: '/'
-  meta:
-    keepAlive: true
-    bgColor: true
-  component: -> System.import('pages.h5/forums/:id')
-
-},{
   # MARKS
   path: '/marks'
   meta:
@@ -81,5 +73,22 @@ module.exports = [{
     key:
       prefix: 'organization-detail'
       params: ['id']
+
+},{
+
+  # 讨论版
+  path: '/forums'
+  alias: '/'
+  component: -> System.import('pages.h5/forums')
+  children: [{
+    path: ':id'
+    meta:
+      keepAlive: true
+      key:
+        prefix: 'forum-detail'
+        params: ['id']
+      bgColor: true
+    component: -> System.import('pages.h5/forums/:id')
+  }]
 
 }]

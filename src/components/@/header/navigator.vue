@@ -1,6 +1,6 @@
 <template lang="jade">
   .navigator
-    router-link.item(to="/", :class="{'-active': $route.path === '/'}") 讨论版
+    router-link.item(to="/", :class="{'-active': activeBBS()}") 讨论版
     a.item(@click.prevent="clickMarks", to="/marks", :class="{'-active': $route.path === '/marks'}") MARKS
     router-link.item(v-if="admin" to="/wiki", :class="{'-active': $route.path === '/wiki'}") 维基计划
 </template>
@@ -13,6 +13,9 @@
         return /^\/forums\//.test(@$route.path)
 
     methods:
+      activeBBS: ->
+        return @$route.path is '/' or /^\/forums/.test(@$route.path)
+
       clickMarks: (e) ->
         if(@$route.path isnt '/marks')
           @commit('RESET_MARKS')

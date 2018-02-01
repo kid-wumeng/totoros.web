@@ -1,7 +1,7 @@
 <template lang="jade">
   #app(:style="appStyle")
     c-header
-    pc-hint
+    //- pc-hint
     .body
       keep-alive
         router-view(v-if="$route.meta.keepAlive", :key="key")

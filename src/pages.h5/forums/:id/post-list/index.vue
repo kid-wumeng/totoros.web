@@ -21,6 +21,9 @@
     box-sizing: border-box;
     .item{
       margin-top: 6px;
+      &:first-child{
+        margin-top: 0;
+      }
     }
   }
 </style>

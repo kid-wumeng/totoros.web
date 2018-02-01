@@ -1,9 +1,9 @@
 <template lang="jade">
   row.header.-between.-center
     row.left.-center
-      cdn-image.logo(path="assets/logo?2017-11-09" @click="$router.push('/')")
+      cdn-image.logo(path="assets/logo?2018-02-01" @click="$router.push('/')")
     row.right.-right.-center
-      .item(:class="{'-active': $route.path === '/'}" @click="$router.push('/')") 讨论版
+      .item(:class="{'-active': activeBBS()}" @click="$router.push('/')") 讨论版
       .item(:class="{'-active': $route.path === '/marks'}" @click="$router.push('/marks')") MARKS
 </template>
 
@@ -12,6 +12,10 @@
   module.exports =
     components:
       'cdn-image': require('components/image/cdn-image')
+
+    methods:
+      activeBBS: ->
+        return @$route.path is '/' or /^\/forums/.test(@$route.path)
 </script>
 
 
@@ -25,9 +29,9 @@
     background-color: #FFF;
     >.left{
       >.logo{
-        @width: 76px;
+        @width: 96px;
         width: @width;
-        height: @width / 5;
+        height: @width / 7.4875;
       }
     }
     >.right{

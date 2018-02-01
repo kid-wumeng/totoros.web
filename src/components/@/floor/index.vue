@@ -89,7 +89,7 @@
     .edit{
       >*{
         font-size: 13px;
-        color: lighten(#DB5A6B, 15%);
+        color: lighten(#22A7F0, 15%);
       }
       >.text{
         margin: 0 2px;

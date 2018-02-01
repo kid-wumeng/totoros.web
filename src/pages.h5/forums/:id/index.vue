@@ -1,46 +1,61 @@
 <template lang="jade">
-  #forums-detail(v-if="forum")
+  #forums-detail
     .wrap
-      c-base(:forum="forum")
       post-list(:posts="posts")
-      more-button(:has-more-page="model.assets.hasMorePage(page, size, total)", @click="more")
+      more-button(:has-more-page="model.assets.hasMorePage(page, size, total)", @click="$emit('more')")
 </template>
 
 
 <script lang="coffee">
   module.exports =
     components:
-      'c-base':      require('./base')
       'post-list':   require('./post-list')
       'more-button': require('components.h5/more-button')
 
+    props:
+      'forum':
+        type: Object
+        required: true
+
     data: ->
-      forum: null
       posts: []
-      page: 0
-      size: 30
+      page:  0
+      size:  50
       total: 0
+
+    created: ->
+      @listen('CREATE_POST', @createPost)
+
+    created: ->
+      @init()
 
     activated: ->
       @init()
 
     methods:
       init: ->
-        @forum = await api.call('forum.get', 1, {open: true})
         result = await api.call('post.getAll', {top: true})
-        @posts = result.posts
         @page  = 0
-        @more()
+        @more(result.posts)
 
-      more: ->
+      more: (topPosts=[]) ->
         @page += 1
         result = await api.call('post.getAll', {
-          fid:  1
+          fid:  @forum.id
           page: @page
           size: @size
         })
-        @posts = @posts.concat(result.posts)
+        @posts = topPosts.concat(result.posts)
         @total = result.total
+
+      createPost: (post) ->
+        if(post.forum.id is @forum.id)
+          index = 0
+          for p, i in @posts
+            if(!p.top)
+              index = i
+              break
+          @posts.splice(index, 0, post)
 </script>
 
 

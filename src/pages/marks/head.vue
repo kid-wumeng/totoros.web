@@ -33,7 +33,7 @@
       width: 800px;
       padding: 30px 0;
       .cdn-image{
-        width: 64px;
+        width: 72px;
         border-radius: 3px;
       }
       .top-area{

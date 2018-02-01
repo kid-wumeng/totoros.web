@@ -54,10 +54,10 @@
     }
     .user-face{
       width: 36px;
-      margin-right: 12px;
+      margin-right: 15px;
     }
     .top{
-      margin-right: 9px;
+      margin-right: 12px;
       font-weight: 600;
       font-size: 14px;
       color: lighten(#A2AEBA, 10%);

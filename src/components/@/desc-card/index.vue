@@ -26,20 +26,20 @@
 <style lang="less" scoped>
   .desc-card{
     .left > *{
-      width: 64px;
+      width: 72px;
     }
     .right{
       margin-left: 12px;
     }
     .name{
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
       color: #273340;
     }
     .desc{
       margin-top: 5px;
-      line-height: 18px;
-      font-size: 12px;
+      line-height: 20px;
+      font-size: 13px;
       color: #707C88;
     }
   }

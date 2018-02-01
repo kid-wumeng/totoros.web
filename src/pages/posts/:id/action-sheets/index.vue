@@ -1,8 +1,8 @@
 <template lang="jade">
   .action-sheets(v-if="admin")
-    detail-box(title="管理")
+    detail-box(title="版主管理")
       .wrap
-        .action(@click="top")  {{ displayTop }}
+        .action(v-if="post.top !== 2" @click="top")  {{ displayTop }}
         .action(@click="move") 移动到其它版块
 
     move-post-modal
@@ -21,7 +21,7 @@
         required: true
 
     computed:
-      displayTop: -> if @post.top then '取消置顶' else '置顶'
+      displayTop: -> if @post.top is 1 then '取消置顶' else '置顶'
 
     methods:
       top: ->

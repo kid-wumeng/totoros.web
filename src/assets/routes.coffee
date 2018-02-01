@@ -1,29 +1,5 @@
 module.exports = [{
 
-  # 首页（讨论版）
-  path: '/'
-  meta:
-    keepAlive: true
-    key:
-      prefix: 'forum-detail'
-      params: ['id']
-    hideLine: true
-  component: -> System.import('pages/forums')
-
-},{
-
-  # 讨论版
-  path: '/forums/:id'
-  meta:
-    keepAlive: true
-    key:
-      prefix: 'forum-detail'
-      params: ['id']
-    hideLine: true
-  component: -> System.import('pages/forums')
-
-},{
-
   # 注册
   path: '/register'
   meta:
@@ -314,4 +290,22 @@ module.exports = [{
       admin: true
     component: -> System.import('pages/admin/sync')
   }]
+
+},{
+
+  # 讨论版
+  path: '/forums'
+  alias: '/'
+  component: -> System.import('pages/forums')
+  children: [{
+    path: ':id'
+    meta:
+      keepAlive: true
+      key:
+        prefix: 'forum-detail'
+        params: ['id']
+      hideLine: true
+    component: -> System.import('pages/forums/:id')
+  }]
+
 }]

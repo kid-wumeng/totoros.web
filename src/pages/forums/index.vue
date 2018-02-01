@@ -1,7 +1,7 @@
 <template lang="jade">
   #forums(v-if="forum")
     c-head(:forum="forum")
-    c-body(:forum="forum", :posts="posts", :size="size", :total="total")
+    router-view(:forum="forum", :posts="posts", :size="size", :total="total")
 </template>
 
 
@@ -9,7 +9,6 @@
   module.exports =
     components:
       'c-head': require('./head')
-      'c-body': require('./body')
 
     data: ->
       forum: null

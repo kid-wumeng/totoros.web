@@ -19,12 +19,12 @@
 <style lang="less" scoped>
   .post-list{
     @padding: 8px;
-    margin-top: 30px;
-    border-top: 1px dashed #EEE;
+    margin-top: 28px;
+    border-top: 1px dotted #E4E8EB;
     box-sizing: border-box;
     .post-item{
       padding-top:  @padding;
-      border-bottom:  1px dashed #EEE;
+      border-bottom:  1px dotted #E4E8EB;
       padding-bottom: @padding + 1;
       padding-left: 8px;
       padding-right: 8px;

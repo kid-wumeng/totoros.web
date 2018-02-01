@@ -3,13 +3,16 @@
     form-item(label="* 论坛名")
       edit-input(:value="name" @change="changeName")
 
+    form-item(label="* 论坛名简写")
+      edit-input(:value="nameSimple" @change="changeNameSimple")
+
     form-item(label="* 是否开放")
       radio-bar(:value="open" @change="changeOpen")
         radio(label="开放",   :value="true")
         radio(label="不开放", :value="false")
 
-    form-item(label="简介")
-      edit-input-area(:value="intro" @change="changeIntro")
+    //- form-item(label="简介")
+    //-   edit-input-area(:value="intro" @change="changeIntro")
 
     form-item(label="排序")
       edit-input(:value="order" type="number", @change="changeOrder")
@@ -26,21 +29,25 @@
       'edit-input-area': require('components/wiki/edit-input-area')
 
     computed:
-      forum: -> @state['update-forum-modal'].forum
-      name:  -> @forum.name
-      open:  -> @forum.open  ? false
-      intro: -> @forum.intro ? ''
-      order: -> @forum.order
+      forum:      -> @state['update-forum-modal'].forum
+      name:       -> @forum.name
+      nameSimple: -> @forum.nameSimple
+      open:       -> @forum.open  ? false
+      # intro:      -> @forum.intro ? ''
+      order:      -> @forum.order
 
     methods:
       changeName: (name) ->
         @submit({name})
 
+      changeNameSimple: (nameSimple) ->
+        @submit({nameSimple})
+
       changeOpen: (open) ->
         @submit({open})
 
-      changeIntro: (intro) ->
-        @submit({intro})
+      # changeIntro: (intro) ->
+      #   @submit({intro})
 
       changeOrder: (order) ->
         @submit({order: parseInt(order)})
