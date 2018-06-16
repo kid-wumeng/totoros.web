@@ -1,5 +1,5 @@
 <template lang="jade">
-   #examples_Button
+   #examples_Area
       Button(text="注册")
       Button(text="登陆")
       Button(text="修改帖子")
