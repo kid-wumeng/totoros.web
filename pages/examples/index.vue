@@ -3,6 +3,8 @@
       Area.side
          nuxt-link(to="/examples/Area",   :class="getClass('Area')")   Area
          nuxt-link(to="/examples/Button", :class="getClass('Button')") Button
+         nuxt-link(to="/examples/Input",  :class="getClass('Input')")  Input
+         nuxt-link(to="/examples/Row",    :class="getClass('Row')")    Row
       Area.main
          nuxt-child
 </template>
@@ -20,7 +22,7 @@
             isCurrentComponent = @$route.path is "/examples/#{component}"
 
             if isCurrentComponent
-               return {'-active': true}
+               return {'active': true}
             else
                return {}
 </script>
@@ -46,8 +48,7 @@
             display: block;
             padding: @padding;
             border-radius: 2px;
-            &:hover,
-            &.-active {
+            &.active {
                background-color: #F6F6F6;
             }
          }
