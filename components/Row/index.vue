@@ -36,7 +36,6 @@
 <style lang="less">
    .Row {
       display: flex;
-      align-items: stretch;
 
       &.x-left    { justify-content: flex-start }
       &.x-center  { justify-content: center }

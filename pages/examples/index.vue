@@ -3,6 +3,7 @@
       Area.side
          nuxt-link(to="/examples/Area",   :class="getClass('Area')")   Area
          nuxt-link(to="/examples/Button", :class="getClass('Button')") Button
+         nuxt-link(to="/examples/Column", :class="getClass('Column')") Column
          nuxt-link(to="/examples/Input",  :class="getClass('Input')")  Input
          nuxt-link(to="/examples/Row",    :class="getClass('Row')")    Row
       Area.main
@@ -41,12 +42,13 @@
       display: flex;
 
       .Area.side {
-         width: 20%;
+         width: 240px;
          padding: @padding;
 
          > a {
             display: block;
             padding: @padding;
+            font-size: 15px;
             border-radius: 2px;
             &.active {
                background-color: #F6F6F6;

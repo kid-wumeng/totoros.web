@@ -1,121 +1,121 @@
 <template lang="jade">
-   #examples_Row
-      div x="left" y="top"
-      Row(x="left" y="top")
+   #examples_Column
+      div    x="left" y="top"
+      Column(x="left" y="top")
          .box.a
          .box.b
          .box.c
 
-      div x="left" y="center"
-      Row(x="left" y="center")
+      div    x="left" y="center"
+      Column(x="left" y="center")
          .box.a
          .box.b
          .box.c
 
-      div x="left" y="bottom"
-      Row(x="left" y="bottom")
+      div    x="left" y="bottom"
+      Column(x="left" y="bottom")
          .box.a
          .box.b
          .box.c
 
-      div x="left" y="fill"
-      Row(x="left" y="fill")
+      div    x="left" y="between"
+      Column(x="left" y="between")
          .box.a
          .box.b
          .box.c
 
-      div x="center" y="top"
-      Row(x="center" y="top")
+      div    x="left" y="around"
+      Column(x="left" y="around")
          .box.a
          .box.b
          .box.c
 
-      div x="center" y="center"
-      Row(x="center" y="center")
+      div    x="center" y="top"
+      Column(x="center" y="top")
          .box.a
          .box.b
          .box.c
 
-      div x="center" y="bottom"
-      Row(x="center" y="bottom")
+      div    x="center" y="center"
+      Column(x="center" y="center")
          .box.a
          .box.b
          .box.c
 
-      div x="center" y="fill"
-      Row(x="center" y="fill")
+      div    x="center" y="bottom"
+      Column(x="center" y="bottom")
          .box.a
          .box.b
          .box.c
 
-      div x="right" y="top"
-      Row(x="right" y="top")
+      div    x="center" y="between"
+      Column(x="center" y="between")
          .box.a
          .box.b
          .box.c
 
-      div x="right" y="center"
-      Row(x="right" y="center")
+      div    x="center" y="around"
+      Column(x="center" y="around")
          .box.a
          .box.b
          .box.c
 
-      div x="right" y="bottom"
-      Row(x="right" y="bottom")
+      div    x="right" y="top"
+      Column(x="right" y="top")
          .box.a
          .box.b
          .box.c
 
-      div x="right" y="fill"
-      Row(x="right" y="fill")
+      div    x="right" y="center"
+      Column(x="right" y="center")
          .box.a
          .box.b
          .box.c
 
-      div x="between" y="top"
-      Row(x="between" y="top")
+      div    x="right" y="bottom"
+      Column(x="right" y="bottom")
          .box.a
          .box.b
          .box.c
 
-      div x="between" y="center"
-      Row(x="between" y="center")
+      div    x="right" y="between"
+      Column(x="right" y="between")
          .box.a
          .box.b
          .box.c
 
-      div x="between" y="bottom"
-      Row(x="between" y="bottom")
+      div    x="right" y="around"
+      Column(x="right" y="around")
          .box.a
          .box.b
          .box.c
 
-      div x="between" y="fill"
-      Row(x="between" y="fill")
+      div    x="fill" y="top"
+      Column(x="fill" y="top")
          .box.a
          .box.b
          .box.c
 
-      div x="around" y="top"
-      Row(x="around" y="top")
+      div    x="fill" y="center"
+      Column(x="fill" y="center")
          .box.a
          .box.b
          .box.c
 
-      div x="around" y="center"
-      Row(x="around" y="center")
+      div    x="fill" y="bottom"
+      Column(x="fill" y="bottom")
          .box.a
          .box.b
          .box.c
 
-      div x="around" y="bottom"
-      Row(x="around" y="bottom")
+      div    x="fill" y="between"
+      Column(x="fill" y="between")
          .box.a
          .box.b
          .box.c
 
-      div x="around" y="fill"
-      Row(x="around" y="fill")
+      div    x="fill" y="around"
+      Column(x="fill" y="around")
          .box.a
          .box.b
          .box.c
@@ -126,15 +126,15 @@
 <script lang="coffee">
    module.exports =
       components:
-         'Row': require('~/components/Row').default
+         'Column': require('~/components/Column').default
 </script>
 
 
 
 <style lang="less">
-   #examples_Row {
-      .Row {
-         width: 100%;
+   #examples_Column {
+      .Column {
+         height: 180px;
          background-color: #F6F6F6;
       }
 
@@ -143,9 +143,9 @@
          justify-content: center;
          align-items: center;
          &::after{
-            width: 100px;
+            height: 30px;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             color: white;
             display: flex;
             justify-content: center;
@@ -157,7 +157,7 @@
          background-color: red;
          &::after{
             content: "A";
-            height: 100px;
+            width: 100px;
          }
       }
 
@@ -165,7 +165,7 @@
          background-color: green;
          &::after{
             content: "B";
-            height: 200px;
+            width: 200px;
          }
       }
 
@@ -173,7 +173,7 @@
          background-color: blue;
          &::after{
             content: "C";
-            height: 50px;
+            width: 50px;
          }
       }
    }
