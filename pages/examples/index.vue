@@ -1,8 +1,8 @@
 <template lang="jade">
    #examples
       Area.side
-         nuxt-link(to="/examples/Area")   Area
-         nuxt-link(to="/examples/Button") Button
+         nuxt-link(to="/examples/Area",   :class="getClass('Area')")   Area
+         nuxt-link(to="/examples/Button", :class="getClass('Button')") Button
       Area.main
          nuxt-child
 </template>
@@ -13,13 +13,23 @@
    module.exports =
       components:
          'Area': require('~/components/Area').default
+
+      methods:
+         getClass: (component) ->
+
+            isCurrentComponent = @$route.path is "/examples/#{component}"
+
+            if isCurrentComponent
+               return {'-active': true}
+            else
+               return {}
 </script>
 
 
 
 <style lang="less">
-   @import '~assets/@';
-   @padding: 20px;
+
+   @padding: 16px;
 
    #examples {
       position: fixed;
@@ -33,7 +43,13 @@
          padding: @padding;
 
          > a {
-            background-color: red;
+            display: block;
+            padding: @padding;
+            border-radius: 2px;
+            &:hover,
+            &.-active {
+               background-color: #F6F6F6;
+            }
          }
       }
 
@@ -41,6 +57,7 @@
          flex: auto;
          margin-left: @padding;
          padding: @padding;
+         overflow: scroll;
          > * {
             display: flex;
             flex-direction: column;

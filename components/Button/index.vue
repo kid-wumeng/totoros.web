@@ -6,7 +6,6 @@
 
 <script lang="coffee">
    module.exports =
-
       props:
          'text':
             type: String
@@ -24,8 +23,6 @@
 
 
 <style lang="less">
-   @import '~assets/@';
-
    @media @small {
    }
 
@@ -49,4 +46,6 @@
          box-shadow: none;
       }
    }
+
+   @import '~assets/@';
 </style>

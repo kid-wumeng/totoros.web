@@ -14,12 +14,11 @@
 
 
 <style lang="less">
-   @import '~assets/@';
-
    @media @small{
    }
 
    @media @large{
    }
 
+   @import '~assets/@';
 </style>
