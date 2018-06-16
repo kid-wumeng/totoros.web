@@ -1,29 +1,30 @@
 <template lang="jade">
-   h1 Button
+   .Button(@click="click") {{ text }}
 </template>
 
 
 
 <script lang="coffee">
    module.exports =
-      data: => {}
+
+      props:
+         'text':
+            type: String
+            required: true
+
+      methods:
+         click: =>
+            @$emit('click')
 </script>
 
 
 
 <style lang="less">
-
    @import '~assets/@';
 
    @media @small{
-      h1{
-         background-color: @kid;
-      }
    }
 
    @media @large{
-      h1{
-         background-color: @kid;
-      }
    }
 </style>

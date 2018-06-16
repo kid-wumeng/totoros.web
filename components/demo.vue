@@ -1,14 +1,21 @@
 <template lang="jade">
-   #demo
+   .demo
 </template>
 
 
 
+
+
 <script lang="coffee">
+
    module.exports =
+
       data: =>
          abc: true
+
 </script>
+
+
 
 
 
@@ -17,14 +24,9 @@
    @import '~assets/@';
 
    @media @small{
-      h1{
-         background-color: @kid;
-      }
    }
 
    @media @large{
-      h1{
-         background-color: @kid;
-      }
    }
+
 </style>
