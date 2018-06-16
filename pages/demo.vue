@@ -1,12 +1,13 @@
 <template lang="jade">
-   h1 Button
+   #demo
 </template>
 
 
 
 <script lang="coffee">
    module.exports =
-      data: => {}
+      data: =>
+         abc: true
 </script>
 
 
