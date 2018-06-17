@@ -1,11 +1,12 @@
 <template lang="jade">
    #examples
       Area.side
-         nuxt-link(to="/examples/Area",   :class="getClass('Area')")   Area
-         nuxt-link(to="/examples/Button", :class="getClass('Button')") Button
-         nuxt-link(to="/examples/Column", :class="getClass('Column')") Column
-         nuxt-link(to="/examples/Input",  :class="getClass('Input')")  Input
-         nuxt-link(to="/examples/Row",    :class="getClass('Row')")    Row
+         nuxt-link(to="/examples/Area",     :class="getClass('Area')")     Area
+         nuxt-link(to="/examples/Button",   :class="getClass('Button')")   Button
+         nuxt-link(to="/examples/Column",   :class="getClass('Column')")   Column
+         nuxt-link(to="/examples/Input",    :class="getClass('Input')")    Input
+         nuxt-link(to="/examples/RadioBar", :class="getClass('RadioBar')") RadioBar
+         nuxt-link(to="/examples/Row",      :class="getClass('Row')")      Row
       Area.main
          nuxt-child
 </template>
@@ -44,6 +45,7 @@
       .Area.side {
          width: 240px;
          padding: @padding;
+         overflow: scroll;
 
          > a {
             display: block;
@@ -61,6 +63,7 @@
          margin-left: @padding;
          padding: @padding;
          overflow: scroll;
+
          > * {
             display: flex;
             flex-direction: column;

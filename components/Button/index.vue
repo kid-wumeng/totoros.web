@@ -10,11 +10,11 @@
          'text':
             type: String
             required: true
-            
+
          'type':
             type: String
             default: 'solid'
-            validator: (value) => ['solid', 'ghost'].includes(value)
+            validator: (type) => ['solid', 'ghost'].includes(type)
 
       methods:
          click: ->

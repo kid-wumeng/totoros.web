@@ -11,12 +11,12 @@
          'x':
             type: String
             default: 'left'
-            validator: (value) => ['left', 'center', 'right', 'fill'].includes(value)
+            validator: (x) => ['left', 'center', 'right', 'fill'].includes(x)
 
          'y':
             type: String
             default: 'top'
-            validator: (value) => ['top', 'center', 'bottom', 'between', 'around'].includes(value)
+            validator: (y) => ['top', 'center', 'bottom', 'between', 'around'].includes(y)
 
       computed:
          'columnClass': ->

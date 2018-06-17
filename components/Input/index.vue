@@ -41,7 +41,7 @@
          'type':
             type: String
             default: 'text'
-            validator: (value) => ['text', 'pass', 'number'].includes(value)
+            validator: (type) => ['text', 'pass', 'number'].includes(type)
 
          'hint':
             type: String
