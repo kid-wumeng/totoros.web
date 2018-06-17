@@ -1,6 +1,7 @@
 <template lang="jade">
-   #examples_RadioBar
-      RadioBar(:radios="radios")
+   #examples_RadioGrid
+      p 多选：{{ type }}
+      RadioGrid(:radios="radios", :cols="9" many v-model="type")
 </template>
 
 
@@ -8,7 +9,7 @@
 <script lang="coffee">
    module.exports =
       components:
-         'RadioBar': require('~/components/RadioBar').default
+         'RadioGrid': require('~/components/RadioGrid').default
 
       data: ->
          radios: [
@@ -17,13 +18,15 @@
             { data: 'serie', text: 'TV/OVA' }
             { data: 'movie', text: '动画电影' }
          ]
+
+         type: ['paint', 'movie']
 </script>
 
 
 
 <style lang="less">
-   #examples_RadioBar {
-      > .RadioBar {
+   #examples_RadioGrid {
+      > .RadioGrid {
          width: 480px;
       }
    }

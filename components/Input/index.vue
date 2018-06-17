@@ -89,7 +89,7 @@
       }
 
       &[disabled] {
-         color: #707C88;
+         color: #BBB;
          background-color: transparent;
          border: 1px solid #F2F2F2;
          box-shadow: none;

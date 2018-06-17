@@ -2,9 +2,9 @@
    #examples_Input
       Input(hint="昵称")
       Input(hint="密码" type="pass" text="12345678")
-      Input(hint="禁用" disabled)
       Input(hint="区域" area v-model="mock")
       Button(text="提交模拟文本" @click="submit")
+      Input(text="禁用" disabled)
 </template>
 
 

@@ -3,7 +3,7 @@
       table
          tbody
             tr
-               td(v-for="(radio, index) in radios", :key="index")
+               td(v-for="(radio, i) in radios", :key="i")
                   nuxt-link(v-if="radio.to", :to="radio.to") {{ radio.text }}
                   span(v-else) {{ radio.text }}
 </template>
