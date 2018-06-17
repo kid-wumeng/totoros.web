@@ -33,6 +33,7 @@
             validator: (radios) => radios.every (radio) => radio?.text? and radio?.data?
 
          'data':
+            # 切记，当 @many = true 时，@data 应该是个数组
             type: null
             required: true
 
@@ -139,11 +140,12 @@
 
 <style lang="less">
 
-   @border: 1px solid rgb(209, 213, 218);
+   @ghost-color: #14BEB4;
+
+   @solid-border: 1px solid rgb(209, 213, 218);
+   @ghost-border: 1px solid @ghost-color;
 
    .RadioGrid {
-      border: @border;
-      border-radius: 2px;
       overflow: hidden;
 
       table {
@@ -154,19 +156,85 @@
          tr {
             td {
                padding: 0;
-               border: @border;
                a, span {
                   display: block;
                   height: 34px;
                   line-height: 34px;
                   text-align: center;
+                  font-weight: 500;
                   font-size: 14px;
                   cursor: pointer;
                   user-select: none;
                }
             }
          }
+      }
+   }
 
+
+   .RadioGrid[type="solid"] {
+      border: @solid-border;
+      border-radius: 2px;
+
+      table {
+         tr {
+            td {
+               border: @solid-border;
+               a, span {
+                  color: #A2AEBA;
+                  background-color: white;
+               }
+            }
+            td.active {
+               a, span {
+                  color: #445669;
+                  background-color: #FAFBFC;
+                  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+               }
+            }
+         }
+      }
+
+      &.is-float-rows {
+         tr:last-child {
+            td:last-child { border-right: @solid-border }
+         }
+      }
+   }
+
+
+   .RadioGrid[type="ghost"] {
+      border: @ghost-border;
+      border-radius: 3px;
+
+      table {
+         tr {
+            td {
+               border: @ghost-border;
+               a, span {
+                  color: @ghost-color;
+                  background-color: transparent;
+               }
+            }
+            td.active {
+               a, span {
+                  color: white;
+                  background-color: @ghost-color;
+               }
+            }
+         }
+      }
+
+      &.is-float-rows {
+         tr:last-child {
+            td:last-child { border-right: @ghost-border }
+         }
+      }
+   }
+
+
+   .RadioGrid {
+      table {
          tr {
             td:first-child { border-left:  none }
             td:last-child  { border-right: none }
@@ -176,33 +244,6 @@
          }
          tr:last-child {
             td { border-bottom: none }
-         }
-      }
-   }
-
-   .RadioGrid.is-float-rows {
-      tr:last-child {
-         td:last-child { border-right: @border }
-      }
-   }
-
-   .RadioGrid[type="solid"] {
-      table {
-         tr {
-            td {
-               a, span {
-                  color: #A2AEBA;
-                  background-color: white;
-               }
-            }
-            td.active {
-               a, span {
-                  font-weight: 600;
-                  color: #273340;
-                  background-color: #FAFBFC;
-                  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
-               }
-            }
          }
       }
    }
