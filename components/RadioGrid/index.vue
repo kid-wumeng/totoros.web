@@ -84,7 +84,7 @@
             #     若每行 3 个，8 / 3 = 浮点行
             #     若每行 2 个，8 / 2 = 整数行
             #
-            # 这条数据的意义在于设置 .is-float-rows 类，
+            # 这条数据的意义在于设置 .-is-float-rows 类，
             # 帮助 CSS 判断是否需要给最后一个 radio 添加 border-right
 
             rows = @radios.length / @cols
@@ -96,8 +96,8 @@
 
 
          'radioGridClass': ->
-            'auto':          @auto
-            'is-float-rows': @isFloatRows
+            '-auto':          @auto
+            '-is-float-rows': @isFloatRows
 
 
       methods:
@@ -177,7 +177,7 @@
    }
 
 
-   .RadioGrid.auto {
+   .RadioGrid.-auto {
       table {
          table-layout: auto;
       }
@@ -207,7 +207,7 @@
          }
       }
 
-      &.is-float-rows {
+      &.-is-float-rows {
          tr:last-child {
             td:last-child { border-right: @solid-border }
          }
@@ -237,7 +237,7 @@
          }
       }
 
-      &.is-float-rows {
+      &.-is-float-rows {
          tr:last-child {
             td:last-child { border-right: @ghost-border }
          }
