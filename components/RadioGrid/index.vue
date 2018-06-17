@@ -22,9 +22,11 @@
 
    module.exports =
 
+
       model:
          prop:  'data'
          event: 'change'
+
 
       props:
          'radios':
