@@ -116,7 +116,7 @@
 
 
          clickOne: (radio) ->
-            if radio.data is @data
+            if @data is radio.data
                @$emit('change', undefined)
             else
                @$emit('change', radio.data)
