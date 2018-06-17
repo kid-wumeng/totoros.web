@@ -1,8 +1,10 @@
 <template lang="jade">
    #examples_RadioGrid
+
       p 单选：{{ data1 }}
       RadioGrid(v-model="data1", :radios="radios1" type="solid")
       RadioGrid(v-model="data1", :radios="radios1" type="ghost")
+
       p 多选：{{ data2 }}
       RadioGrid(v-model="data2", :radios="radios2" type="solid" many, :cols="4")
       RadioGrid(v-model="data2", :radios="radios2" type="ghost" many, :cols="4")
