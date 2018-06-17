@@ -51,6 +51,10 @@
             default: Number.MAX_VALUE
             validator: (cols) => cols > 0
 
+         'auto':
+            type: Boolean
+            default: false
+
 
       computed:
          'trs': ->
@@ -92,6 +96,7 @@
 
 
          'radioGridClass': ->
+            'auto':          @auto
             'is-float-rows': @isFloatRows
 
 
@@ -168,6 +173,13 @@
                }
             }
          }
+      }
+   }
+
+
+   .RadioGrid.auto {
+      table {
+         table-layout: auto;
       }
    }
 
