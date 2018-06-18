@@ -55,6 +55,7 @@
       text-align: justify;
       font-size: 12px;
       color: #999;
+      user-select: none;
    }
 
    .ImageCDN.-cover {

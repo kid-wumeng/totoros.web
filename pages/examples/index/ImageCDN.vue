@@ -19,8 +19,6 @@
       .ImageCDN {
          width: 200px;
          height: 200px;
-         border: 1px solid #C7C7C9;
-         box-shadow: 0 0px 3px #DDD;
       }
    }
 </style>
