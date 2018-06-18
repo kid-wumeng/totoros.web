@@ -9,14 +9,4 @@
    module.exports =
       components:
          'PageBar': require('~/components/PageBar').default
-
-      data: ->
-         page: 1
 </script>
-
-
-
-<style lang="less">
-   #examples_PageBar {
-   }
-</style>
