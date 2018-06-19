@@ -14,6 +14,7 @@
          nuxt-link(to="/examples/Rate",       :class="getClass('Rate')")       Rate
          nuxt-link(to="/examples/Row",        :class="getClass('Row')")        Row
          nuxt-link(to="/examples/Tip",        :class="getClass('Tip')")        Tip
+         nuxt-link(to="/examples/Toast",      :class="getClass('Toast')")      Toast
       Area.main
          nuxt-child
 </template>

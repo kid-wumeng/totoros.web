@@ -13,7 +13,7 @@
       margin: 0;
       border: 0;
       padding: 0;
-      font-family: "Lato", "Ubuntu", "Helvetica Neue", "Arial", "Verdana", "Roboto", "PingFang SC", "Hiragino Sans GB", sans-serif;;
+      font-family: "Ubuntu", "Lato", "Helvetica Neue", "Arial", "Verdana", "Roboto", "PingFang SC", "Hiragino Sans GB", sans-serif;;
       color: #242424;
       background-image: url(~/assets/images/bg.png);
       -webkit-font-smoothing: antialiased;

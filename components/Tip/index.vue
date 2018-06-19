@@ -89,6 +89,7 @@
       .text {
          position: fixed;
          padding: 6px 12px;
+         line-height: 1.6;
          text-align: justify;
          white-space: nowrap;
          font-weight: 500;
