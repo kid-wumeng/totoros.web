@@ -52,16 +52,20 @@
 
       .Area.side {
          width: 240px;
-         padding: @padding;
          overflow: scroll;
+         padding: @padding 0;
 
          > a {
             display: block;
-            padding: @padding;
-            font-size: 15px;
-            border-radius: 2px;
-            &.active {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #445669;
+            &:hover {
                background-color: #F6F6F6;
+            }
+            &.active {
+               color: white;
+               background-color: #445669;
             }
          }
       }
