@@ -4,10 +4,12 @@
       :value="text",
       :type="nativeType",
       :placeholder="hint",
-      :autofocus="focus",
+      :autofocus="autofocus",
       :disabled="disabled",
       spellcheck="false",
       @input="input"
+      @focus="focus"
+      @blur="blur"
    )
 
    input.Input(
@@ -15,10 +17,12 @@
       :value="text",
       :type="nativeType",
       :placeholder="hint",
-      :autofocus="focus",
+      :autofocus="autofocus",
       :disabled="disabled",
       spellcheck="false",
       @input="input"
+      @focus="focus"
+      @blur="blur"
    )
 </template>
 
@@ -47,7 +51,7 @@
             type: String
             default: ''
 
-         'focus':
+         'autofocus':
            type: Boolean
            default: false
 
@@ -65,6 +69,12 @@
       methods:
          input: (event) ->
             @$emit('input', text = event.target.value.trim())
+
+         focus: (event) ->
+            @$emit('focus')
+
+         blur:  (event) ->
+            @$emit('blur')
 </script>
 
 

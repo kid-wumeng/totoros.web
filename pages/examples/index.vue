@@ -13,6 +13,7 @@
          nuxt-link(to="/examples/RadioGrid",  :class="getClass('RadioGrid')")  RadioGrid
          nuxt-link(to="/examples/Rate",       :class="getClass('Rate')")       Rate
          nuxt-link(to="/examples/Row",        :class="getClass('Row')")        Row
+         nuxt-link(to="/examples/Tip",        :class="getClass('Tip')")        Tip
       Area.main
          nuxt-child
 </template>

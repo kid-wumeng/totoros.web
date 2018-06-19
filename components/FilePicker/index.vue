@@ -1,8 +1,6 @@
 <template lang="jade">
-   .FilePicker
-      .wrap(@click="openPicker")
-         slot
-
+   .FilePicker(@click="openPicker")
+      slot
       input(
          ref="input",
          type="file",
@@ -76,12 +74,7 @@
 <style lang="less">
    .FilePicker {
       display: inline-block;
-
-      .wrap{
-         width: 100%;
-         display: block;
-         cursor: pointer;
-      }
+      cursor: pointer;
 
       input{
          display: none;

@@ -1,6 +1,6 @@
 <template lang="jade">
    #examples_Input
-      Input(hint="昵称")
+      Input(hint="昵称" autofocus)
       Input(hint="密码" type="pass" text="12345678")
       Input(hint="区域" area v-model="mock")
       Button(text="提交模拟文本" @click="submit")

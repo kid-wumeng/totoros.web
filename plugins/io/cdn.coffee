@@ -1,4 +1,4 @@
-module.exports = ( path = '' ) ->
+module.exports = cdn = ( path = '' ) ->
 
    if path and path[0] isnt '/'
       path = '/' + path
