@@ -55,10 +55,10 @@
       }
    }
 
-   .fade-enter-active, .fade-leave-active {
-   }
-   .fade-enter,
-   .fade-leave-to {
-      opacity: 0;
+   .Dialog {
+      .mask.fade-enter,
+      .mask.fade-leave-to {
+         opacity: 0;
+      }
    }
 </style>
