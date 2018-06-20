@@ -4,6 +4,7 @@
          nuxt-link(to="/examples/Area",       :class="getClass('Area')")       Area
          nuxt-link(to="/examples/Button",     :class="getClass('Button')")     Button
          nuxt-link(to="/examples/Column",     :class="getClass('Column')")     Column
+         nuxt-link(to="/examples/Dialog",     :class="getClass('Dialog')")     Dialog
          nuxt-link(to="/examples/FilePicker", :class="getClass('FilePicker')") FilePicker
          nuxt-link(to="/examples/ImageCDN",   :class="getClass('ImageCDN')")   ImageCDN
          nuxt-link(to="/examples/ImageFrame", :class="getClass('ImageFrame')") ImageFrame
