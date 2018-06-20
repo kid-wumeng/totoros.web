@@ -1,14 +1,16 @@
 <template lang="jade">
    .Dialog
-      .mask(v-if="open" @click.self="close")
-         slot
-         .close(@click="close")
+      transition(name="fade")
+         .mask(v-if="open" @click.self="close")
+            slot
+            .close(@click="close")
 </template>
 
 
 
 <script lang="coffee">
    module.exports =
+
       props:
          'open':
             type: Boolean
@@ -22,6 +24,9 @@
 
 
 <style lang="less">
+
+   @close-size: 28px;
+
    .Dialog {
       .mask {
          position: fixed;
@@ -33,24 +38,27 @@
          display: flex;
          justify-content: center;
          align-items: center;
+         transition: opacity 0.5s ease;
 
-         > .close {
+         .close {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 64px;
-            height: 64px;
+            top:    @close-size;
+            right:  @close-size;
+            width:  @close-size;
+            height: @close-size;
             background-image: url(~/assets/images/close_white.png);
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 28px;
-            opacity: 0.5;
-            cursor: pointer;
-
-            &:hover {
-               opacity: 1;
-            }
+            background-size: contain;
+            opacity: 0.6;
          }
       }
+   }
+
+   .fade-enter-active, .fade-leave-active {
+   }
+   .fade-enter,
+   .fade-leave-to {
+      opacity: 0;
    }
 </style>

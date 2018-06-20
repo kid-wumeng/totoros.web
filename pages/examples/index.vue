@@ -48,7 +48,7 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      padding: @padding * 3;
+      padding: @padding;
       display: flex;
 
       .Area.side {
