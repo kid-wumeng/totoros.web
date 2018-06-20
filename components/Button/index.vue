@@ -29,8 +29,8 @@
 
    @media @large {
       .Button {
-         height: 36px;
-         line-height: 36px;
+         height: 34px;
+         line-height: 34px;
          padding: 0 20px;
          font-weight: 600;
          font-size: 14px;

@@ -82,7 +82,7 @@
 <style lang="less">
 
    @line-height-textarea: 26px;
-   @line-height-input:    36px;
+   @line-height-input:    34px;
 
    .Input {
       display: block;

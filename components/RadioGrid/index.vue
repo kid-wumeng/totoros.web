@@ -165,8 +165,8 @@
                padding: 0;
                a, span {
                   display: block;
-                  height: 34px;
-                  line-height: 34px;
+                  height: 32px;
+                  line-height: 32px;
                   text-align: center;
                   font-weight: 500;
                   font-size: 14px;

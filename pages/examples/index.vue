@@ -14,6 +14,7 @@
          nuxt-link(to="/examples/RadioGrid",  :class="getClass('RadioGrid')")  RadioGrid
          nuxt-link(to="/examples/Rate",       :class="getClass('Rate')")       Rate
          nuxt-link(to="/examples/Row",        :class="getClass('Row')")        Row
+         nuxt-link(to="/examples/Table",      :class="getClass('Table')")      Table
          nuxt-link(to="/examples/Tip",        :class="getClass('Tip')")        Tip
          nuxt-link(to="/examples/Toast",      :class="getClass('Toast')")      Toast
       Area.main
@@ -52,6 +53,7 @@
       display: flex;
 
       .Area.side {
+         flex: none;
          width: 240px;
          overflow: scroll;
          padding: @padding 0;

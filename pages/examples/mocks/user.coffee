@@ -1,0 +1,1 @@
+module.exports = require('./users')[0]
