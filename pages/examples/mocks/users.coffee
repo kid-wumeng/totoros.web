@@ -13,7 +13,7 @@ module.exports = [{
       width:  500
       height: 500
       length: 437824
-      ver:    7
+      ver:    1
 },{
    id: 2
    name: 'totoros'
@@ -29,5 +29,5 @@ module.exports = [{
       width:  500
       height: 500
       length: 437824
-      ver:    7
+      ver:    1
 }]

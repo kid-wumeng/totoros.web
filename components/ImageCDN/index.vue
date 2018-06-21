@@ -1,5 +1,5 @@
 <template lang="jade">
-   .ImageCDN(:style="imageStyle", :class="imageClass") {{ path ? '' : alt }}
+   .ImageCDN(:style="imageStyle") {{ path ? '' : alt }}
 </template>
 
 
@@ -7,28 +7,19 @@
 <script lang="coffee">
    module.exports =
 
-
       props:
          'path':
             type: String
             default: ''
-
          'alt':
             type: String
             default: ''
-
          'ratio':
             type: Number
             default: 0
 
-         'cover':
-            type: Boolean
-            default: false
-
-
       data: ->
          'width': 0
-
 
       computed:
          src: ->
@@ -37,10 +28,8 @@
             else
                return ''
 
-
          height: ->
             return @width * @ratio
-
 
          imageStyle: ->
 
@@ -54,11 +43,6 @@
 
             return style
 
-
-         imageClass: ->
-            '-cover': @cover
-
-
       mounted: ->
          @width = @$el.offsetWidth
 </script>
@@ -70,7 +54,7 @@
       width: 100%;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -78,9 +62,5 @@
       font-size: 12px;
       color: #999;
       user-select: none;
-   }
-
-   .ImageCDN.-cover {
-      background-size: cover;
    }
 </style>

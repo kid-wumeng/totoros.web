@@ -1,3 +1,5 @@
 module.exports =
-   user:  require('./user')
-   users: require('./users')
+   subject:  require('./subject')
+   subjects: require('./subjects')
+   user:     require('./user')
+   users:    require('./users')

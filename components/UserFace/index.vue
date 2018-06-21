@@ -20,12 +20,12 @@
             default: false
 
       computed:
-         path: ->
-            id  = @user?.id
-            ver = @user?.face?.ver
+         id:  -> @user?.id
+         ver: -> @user?.face?.ver
 
-            if id and ver
-               return "users/#{id}/face?ver=#{ver}"
+         path: ->
+            if @id and @ver
+               return "users/#{@id}/face?ver=#{@ver}"
             else
                return ''
 
