@@ -17,26 +17,50 @@
             type: String
             default: ''
 
+         'ratio':
+            type: Number
+            default: 0
+
          'cover':
             type: Boolean
             default: false
 
 
+      data: ->
+         'width': 0
+
+
       computed:
-         'src': ->
+         src: ->
             if @path
                return @io.cdn(@path)
             else
                return ''
 
-         'imageStyle': ->
-            if @src
-               return {'background-image': 'url(' + @src + ')'}
-            else
-               return {}
 
-         'imageClass': ->
+         height: ->
+            return @width * @ratio
+
+
+         imageStyle: ->
+
+            style = {}
+
+            if @src
+               style['background-image'] = 'url(' + @src + ')'
+
+            if @height
+               style['height'] = @height + 'px'
+
+            return style
+
+
+         imageClass: ->
             '-cover': @cover
+
+
+      mounted: ->
+         @width = @$el.offsetWidth
 </script>
 
 
@@ -44,14 +68,12 @@
 <style lang="less">
    .ImageCDN {
       width: 100%;
-      height: 100%;
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 24px;
       text-align: justify;
       font-size: 12px;
       color: #999;

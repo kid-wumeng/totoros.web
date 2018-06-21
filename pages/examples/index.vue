@@ -18,6 +18,7 @@
          nuxt-link(to="/examples/Table",       :class="getClass('Table')")       Table
          nuxt-link(to="/examples/Tip",         :class="getClass('Tip')")         Tip
          nuxt-link(to="/examples/Toast",       :class="getClass('Toast')")       Toast
+         nuxt-link(to="/examples/UserFace",    :class="getClass('UserFace')")    UserFace
       Area.main
          nuxt-child
 </template>
