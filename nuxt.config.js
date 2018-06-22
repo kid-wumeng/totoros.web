@@ -11,6 +11,10 @@ module.exports =
    },
 
    head: {
+      htmlAttrs: {
+         lang: 'zh'
+      },
+
       titleTemplate (chunk) {
          return chunk ? `${chunk} - totoros` : 'totoros'
       },

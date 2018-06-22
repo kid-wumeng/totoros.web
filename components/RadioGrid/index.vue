@@ -105,9 +105,9 @@
       methods:
          getTdClass: (radio) ->
             if @many
-               return {'active': @data.includes(radio.data)}
+               return {'-active': @data.includes(radio.data)}
             else
-               return {'active': @data is radio.data}
+               return {'-active': @data is radio.data}
 
 
          click: (radio) ->
@@ -199,7 +199,7 @@
                   background-color: white;
                }
             }
-            td.active {
+            td.-active {
                a, span {
                   color: #445669;
                   background-color: #FAFBFC;
@@ -230,7 +230,7 @@
                   background-color: transparent;
                }
             }
-            td.active {
+            td.-active {
                a, span {
                   color: white;
                   background-color: @ghost-color;
