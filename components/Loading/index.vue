@@ -1,5 +1,5 @@
 <template lang="jade">
-   Dialog.Loading(:open="open")
+   Dialog.Loading(:open="open" hide-close)
       .wrap
          Indicator(v-if="value === null")
          ProgressBar(v-else :value="value", :total="total")

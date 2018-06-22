@@ -3,7 +3,7 @@
       transition(name="fade")
          .mask(v-if="open" @click.self="close")
             slot
-            .close(@click="close")
+            .close(v-if="!hideClose" @click="close")
 </template>
 
 
@@ -13,6 +13,10 @@
 
       props:
          'open':
+            type: Boolean
+            default: false
+
+         'hideClose':
             type: Boolean
             default: false
 
