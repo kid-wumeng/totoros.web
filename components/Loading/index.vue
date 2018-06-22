@@ -35,7 +35,6 @@
 
 <style lang="less">
    .Loading {
-
       .text {
          margin-top: 16px;
          text-align: center;
