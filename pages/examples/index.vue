@@ -1,6 +1,7 @@
 <template lang="jade">
    #examples
       Area.side
+         nuxt-link(to="/examples/AlertDialog", :class="getClass('AlertDialog')") AlertDialog
          nuxt-link(to="/examples/Area",        :class="getClass('Area')")        Area
          nuxt-link(to="/examples/Button",      :class="getClass('Button')")      Button
          nuxt-link(to="/examples/Column",      :class="getClass('Column')")      Column
