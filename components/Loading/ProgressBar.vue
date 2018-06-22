@@ -33,6 +33,7 @@
 
 <style lang="less">
    .ProgressBar {
+      width: 600px;
       height: 4px;
       background-color: #F4F4F4;
       border-radius: 50px;

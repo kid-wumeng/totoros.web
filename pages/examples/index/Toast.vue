@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_Toast
-      Toast(:open="open", :text="text")
       Button(text="toast" @click="click")
+      Toast(:open="open", :text="text")
 </template>
 
 

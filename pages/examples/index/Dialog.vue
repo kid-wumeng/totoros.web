@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_Dialog
-      Dialog(:open="open"  @close="open = false"): Area
       Button(text="dialog" @click="open = true")
+      Dialog(:open="open"  @close="open = false"): Area
 </template>
 
 

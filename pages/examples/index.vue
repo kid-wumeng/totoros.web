@@ -9,8 +9,8 @@
          nuxt-link(to="/examples/ImageCDN",    :class="getClass('ImageCDN')")    ImageCDN
          nuxt-link(to="/examples/ImageFrame",  :class="getClass('ImageFrame')")  ImageFrame
          nuxt-link(to="/examples/Input",       :class="getClass('Input')")       Input
+         nuxt-link(to="/examples/Loading",     :class="getClass('Loading')")     Loading
          nuxt-link(to="/examples/PageBar",     :class="getClass('PageBar')")     PageBar
-         nuxt-link(to="/examples/ProgressBar", :class="getClass('ProgressBar')") ProgressBar
          nuxt-link(to="/examples/RadioBar",    :class="getClass('RadioBar')")    RadioBar
          nuxt-link(to="/examples/RadioGrid",   :class="getClass('RadioGrid')")   RadioGrid
          nuxt-link(to="/examples/Rate",        :class="getClass('Rate')")        Rate
