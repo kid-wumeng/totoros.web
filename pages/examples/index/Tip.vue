@@ -31,3 +31,23 @@
          blur:  ->
             @tipOpen = false
 </script>
+
+
+
+<style lang="less">
+   #examples_Tip {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > .Tip {
+         margin: 0 auto;
+
+         .Input,
+         .Button {
+            width: 200px;
+         }
+      }
+   }
+</style>

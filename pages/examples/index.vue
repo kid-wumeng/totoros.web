@@ -19,6 +19,7 @@
          nuxt-link(to="/examples/SubjectFace", :class="getClass('SubjectFace')") SubjectFace
          nuxt-link(to="/examples/TabBar",      :class="getClass('TabBar')")      TabBar
          nuxt-link(to="/examples/Table",       :class="getClass('Table')")       Table
+         nuxt-link(to="/examples/TextArea",    :class="getClass('TextArea')")    TextArea
          nuxt-link(to="/examples/Tip",         :class="getClass('Tip')")         Tip
          nuxt-link(to="/examples/Toast",       :class="getClass('Toast')")       Toast
          nuxt-link(to="/examples/UserFace",    :class="getClass('UserFace')")    UserFace

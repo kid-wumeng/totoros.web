@@ -1,7 +1,18 @@
 import Vue from 'vue'
 
 
-Vue.prototype.io =
-   cdn:   require('./cdn')
-   dev:   require('./dev')
-   sleep: require('./sleep')
+io =
+   cdn:               require('./cdn')
+   dev:               require('./dev')
+   formatSubjectType: require('./formatSubjectType')
+   isID:              require('./isID')
+   sleep:             require('./sleep')
+
+
+if process.browser
+   window.io = io
+else
+   global.io = io
+
+
+Vue.prototype.io = io
