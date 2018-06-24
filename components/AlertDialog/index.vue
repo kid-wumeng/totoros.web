@@ -39,8 +39,8 @@
 
    .AlertDialog {
       .Area {
-         min-width: 200px;
-         max-width: 600px;
+         min-width: 360px;
+         max-width: 640px;
          padding: @padding;
          .Row {
             margin-top: @padding * 1.5;

@@ -1,11 +1,12 @@
 <template lang="jade">
-   .Button(@click="click") {{ text }}
+   .Button(:type="type" @click="click") {{ text }}
 </template>
 
 
 
 <script lang="coffee">
    module.exports =
+
       props:
          'text':
             type: String
@@ -14,7 +15,7 @@
          'type':
             type: String
             default: 'solid'
-            validator: (type) => ['solid', 'ghost'].includes(type)
+            validator: (type) => ['solid', 'ghost', 'light'].includes(type)
 
       methods:
          click: ->
@@ -24,29 +25,42 @@
 
 
 <style lang="less">
-   @media @small {
+
+   @padding: 20px;
+
+   .Button {
+      height: 34px;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 3px;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 
-   @media @large {
-      .Button {
-         height: 34px;
-         line-height: 34px;
-         padding: 0 20px;
-         font-weight: 600;
-         font-size: 14px;
-         text-align: center;
-         color: #FFF;
-         border-radius: 3px;
-         user-select: none;
-         cursor: pointer;
-         background-image: linear-gradient(-180deg, #53BD66 0%, #16a085 80%);
-         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      }
-      .Button:active{
+   .Button[type="solid"] {
+      padding: 0 @padding;
+      color: #FFF;
+      background-image: linear-gradient(-180deg, #53BD66 0%, #16a085 80%);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+      &:active{
          background-image: linear-gradient(-180deg, #1E8470 0%, #16a085 80%);
          box-shadow: none;
       }
    }
 
-   @import '~assets/@';
+   .Button[type="ghost"] {
+      padding: 0 @padding - 1;
+      color: #14BEB4;
+      border: 1px solid #14BEB4;
+   }
+
+   .Button[type="light"] {
+      padding: 0 @padding - 1;
+      color: #A2AEBA;
+      border: 1px solid lighten(#A2AEBA, 24%);
+   }
 </style>

@@ -1,9 +1,11 @@
 <template lang="jade">
    #examples_Button
-      Button(text="注册")
-      Button(text="登陆")
-      Button(text="修改帖子")
-      Button(text="Setting")
+      Button(text="登录" type="solid")
+      Button(text="登陆" type="ghost")
+      Button(text="登陆" type="light")
+      Button(text="Setting" type="solid")
+      Button(text="Setting" type="ghost")
+      Button(text="Setting" type="light")
 </template>
 
 
