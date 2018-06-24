@@ -20,6 +20,7 @@
          nuxt-link(to="/examples/Rate",          :class="getClass('Rate')")          Rate
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
+         nuxt-link(to="/examples/SubjectItem",   :class="getClass('SubjectItem')")   SubjectItem
          nuxt-link(to="/examples/TabBar",        :class="getClass('TabBar')")        TabBar
          nuxt-link(to="/examples/Table",         :class="getClass('Table')")         Table
          nuxt-link(to="/examples/TextArea",      :class="getClass('TextArea')")      TextArea
