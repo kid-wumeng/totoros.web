@@ -1,7 +1,7 @@
 <template lang="jade">
    Dialog.AlertDialog(:open="open" @close="close")
       Area
-         .text(v-html="textBr")
+         TextArea(:text="text")
          Row(x="right")
             Button(text="OK" @click="close")
 </template>
@@ -12,10 +12,11 @@
    module.exports =
 
       components:
-         'Dialog': require('~/components/Dialog').default
-         'Area':   require('~/components/Area').default
-         'Row':    require('~/components/Row').default
-         'Button': require('~/components/Button').default
+         'Dialog':   require('~/components/Dialog').default
+         'Area':     require('~/components/Area').default
+         'TextArea': require('~/components/TextArea').default
+         'Row':      require('~/components/Row').default
+         'Button':   require('~/components/Button').default
 
       props:
          'open':
@@ -24,10 +25,6 @@
          'text':
             type: String
             default: ''
-
-      computed:
-         textBr: ->
-            return @text.trim().replace(/\n/g, '<br/>')
 
       methods:
          close: ->
@@ -45,13 +42,6 @@
          min-width: 200px;
          max-width: 600px;
          padding: @padding;
-         .text {
-            line-height: 1.7;
-            text-align: justify;
-            text-indent: 2em;
-            font-size: 14px;
-            color: #273340;
-         }
          .Row {
             margin-top: @padding * 1.5;
          }

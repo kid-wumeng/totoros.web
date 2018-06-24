@@ -14,5 +14,5 @@
          'Button':      require('~/components/Button').default
 
       data: ->
-         open: true
+         open: false
 </script>
