@@ -1,9 +1,9 @@
 <template lang="jade">
-   .Dialog
-      transition(name="fade")
-         .mask(v-if="open" @click.self="close")
-            slot
-            .close(v-if="!hideClose" @click="close")
+   Modal.Dialog(:open="open" @close="close")
+      Area
+         slot
+         Row(x="right" y="center")
+            slot(name="action")
 </template>
 
 
@@ -11,12 +11,13 @@
 <script lang="coffee">
    module.exports =
 
+      components:
+         'Modal': require('~/components/Modal').default
+         'Area':  require('~/components/Area').default
+         'Row':   require('~/components/Row').default
+
       props:
          'open':
-            type: Boolean
-            default: false
-
-         'hideClose':
             type: Boolean
             default: false
 
@@ -29,40 +30,58 @@
 
 <style lang="less">
 
-   @close-size: 28px;
+   @padding-x: 27px;
+   @padding-y: 18px;
+   @action-bar-height: 36px;
 
    .Dialog {
-      .mask {
-         position: fixed;
-         left: 0;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         background-color: rgba(68, 86, 105, 0.6);
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         transition: opacity 0.5s ease;
+      .Area {
+         min-width:  360px;
+         max-width:  640px;
+         min-height: 160px;
+         padding-left:   @padding-x;
+         padding-right:  @padding-x;
+         padding-top:    @padding-y;
+         padding-bottom: @padding-y + @action-bar-height;
+         position: relative;
 
-         .close {
-            position: absolute;
-            top:    @close-size;
-            right:  @close-size;
-            width:  @close-size;
-            height: @close-size;
-            background-image: url(~/assets/images/close_white.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            opacity: 0.6;
+         > * {
+            margin-top: @padding-y;
          }
-      }
-   }
 
-   .Dialog {
-      .mask.fade-enter,
-      .mask.fade-leave-to {
-         opacity: 0;
+         > *:first-child {
+            margin-top: 0;
+         }
+
+         > .Row {
+            margin-top: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: @action-bar-height;
+            border-top: 1px solid #F2F2F2;
+
+            > * {
+               display: block;
+               height: 100%;
+               padding: 0 @padding-x;
+               font-size: 13px;
+               color: #939EA9;
+               border-left: 1px solid #F2F2F2;
+               outline: none;
+               cursor: pointer;
+               user-select: none;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               transition: color 0.2s ease;
+
+               &:hover {
+                  color: #273340;
+               }
+            }
+         }
       }
    }
 </style>

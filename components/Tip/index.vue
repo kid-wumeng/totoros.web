@@ -9,16 +9,13 @@
 <script lang="coffee">
    module.exports =
 
-
       props:
          'text':
             type: String
             required: true
-
          'open':
             type: Boolean
             default: false
-
          'auto':
             type: Boolean
             default: false

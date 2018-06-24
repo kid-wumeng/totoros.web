@@ -32,9 +32,10 @@
       height: 34px;
       font-weight: 600;
       font-size: 14px;
-      border-radius: 3px;
-      user-select: none;
+      border-radius: 2px;
       cursor: pointer;
+      user-select: none;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;

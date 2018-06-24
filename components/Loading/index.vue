@@ -1,5 +1,5 @@
 <template lang="jade">
-   Dialog.Loading(:open="open" hide-close)
+   Modal.Loading(:open="open" hide-close)
       .wrap
          Indicator(v-if="value === null")
          ProgressBar(v-else :value="value", :total="total")
@@ -12,7 +12,7 @@
    module.exports =
 
       components:
-         'Dialog':      require('~/components/Dialog').default
+         'Modal':       require('~/components/Modal').default
          'ProgressBar': require('./ProgressBar').default
          'Indicator':   require('./Indicator').default
 
