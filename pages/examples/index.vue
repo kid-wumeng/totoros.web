@@ -15,12 +15,14 @@
          nuxt-link(to="/examples/Modal",         :class="getClass('Modal')")         Modal
          nuxt-link(to="/examples/PageBar",       :class="getClass('PageBar')")       PageBar
          nuxt-link(to="/examples/PromptDialog",  :class="getClass('PromptDialog')")  PromptDialog
+         nuxt-link(to="/examples/Radar",         :class="getClass('Radar')")         Radar
          nuxt-link(to="/examples/RadioBar",      :class="getClass('RadioBar')")      RadioBar
          nuxt-link(to="/examples/RadioGrid",     :class="getClass('RadioGrid')")     RadioGrid
          nuxt-link(to="/examples/Rate",          :class="getClass('Rate')")          Rate
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
          nuxt-link(to="/examples/SubjectItem",   :class="getClass('SubjectItem')")   SubjectItem
+         nuxt-link(to="/examples/SubjectRadar",  :class="getClass('SubjectRadar')")  SubjectRadar
          nuxt-link(to="/examples/TabBar",        :class="getClass('TabBar')")        TabBar
          nuxt-link(to="/examples/Table",         :class="getClass('Table')")         Table
          nuxt-link(to="/examples/TextArea",      :class="getClass('TextArea')")      TextArea

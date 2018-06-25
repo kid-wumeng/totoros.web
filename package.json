@@ -8,11 +8,13 @@
   "dependencies": {
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.1",
+    "convex-hull": "^1.0.3",
     "cross-env": "^5.2.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
-    "nuxt": "^1.4.1"
+    "nuxt": "^1.4.1",
+    "v-charts": "^1.17.4"
   }
 }
