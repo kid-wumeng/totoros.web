@@ -139,6 +139,11 @@
 
 
 
+         isOrigin: ( p ) ->
+            return p.x is @origin.x and p.y is @origin.y
+
+
+
          findConvexPoints: ->
 
             points = [ @dataPoints..., @origin ]
@@ -147,9 +152,25 @@
 
             indexs = ch( tuples )
 
-            convex = indexs.map ( index ) => points[index[0]]
+            points = indexs.map ( index ) => points[index[0]]
 
-            return convex
+            if points.length
+               return points
+
+            else
+               # convex-hull 不会将 1 或 2 个点视为凸包，需要手动处理
+               # 这种情况，雷达图上将呈现一条直线
+               # 调用本方法的地方理应获知，以作相应处理，因此设置标志位 points.line = true
+
+               points = @dataPoints.filter ( point ) => !@isOrigin( point )
+
+               switch points.length
+                  when 1 then points = points.concat([@origin])
+                  when 2 then points = points
+                  else        points = []
+
+               points.line = true
+               return points
 
 
 
@@ -199,9 +220,11 @@
 
          drawDataFrame: ->
 
+            points = @findConvexPoints()
+
             @ctx.beginPath()
 
-            for point, i in @findConvexPoints()
+            for point, i in points
                if i is 0
                   @ctx.moveTo( point.x, point.y )
                else
@@ -215,6 +238,8 @@
 
             @ctx.fillStyle = gradient
             @ctx.fill()
+
+            @ctx.lineWidth = 3 if points.line
 
             @ctx.strokeStyle = 'rgba(22, 160, 133, 0.8)'
             @ctx.stroke()

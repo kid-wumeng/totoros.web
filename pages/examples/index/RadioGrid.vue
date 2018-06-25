@@ -21,7 +21,7 @@
          radios1: [
             { data: 'comic', text: '漫画' }
             { data: 'paint', text: '绘本' }
-            { data: 'serie', text: 'TV/OVA' }
+            { data: 'anime', text: 'TV/OVA' }
             { data: 'movie', text: '动画电影' }
          ]
 

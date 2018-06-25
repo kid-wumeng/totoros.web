@@ -12,7 +12,7 @@
       props:
          'text':
             type: String
-            required: true
+            default: ''
          'open':
             type: Boolean
             default: false
@@ -35,7 +35,7 @@
             return @open or (@auto and @autoOpen)
 
          textClass: ->
-            '-open': @textOpen
+            '-open': @text and @textOpen
 
          textStyle: ->
             'left': @left + 'px'

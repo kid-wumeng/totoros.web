@@ -5,6 +5,7 @@ io =
    cdn:               require('./cdn')
    dev:               require('./dev')
    dpr:               require('./dpr')
+   formatScore:       require('./formatScore')
    formatSubjectType: require('./formatSubjectType')
    isID:              require('./isID')
    sleep:             require('./sleep')

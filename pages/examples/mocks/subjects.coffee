@@ -12,6 +12,11 @@ module.exports = [{
    end: { year: 2018, month: 3, day: 12 }
    startText: '1990-11-26'
    endText: '2018-03-12'
+   world: 78
+   story: 85
+   roles: 33
+   paint: 60
+   music: 65
    createDate: new Date()
    updateDate: new Date()
    face:
@@ -24,7 +29,7 @@ module.exports = [{
       ver:    1
 },{
    id: 2
-   type: 'serie'
+   type: 'anime'
    typeText: 'TV/OVA'
    name: '乒乓'
    nameOrigin: ''
@@ -36,6 +41,11 @@ module.exports = [{
    end: { year: 2018, month: 3, day: 12 }
    startText: '1990-11-26'
    endText: '2018-03-12'
+   world: 78
+   story: 85
+   roles: 33
+   paint: 60
+   music: 65
    createDate: new Date()
    updateDate: new Date()
    face:
