@@ -47,7 +47,7 @@
          font-weight: 500;
          font-size: 12px;
          color: #FFF;
-         background-color: rgba(39, 51, 64, 0.75);
+         background-color: rgba(68, 86, 105, 0.8);
          border-radius: 4px;
          opacity: 0;
          transition: opacity 0.2s ease;

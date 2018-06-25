@@ -79,7 +79,7 @@
 
 <style lang="less">
 
-   @color: rgba(39, 51, 64, 0.75);
+   @color: rgba(68, 86, 105, 0.8);
    @size:  6px;
 
    .Tip {

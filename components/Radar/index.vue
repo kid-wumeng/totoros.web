@@ -40,7 +40,7 @@
 
 
          vertexs: ->
-            @getVertexs(0.7)
+            @getVertexs(0.65)
 
 
          textVertexs: ->
@@ -69,6 +69,7 @@
 
             @initCanvas()
             @drawVertexFrame()
+            @drawVertexLines()
             @drawDataFrame()
             @drawText()
 
@@ -138,22 +139,6 @@
 
 
 
-         getAngle: ( o, p ) ->
-
-            dx = p.x - o.x
-            dy = p.y - o.y
-
-            angle = Math.atan2(dy, dx) * 180 / Math.PI
-
-            return Math.round(angle)
-
-
-
-         isSamePoint: ( p1, p2 ) ->
-            return p1.x is p2.x and p1.y is p2.y
-
-
-
          findConvexPoints: ->
 
             points = [ @dataPoints..., @origin ]
@@ -193,8 +178,22 @@
 
             @ctx.closePath()
 
-            @ctx.strokeStyle = '#EAEAEA'
+            @ctx.strokeStyle = '#E2E2E2'
             @ctx.stroke()
+
+
+
+         drawVertexLines: ->
+
+            for vertex in @vertexs
+
+               @ctx.beginPath()
+               @ctx.moveTo( @origin.x, @origin.y )
+               @ctx.lineTo( vertex.x, vertex.y )
+               @ctx.closePath()
+
+               @ctx.strokeStyle = '#E2E2E2'
+               @ctx.stroke()
 
 
 
@@ -210,14 +209,13 @@
 
             @ctx.closePath()
 
-            grd = @ctx.createLinearGradient(0, 0, @size, @size)
-            grd.addColorStop(0.0, 'rgba(22, 160, 133, 0.8)')
-            grd.addColorStop(1.0, 'rgba(83, 189, 102, 0.8)')
+            gradient = @ctx.createLinearGradient(0, 0, @size, @size)
+            gradient.addColorStop(0.0, 'rgba(22, 160, 133, 0.8)')
+            gradient.addColorStop(1.0, 'rgba(83, 189, 102, 0.8)')
 
-            @ctx.fillStyle = grd
+            @ctx.fillStyle = gradient
             @ctx.fill()
 
-            @ctx.lineWidth   = 1
             @ctx.strokeStyle = 'rgba(22, 160, 133, 0.8)'
             @ctx.stroke()
 
@@ -229,9 +227,9 @@
 
                 vertex = @textVertexs[i]
 
-                @ctx.font = '12px Ubuntu'
-                @ctx.fillStyle = '#A2AEBA'
-                @ctx.textAlign = 'center'
+                @ctx.font         = '12px Ubuntu'
+                @ctx.fillStyle    = '#A2AEBA'
+                @ctx.textAlign    = 'center'
                 @ctx.textBaseline = 'middle'
 
                 @ctx.fillText(item.text, vertex.x, vertex.y)
@@ -241,5 +239,6 @@
 
 <style lang="less">
    .Radar {
+      display: block;
    }
 </style>
