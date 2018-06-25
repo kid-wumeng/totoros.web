@@ -20,8 +20,10 @@
          nuxt-link(to="/examples/RadioGrid",     :class="getClass('RadioGrid')")     RadioGrid
          nuxt-link(to="/examples/Rate",          :class="getClass('Rate')")          Rate
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
+         nuxt-link(to="/examples/SubjectDesc",   :class="getClass('SubjectDesc')")   SubjectDesc
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
          nuxt-link(to="/examples/SubjectItem",   :class="getClass('SubjectItem')")   SubjectItem
+         nuxt-link(to="/examples/SubjectName",   :class="getClass('SubjectName')")   SubjectName
          nuxt-link(to="/examples/SubjectRadar",  :class="getClass('SubjectRadar')")  SubjectRadar
          nuxt-link(to="/examples/TabBar",        :class="getClass('TabBar')")        TabBar
          nuxt-link(to="/examples/Table",         :class="getClass('Table')")         Table

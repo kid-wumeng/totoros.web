@@ -69,6 +69,7 @@
 
 <style lang="less">
    .SubjectRadar {
+      flex: none;
       .Radar {
          width: 100%;
       }

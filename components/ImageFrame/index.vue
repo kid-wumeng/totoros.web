@@ -23,6 +23,7 @@
 
 <style lang="less">
    .ImageFrame {
+      flex: none;
       padding: 1px;
       border: 1px solid transparent;
    }

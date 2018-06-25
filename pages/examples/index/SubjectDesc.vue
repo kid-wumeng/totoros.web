@@ -1,7 +1,7 @@
 <template lang="jade">
-   #examples_SubjectItem
-      SubjectItem(:subject="subject1")
-      SubjectItem(:subject="subject2")
+   #examples_SubjectDesc
+      SubjectDesc(:subject="subject1")
+      SubjectDesc(:subject="subject2")
 </template>
 
 
@@ -12,7 +12,7 @@
 
    module.exports =
       components:
-         'SubjectItem': require('~/components/SubjectItem').default
+         'SubjectDesc': require('~/components/SubjectDesc').default
 
       data: ->
          subject1: mocks.subjects[0]
@@ -22,9 +22,6 @@
 
 
 <style lang="less">
-   #examples_SubjectItem {
-      .SubjectItem {
-         margin-top: 50px;
-      }
+   #examples_SubjectDesc {
    }
 </style>

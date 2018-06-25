@@ -26,6 +26,10 @@
             type: Boolean
             default: false
 
+         'indent':
+            type: Boolean
+            default: false
+
 
       computed:
          ps: ->
@@ -53,7 +57,6 @@
 <style lang="less">
    .TextArea {
       line-height: 24px;
-      text-align: justify;
       font-size: 14px;
       word-break: break-all;
 
@@ -140,6 +143,5 @@
             }
          }
       }
-
    }
 </style>

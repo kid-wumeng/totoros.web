@@ -1,7 +1,6 @@
 module.exports = [{
    id: 1
    type: 'comic'
-   typeText: '漫画'
    name: '剑风传奇'
    nameOrigin: '剣風伝奇ベルセルク'
    nameAliases: ['烙印战士', 'ベルセルク', 'BERSERK']
@@ -30,9 +29,9 @@ module.exports = [{
 },{
    id: 2
    type: 'anime'
-   typeText: 'TV/OVA'
-   name: '乒乓'
-   nameOrigin: ''
+   way: 'tv'
+   name: ''
+   nameOrigin: '乒乓 ピンポン THE ANIMATION'
    nameAliases: []
    intro: ''
    authors: ['汤浅政明', '松本大洋']

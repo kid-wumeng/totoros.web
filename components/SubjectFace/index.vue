@@ -42,6 +42,6 @@
 
 <style lang="less">
    .SubjectFace {
-      background-color: #F6F6F6;
+      background-color: #FBFBFB;
    }
 </style>

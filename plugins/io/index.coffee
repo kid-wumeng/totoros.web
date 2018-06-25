@@ -7,6 +7,7 @@ io =
    dpr:               require('./dpr')
    formatScore:       require('./formatScore')
    formatSubjectType: require('./formatSubjectType')
+   formatSubjectWay:  require('./formatSubjectWay')
    isID:              require('./isID')
    sleep:             require('./sleep')
 

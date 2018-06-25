@@ -51,6 +51,7 @@
 
 <style lang="less">
    .ImageCDN {
+      flex: none;
       width: 100%;
       background-repeat: no-repeat;
       background-position: center;
