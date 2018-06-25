@@ -4,7 +4,7 @@
       Column
          SubjectName(:subject="subject")
          SubjectDesc(:subject="subject")
-         TextArea(:text="subject.intro")
+         SubjectIntro(:subject="subject")
       SubjectRadar(:subject="subject")
 </template>
 
@@ -21,6 +21,7 @@
          'SubjectFace':  require('~/components/SubjectFace').default
          'SubjectName':  require('~/components/SubjectName').default
          'SubjectDesc':  require('~/components/SubjectDesc').default
+         'SubjectIntro': require('~/components/SubjectIntro').default
          'SubjectRadar': require('~/components/SubjectRadar').default
 
       props:
@@ -33,22 +34,16 @@
 
 <style lang="less">
    .SubjectItem {
-      width: 800px;
-
       .SubjectFace {
          width: 80px;
       }
-
       .Column{
          flex: auto;
-         margin: 0 20px;
-         .TextArea {
-            text-indent: 2em;
-         }
+         margin-left: 20px;
+         margin-right: 60px;
       }
-
       .SubjectRadar {
-         width: 150px;
+         width: 140px;
       }
    }
 </style>
