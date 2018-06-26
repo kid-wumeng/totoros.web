@@ -1,6 +1,6 @@
 <template lang="jade">
-   #examples_SubjectList
-      SubjectList(:subjects="subjects")
+   #examples_SubjectGrid
+      SubjectGrid(:subjects="subjects")
 </template>
 
 
@@ -10,7 +10,7 @@
 
    module.exports =
       components:
-         'SubjectList': require('~/components/SubjectList').default
+         'SubjectGrid': require('~/components/SubjectGrid').default
 
       data: ->
          subjects: mocks.subjects
@@ -19,7 +19,6 @@
 
 
 <style lang="less">
-   #examples_SubjectList {
-      width: 850px;
+   #examples_SubjectGrid {
    }
 </style>

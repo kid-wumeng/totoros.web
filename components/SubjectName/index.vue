@@ -13,7 +13,7 @@
             required: true
 
          'size':
-            type: Object
+            type: String
             default: 'medium'
             validator: (type) => ['small', 'medium', 'large'].includes(type)
 
@@ -43,9 +43,10 @@
 
 <style lang="less">
    .SubjectName {
-      font-weight: 600;
-      cursor: pointer;
+      text-align: justify;
       color: #273340;
+      word-break: break-all;
+      cursor: pointer;
 
       &:hover {
          color: #14BEB4;
@@ -53,10 +54,11 @@
    }
 
    .SubjectName[size="small"] {
-      font-size: 16px;
+      font-size: 13px;
    }
 
    .SubjectName[size="medium"] {
+      font-weight: 600;
       font-size: 15px;
    }
 

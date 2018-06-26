@@ -35,12 +35,12 @@
 <style lang="less">
    .SubjectItem {
       .SubjectFace {
-         width: 80px;
+         width: 90px;
       }
       .Column{
          flex: auto;
-         margin-left: 22px;
-         margin-right: 54px;
+         margin-left: 24px;
+         margin-right: 56px;
 
          .SubjectDesc {
             margin-top: 10px;

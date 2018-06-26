@@ -8,6 +8,7 @@
          nuxt-link(to="/examples/ConfirmDialog", :class="getClass('ConfirmDialog')") ConfirmDialog
          nuxt-link(to="/examples/Dialog",        :class="getClass('Dialog')")        Dialog
          nuxt-link(to="/examples/FilePicker",    :class="getClass('FilePicker')")    FilePicker
+         nuxt-link(to="/examples/Grid",          :class="getClass('Grid')")          Grid
          nuxt-link(to="/examples/ImageCDN",      :class="getClass('ImageCDN')")      ImageCDN
          nuxt-link(to="/examples/ImageFrame",    :class="getClass('ImageFrame')")    ImageFrame
          nuxt-link(to="/examples/Input",         :class="getClass('Input')")         Input
@@ -22,11 +23,13 @@
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
          nuxt-link(to="/examples/SubjectDesc",   :class="getClass('SubjectDesc')")   SubjectDesc
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
+         nuxt-link(to="/examples/SubjectGrid",   :class="getClass('SubjectGrid')")   SubjectGrid
          nuxt-link(to="/examples/SubjectIntro",  :class="getClass('SubjectIntro')")  SubjectIntro
          nuxt-link(to="/examples/SubjectItem",   :class="getClass('SubjectItem')")   SubjectItem
          nuxt-link(to="/examples/SubjectList",   :class="getClass('SubjectList')")   SubjectList
          nuxt-link(to="/examples/SubjectName",   :class="getClass('SubjectName')")   SubjectName
          nuxt-link(to="/examples/SubjectRadar",  :class="getClass('SubjectRadar')")  SubjectRadar
+         nuxt-link(to="/examples/SubjectTile",   :class="getClass('SubjectTile')")   SubjectTile
          nuxt-link(to="/examples/TabBar",        :class="getClass('TabBar')")        TabBar
          nuxt-link(to="/examples/Table",         :class="getClass('Table')")         Table
          nuxt-link(to="/examples/TextArea",      :class="getClass('TextArea')")      TextArea
@@ -100,6 +103,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
 
             > * {
                flex: none;

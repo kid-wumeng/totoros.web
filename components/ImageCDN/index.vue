@@ -18,8 +18,10 @@
             type: Number
             default: 0
 
+
       data: ->
          'width': 0
+
 
       computed:
          src: ->
@@ -43,10 +45,16 @@
 
             return style
 
+
       mounted: ->
-         @width = @$el.offsetWidth
+         @update()
+         @io.resize(@$el, @update)
+
 
       methods:
+         update: ->
+            @width = @$el.offsetWidth
+
          click: ->
             @$emit('click')
 </script>

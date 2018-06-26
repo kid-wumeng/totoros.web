@@ -9,6 +9,7 @@ io =
    formatSubjectType: require('./formatSubjectType')
    formatSubjectWay:  require('./formatSubjectWay')
    isID:              require('./isID')
+   resize:            require('./resize')
    sleep:             require('./sleep')
 
 
