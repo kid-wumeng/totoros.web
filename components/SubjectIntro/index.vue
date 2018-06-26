@@ -18,8 +18,14 @@
 
 
 <style lang="less">
-   .SubjectIntro {
+   .SubjectIntro.TextArea {
+      line-height: 22px;
       text-indent: 2em;
       text-align: justify;
+      font-size: 14px;
+
+      p {
+         margin-bottom: 6px;
+      }
    }
 </style>

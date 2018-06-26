@@ -58,6 +58,7 @@
    .TextArea {
       line-height: 24px;
       font-size: 14px;
+      color: #273340;
       word-break: break-all;
 
       > h1,
@@ -70,7 +71,7 @@
       > blockquote   { margin-bottom: 16px }
       > ul           { margin-bottom: 16px }
       > ol           { margin-bottom: 16px }
-      > *:last-child { margin-bottom: 0 }
+      > *:last-child { margin-bottom: 0 !important }
 
       > h1,
       > h2,
@@ -133,11 +134,9 @@
             face {
                display: block;
             }
-
             name {
                display: block;
             }
-
             desc {
                display: block;
             }

@@ -1,5 +1,5 @@
 <template lang="jade">
-   ImageCDN.UserFace(:path="path", :ratio="1", :class="faceClass")
+   ImageCDN.UserFace(:path="path", :ratio="1", :class="faceClass" @click="click")
 </template>
 
 
@@ -31,6 +31,10 @@
 
          faceClass: ->
             '-circle': @circle
+
+      methods:
+         click: ->
+            @$router.push("/users/#{@id}")
 </script>
 
 
@@ -39,6 +43,7 @@
    .UserFace {
       background-color: #F6F6F6;
       border-radius: 3px;
+      cursor: pointer;
    }
 
    .UserFace.-circle {

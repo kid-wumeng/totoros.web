@@ -38,6 +38,13 @@
 
 <style lang="less">
    .SubjectName {
+      font-weight: 600;
+      font-size: 16px;
       cursor: pointer;
+      color: #273340;
+
+      &:hover {
+         color: #14BEB4;
+      }
    }
 </style>

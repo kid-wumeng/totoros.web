@@ -1,5 +1,5 @@
 <template lang="jade">
-   .ImageCDN(:style="imageStyle") {{ path ? '' : alt }}
+   .ImageCDN(:style="imageStyle" @click="click") {{ path ? '' : alt }}
 </template>
 
 
@@ -45,6 +45,10 @@
 
       mounted: ->
          @width = @$el.offsetWidth
+
+      methods:
+         click: ->
+            @$emit('click')
 </script>
 
 

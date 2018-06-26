@@ -19,6 +19,19 @@
 
 
 <style lang="less">
-   .SubjectItem {
+   .SubjectList {
+      .SubjectItem {
+         padding: 20px;
+         margin-bottom: 20px;
+      }
+      .SubjectItem:last-child {
+         margin-bottom: 0;
+      }
+      .SubjectItem:nth-child(odd) {
+         // background-color: rgba(249, 249, 249, 0.9);
+      }
+      .SubjectItem:nth-child(even) {
+         background-color: rgba(255, 255, 255, 0.9);
+      }
    }
 </style>

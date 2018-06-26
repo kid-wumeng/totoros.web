@@ -77,7 +77,8 @@
          > a {
             display: block;
             padding: 10px 16px;
-            font-size: 13px;
+            font-weight: 500;
+            font-size: 14px;
             color: #445669;
             &:hover {
                background-color: #F6F6F6;

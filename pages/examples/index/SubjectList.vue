@@ -20,5 +20,6 @@
 
 <style lang="less">
    #examples_SubjectList {
+      width: 800px;
    }
 </style>

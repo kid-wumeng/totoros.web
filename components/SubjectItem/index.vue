@@ -39,8 +39,15 @@
       }
       .Column{
          flex: auto;
-         margin-left: 20px;
-         margin-right: 60px;
+         margin-left: 22px;
+         margin-right: 54px;
+
+         .SubjectDesc {
+            margin-top: 10px;
+         }
+         .SubjectIntro {
+            margin-top: 10px;
+         }
       }
       .SubjectRadar {
          width: 140px;

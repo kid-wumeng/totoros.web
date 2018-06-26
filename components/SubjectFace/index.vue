@@ -1,5 +1,5 @@
 <template lang="jade">
-   ImageCDN.SubjectFace(:path="path", :ratio="ratio")
+   ImageCDN.SubjectFace(:path="path", :ratio="ratio" @click="click")
 </template>
 
 
@@ -36,6 +36,10 @@
                return @height / @width
             else
                return 1.45
+
+      methods:
+         click: ->
+            @$router.push("/subjects/#{@id}")
 </script>
 
 
@@ -43,5 +47,6 @@
 <style lang="less">
    .SubjectFace {
       background-color: #FBFBFB;
+      cursor: pointer;
    }
 </style>

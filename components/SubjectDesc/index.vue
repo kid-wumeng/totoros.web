@@ -1,5 +1,5 @@
 <template lang="jade">
-   .SubjectDesc {{ desc }}
+   .SubjectDesc(v-html="desc")
 </template>
 
 
@@ -37,12 +37,17 @@
             if @styles?.length
                descs.push(@styles.join('、'))
 
-            return descs.join(' / ')
+            return descs.join('<span class="sep">/</span>')
 </script>
 
 
 
 <style lang="less">
    .SubjectDesc {
+      font-size: 13px;
+      color: #A2AEBA;
+      .sep {
+         margin: 0 8px;
+      }
    }
 </style>
