@@ -56,7 +56,8 @@
 
 <style lang="less">
    .TextArea {
-      line-height: 24px;
+      line-height: 23px;
+      text-align: justify;
       font-size: 14px;
       color: #273340;
       word-break: break-all;
@@ -66,11 +67,11 @@
       > h3,
       > h4,
       > h5,
-      > h6           { margin-bottom: 20px }
-      > p            { margin-bottom: 16px }
-      > blockquote   { margin-bottom: 16px }
-      > ul           { margin-bottom: 16px }
-      > ol           { margin-bottom: 16px }
+      > h6           { margin-bottom: 10px }
+      > p            { margin-bottom: 6px }
+      > blockquote   { margin-bottom: 6px }
+      > ul           { margin-bottom: 6px }
+      > ol           { margin-bottom: 6px }
       > *:last-child { margin-bottom: 0 !important }
 
       > h1,

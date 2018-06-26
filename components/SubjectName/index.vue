@@ -1,5 +1,5 @@
 <template lang="jade">
-   .SubjectName(@click="click") {{ name }}
+   .SubjectName(:size="size" @click="click") {{ name }}
 </template>
 
 
@@ -11,6 +11,11 @@
          'subject':
             type: Object
             required: true
+
+         'size':
+            type: Object
+            default: 'medium'
+            validator: (type) => ['small', 'medium', 'large'].includes(type)
 
       computed:
          name: ->
@@ -39,12 +44,23 @@
 <style lang="less">
    .SubjectName {
       font-weight: 600;
-      font-size: 16px;
       cursor: pointer;
       color: #273340;
 
       &:hover {
          color: #14BEB4;
       }
+   }
+
+   .SubjectName[size="small"] {
+      font-size: 16px;
+   }
+
+   .SubjectName[size="medium"] {
+      font-size: 15px;
+   }
+
+   .SubjectName[size="large"] {
+      font-size: 16px;
    }
 </style>
