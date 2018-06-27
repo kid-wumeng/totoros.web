@@ -16,7 +16,7 @@ module.exports = [{
       ver:    1
 },{
    id: 2
-   name: 'totoros'
+   name: '狀態絕佳初見泉Spring'
    intro: 'totoros·官方'
    master: true
    editor: true

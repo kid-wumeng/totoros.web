@@ -1,5 +1,5 @@
 <template lang="jade">
-   TextArea.SubjectIntro(:text="subject.intro")
+   TextArea.Content(:text="mark.content")
 </template>
 
 
@@ -10,7 +10,7 @@
          'TextArea': require('~/components/TextArea').default
 
       props:
-         'subject':
+         'mark':
             type: Object
             required: true
 </script>
@@ -18,7 +18,8 @@
 
 
 <style lang="less">
-   .SubjectIntro {
+   .Content {
       text-indent: 2em;
+      color: #445669 !important;
    }
 </style>

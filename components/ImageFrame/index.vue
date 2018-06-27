@@ -24,7 +24,7 @@
 <style lang="less">
    .ImageFrame {
       flex: none;
-      padding: 1px;
+      padding: 2px;
       border: 1px solid transparent;
    }
 

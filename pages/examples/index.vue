@@ -13,6 +13,8 @@
          nuxt-link(to="/examples/ImageFrame",    :class="getClass('ImageFrame')")    ImageFrame
          nuxt-link(to="/examples/Input",         :class="getClass('Input')")         Input
          nuxt-link(to="/examples/Loading",       :class="getClass('Loading')")       Loading
+         nuxt-link(to="/examples/MarkItem",      :class="getClass('MarkItem')")      MarkItem
+         nuxt-link(to="/examples/MarkList",      :class="getClass('MarkList')")      MarkList
          nuxt-link(to="/examples/Modal",         :class="getClass('Modal')")         Modal
          nuxt-link(to="/examples/PageBar",       :class="getClass('PageBar')")       PageBar
          nuxt-link(to="/examples/PromptDialog",  :class="getClass('PromptDialog')")  PromptDialog
@@ -36,6 +38,7 @@
          nuxt-link(to="/examples/Tip",           :class="getClass('Tip')")           Tip
          nuxt-link(to="/examples/Toast",         :class="getClass('Toast')")         Toast
          nuxt-link(to="/examples/UserFace",      :class="getClass('UserFace')")      UserFace
+         nuxt-link(to="/examples/UserName",      :class="getClass('UserName')")      UserName
       Area.main
          nuxt-child
 </template>

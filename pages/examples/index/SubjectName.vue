@@ -18,10 +18,3 @@
          subject1: mocks.subjects[0]
          subject2: mocks.subjects[1]
 </script>
-
-
-
-<style lang="less">
-   #examples_SubjectName {
-   }
-</style>

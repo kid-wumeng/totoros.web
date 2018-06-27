@@ -1,6 +1,6 @@
 <template lang="jade">
    Column.SubjectTile(x="center")
-      SubjectFace(:subject="subject")
+      ImageFrame: SubjectFace(:subject="subject")
       SubjectName(:subject="subject" size="small")
 </template>
 

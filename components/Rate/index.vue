@@ -74,8 +74,8 @@
 
    .Rate[size="small"] {
       .star {
-         width: 18px;
-         height: 18px;
+         width: 14px;
+         height: 14px;
       }
    }
 

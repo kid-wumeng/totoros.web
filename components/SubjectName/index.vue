@@ -15,7 +15,7 @@
          'size':
             type: String
             default: 'medium'
-            validator: (type) => ['small', 'medium', 'large'].includes(type)
+            validator: (size) => ['small', 'medium', 'large'].includes(size)
 
       computed:
          name: ->

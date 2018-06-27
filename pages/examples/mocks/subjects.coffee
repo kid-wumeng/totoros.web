@@ -1,6 +1,7 @@
 module.exports = [{
    id: 1
    type: 'anime'
+   way: 'tv'
    name: '剑风传奇'
    nameOrigin: '剣風伝奇ベルセルク'
    nameAliases: ['烙印战士', 'ベルセルク', 'BERSERK']
@@ -29,7 +30,6 @@ module.exports = [{
 },{
    id: 2
    type: 'comic'
-   way: 'tv'
    name: ''
    nameOrigin: '乒乓 ピンポン THE ANIMATION'
    nameAliases: []
