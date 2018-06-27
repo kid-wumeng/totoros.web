@@ -6,6 +6,7 @@
          SubjectDesc(:subject="subject")
          Score(:mark="mark")
          Content(:mark="mark")
+      ActionArea(:mark="mark" @update="update" @remove="remove")
 </template>
 
 
@@ -22,6 +23,7 @@
          'SubjectDesc': require('~/components/SubjectDesc').default
          'Score':       require('./Score').default
          'Content':     require('./Content').default
+         'ActionArea':  require('./ActionArea').default
 
       props:
          'mark':
@@ -30,6 +32,10 @@
 
       computed:
          subject: -> @mark.subject
+
+      methods:
+         update: -> @$emit('update')
+         remove: -> @$emit('remove')
 </script>
 
 
@@ -37,11 +43,12 @@
 <style lang="less">
    .MarkItem[mode="subject"] {
       .SubjectFace {
-         width: 90px;
+         width: 80px;
       }
       .Column{
          flex: auto;
          margin-left: 24px;
+         margin-right: 64px;
          .SubjectDesc {
             margin-top: 10px;
          }

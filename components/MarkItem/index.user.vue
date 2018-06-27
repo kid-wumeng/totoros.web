@@ -27,6 +27,7 @@
 
       computed:
          user: -> @mark.user
+         date: -> @mark.createDate
 </script>
 
 

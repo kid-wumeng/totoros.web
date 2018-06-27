@@ -39,5 +39,5 @@ module.exports =
       ]
    },
 
-   plugins: ['~/plugins/io']
+   plugins: ['~/plugins/io', '~/plugins/sai']
 }

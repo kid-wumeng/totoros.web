@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_MarkList
       MarkList(:marks="marks" mode="user")
-      MarkList(:marks="marks" mode="subject")
+      MarkList(:marks="marks" mode="subject" @update='update' @remove="remove")
 </template>
 
 
@@ -15,6 +15,10 @@
 
       data: ->
          marks: mocks.marks
+
+      methods:
+         update: ( id ) -> alert('update: ' + id)
+         remove: ( id ) -> alert('remove: ' + id)
 </script>
 
 
@@ -24,8 +28,8 @@
       .MarkList[mode="user"] {
          width: 750px;
       }
-      .MarkList[mode="subject"] {
-         width: 850px;
+      .MarkList:last-child {
+         margin-top: 100px;
       }
    }
 </style>

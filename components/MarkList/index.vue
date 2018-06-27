@@ -1,6 +1,6 @@
 <template lang="jade">
    .MarkList(:mode="mode")
-      MarkItem(v-for="mark in marks", :key="mark.id", :mark="mark", :mode="mode")
+      MarkItem(v-for="mark in marks", :key="mark.id", :mark="mark", :mode="mode" @update="update(mark)" @remove="remove(mark)")
 </template>
 
 
@@ -19,6 +19,10 @@
             type: String
             required: true
             validator: (mode) => ['user', 'subject'].includes(mode)
+
+      methods:
+         update: ( mark ) -> @$emit('update', mark.id)
+         remove: ( mark ) -> @$emit('remove', mark.id)
 </script>
 
 

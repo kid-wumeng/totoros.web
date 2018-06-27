@@ -15,6 +15,7 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "nuxt": "^1.4.1",
-    "resize-observer-polyfill": "^1.5.0"
+    "resize-observer-polyfill": "^1.5.0",
+    "sai.io": "^0.2.2"
   }
 }
