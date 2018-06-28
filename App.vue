@@ -30,7 +30,7 @@
    global.io  = Vue.prototype.io  = io
 
 
-   module.exports =
+   export default {
       mounted: ->
          @setFavicon()
 
@@ -44,43 +44,44 @@
             link.type = 'image/png'
 
             document.head.appendChild(link)
+   }
 </script>
 
 
 
 <style lang="less">
 
-   @font-face{
+   @font-face {
       font-family: "Lato";
       font-weight: 400;
       src: url(~/assets/fonts/Lato-Regular.ttf);
    }
 
-   @font-face{
+   @font-face {
       font-family: "Lato";
       src: url(~/assets/fonts/Lato-Medium.ttf);
       font-weight: 500;
    }
 
-   @font-face{
+   @font-face {
       font-family: "Lato";
       src: url(~/assets/fonts/Lato-Semibold.ttf);
       font-weight: 600;
    }
 
-   @font-face{
+   @font-face {
       font-family: "Ubuntu";
       font-weight: 400;
       src: url(~/assets/fonts/Ubuntu-R.ttf);
    }
 
-   @font-face{
+   @font-face {
       font-family: "Ubuntu";
       src: url(~/assets/fonts/Ubuntu-M.ttf);
       font-weight: 500;
    }
 
-   @font-face{
+   @font-face {
       font-family: "Ubuntu";
       src: url(~/assets/fonts/Ubuntu-B.ttf);
       font-weight: 600;

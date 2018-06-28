@@ -5,7 +5,8 @@
 
 
 <script lang="coffee">
-   module.exports =
+   export default {
       components:
          'App': require('~/App').default
+   }
 </script>

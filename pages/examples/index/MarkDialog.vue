@@ -1,37 +1,42 @@
 <template lang="jade">
    #examples_MarkDialog
-      Button(text="Mark 1", @click="click1")
-      Button(text="Mark 2", @click="click2")
-      MarkDialog(:subject="subject", :open="open" @ok="ok" @close="close")
+      Button(text="Mark ( 创建 )", @click="click1")
+      Button(text="Mark ( 修改 )", @click="click2")
+      MarkDialog(:open="open", :mark="mark" @sure="sure" @close="close")
 </template>
 
 
 
 <script lang="coffee">
 
+   import MarkDialog from '~/components/MarkDialog'
+
    mocks = require('../mocks')
 
-   module.exports =
+   export default {
 
       components:
-         'MarkDialog': require('~/components/MarkDialog').default
+         'MarkDialog': MarkDialog
          'Button':     require('~/components/Button').default
 
       data: ->
          open: false
-         subject: null
+         mark: null
 
       methods:
          click1: ->
-            @subject = mocks.subjects[0]
             @open = true
+            @mark = null
 
          click2: ->
-            @subject = mocks.subjects[1]
             @open = true
+            @mark = mocks.mark
 
-         ok: ->
+         sure: ->
+            @open = false
 
          close: ->
             @open = false
+
+   }
 </script>

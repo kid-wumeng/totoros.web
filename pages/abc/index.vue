@@ -1,12 +1,11 @@
 <template lang="jade">
-   h1 HOME
+   #abc abc
 </template>
 
 
 
-<script lang="coffee">
+<script>
    export default {
-      data: => {}
    }
 </script>
 
