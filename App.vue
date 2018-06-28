@@ -1,5 +1,5 @@
 <template lang="jade">
-   #app
+   #App
       nuxt
 </template>
 
