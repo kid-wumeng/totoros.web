@@ -13,6 +13,7 @@
          nuxt-link(to="/examples/ImageFrame",    :class="getClass('ImageFrame')")    ImageFrame
          nuxt-link(to="/examples/Input",         :class="getClass('Input')")         Input
          nuxt-link(to="/examples/Loading",       :class="getClass('Loading')")       Loading
+         nuxt-link(to="/examples/MarkDialog",    :class="getClass('MarkDialog')")    MarkDialog
          nuxt-link(to="/examples/MarkItem",      :class="getClass('MarkItem')")      MarkItem
          nuxt-link(to="/examples/MarkList",      :class="getClass('MarkList')")      MarkList
          nuxt-link(to="/examples/Modal",         :class="getClass('Modal')")         Modal
