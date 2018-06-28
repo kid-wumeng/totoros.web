@@ -32,12 +32,6 @@ module.exports =
          hid:     'description',
          name:    'description',
          content: '硬核漫画, 青年漫画, 小众漫画, 冷门漫画'
-      }],
-
-      link: [
-         { rel: 'icon', href: '/images/favicon.png', type: 'image/png' }
-      ]
-   },
-
-   plugins: ['~/plugins/io', '~/plugins/sai']
+      }]
+   }
 }

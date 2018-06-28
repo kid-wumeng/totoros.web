@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_UserName
       UserName(:user="user1")
-      UserName(:user="user2")
+      UserName(:user="user2" clickable)
 </template>
 
 

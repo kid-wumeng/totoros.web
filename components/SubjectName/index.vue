@@ -1,6 +1,6 @@
 <template lang="jade">
-   nuxt-link.SubjectName(v-if="clickable", :size="size", :to="to") {{ subject.name }}
-   span.SubjectName(v-else :size="size") {{ subject.name }}
+   nuxt-link.SubjectName(v-if="clickable", :size="size", :to="to") {{ name }}
+   span.SubjectName(v-else :size="size") {{ name }}
 </template>
 
 

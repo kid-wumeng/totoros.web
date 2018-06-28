@@ -30,8 +30,8 @@
 
    .Button {
       height: 34px;
-      font-weight: 600;
       font-family: "Ubuntu";
+      font-weight: 600;
       font-size: 14px;
       border-radius: 2px;
       cursor: pointer;

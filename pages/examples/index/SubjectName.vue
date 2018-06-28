@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_SubjectName
       SubjectName(:subject="subject1")
-      SubjectName(:subject="subject2")
+      SubjectName(:subject="subject2" clickable)
 </template>
 
 
