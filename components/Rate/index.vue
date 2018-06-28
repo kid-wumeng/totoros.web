@@ -1,7 +1,10 @@
 <template lang="jade">
    .Rate(:size="size", :class="rateClass")
-      Tip(v-for="i in 7", :key="i", :text="io.formatScore(i)" auto)
+      Tip(v-for="i in 7", :key="i", :text="getTipText(i)" auto)
          .star(:class="getStarClass(i)" @click="click(i)")
+
+      .preload-star
+      .preload-star-active
 </template>
 
 
@@ -12,11 +15,9 @@
       components:
          'Tip': require('~/components/Tip').default
 
-
       model:
          prop:  'score'
          event: 'change'
-
 
       props:
          'score':
@@ -40,6 +41,13 @@
 
 
       methods:
+         getTipText: (i) ->
+            if @changeable
+               return io.formatScore(i)
+            else
+               return ''
+
+
          getStarClass: (i) ->
             if i <= @score
                return {'-active': true}
@@ -73,6 +81,16 @@
       .star.-active {
          background-image: url('~/assets/images/star-active.png');
          opacity: 1;
+      }
+
+      .preload-star {
+         background-image: url('~/assets/images/star.png');
+         display: none;
+      }
+
+      .preload-star-active {
+         background-image: url('~/assets/images/star-active.png');
+         display: none;
       }
    }
 

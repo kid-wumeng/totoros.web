@@ -1,7 +1,7 @@
 <template lang="jade">
    .Tip(@mouseenter="mouseenter" @mouseleave="mouseleave")
       slot
-      .text(ref="text", v-html="textBr", :class="textClass", :style="textStyle")
+      .text-popup(ref="text", v-html="textBr", :class="textClass", :style="textStyle")
 </template>
 
 
@@ -84,7 +84,7 @@
 
    .Tip {
       display: inline-block;
-      .text {
+      .text-popup {
          position: fixed;
          padding: 6px 12px;
          line-height: 1.6;
@@ -112,7 +112,7 @@
          }
       }
 
-      .text.-open {
+      .text-popup.-open {
          opacity: 1;
       }
    }

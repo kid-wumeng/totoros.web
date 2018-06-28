@@ -43,7 +43,7 @@
          top: 0;
          width:  @close-size * 3;
          height: @close-size * 3;
-         background-image: url(~/assets/images/close_white.png);
+         background-image: url(~/assets/images/close-light.png);
          background-repeat: no-repeat;
          background-position: center;
          background-size: @close-size;

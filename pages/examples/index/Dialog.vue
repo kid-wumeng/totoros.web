@@ -3,8 +3,8 @@
       Button(text="Dialog" @click="click")
       Dialog(v-if="open" @close="close")
          TextArea(:text="text")
-         button(slot="action" @click="open = false") action1
-         button(slot="action" @click="open = false") action2
+         button(slot="action" @click="close") action1
+         button(slot="action" @click="close") action2
 </template>
 
 

@@ -10,7 +10,7 @@
       props:
          'x':
             type: String
-            default: 'left'
+            default: 'fill'
             validator: (x) => ['left', 'center', 'right', 'fill'].includes(x)
 
          'y':

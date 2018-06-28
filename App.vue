@@ -12,18 +12,19 @@
 
 
    io =
-      cdn:               require('~/io/cdn')
-      dev:               require('~/io/dev')
-      dpr:               require('~/io/dpr')
-      formatDate:        require('~/io/formatDate')
-      formatDateAgo:     require('~/io/formatDateAgo')
-      formatMarkStep:    require('~/io/formatMarkStep')
-      formatScore:       require('~/io/formatScore')
-      formatSubjectType: require('~/io/formatSubjectType')
-      formatSubjectWay:  require('~/io/formatSubjectWay')
-      isID:              require('~/io/isID')
-      resize:            require('~/io/resize')
-      sleep:             require('~/io/sleep')
+      cdn:                    require('~/io/cdn')
+      dev:                    require('~/io/dev')
+      dpr:                    require('~/io/dpr')
+      formatDate:             require('~/io/formatDate')
+      formatDateAgo:          require('~/io/formatDateAgo')
+      formatMarkStep:         require('~/io/formatMarkStep')
+      formatScore:            require('~/io/formatScore')
+      formatSubjectType:      require('~/io/formatSubjectType')
+      formatSubjectTypeOrWay: require('~/io/formatSubjectTypeOrWay')
+      formatSubjectWay:       require('~/io/formatSubjectWay')
+      isID:                   require('~/io/isID')
+      resize:                 require('~/io/resize')
+      sleep:                  require('~/io/sleep')
 
 
    global.Sai = Vue.prototype.Sai = Sai

@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_PromptDialog
       Button(text="Prompt", @click="click")
-      PromptDialog(v-if="open", :text="text", :defaults="defaults" @sure="sure" @close="close")
+      PromptDialog(v-if="open", :text="text", :defaults="defaults" @close="close" @sure="sure")
 </template>
 
 

@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_ConfirmDialog
       Button(text="Confirm", @click="click")
-      ConfirmDialog(v-if="open", :text="text" @sure="sure" @close="close")
+      ConfirmDialog(v-if="open", :text="text" @close="close" @sure="sure")
 </template>
 
 

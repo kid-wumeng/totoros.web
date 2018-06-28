@@ -1,14 +1,17 @@
 <template lang="jade">
-   Modal.MarkDialog(:open="true" @close="close")
-      .wrap
-         h1 标记〖 {{ subject.name }} 〗
-         TabBar(v-model="step", :tabs="stepRadios" type="ghost")
-         Column(x="fill")
-            Rate(v-model="score" size="large" changeable)
-            Input(v-model="content" area hint="评论 / 可选")
-            Row(x="between" y="center")
-               .remove 删除
-               Button(text="OK" type="ghost")
+   Modal.MarkDialog(hide-close)
+      Column
+         Title(:subject="subject")
+         Step(v-model="step")
+         Score(v-model="score" v-if="scoreOpen")
+         Row.items(x="center"  v-if="itemsOpen")
+            Item(v-model="world" name="world")
+            Item(v-model="story" name="story")
+            Item(v-model="roles" name="roles")
+            Item(v-model="paint" name="paint")
+            Item(v-model="music" name="music" v-if="musicOpen")
+         Content(v-model="content")
+         ActionBar(:mark="mark" @remove="remove" @cancel="cancel" @update="update" @create="create")
 </template>
 
 
@@ -17,28 +20,32 @@
    module.exports =
 
       components:
-         'Modal':    require('~/components/Modal').default
-         'Row':      require('~/components/Row').default
-         'Column':   require('~/components/Column').default
-         'TabBar':   require('~/components/TabBar').default
-         'RadioBar': require('~/components/RadioBar').default
-         'Rate':     require('~/components/Rate').default
-         'Input':    require('~/components/Input').default
-         'Button':   require('~/components/Button').default
+         'Modal':     require('~/components/Modal').default
+         'Row':       require('~/components/Row').default
+         'Column':    require('~/components/Column').default
+         'Title':     require('./Title').default
+         'Step':      require('./Step').default
+         'Score':     require('./Score').default
+         'Item':      require('./Item').default
+         'Content':   require('./Content').default
+         'ActionBar': require('./ActionBar').default
 
       props:
-         'open':
-            type: Boolean
-            default: false
-         'mark':
-            type: Object
-            default: null
          'subject':
             type: Object
             required: true
 
+         'mark':
+            type: Object
+            default: null
+
+         'defaultStep':
+            type: Number
+            default: 1
+            validator: (step) => [1, 2, 3].includes(step)
+
       data: ->
-         'step':    @mark?.step    ? 1
+         'step':    @mark?.step    ? @defaultStep
          'score':   @mark?.score   ? 0
          'world':   @mark?.world   ? false
          'story':   @mark?.story   ? false
@@ -47,60 +54,50 @@
          'music':   @mark?.music   ? false
          'content': @mark?.content ? ''
 
-         'stepRadios': [
-            { text: io.formatMarkStep(1), data: 1 }
-            { text: io.formatMarkStep(2), data: 2 }
-            { text: io.formatMarkStep(3), data: 3 }
-         ]
-
       computed:
-         id: -> mark?.id
+         scoreOpen: -> [2, 3].includes(@step)
+         itemsOpen: -> [2, 3].includes(@step)
+         musicOpen: -> ['anime', 'movie'].includes(@subject.type)
 
       methods:
-         sure: ->
-            @$emit('sure')
+         remove: -> @$emit('remove')
+         cancel: -> @$emit('cancel')
+         update: -> @$emit('update', @getData())
+         create: -> @$emit('create', @getData())
 
-         close: ->
-            @$emit('close')
+         getData: ->
+            return
+               step:    @step
+               score:   @score
+               world:   @world
+               story:   @story
+               roles:   @roles
+               paint:   @paint
+               music:   @music
+               content: @content
 </script>
 
 
 
 <style lang="less">
    .MarkDialog {
-      background-color: rgba(255, 255, 255, 0.4) !important;
+      background-color: rgba(255, 255, 255, 0.9) !important;
 
-      .wrap {
-         width: 480px;
-         background-color: white;
-         box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+      > .Column {
+         width: 600px;
 
-         h1 {
-            padding: 10px;
-            font-weight: 600;
-            font-size: 13px;
-            color: white;
-            background-image: linear-gradient(-60deg, #53BD66 0%, #16a085 80%);
+         > * {
+            margin-bottom: 34px;
+            &:last-child {
+               margin-bottom: 0;
+            }
          }
 
-         .Column {
-            padding: 30px 20px;
-
-            .Rate {
-               margin: 0 auto;
-            }
-
-            .Input {
-               margin-top: 30px;
-               width: 100%;
-               height: 174px;
-            }
-
-            .Row {
-               margin-top: 30px;
-
-               .Button {
-                  height: 30px;
+         > .Row.items {
+            > .Item {
+               margin-right: 24px;
+               &:last-child {
+                  margin-right: 0;
                }
             }
          }

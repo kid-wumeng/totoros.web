@@ -1,6 +1,6 @@
 <template lang="jade">
-   nuxt-link.SubjectName(v-if="clickable", :size="size", :to="to") {{ name }}
-   span.SubjectName(v-else :size="size") {{ name }}
+   nuxt-link.SubjectName(v-if="clickable", :size="size", :to="to") {{ subject.name }}
+   span.SubjectName(v-else :size="size") {{ subject.name }}
 </template>
 
 
@@ -24,22 +24,6 @@
 
 
       computed:
-         name: ->
-            { name, nameOrigin, nameAliases } = @subject
-
-            if name
-               return name
-
-            if nameOrigin
-               return nameOrigin
-
-            if Array.isArray(nameAliases) and nameAliases.length
-               for alias in nameAliases
-                   if alias
-                      return alias
-
-            return '?????'
-
          to: ->
             return "/subjects/#{@subject.id}"
 </script>

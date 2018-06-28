@@ -26,10 +26,7 @@
                descs.push(@start.year)
 
             if @type
-               if @type is 'anime' and @way
-                  descs.push(io.formatSubjectWay(@way))
-               else
-                  descs.push(io.formatSubjectType(@type))
+               descs.push(io.formatSubjectTypeOrWay(@type, @way))
 
             if @authors?.length
                descs.push(@authors.join('、'))

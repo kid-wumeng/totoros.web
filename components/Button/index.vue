@@ -15,7 +15,7 @@
          'type':
             type: String
             default: 'solid'
-            validator: (type) => ['solid', 'ghost', 'light'].includes(type)
+            validator: (type) => ['solid', 'ghost', 'light', 'alert'].includes(type)
 
       methods:
          click: ->
@@ -58,16 +58,17 @@
       padding: 0 @padding - 1;
       color: #14BEB4;
       border: 1px solid #14BEB4;
-
-      &:hover {
-         color: white;
-         background-color: #14BEB4;
-      }
    }
 
    .Button[type="light"] {
       padding: 0 @padding - 1;
       color: #A2AEBA;
-      border: 1px solid lighten(#A2AEBA, 24%);
+      border: 1px solid lighten(#A2AEBA, 16%);
+   }
+
+   .Button[type="alert"] {
+      padding: 0 @padding - 1;
+      color: red;
+      border: 1px solid lighten(red, 24%);
    }
 </style>

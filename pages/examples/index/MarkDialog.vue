@@ -1,8 +1,17 @@
 <template lang="jade">
    #examples_MarkDialog
-      Button(text="Mark ( 创建 )", @click="click1")
-      Button(text="Mark ( 修改 )", @click="click2")
-      MarkDialog(v-if="open", :mark="mark", :subject="subject" @sure="sure" @close="close")
+      Button(text="Mark ( 创建 )", @click="click_create")
+      Button(text="Mark ( 修改 )", @click="click_update")
+      MarkDialog(
+         v-if="open",
+         :subject="subject",
+         :mark="mark",
+         :default-step="3"
+         @cancel="cancel"
+         @remove="remove"
+         @update="update"
+         @create="create"
+      )
 </template>
 
 
@@ -18,22 +27,31 @@
          'Button':     require('~/components/Button').default
 
       data: ->
-         open:    true
-         mark:    mocks.mark
+         open:    false
          subject: mocks.subject
+         mark:    mocks.mark
 
       methods:
-         click1: ->
-            @open = true
+         click_create: ->
             @mark = null
+            @open = true
 
-         click2: ->
+         click_update: ->
             @mark = mocks.mark
             @open = true
 
-         sure: ->
+         cancel: ->
             @open = false
 
-         close: ->
+         remove: ->
+            alert('remove')
+            @open = false
+
+         update: (data) ->
+            alert('update: ' + JSON.stringify(data))
+            @open = false
+
+         create: (data) ->
+            alert('create: ' + JSON.stringify(data))
             @open = false
 </script>

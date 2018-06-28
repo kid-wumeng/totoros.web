@@ -30,7 +30,7 @@ module.exports = [{
 },{
    id: 2
    type: 'comic'
-   name: ''
+   name: '乒乓 ピンポン THE ANIMATION'
    nameOrigin: '乒乓 ピンポン THE ANIMATION'
    nameAliases: []
    intro: '片濑高中的新生“阿扁”星野裕（片山福十郎 配音）和“笑爷”月本诚（内山昂辉 配音）是同出自一个乒乓球道场的朋友。'

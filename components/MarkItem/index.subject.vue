@@ -1,7 +1,7 @@
 <template lang="jade">
    Row.MarkItem(mode="subject")
       ImageFrame: SubjectFace(:subject="subject")
-      Column(x="fill")
+      Column
          Row(x="between" y="center")
             SubjectName(:subject="subject" clickable)
             Step(:mark="mark")
