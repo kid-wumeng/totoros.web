@@ -48,7 +48,7 @@
 
 
 <script lang="coffee">
-   export default {
+   module.exports =
       components:
          'Area': require('~/components/Area').default
 
@@ -61,7 +61,6 @@
                return {'active': true}
             else
                return {}
-   }
 </script>
 
 

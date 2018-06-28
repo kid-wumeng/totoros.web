@@ -33,5 +33,9 @@ module.exports =
          name:    'description',
          content: '硬核漫画, 青年漫画, 小众漫画, 冷门漫画'
       }]
+   },
+
+   render: {
+      resourceHints: false
    }
 }

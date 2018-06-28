@@ -7,7 +7,7 @@
 
 
 <script lang="coffee">
-   export default {
+   module.exports =
 
       components:
          'Dialog':   require('~/components/Dialog').default
@@ -38,7 +38,6 @@
 
          close: ->
             @$emit('close')
-   }
 </script>
 
 

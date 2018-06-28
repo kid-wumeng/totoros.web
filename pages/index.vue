@@ -5,9 +5,8 @@
 
 
 <script lang="coffee">
-   export default {
-      data: => {}
-   }
+   module.exports =
+      data: -> {}
 </script>
 
 

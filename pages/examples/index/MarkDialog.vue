@@ -9,14 +9,12 @@
 
 <script lang="coffee">
 
-   import MarkDialog from '~/components/MarkDialog'
-
    mocks = require('../mocks')
 
-   export default {
+   module.exports =
 
       components:
-         'MarkDialog': MarkDialog
+         'MarkDialog': require('~/components/MarkDialog').default
          'Button':     require('~/components/Button').default
 
       data: ->
@@ -37,6 +35,4 @@
 
          close: ->
             @open = false
-
-   }
 </script>

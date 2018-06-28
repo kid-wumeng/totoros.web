@@ -30,7 +30,8 @@
    global.io  = Vue.prototype.io  = io
 
 
-   export default {
+   module.exports =
+
       mounted: ->
          @setFavicon()
 
@@ -44,7 +45,6 @@
             link.type = 'image/png'
 
             document.head.appendChild(link)
-   }
 </script>
 
 
