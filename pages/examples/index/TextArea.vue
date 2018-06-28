@@ -70,7 +70,8 @@
 <style lang="less">
    #examples_TextArea {
       > .TextArea {
-         width: 540px;
+         width: 700px;
+         text-indent: 2em;
       }
    }
 </style>

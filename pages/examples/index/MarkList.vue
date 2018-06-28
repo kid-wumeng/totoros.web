@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_MarkList
       MarkList(:marks="marks" mode="user")
-      MarkList(:marks="marks" mode="subject" @update='update' @remove="remove")
+      MarkList(:marks="marks" mode="subject")
 </template>
 
 
@@ -15,10 +15,6 @@
 
       data: ->
          marks: mocks.marks
-
-      methods:
-         update: ( id ) -> alert('update: ' + id)
-         remove: ( id ) -> alert('remove: ' + id)
 </script>
 
 

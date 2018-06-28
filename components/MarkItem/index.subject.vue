@@ -35,10 +35,6 @@
 
       computed:
          subject: -> @mark.subject
-
-      methods:
-         update: -> @$emit('update')
-         remove: -> @$emit('remove')
 </script>
 
 

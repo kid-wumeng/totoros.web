@@ -1,5 +1,5 @@
 <template lang="jade">
-   component.MarkItem(:is="mode", :mark="mark" @update="update" @remove="remove")
+   component.MarkItem(:is="mode", :mark="mark")
 </template>
 
 
@@ -20,8 +20,4 @@
             type: String
             required: true
             validator: (mode) => ['user', 'subject'].includes(mode)
-
-      methods:
-         update: -> @$emit('update')
-         remove: -> @$emit('remove')
 </script>
