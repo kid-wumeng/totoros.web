@@ -2,7 +2,9 @@
    Row.MarkItem(mode="user")
       UserFace(:user="user")
       Column
-         UserName(:user="user")
+         Row(y="center")
+            UserName(:user="user" clickable)
+            Step(:mark="mark")
          Score(:mark="mark")
          Content(:mark="mark")
 </template>
@@ -17,6 +19,7 @@
          'Column':   require('~/components/Column').default
          'UserFace': require('~/components/UserFace').default
          'UserName': require('~/components/UserName').default
+         'Step':     require('./Step').default
          'Score':    require('./Score').default
          'Content':  require('./Content').default
 
@@ -40,6 +43,11 @@
       .Column{
          flex: auto;
          margin-left: 16px;
+         .Row {
+            .Step {
+               margin-left: 10px;
+            }
+         }
          .Score {
             margin-top: 12px;
          }

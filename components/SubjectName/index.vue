@@ -1,5 +1,6 @@
 <template lang="jade">
-   .SubjectName(:size="size" @click="click") {{ name }}
+   nuxt-link.SubjectName(v-if="clickable", :size="size", :to="to") {{ subject.name }}
+   span.SubjectName(v-else :size="size") {{ subject.name }}
 </template>
 
 
@@ -16,6 +17,11 @@
             type: String
             default: 'medium'
             validator: (size) => ['small', 'medium', 'large'].includes(size)
+
+         'clickable':
+            type: Boolean
+            default: false
+
 
       computed:
          name: ->
@@ -34,23 +40,19 @@
 
             return '?????'
 
-      methods:
-         click: ->
-            @$router.push("/subjects/#{@subject.id}")
+         to: ->
+            return "/subjects/#{@subject.id}"
 </script>
 
 
 
 <style lang="less">
    .SubjectName {
+      display: block;
       text-align: justify;
-      color: #273340;
       word-break: break-all;
-      cursor: pointer;
-
-      &:hover {
-         color: #14BEB4;
-      }
+      font-family: "Ubuntu";
+      color: #273340;
    }
 
    .SubjectName[size="small"] {
@@ -58,11 +60,17 @@
    }
 
    .SubjectName[size="medium"] {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 15px;
    }
 
    .SubjectName[size="large"] {
       font-size: 16px;
+   }
+
+   a.SubjectName {
+      &:hover {
+         text-decoration: underline;
+      }
    }
 </style>

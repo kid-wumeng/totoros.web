@@ -31,6 +31,7 @@
    .Button {
       height: 34px;
       font-weight: 600;
+      font-family: "Ubuntu";
       font-size: 14px;
       border-radius: 2px;
       cursor: pointer;
@@ -43,7 +44,7 @@
 
    .Button[type="solid"] {
       padding: 0 @padding;
-      color: #FFF;
+      color: white;
       background-image: linear-gradient(-180deg, #53BD66 0%, #16a085 80%);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 

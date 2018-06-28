@@ -1,11 +1,12 @@
 <template lang="jade">
    Row.Score(y="center")
       Rate(:score="score")
-      .item(v-if="world") {{ io.formatScore('world') }} +1
-      .item(v-if="story") {{ io.formatScore('story') }} +1
-      .item(v-if="roles") {{ io.formatScore('roles') }} +1
-      .item(v-if="paint") {{ io.formatScore('paint') }} +1
-      .item(v-if="music") {{ io.formatScore('music') }} +1
+      Row.items(y="center")
+         .item(v-if="world") {{ io.formatScore('world') }} +1
+         .item(v-if="story") {{ io.formatScore('story') }} +1
+         .item(v-if="roles") {{ io.formatScore('roles') }} +1
+         .item(v-if="paint") {{ io.formatScore('paint') }} +1
+         .item(v-if="music") {{ io.formatScore('music') }} +1
 </template>
 
 
@@ -34,14 +35,14 @@
 
 <style lang="less">
    .Score {
-      .Rate {
-         margin-right: 14px;
-      }
-      .item {
-         font-size: 13px;
-         color: #F3C02D;
-         margin-right: 10px;
-         &:last-child { margin-right: 0; }
+      .items {
+         .item {
+            font-size: 13px;
+            color: #F3C02D;
+            margin-right: 10px;
+            &:first-child { margin-left: 14px }
+            &:last-child  { margin-right: 0   }
+         }
       }
    }
 </style>

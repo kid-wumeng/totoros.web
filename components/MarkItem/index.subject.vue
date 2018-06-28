@@ -1,12 +1,14 @@
 <template lang="jade">
    Row.MarkItem(mode="subject")
       ImageFrame: SubjectFace(:subject="subject")
-      Column
-         SubjectName(:subject="subject")
+      Column(x="fill")
+         Row(x="between" y="center")
+            SubjectName(:subject="subject" clickable)
+            Step(:mark="mark")
          SubjectDesc(:subject="subject")
          Score(:mark="mark")
          Content(:mark="mark")
-      ActionArea(:mark="mark" @update="update" @remove="remove")
+      Read(:subject="subject")
 </template>
 
 
@@ -18,12 +20,13 @@
          'Row':         require('~/components/Row').default
          'Column':      require('~/components/Column').default
          'ImageFrame':  require('~/components/ImageFrame').default
+         'Read':        require('~/components/Read').default
          'SubjectFace': require('~/components/SubjectFace').default
          'SubjectName': require('~/components/SubjectName').default
          'SubjectDesc': require('~/components/SubjectDesc').default
+         'Step':        require('./Step').default
          'Score':       require('./Score').default
          'Content':     require('./Content').default
-         'ActionArea':  require('./ActionArea').default
 
       props:
          'mark':
@@ -49,6 +52,11 @@
          flex: auto;
          margin-left: 24px;
          margin-right: 64px;
+         .Row {
+            .Step {
+               margin-left: 16px;
+            }
+         }
          .SubjectDesc {
             margin-top: 10px;
          }

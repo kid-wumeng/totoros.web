@@ -40,13 +40,13 @@ module.exports = [{
 },{
    id:    2
    step:  3
-   score: 4
-   world: true
-   story: true
+   score: 0
+   world: false
+   story: false
    roles: false
-   paint: true
+   paint: false
    music: false
-   content: '他离家出走，说谎，制造不同的身份开始光鲜亮丽的生活。他是智商超群的罪犯，但是他只是个孤独的孩子。在平安夜的时候打电话给抓他的警探，在平安夜被捕的时候拥抱着他说圣诞快乐，在听到父亲的死讯以后失声痛哭，看到妈妈的新家庭以后对来抓他的警察说你们带我走吧。他终究只是个孩子。'
+   # content: '他离家出走，说谎，制造不同的身份开始光鲜亮丽的生活。他是智商超群的罪犯，但是他只是个孤独的孩子。在平安夜的时候打电话给抓他的警探，在平安夜被捕的时候拥抱着他说圣诞快乐，在听到父亲的死讯以后失声痛哭，看到妈妈的新家庭以后对来抓他的警察说你们带我走吧。他终究只是个孩子。'
    createDate: new Date()
    updateDate: new Date()
    user:
@@ -61,7 +61,7 @@ module.exports = [{
          length: 437824
          ver:    1
    subject:
-      id: 1
+      id: 2
       name: '乒乓 ピンポン THE ANIMATION'
       type: 'comic'
       way: 'tv'

@@ -22,6 +22,7 @@
          nuxt-link(to="/examples/RadioBar",      :class="getClass('RadioBar')")      RadioBar
          nuxt-link(to="/examples/RadioGrid",     :class="getClass('RadioGrid')")     RadioGrid
          nuxt-link(to="/examples/Rate",          :class="getClass('Rate')")          Rate
+         nuxt-link(to="/examples/Read",          :class="getClass('Read')")          Read
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
          nuxt-link(to="/examples/SubjectDesc",   :class="getClass('SubjectDesc')")   SubjectDesc
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
@@ -83,7 +84,7 @@
          > a {
             display: block;
             padding: 10px 16px;
-            font-weight: 500;
+            font-family: "Ubuntu";
             font-size: 14px;
             color: #445669;
             &:hover {

@@ -1,5 +1,6 @@
 <template lang="jade">
-   .UserName(:size="size" @click="click") {{ user.name }}
+   nuxt-link.UserName(v-if="clickable", :size="size", :to="to") {{ user.name }}
+   span.UserName(v-else :size="size") {{ user.name }}
 </template>
 
 
@@ -17,23 +18,25 @@
             default: 'medium'
             validator: (size) => ['small', 'medium', 'large'].includes(size)
 
-      methods:
-         click: ->
-            @$router.push("/users/#{@user.id}")
+         'clickable':
+            type: Boolean
+            default: false
+
+
+      computed:
+         to: ->
+            return "/users/#{@user.id}"
 </script>
 
 
 
 <style lang="less">
    .UserName {
+      display: block;
       text-align: justify;
-      color: #273340;
       word-break: break-all;
-      cursor: pointer;
-
-      &:hover {
-         color: #14BEB4;
-      }
+      font-family: "Ubuntu";
+      color: #273340;
    }
 
    .UserName[size="small"] {
@@ -42,10 +45,16 @@
 
    .UserName[size="medium"] {
       font-weight: 500;
-      font-size: 14px;
+      font-size: 15px;
    }
 
    .UserName[size="large"] {
       font-size: 16px;
+   }
+
+   a.UserName {
+      &:hover {
+         text-decoration: underline;
+      }
    }
 </style>
