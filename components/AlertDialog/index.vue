@@ -1,5 +1,5 @@
 <template lang="jade">
-   Dialog.AlertDialog(:open="open" @close="close")
+   Dialog.AlertDialog(@close="close")
       TextArea(:text="text")
       button(slot="action" @click="close") OK
 </template>
@@ -14,14 +14,10 @@
          'TextArea': require('~/components/TextArea').default
 
       props:
-         'open':
-            type: Boolean
-            default: false
          'text':
             type: String
             default: ''
 
       methods:
-         close: ->
-            @$emit('close')
+         close: -> @$emit('close')
 </script>

@@ -2,7 +2,7 @@
    #examples_MarkDialog
       Button(text="Mark ( 创建 )", @click="click1")
       Button(text="Mark ( 修改 )", @click="click2")
-      MarkDialog(:open="open", :mark="mark" @sure="sure" @close="close")
+      MarkDialog(v-if="open", :mark="mark", :subject="subject" @sure="sure" @close="close")
 </template>
 
 
@@ -18,8 +18,9 @@
          'Button':     require('~/components/Button').default
 
       data: ->
-         open: false
-         mark: null
+         open:    true
+         mark:    mocks.mark
+         subject: mocks.subject
 
       methods:
          click1: ->
@@ -27,8 +28,8 @@
             @mark = null
 
          click2: ->
-            @open = true
             @mark = mocks.mark
+            @open = true
 
          sure: ->
             @open = false

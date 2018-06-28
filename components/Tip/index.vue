@@ -83,6 +83,7 @@
    @size:  6px;
 
    .Tip {
+      display: inline-block;
       .text {
          position: fixed;
          padding: 6px 12px;

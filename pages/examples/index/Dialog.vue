@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_Dialog
-      Button(text="Dialog" @click="open = true")
-      Dialog(:open="open"  @close="open = false")
+      Button(text="Dialog" @click="click")
+      Dialog(v-if="open" @close="close")
          TextArea(:text="text")
          button(slot="action" @click="open = false") action1
          button(slot="action" @click="open = false") action2
@@ -19,4 +19,8 @@
       data: ->
          open: false
          text: '这是一个 Dialog 对话框！'
+
+      methods:
+         click: -> @open = true
+         close: -> @open = false
 </script>

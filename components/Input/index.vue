@@ -81,18 +81,20 @@
 
 <style lang="less">
 
-   @line-height-textarea: 26px;
+   @line-height-textarea: 23px;
    @line-height-input:    34px;
 
    .Input {
       display: block;
       padding: 0 10px;
+      font-family: "Lato";
       font-size: 14px;
       color: #273340;
       background-color: #FAFBFC;
       border: 1px solid rgb(209, 213, 218);
       border-radius: 2px;
       box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+      outline: none;
 
       &::placeholder {
          color: #BBB;

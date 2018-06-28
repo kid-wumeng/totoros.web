@@ -58,6 +58,11 @@
       padding: 0 @padding - 1;
       color: #14BEB4;
       border: 1px solid #14BEB4;
+
+      &:hover {
+         color: white;
+         background-color: #14BEB4;
+      }
    }
 
    .Button[type="light"] {

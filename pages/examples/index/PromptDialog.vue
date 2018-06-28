@@ -1,7 +1,7 @@
 <template lang="jade">
    #examples_PromptDialog
-      Button(text="Prompt", @click="open = true")
-      PromptDialog(:open="open", :text="text", :defaults="defaults" @ok="ok" @close="open = false")
+      Button(text="Prompt", @click="click")
+      PromptDialog(v-if="open", :text="text", :defaults="defaults" @sure="sure" @close="close")
 </template>
 
 
@@ -19,7 +19,10 @@
          defaults: 'KID'
 
       methods:
-         ok: ( text ) ->
+         click: -> @open = true
+         close: -> @open = false
+
+         sure: ( text ) ->
             alert(text)
             @open = false
 </script>

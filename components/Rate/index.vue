@@ -1,12 +1,16 @@
 <template lang="jade">
    .Rate(:size="size", :class="rateClass")
-      .star(v-for="i in 7", :key="i", :class="getStarClass(i)" @click="click(i)")
+      Tip(v-for="i in 7", :key="i", :text="io.formatScore(i)" auto)
+         .star(:class="getStarClass(i)" @click="click(i)")
 </template>
 
 
 
 <script lang="coffee">
    module.exports =
+
+      components:
+         'Tip': require('~/components/Tip').default
 
 
       model:
@@ -81,10 +85,10 @@
 
    .Rate[size="large"] {
       .star {
-         width: 36px;
-         height: 36px;
+         width: 28px;
+         height: 28px;
       }
-      .star:not(:first-child) {
+      .Tip:not(:first-child) {
          margin-left: 1px;
       }
    }

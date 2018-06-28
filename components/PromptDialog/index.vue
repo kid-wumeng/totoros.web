@@ -1,9 +1,9 @@
 <template lang="jade">
-   Dialog.PromptDialog(:open="open" @close="close")
+   Dialog.PromptDialog(@close="close")
       TextArea(:text="text")
       Input(v-model="input")
       button(slot="action" @click="close") Cancal
-      button(slot="action" @click="ok")    OK
+      button(slot="action" @click="sure")  OK
 </template>
 
 
@@ -17,9 +17,6 @@
          'Input':    require('~/components/Input').default
 
       props:
-         'open':
-            type: Boolean
-            default: false
          'text':
             type: String
             default: ''
@@ -31,11 +28,8 @@
          input: @defaults
 
       methods:
-         ok: ->
-            @$emit('ok', @input)
-
-         close: ->
-            @$emit('close')
+         close: -> @$emit('close')
+         sure:  -> @$emit('sure', @input)
 </script>
 
 

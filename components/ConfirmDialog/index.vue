@@ -1,8 +1,8 @@
 <template lang="jade">
-   Dialog.ConfirmDialog(:open="open" @close="close")
+   Dialog.ConfirmDialog(@close="close")
       TextArea(:text="text")
       button(slot="action" @click="close") NO
-      button(slot="action" @click="ok")    YES
+      button(slot="action" @click="sure")  YES
 </template>
 
 
@@ -15,17 +15,11 @@
          'TextArea': require('~/components/TextArea').default
 
       props:
-         'open':
-            type: Boolean
-            default: false
          'text':
             type: String
             default: ''
 
       methods:
-         ok: ->
-            @$emit('ok')
-
-         close: ->
-            @$emit('close')
+         close: -> @$emit('close')
+         sure:  -> @$emit('sure')
 </script>

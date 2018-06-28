@@ -1,5 +1,5 @@
 <template lang="jade">
-   Modal.Dialog(:open="open" @close="close")
+   Modal.Dialog(@close="close")
       Area
          slot
          Row(x="right" y="center")
@@ -16,14 +16,8 @@
          'Area':  require('~/components/Area').default
          'Row':   require('~/components/Row').default
 
-      props:
-         'open':
-            type: Boolean
-            default: false
-
       methods:
-         close: ->
-            @$emit('close')
+         close: -> @$emit('close')
 </script>
 
 
@@ -66,6 +60,7 @@
                display: block;
                height: 100%;
                padding: 0 @padding-x;
+               font-weight: 500;
                font-size: 13px;
                color: #939EA9;
                border-left: 1px solid #F2F2F2;
