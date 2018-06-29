@@ -16,7 +16,7 @@ module.exports =
       },
 
       titleTemplate (chunk) {
-         return chunk ? `${chunk} - totoros` : 'totoros'
+         return chunk ? `${chunk} - totoros` : '冰岛 · 漫画学术趴'
       },
 
       meta: [{

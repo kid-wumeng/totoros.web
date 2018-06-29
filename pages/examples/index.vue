@@ -25,6 +25,7 @@
          nuxt-link(to="/examples/Rate",          :class="getClass('Rate')")          Rate
          nuxt-link(to="/examples/Read",          :class="getClass('Read')")          Read
          nuxt-link(to="/examples/Row",           :class="getClass('Row')")           Row
+         nuxt-link(to="/examples/SearchDialog",  :class="getClass('SearchDialog')")  SearchDialog
          nuxt-link(to="/examples/SubjectDesc",   :class="getClass('SubjectDesc')")   SubjectDesc
          nuxt-link(to="/examples/SubjectFace",   :class="getClass('SubjectFace')")   SubjectFace
          nuxt-link(to="/examples/SubjectGrid",   :class="getClass('SubjectGrid')")   SubjectGrid

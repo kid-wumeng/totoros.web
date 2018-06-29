@@ -11,7 +11,7 @@
       props:
          'cols':
             type: Number
-            default: 8
+            default: 7
 
 
       data: ->

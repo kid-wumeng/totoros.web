@@ -1,11 +1,6 @@
 <template lang="jade">
    Grid.SubjectGrid
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
-      SubjectTile(v-for="(subject, index) in subjects", :key="index", :subject="subject")
+      SubjectTile(v-for="subject in subjects", :key="subject.id", :subject="subject")
 </template>
 
 

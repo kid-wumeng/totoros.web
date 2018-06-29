@@ -35,7 +35,7 @@
 <style lang="less">
    .SubjectItem {
       .SubjectFace {
-         width: 90px;
+         width: 80px;
       }
       .Column{
          flex: auto;

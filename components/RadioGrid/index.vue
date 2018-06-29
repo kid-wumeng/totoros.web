@@ -165,11 +165,10 @@
                padding: 0;
                a, span {
                   display: block;
-                  height: 32px;
-                  line-height: 32px;
+                  height: 30px;
+                  line-height: 30px;
                   text-align: center;
-                  font-weight: 500;
-                  font-size: 14px;
+                  font-size: 13px;
                   cursor: pointer;
                   user-select: none;
                }
@@ -195,12 +194,14 @@
             td {
                border: @solid-border;
                a, span {
+                  font-weight: 500;
                   color: #A2AEBA;
                   background-color: white;
                }
             }
             td.-active {
                a, span {
+                  font-weight: 600;
                   color: #445669;
                   background-color: #FAFBFC;
                   box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
@@ -226,12 +227,14 @@
             td {
                border: @ghost-border;
                a, span {
+                  font-weight: 400;
                   color: @ghost-color;
                   background-color: transparent;
                }
             }
             td.-active {
                a, span {
+                  font-weight: 600;
                   color: white;
                   background-color: @ghost-color;
                }

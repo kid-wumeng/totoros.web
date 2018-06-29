@@ -7,9 +7,9 @@
       :autofocus="autofocus",
       :disabled="disabled",
       spellcheck="false",
-      @input="input"
-      @focus="focus"
-      @blur="blur"
+      @input="onInput"
+      @focus="onFocus"
+      @blur="onBlur"
    )
 
    input.Input(
@@ -20,9 +20,9 @@
       :autofocus="autofocus",
       :disabled="disabled",
       spellcheck="false",
-      @input="input"
-      @focus="focus"
-      @blur="blur"
+      @input="onInput"
+      @focus="onFocus"
+      @blur="onBlur"
    )
 </template>
 
@@ -67,14 +67,11 @@
                when 'number' then 'number'
 
       methods:
-         input: (event) ->
-            @$emit('input', text = event.target.value.trim())
+         onInput: (event) -> @$emit('input', text = event.target.value.trim())
+         onFocus: (event) -> @$emit('focus')
+         onBlur:  (event) -> @$emit('blur')
 
-         focus: (event) ->
-            @$emit('focus')
-
-         blur:  (event) ->
-            @$emit('blur')
+         focus: -> @$el.focus()
 </script>
 
 
@@ -87,7 +84,7 @@
    .Input {
       display: block;
       padding: 0 10px;
-      font-family: "Lato";
+      font-family: "Ubuntu";
       font-size: 14px;
       color: #273340;
       background-color: #FAFBFC;

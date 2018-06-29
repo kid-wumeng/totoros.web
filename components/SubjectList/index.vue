@@ -21,8 +21,7 @@
 <style lang="less">
    .SubjectList {
       .SubjectItem {
-         padding: 20px;
-         margin-bottom: 20px;
+         margin-bottom: 60px;
       }
       .SubjectItem:last-child {
          margin-bottom: 0;
