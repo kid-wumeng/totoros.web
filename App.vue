@@ -97,11 +97,11 @@
    }
 
    html {
-      // height: 100%;
+      height: 100%;
    }
 
    body {
-      // min-height: 100%;
+      min-height: 100%;
       font-family: "Lato", "Helvetica Neue", "Arial", "Verdana", "Roboto", "PingFang SC", "Hiragino Sans GB", sans-serif;;
       color: #242424;
       background-image: url(~/assets/images/bg.jpg);
