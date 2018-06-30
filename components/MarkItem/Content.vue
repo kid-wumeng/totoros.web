@@ -18,8 +18,10 @@
 
 
 <style lang="less">
-   .Content {
-      text-indent: 2em;
-      color: #445669 !important;
+   .MarkItem {
+      .Content {
+         text-indent: 2em;
+         color: #445669 !important;
+      }
    }
 </style>

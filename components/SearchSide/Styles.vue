@@ -17,7 +17,7 @@
       props:
          'styles':
             type: Array
-            default: -> []
+            required: true
 
       data: ->
          radios: [

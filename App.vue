@@ -1,5 +1,6 @@
 <template lang="jade">
    #App
+      Header(:remind-count="3")
       nuxt
 </template>
 
@@ -34,6 +35,9 @@
 
    module.exports =
 
+      components:
+         'Header': require('~/components/Header').default
+
       mounted: ->
          @setFavicon()
 
@@ -61,14 +65,14 @@
 
    @font-face {
       font-family: "Lato";
-      src: url(~/assets/fonts/Lato-Medium.ttf);
       font-weight: 500;
+      src: url(~/assets/fonts/Lato-Medium.ttf);
    }
 
    @font-face {
       font-family: "Lato";
-      src: url(~/assets/fonts/Lato-Semibold.ttf);
       font-weight: 600;
+      src: url(~/assets/fonts/Lato-Semibold.ttf);
    }
 
    @font-face {
@@ -79,14 +83,14 @@
 
    @font-face {
       font-family: "Ubuntu";
-      src: url(~/assets/fonts/Ubuntu-M.ttf);
       font-weight: 500;
+      src: url(~/assets/fonts/Ubuntu-M.ttf);
    }
 
    @font-face {
       font-family: "Ubuntu";
-      src: url(~/assets/fonts/Ubuntu-B.ttf);
       font-weight: 600;
+      src: url(~/assets/fonts/Ubuntu-B.ttf);
    }
 
    * {

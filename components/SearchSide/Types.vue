@@ -17,7 +17,7 @@
       props:
          'types':
             type: Array
-            default: -> []
+            required: true
 
       computed:
          radios: ->

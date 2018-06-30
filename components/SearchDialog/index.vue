@@ -2,10 +2,6 @@
    Modal.SearchDialog(@close="close")
       Area
          .side
-            Like(v-model="like")
-            ViewMode(v-model="view")
-            Types(v-model="types")
-            Styles(v-model="styles")
          .main(v-if="mainOpen")
             SubjectList(v-show="view === 'list'", :subjects="subjects")
             SubjectGrid(v-show="view === 'grid'", :subjects="subjects")
@@ -21,10 +17,6 @@
          'Area':        require('~/components/Area').default
          'SubjectList': require('~/components/SubjectList').default
          'SubjectGrid': require('~/components/SubjectGrid').default
-         'Like':        require('./Like').default
-         'ViewMode':    require('./ViewMode').default
-         'Types':       require('./Types').default
-         'Styles':      require('./Styles').default
 
       props:
          'subjects':

@@ -12,7 +12,7 @@
 
       model:
          prop:  'like'
-         event: 'input'
+         event: 'change'
 
       props:
          'like':
@@ -23,7 +23,7 @@
          @$el.focus()
 
       methods:
-         input: (text) -> @$emit('input', text)
+         input: (text) -> @$emit('change', text)
 </script>
 
 
