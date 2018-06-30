@@ -1,4 +1,6 @@
 module.exports =
+   comment:  require('./comment')
+   comments: require('./comments')
    mark:     require('./mark')
    marks:    require('./marks')
    subject:  require('./subject')

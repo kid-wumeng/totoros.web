@@ -5,6 +5,8 @@
          nuxt-link(to="/examples/Area",          :class="getClass('Area')")          Area
          nuxt-link(to="/examples/Button",        :class="getClass('Button')")        Button
          nuxt-link(to="/examples/Column",        :class="getClass('Column')")        Column
+         nuxt-link(to="/examples/CommentItem",   :class="getClass('CommentItem')")   CommentItem
+         nuxt-link(to="/examples/CommentList",   :class="getClass('CommentList')")   CommentList
          nuxt-link(to="/examples/ConfirmDialog", :class="getClass('ConfirmDialog')") ConfirmDialog
          nuxt-link(to="/examples/Dialog",        :class="getClass('Dialog')")        Dialog
          nuxt-link(to="/examples/FilePicker",    :class="getClass('FilePicker')")    FilePicker
@@ -96,8 +98,9 @@
                background-color: #F6F6F6;
             }
             &.active {
+               font-weight: 500;
                color: white;
-               background-color: #445669;
+               background-color: #273340;
             }
          }
       }

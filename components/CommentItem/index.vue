@@ -1,12 +1,11 @@
 <template lang="jade">
-   Row.MarkItem(mode="user")
+   Row.CommentItem
       UserFace(:user="user")
       Column
-         Row(y="center")
+         Row(x="between" y="center")
             UserName(:user="user" clickable)
-            Step(:mark="mark")
-         Score(:mark="mark")
-         Content(:mark="mark")
+            Date(:comment="comment")
+         Content(:comment="comment")
 </template>
 
 
@@ -19,23 +18,21 @@
          'Column':   require('~/components/Column').default
          'UserFace': require('~/components/UserFace').default
          'UserName': require('~/components/UserName').default
-         'Step':     require('./Step').default
-         'Score':    require('./Score').default
+         'Date':     require('./Date').default
          'Content':  require('./Content').default
 
       props:
-         'mark':
+         'comment':
             type: Object
             required: true
 
       computed:
-         user: -> @mark.user
+         user: -> @comment.user
 </script>
 
 
-
 <style lang="less">
-   .MarkItem[mode="user"] {
+   .CommentItem {
       .UserFace {
          width: 56px;
       }
@@ -45,13 +42,9 @@
          margin-left: 16px;
 
          .Row {
-            .Step {
+            .Date {
                margin-left: 10px;
             }
-         }
-
-         .Score {
-            margin-top: 12px;
          }
 
          .Content {

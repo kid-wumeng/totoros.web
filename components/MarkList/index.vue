@@ -26,11 +26,10 @@
 <style lang="less">
    .MarkList {
       .MarkItem {
-         padding: 20px;
-         margin-bottom: 20px;
-      }
-      .MarkItem:last-child {
-         margin-bottom: 0;
+         margin-bottom: 60px;
+         &:last-child {
+            margin-bottom: 0;
+         }
       }
    }
 </style>

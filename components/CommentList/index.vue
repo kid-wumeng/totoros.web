@@ -1,6 +1,6 @@
 <template lang="jade">
-   .SubjectList
-      SubjectItem(v-for="subject in subjects", :key="subject.id", :subject="subject")
+   .CommentList(:mode="mode")
+      CommentItem(v-for="comment in comments", :key="comment.id", :comment="comment")
 </template>
 
 
@@ -8,10 +8,10 @@
 <script lang="coffee">
    module.exports =
       components:
-         'SubjectItem': require('~/components/SubjectItem').default
+         'CommentItem': require('~/components/CommentItem').default
 
       props:
-         'subjects':
+         'comments':
             type: Array
             default: -> []
 </script>
@@ -19,8 +19,8 @@
 
 
 <style lang="less">
-   .SubjectList {
-      .SubjectItem {
+   .CommentList {
+      .CommentItem {
          margin-bottom: 60px;
          &:last-child {
             margin-bottom: 0;
