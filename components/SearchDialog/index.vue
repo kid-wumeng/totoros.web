@@ -1,7 +1,7 @@
 <template lang="jade">
    Modal.SearchDialog(@close="close")
       Area
-         .side
+         SearchSide
          .main(v-if="mainOpen")
             SubjectList(v-show="view === 'list'", :subjects="subjects")
             SubjectGrid(v-show="view === 'grid'", :subjects="subjects")
@@ -15,6 +15,7 @@
       components:
          'Modal':       require('~/components/Modal').default
          'Area':        require('~/components/Area').default
+         'SearchSide':  require('~/components/SearchSide').default
          'SubjectList': require('~/components/SubjectList').default
          'SubjectGrid': require('~/components/SubjectGrid').default
 
@@ -51,7 +52,7 @@
          overflow: scroll;
          position: relative;
 
-         .side {
+         .SearchSide {
             position: absolute;
             left: 0;
             top: 0;
@@ -59,14 +60,8 @@
             height: 100%;
             padding: @padding;
             border-right: 1px solid #F2F2F2;
-
-            > * {
-               margin-bottom: 12px;
-               &:last-child {
-                  margin-bottom: 0;
-               }
-            }
          }
+         
          .main {
             margin-left: @side-width;
             padding: @padding;

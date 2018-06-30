@@ -52,7 +52,6 @@
 
       .count {
          position: absolute;
-         left: 7px;
          top: -9px;
          height: 18px;
          line-height: 18px;
@@ -65,14 +64,17 @@
          transform: scale3d(0.75, 0.75, 1);
 
          &.-bit1{
+            left: 7px;
             width: 18px;
             border-radius: 100%;
          }
          &.-bit2{
+            left: 6px;
             width: 26px;
             border-radius: 50px;
          }
          &.-bit3{
+            left: 5px;
             width: 34px;
             border-radius: 50px;
          }
