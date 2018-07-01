@@ -1,5 +1,8 @@
 <template lang="jade">
-   .Date {{ date }} / {{ floor }}楼
+   .Date
+      span {{ date }}
+      span.sep /
+      span {{ floor }}楼
 </template>
 
 
@@ -12,7 +15,7 @@
             required: true
 
       computed:
-         date:  -> io.formatDate(@comment.createDate, time = true)
+         date:  -> io.formatDate(@comment.createDate)
          floor: -> @comment.floor
 </script>
 
@@ -21,8 +24,15 @@
 <style lang="less">
    .CommentItem {
       .Date {
+         font-family: "Ubuntu";
          font-size: 12px;
-         color: #707C88;
+         color: #A2AEBA;
+         user-select: none;
+
+         .sep {
+            margin: 0 6px;
+            font-family: "Lato";
+         }
       }
    }
 </style>

@@ -22,6 +22,9 @@
          nuxt-link(to="/examples/MarkList",      :class="getClass('MarkList')")      MarkList
          nuxt-link(to="/examples/Modal",         :class="getClass('Modal')")         Modal
          nuxt-link(to="/examples/PageBar",       :class="getClass('PageBar')")       PageBar
+         nuxt-link(to="/examples/PostItem",      :class="getClass('PostItem')")      PostItem
+         nuxt-link(to="/examples/PostList",      :class="getClass('PostList')")      PostList
+         nuxt-link(to="/examples/PostName",      :class="getClass('PostName')")      PostName
          nuxt-link(to="/examples/PromptDialog",  :class="getClass('PromptDialog')")  PromptDialog
          nuxt-link(to="/examples/Radar",         :class="getClass('Radar')")         Radar
          nuxt-link(to="/examples/RadioBar",      :class="getClass('RadioBar')")      RadioBar
@@ -76,9 +79,6 @@
    @padding: 16px;
 
    #examples {
-      position: fixed;
-      width: 100%;
-      height: 100%;
       padding: @padding;
       display: flex;
 

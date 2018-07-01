@@ -4,7 +4,7 @@
          Row(y="center")
             .logo 冰岛 · 硬核漫画
          Row(y="center")
-            Remind(:count="remindCount")
+            Remind(:user="user", :count="remindCount")
             UserFace(:user="user")
 </template>
 
@@ -40,10 +40,10 @@
 
       > .Row {
          width: 1000px;
-         height: 56px;
+         height: 64px;
 
          .Remind {
-            margin-right: 36px;
+            margin-right: 40px;
          }
 
          .UserFace {

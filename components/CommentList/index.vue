@@ -1,5 +1,5 @@
 <template lang="jade">
-   .CommentList(:mode="mode")
+   .CommentList
       CommentItem(v-for="comment in comments", :key="comment.id", :comment="comment")
 </template>
 
@@ -23,7 +23,7 @@
       .CommentItem {
          margin-bottom: 60px;
          &:last-child {
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
          }
       }
    }

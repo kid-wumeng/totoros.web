@@ -1,7 +1,7 @@
 <template lang="jade">
    .Remind
       Icon(name="bell")
-      .count(v-show="count", :class="countClass") {{ countLabel }}
+      .count(v-show="count", :bit="bit") {{ countLabel }}
 </template>
 
 
@@ -13,6 +13,9 @@
          'Icon': require('~/components/Icon').default
 
       props:
+         'user':
+            type: Object
+            default: null
          'count':
             type: Number
             required: true
@@ -23,13 +26,6 @@
                when @count <= 9  then 1
                when @count <= 99 then 2
                else                   3
-
-
-         countClass: ->
-            '-bit1': @bit is 1
-            '-bit2': @bit is 2
-            '-bit3': @bit is 3
-
 
          countLabel: ->
             if @count <= 99
@@ -42,6 +38,7 @@
 
 <style lang="less">
    .Remind {
+      cursor: pointer;
       user-select: none;
       position: relative;
 
@@ -52,7 +49,7 @@
 
       .count {
          position: absolute;
-         top: -9px;
+         top: -10px;
          height: 18px;
          line-height: 18px;
          text-align: center;
@@ -63,17 +60,17 @@
          background-color: white;
          transform: scale3d(0.75, 0.75, 1);
 
-         &.-bit1{
+         &[bit="1"] {
             left: 7px;
             width: 18px;
             border-radius: 100%;
          }
-         &.-bit2{
+         &[bit="2"] {
             left: 6px;
             width: 26px;
             border-radius: 50px;
          }
-         &.-bit3{
+         &[bit="3"] {
             left: 5px;
             width: 34px;
             border-radius: 50px;

@@ -1,5 +1,8 @@
 <template lang="jade">
-   .Step ( {{ date }} / {{ step }} )
+   .Step
+      span {{ date }}
+      span.sep /
+      span {{ step }}
 </template>
 
 
@@ -20,7 +23,14 @@
 
 <style lang="less">
    .Step {
+      font-family: "Ubuntu";
       font-size: 12px;
-      color: #707C88;
+      color: #A2AEBA;
+      user-select: none;
+
+      .sep {
+         margin: 0 6px;
+         font-family: "Lato";
+      }
    }
 </style>

@@ -3,6 +3,8 @@ module.exports =
    comments: require('./comments')
    mark:     require('./mark')
    marks:    require('./marks')
+   post:     require('./post')
+   posts:    require('./posts')
    subject:  require('./subject')
    subjects: require('./subjects')
    user:     require('./user')

@@ -1,6 +1,6 @@
 <template lang="jade">
-   .SubjectList
-      SubjectItem(v-for="subject in subjects", :key="subject.id", :subject="subject")
+   .PostList
+      PostItem(v-for="post in posts", :key="post.id", :post="post")
 </template>
 
 
@@ -8,10 +8,10 @@
 <script lang="coffee">
    module.exports =
       components:
-         'SubjectItem': require('~/components/SubjectItem').default
+         'PostItem': require('~/components/PostItem').default
 
       props:
-         'subjects':
+         'posts':
             type: Array
             default: -> []
 </script>
@@ -19,9 +19,9 @@
 
 
 <style lang="less">
-   .SubjectList {
-      .SubjectItem {
-         margin-bottom: 60px;
+   .PostList {
+      .PostItem {
+         margin-bottom: 30px;
          &:last-child {
             margin-bottom: 0 !important;
          }

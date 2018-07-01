@@ -1,6 +1,6 @@
 <template lang="jade">
-   nuxt-link.UserName(v-if="clickable", :size="size", :to="to") {{ user.name }}
-   span.UserName(v-else :size="size") {{ user.name }}
+   nuxt-link.PostName(v-if="clickable", :size="size", :to="to") {{ post.name }}
+   span.PostName(v-else :size="size") {{ post.name }}
 </template>
 
 
@@ -9,7 +9,7 @@
    module.exports =
 
       props:
-         'user':
+         'post':
             type: Object
             required: true
 
@@ -25,34 +25,33 @@
 
       computed:
          to: ->
-            return "/users/#{@user.id}"
+            return "/posts/#{@post.id}"
 </script>
 
 
 
 <style lang="less">
-   .UserName {
+   .PostName {
       display: block;
       text-align: justify;
       word-break: break-all;
       font-family: "Ubuntu";
-      color: #273340;
+      color: #262626;
    }
 
-   .UserName[size="small"] {
-      font-size: 14px;
+   .PostName[size="small"] {
+      font-size: 13px;
    }
 
-   .UserName[size="medium"] {
-      font-weight: 500;
+   .PostName[size="medium"] {
       font-size: 15px;
    }
 
-   .UserName[size="large"] {
+   .PostName[size="large"] {
       font-size: 16px;
    }
 
-   a.UserName {
+   a.PostName {
       &:hover {
          text-decoration: underline;
       }

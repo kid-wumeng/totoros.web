@@ -1,7 +1,7 @@
 <template lang="jade">
    #App
-      Header(:remind-count="3")
-      nuxt
+      Header(ref="header", :remind-count="3")
+      nuxt(:style="style")
 </template>
 
 
@@ -18,7 +18,6 @@
       dev:                    require('~/io/dev')
       dpr:                    require('~/io/dpr')
       formatDate:             require('~/io/formatDate')
-      formatDateAgo:          require('~/io/formatDateAgo')
       formatMarkStep:         require('~/io/formatMarkStep')
       formatScore:            require('~/io/formatScore')
       formatSubjectType:      require('~/io/formatSubjectType')
@@ -38,8 +37,18 @@
       components:
          'Header': require('~/components/Header').default
 
+      data: ->
+         height: 0
+
+      computed:
+         style: ->
+            'height': @height + 'px'
+
+
       mounted: ->
          @setFavicon()
+         @setHeight()
+         window.addEventListener('resize', @setHeight)
 
 
       methods:
@@ -51,6 +60,14 @@
             link.type = 'image/png'
 
             document.head.appendChild(link)
+
+
+         setHeight: ->
+
+            windowHeight = window.innerHeight
+            headerHeight = @$refs.header.$el.offsetHeight
+
+            @height = windowHeight - headerHeight
 </script>
 
 
@@ -91,6 +108,12 @@
       font-family: "Ubuntu";
       font-weight: 600;
       src: url(~/assets/fonts/Ubuntu-B.ttf);
+   }
+
+   @font-face {
+      font-family: "Adele";
+      font-weight: 400;
+      src: url(~/assets/fonts/ADELE-Light.ttf);
    }
 
    * {

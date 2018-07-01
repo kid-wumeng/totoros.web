@@ -28,7 +28,7 @@
       .MarkItem {
          margin-bottom: 60px;
          &:last-child {
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
          }
       }
    }
