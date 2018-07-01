@@ -1,7 +1,7 @@
 <template lang="jade">
    #App
       Header(ref="header", :remind-count="3")
-      nuxt(:style="style")
+      nuxt(v-show="show", :style="style")
 </template>
 
 
@@ -41,6 +41,9 @@
          height: 0
 
       computed:
+         show: ->
+            return @height > 0
+
          style: ->
             'height': @height + 'px'
 
